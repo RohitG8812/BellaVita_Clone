@@ -1,0 +1,384 @@
+/* @import url("https://fonts.cdnfonts.com/css/twentieth-century-for-kenmore"); */
+@import url("https://db.onlinewebfonts.com/c/6138beb83221f6eb46ed08543a304d1d?family=Twentieth+Century");
+* {
+  --card-font: "Twentieth Century", sans-serif;
+  --card-font-style: normal;
+  --card-font-weight: 500;
+  --card-font-size: 17.2px;
+  --card-line-height: 21.6px;
+  --card-letter-spacing: 0.63px;
+  --card-color: rgb(26, 27, 24);
+  --card-min-height: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  font-size: calc(var(--font-body-scale) * 62.5%);
+  height: 100%;
+}
+
+body {
+  font-family: var(--card-font);
+  font-style: var(--card-font-style);
+  font-weight: var(--card-font-weight);
+  font-size: var(--card-font-size);
+  line-height: var(--card-line-height);
+  letter-spacing: var(--card-letter-spacing);
+  color: var(--card-color);
+  min-height: var(--card-min-height);
+  box-sizing: border-box;
+  /* border: 1px solid blue; */
+}
+
+.homeMain {
+  width: 100%;
+}
+
+img {
+  width: 180px;
+}
+
+/* --Top Slider */
+
+.mainSlider {
+  width: 100%;
+  background-color: rgb(23, 22, 21);
+  display: flex;
+  justify-content: center;
+}
+
+.sliderContainer {
+  max-width: 1050px;
+  width: 100%;
+  height: 36px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-out;
+  width: calc(100% * 3); /* Smooth transition effect */
+}
+
+.slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  text-align: center;
+  letter-spacing: 0.78px;
+  line-height: 16.25px;
+}
+
+.arrow {
+  width: 30px;
+}
+
+.prevBtn,
+.nextBtn {
+  background: rgb(23, 22, 21);
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  padding: 0 10px;
+  opacity: 0.8;
+}
+
+.prevBtn:hover,
+.nextBtn:hover {
+  opacity: 1;
+}
+
+/* --Navbar  */
+
+.mainNavbar {
+  width: 100%;
+  position: relative;
+  border-bottom: 1.5px solid rgb(226, 224, 224);
+  background-color: transparent;
+  z-index: 1;
+}
+
+.mainHover:hover{
+  background-color: #fff;
+  li a {
+    color:  rgb(40, 40, 40);
+  }
+}
+
+.mainHover{
+  li a {
+    color:  #fff;
+  }
+}
+
+/* -Top Navbar  */
+.topNav {
+  /* border: 1px solid green; */
+  padding-block: 5px;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 50px;
+  padding-top: 12px;
+}
+
+/* Input Field of Navbar */
+.form button {
+  border: none;
+  background: none;
+}
+
+.form {
+  --timing: 0.3s;
+  --width-of-input: 188px;
+  --height-of-input: 30px;
+  --border-height: 2px;
+  --input-bg: #fff;
+  --border-radius: 1px;
+  --after-border-radius: 1px;
+  position: relative;
+  width: var(--width-of-input);
+  height: var(--height-of-input);
+  display: flex;
+  align-items: center;
+  padding-inline: 0.5em;
+  border-radius: var(--border-radius);
+  transition: border-radius 0.5s ease;
+  background: transparent;
+  border-bottom: 1px solid #000;
+}
+
+.input {
+  font-family: "Twentieth Century", sans-serif;
+  letter-spacing: 0.63px;
+  font-size: 15.33px;
+  font-weight: 400;
+  font-style: normal;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  padding-inline: 0.5em;
+  border: none;
+}
+
+.form:before {
+  content: "";
+  position: absolute;
+  background: var(--border-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: var(--border-height);
+  left: 0;
+  bottom: 0;
+  border-radius: 1px;
+  transition: transform var(--timing) ease;
+}
+
+.form:focus-within {
+  border-radius: var(--after-border-radius);
+}
+
+input:focus {
+  outline: none;
+}
+
+.form:focus-within:before {
+  transform: scale(1);
+}
+
+.reset {
+  border: none;
+  background: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+input:not(:placeholder-shown) ~ .reset {
+  opacity: 1;
+  visibility: visible;
+}
+
+.form svg {
+  width: 17px;
+  margin-top: 3px;
+}
+/* --- */
+
+.searchBar {
+  height: 100%;
+  width: 30%;
+}
+
+.brandLogo {
+  height: 100%;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 143.325px;
+  height: 20px;
+  padding: 3px;
+}
+
+.Nav_icons {
+  height: 31px;
+  width: 30%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.navIcon {
+  height: 20px;
+  width: 22px;
+  padding-left: 28px;
+}
+
+.navIcon:hover {
+  opacity: 0.6;
+  scale: 1.05;
+  transition: 0.2s ease-in-out;
+}
+
+/*  */
+
+/* -Bottom Navbar */
+
+.bottom {
+  /* border: 1px solid red; */
+  padding-top: 9px;
+  padding-bottom: 7px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 28px;
+}
+
+li {
+  font-size: 12px;
+  text-transform: uppercase;
+  list-style: none;
+  font-weight: 550;
+  letter-spacing: 2.4px;
+  line-height: 21.6px;
+}
+
+li a {
+  text-decoration: none;
+  color: rgb(40, 40, 40);;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.5px;
+  width: 0;
+  background-color: rgba(40, 40, 40, 0.423); 
+  transition: width 0.15s ease-in-out;
+}
+
+li a:hover::after,
+.navActive::after {
+  width: 100%;
+}
+
+li a:hover {
+  color: rgba(40, 40, 40, 0.749);
+}
+
+/* Home */
+
+.topBanner {
+  position: relative;
+  top: -87px;
+}
+
+.BannerImage {
+  width: 100%;
+  display: block;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.roundBtn {
+  bottom: 40px;
+  width: 8px;
+  height: 8px;
+  background-color: rgb(189, 186, 186);
+  border: none;
+  margin-right: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.roundBtn.active {
+  background-color: #fff;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slideIn 0.2s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

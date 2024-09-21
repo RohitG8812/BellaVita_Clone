@@ -1,0 +1,79 @@
+import React from 'react'
+import CartIcon from "../assets/icons/cart12.png"
+import ProfileIcon from '../assets/icons/profile.svg'
+import BrandLogo from "../assets/logo.jpg"
+import { NavLink, useLocation } from 'react-router-dom'
+
+function Navbar() {
+    const location = useLocation();
+    console.log(location, location.pathname)
+
+    return (
+        <div className={`mainNavbar ${location.pathname === "/" && "mainHover"}`}>
+            <div className="topNav">
+                <div className="searchBar">
+                    <form className="form">
+                        <button>
+                            <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+                                <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" strokeWidth="1.333" strokeLinecap="round" strokeLinejoin="round"></path>
+                            </svg>
+                        </button>
+                        <input className="input" placeholder="Search" required="" type="text" />
+                        <button className="reset" type="reset">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div className="brandLogo">
+                    <a href="/"><img src={BrandLogo} alt="" className='logo' /></a>
+                </div>
+                <div className="Nav_icons">
+                    <a href=""><img src={ProfileIcon} alt="" className='navIcon' /></a>
+                    <a href=""><img src={CartIcon} alt="" className='navIcon' /></a>
+                </div>
+            </div>
+            <div className="bottom">
+                <nav>
+                    <ul>
+                        <li className='li'>
+                            <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/crazyDeals">Crazy Deals</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/shopAll">Shop All</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/bestSellers">BestSellers</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/perfumes">Perfumes</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/bathBody">Bath & Body</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/makeup">Makeup</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/newArrivals">New Arrivals</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/skincare">SkinCare</NavLink>
+                        </li>
+                        <li>
+                            <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/giftSets">Gifting</NavLink>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    )
+}
+
+export default Navbar
+
+
+{/* < a href = "" > <img src={ProfileIcon} alt="" /></a > */ }
+{/* <a href=""><img src={CartIcon} alt="" /></a> */ }
