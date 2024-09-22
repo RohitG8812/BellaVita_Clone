@@ -1,12 +1,11 @@
-/* @import url("https://fonts.cdnfonts.com/css/twentieth-century-for-kenmore"); */
 /* @import url("https://db.onlinewebfonts.com/c/6138beb83221f6eb46ed08543a304d1d?family=Twentieth+Century"); */
 @font-face {
-  font-family: "Twentieth Century";
-  src: url(/BellaVita_Clone/public/Twentieth\ Century.ttf);
+  font-family: myFont;
+  src: url(../public/TwentiethCentury.ttf);
 }
 
 * {
-  /* --card-font: "Twentieth Century", sans-serif; */
+  --card-font: myFont;
   --card-font-style: normal;
   --card-font-weight: 500;
   --card-font-size: 17.2px;
@@ -26,7 +25,7 @@ html {
 }
 
 body {
-  font-family: "Twentieth Century";
+  font-family: var(--card-font);
   font-style: var(--card-font-style);
   font-weight: var(--card-font-weight);
   font-size: var(--card-font-size);
@@ -114,16 +113,16 @@ img {
   z-index: 1;
 }
 
-.mainHover:hover{
+.mainHover:hover {
   background-color: #fff;
   li a {
-    color:  rgb(40, 40, 40);
+    color: rgb(40, 40, 40);
   }
 }
 
-.mainHover{
+.mainHover {
   li a {
-    color:  #fff;
+    color: #fff;
   }
 }
 
@@ -292,7 +291,7 @@ li {
 
 li a {
   text-decoration: none;
-  color: rgb(40, 40, 40);;
+  color: rgb(40, 40, 40);
   position: relative;
   padding-bottom: 5px;
 }
@@ -304,7 +303,7 @@ li a::after {
   bottom: 0;
   height: 0.5px;
   width: 0;
-  background-color: rgba(40, 40, 40, 0.423); 
+  background-color: rgba(40, 40, 40, 0.423);
   transition: width 0.15s ease-in-out;
 }
 
