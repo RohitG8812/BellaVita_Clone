@@ -1,7 +1,12 @@
 /* @import url("https://fonts.cdnfonts.com/css/twentieth-century-for-kenmore"); */
-@import url("https://db.onlinewebfonts.com/c/6138beb83221f6eb46ed08543a304d1d?family=Twentieth+Century");
+/* @import url("https://db.onlinewebfonts.com/c/6138beb83221f6eb46ed08543a304d1d?family=Twentieth+Century"); */
+@font-face {
+  font-family: "Twentieth Century";
+  src: url(/BellaVita_Clone/public/Twentieth\ Century.ttf);
+}
+
 * {
-  --card-font: "Twentieth Century", sans-serif;
+  /* --card-font: "Twentieth Century", sans-serif; */
   --card-font-style: normal;
   --card-font-weight: 500;
   --card-font-size: 17.2px;
@@ -21,7 +26,7 @@ html {
 }
 
 body {
-  font-family: var(--card-font);
+  font-family: "Twentieth Century";
   font-style: var(--card-font-style);
   font-weight: var(--card-font-weight);
   font-size: var(--card-font-size);
