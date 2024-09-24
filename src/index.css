@@ -811,4 +811,7 @@ li a:hover {
     padding: 10px 3px;
     overflow: hidden;
   }
+  .yellowText{
+    font-size: 13px;
+  }
 }
