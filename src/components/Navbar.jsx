@@ -1,17 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CartIcon from "../assets/icons/cart12.png"
 import ProfileIcon from '../assets/icons/profile.svg'
-import BrandLogo from "../assets/logo.jpg"
+import BrandLogo from "../assets/logo.svg"
 import { NavLink, useLocation } from 'react-router-dom'
+import SideNavbar from './SideNavbar'
+
 
 function Navbar() {
+    const [sidebarOpen, setSidebarOpen] = useState(false)
     const location = useLocation();
     console.log(location, location.pathname)
 
     return (
-        <div className={`mainNavbar ${location.pathname === "/" && "mainHover"}`}>
+        <div className={`mainNavbar ${location.pathname === "/" && "mainHover"} ${sidebarOpen ? "sidebarOpenHover" : ""}`}>
             <div className="topNav">
                 <div className="searchBar">
+                    <div className="hamburgMenu">
+                        <SideNavbar setSidebarOpen={setSidebarOpen} />
+                    </div>
                     <form className="form">
                         <button>
                             <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">

@@ -5,7 +5,7 @@ import RightArrow from "../assets/icons/right.svg"
 function TopSlider() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const slides = [
-        "🎁FREE Gift on all PREPAID Orders", "Any 3 100ml PERFUMES for ₹1298", "Any 2 100ml PERFUMES for ₹949",
+        "🎁FREE Gift on all PREPAID Orders", "Get any 3 100ml PERFUMES for ₹1298", "Get any 2 100ml PERFUMES for ₹949",
     ]
 
     useEffect(() => {

@@ -1,0 +1,14 @@
+<svg viewBox="0 0 24.1 24.09" height="24.09" width="24.1" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(-60.9 -178)" data-name="Group 159" id="Group_159">
+    <rect fill="#fff" transform="translate(61 178)" height="24" width="24" data-name="Rectangle 222" id="Rectangle_222"></rect>
+    <g transform="translate(59 177)" id="location_7026129">
+      <g transform="translate(5.829 15.794)" data-name="Group 122" id="Group_122">
+        <path fill-rule="evenodd" stroke-width="0.2" stroke="#000" transform="translate(-7.33 -22.701)" d="M8.1,26.53a.769.769,0,1,1-.769.769A.769.769,0,0,1,8.1,26.53Z" data-name="Path 103" id="Path_103"></path>
+        <path fill-rule="evenodd" stroke-width="0.2" stroke="#000" transform="translate(-8.532 -22.701)" d="M12.369,26.53a.769.769,0,1,1-.769.769A.769.769,0,0,1,12.369,26.53Z" data-name="Path 104" id="Path_104"></path>
+        <path fill-rule="evenodd" stroke-width="0.2" stroke="#000" transform="translate(-12.736 -21.2)" d="M27.3,21.2a.769.769,0,1,1-.769.769A.769.769,0,0,1,27.3,21.2Z" data-name="Path 105" id="Path_105"></path>
+      </g>
+      <path stroke-width="0.2" stroke="#000" transform="translate(0)" d="M23.869,3.121A3.808,3.808,0,0,0,21.161,2H5.829A3.836,3.836,0,0,0,2,5.829V21.161A3.829,3.829,0,0,0,5.829,24.99h9.2V23.46h-9.2a2.3,2.3,0,0,1-2.3-2.3V5.829a2.3,2.3,0,0,1,2.3-2.3H9.659V9.659a.769.769,0,0,0,.956.718l2.874-.718,2.874.718a.8.8,0,0,0,.661-.137.769.769,0,0,0,.295-.6V3.53h3.829a2.3,2.3,0,0,1,2.3,2.3V11.2H24.99V5.829a3.8,3.8,0,0,0-1.121-2.709ZM15.794,8.681l-2.112-.524a.754.754,0,0,0-.374,0L11.2,8.681V3.53h4.6Z" data-name="Path 106" id="Path_106"></path>
+      <path stroke-width="0.2" stroke="#000" transform="translate(-5.406 -4.204)" d="M25.8,29.194a.769.769,0,0,1-.46-.158c-.165-.129-4.138-3.175-4.138-7.508a4.6,4.6,0,1,1,9.2,0c0,4.311-3.966,7.378-4.138,7.508A.769.769,0,0,1,25.8,29.194Zm0-10.726a3.068,3.068,0,0,0-3.068,3.068c0,2.766,2.105,5.029,3.068,5.891.956-.876,3.068-3.125,3.068-5.891A3.068,3.068,0,0,0,25.8,18.467Z" data-name="Path 107" id="Path_107"></path>
+    </g>
+  </g>
+</svg>

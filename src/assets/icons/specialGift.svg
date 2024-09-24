@@ -1,0 +1,12 @@
+<svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(-61 -178)" data-name="Group 157" id="Group_157">
+    <rect fill="none" transform="translate(61 178)" height="24" width="24" data-name="Rectangle 219" id="Rectangle_219"></rect>
+    <g transform="translate(62 180)" data-name="Icon feather-gift" id="Icon_feather-gift">
+      <path stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#000" fill="none" transform="translate(-4.19 -7.021)" d="M24.373,18v9.047H6V18" data-name="Path 59" id="Path_59"></path>
+      <path stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#000" fill="none" transform="translate(-3 -5.332)" d="M3,10.5H24.992v4.524H3Z" data-name="Path 60" id="Path_60"></path>
+      <path stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#000" fill="none" transform="translate(-7.004 -4.045)" d="M18,24.071V10.5" data-name="Path 61" id="Path_61"></path>
+      <path stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#000" fill="none" transform="translate(-3.886 -3)" d="M13.833,7.524H9.762A2.262,2.262,0,1,1,9.762,3C12.929,3,13.833,7.524,13.833,7.524Z" data-name="Path 62" id="Path_62"></path>
+      <path stroke-width="1" stroke-linejoin="round" stroke-linecap="round" stroke="#000" fill="none" transform="translate(-5.955 -3)" d="M18,7.524h4.071a2.262,2.262,0,1,0,0-4.524C18.9,3,18,7.524,18,7.524Z" data-name="Path 63" id="Path_63"></path>
+    </g>
+  </g>
+</svg>

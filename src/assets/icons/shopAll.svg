@@ -1,0 +1,10 @@
+<svg viewBox="0 0 24 24" height="24" width="24" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="clip-path">
+      <rect stroke-width="1" stroke="#707070" fill="#fff" transform="translate(61 178)" height="24" width="24" data-name="Rectangle 223" id="Rectangle_223"></rect>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#clip-path)" transform="translate(-61 -178)" data-name="Mask Group 33" id="Mask_Group_33">
+    <path stroke-width="1.2" stroke="#000" fill="none" transform="translate(57.896 176.044)" d="M10.087,10.749l.922-6.122h-4.8l-2,5.248a1.839,1.839,0,0,0-.094.583c0,1.287,1.341,2.332,3,2.332a2.844,2.844,0,0,0,2.976-2.041Zm4.521,2.041c1.656,0,3-1.045,3-2.332,0-.048,0-.1-.006-.141l-.594-5.69h-4.8l-.595,5.685c0,.048,0,.1,0,.146,0,1.287,1.342,2.332,3,2.332Zm5.831,1.22v4.611H8.778v-4.6a4.907,4.907,0,0,1-1.666.289,4.808,4.808,0,0,1-.666-.057v7.4a1.636,1.636,0,0,0,1.63,1.633H21.139a1.638,1.638,0,0,0,1.633-1.633v-7.4a5.01,5.01,0,0,1-.666.057A4.846,4.846,0,0,1,20.439,14.01ZM25.01,9.875,23,4.627h-4.8l.921,6.113a2.838,2.838,0,0,0,2.977,2.05c1.656,0,3-1.045,3-2.332a1.873,1.873,0,0,0-.093-.583Z" data-name="Icon metro-shop" id="Icon_metro-shop"></path>
+  </g>
+</svg>
