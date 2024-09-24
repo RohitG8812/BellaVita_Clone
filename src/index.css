@@ -275,7 +275,7 @@ input:not(:placeholder-shown) ~ .reset {
 .searchBar {
   display: flex;
   align-items: center;
-  /* gap: 20px; */
+  gap: 20px;
   height: 100%;
   width: 30%;
 }
@@ -620,13 +620,12 @@ li a:hover {
 @media (max-width: 1030px) {
   .sideBarIcon {
     display: block;
-    gap: 20px;
   }
   .bottom {
     display: none;
   }
   .topBanner {
-    top: -51.5px;
+    top: -49.1px;
   }
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
     width: 450px !important;
@@ -641,7 +640,7 @@ li a:hover {
     display: block;
   }
   .topBanner {
-    top: -88.3px;
+    top: -85.9px;
   }
   .css-1u2w381-MuiModal-root-MuiDrawer-root {
     top: 122.5px !important;
