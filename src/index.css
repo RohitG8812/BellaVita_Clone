@@ -629,7 +629,7 @@ li a:hover {
     display: none;
   }
   .topBanner {
-    top: -51.7px;
+    top: -51.5px;
   }
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
     width: 450px !important;
@@ -644,7 +644,7 @@ li a:hover {
     display: block;
   }
   .topBanner {
-    top: -88.7px;
+    top: -88.3px;
   }
   .css-1u2w381-MuiModal-root-MuiDrawer-root {
     top: 122.5px !important;
@@ -661,7 +661,7 @@ li a:hover {
     border-top: 1px solid rgb(210, 213, 217);
     background-color: #fff;
     cursor: default !important;
-    width: 80%;
+    width: 85%;
   }
 
   /* for deployed version issues */
@@ -670,7 +670,7 @@ li a:hover {
     border-top: 1px solid rgb(210, 213, 217);
     background-color: #fff;
     cursor: default !important;
-    width: 80%;
+    width: 85%;
   }
 
   /* for transparent */
@@ -711,11 +711,11 @@ li a:hover {
   .formLower {
     width: 90%;
   }
-  .sidebarWidth {
-    max-width: 450px !important;
-  }
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
-    width: 90% !important;
+    width: 87% !important;
+  }
+  .css-nsg84x {
+    width: 87% !important;
   }
 }
 
