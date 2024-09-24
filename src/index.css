@@ -469,17 +469,32 @@ li a:hover {
   top: 86.5px !important;
 }
 
+.css-y28f86 {
+  top: 86.5px !important;
+}
+
 /* for white background one */
 .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
   top: 86.5px;
   border-top: 1px solid rgb(210, 213, 217);
   background-color: #fff;
-  cursor: default;
+  cursor: default !important;
+}
+
+.css-nsg84x {
+  top: 86.5px !important;
+  border-top: 1px solid rgb(210, 213, 217);
+  background-color: #fff;
+  cursor: default !important;
 }
 
 /* for transparent */
 .MuiBackdrop-root.MuiModal-backdrop.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
-  top: 86.5px;
+  top: 86.5px !important;
+}
+
+.css-919eu4 {
+  top: 86.5px !important;
 }
 
 .MuiPaper-root {
