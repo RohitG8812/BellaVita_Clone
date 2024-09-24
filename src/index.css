@@ -621,6 +621,10 @@ li a:hover {
   .sideBarIcon {
     display: block;
   }
+  /* for deployed version */
+  .css-6v2v4c {
+    display: block !important;
+  }
   .bottom {
     display: none;
   }
