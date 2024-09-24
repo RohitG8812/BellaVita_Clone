@@ -37,6 +37,10 @@ body {
   /* border: 1px solid blue; */
 }
 
+a {
+  text-decoration: none;
+}
+
 .homeMain {
   width: 100%;
 }
@@ -270,12 +274,10 @@ input:not(:placeholder-shown) ~ .reset {
 
 .searchBar {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   gap: 20px;
   height: 100%;
   width: 30%;
-  /* border: 1px solid red; */
 }
 
 .brandLogo {
@@ -319,7 +321,6 @@ input:not(:placeholder-shown) ~ .reset {
 .bottom {
   margin: 0 auto;
   max-width: 1100px;
-  /* border: 1px solid red; */
   padding-top: 9px;
   padding-inline: 50px;
   padding-bottom: 7px;
@@ -452,12 +453,18 @@ li a:hover {
 
 .css-1apkmlw-MuiButtonBase-root-MuiButton-root {
   min-width: 0px !important;
+  padding: 5.7px 0px !important;
 }
 
 .sideBarIcon:hover {
   opacity: 0.6;
   scale: 1.05;
   transition: 0.2s ease-in-out;
+}
+
+.closeIcon {
+  background-color: #0000001b;
+  border-radius: 50%;
 }
 
 .sideBarMenu {
@@ -480,6 +487,7 @@ li a:hover {
   border-top: 1px solid rgb(210, 213, 217);
   background-color: #fff;
   cursor: default !important;
+  width: 80%;
 }
 
 /* for deployed version issues */
@@ -488,6 +496,7 @@ li a:hover {
   border-top: 1px solid rgb(210, 213, 217);
   background-color: #fff;
   cursor: default !important;
+  width: 80%;
 }
 
 /* for transparent */
@@ -511,7 +520,8 @@ li a:hover {
   .logo,
   .navIcon,
   .form,
-  .sideBarIcon {
+  .sideBarIcon,
+  .formLower {
     filter: none !important;
   }
 }
@@ -544,7 +554,6 @@ li a:hover {
 }
 
 .formLower {
-  /* border: 1px solid red; */
   --timing: 0.3s;
   --width-of-input: 93%;
   --height-of-input: 30px;
@@ -604,9 +613,6 @@ li a:hover {
 }
 
 @media (max-width: 1030px) {
-  .topNav {
-    padding-bottom: 6px;
-  }
   .sideBarIcon {
     display: block;
   }
@@ -615,6 +621,9 @@ li a:hover {
   }
   .topBanner {
     top: -51px;
+  }
+  .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
+    width: 450px !important;
   }
 }
 
@@ -626,7 +635,43 @@ li a:hover {
     display: block;
   }
   .topBanner {
-    top: -87.3px;
+    top: -87.9px;
+  }
+  .css-1u2w381-MuiModal-root-MuiDrawer-root {
+    top: 122.5px !important;
+  }
+
+  /* for deployed version issues */
+  .css-y28f86 {
+    top: 122.5px !important;
+  }
+
+  /* for white background one */
+  .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
+    top: 122.5px;
+    border-top: 1px solid rgb(210, 213, 217);
+    background-color: #fff;
+    cursor: default !important;
+    width: 80%;
+  }
+
+  /* for deployed version issues */
+  .css-nsg84x {
+    top: 122.5px !important;
+    border-top: 1px solid rgb(210, 213, 217);
+    background-color: #fff;
+    cursor: default !important;
+    width: 80%;
+  }
+
+  /* for transparent */
+  .MuiBackdrop-root.MuiModal-backdrop.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+    top: 122.5px !important;
+  }
+
+  /* for deployed version issues */
+  .css-919eu4 {
+    top: 122.5px !important;
   }
 }
 
@@ -638,11 +683,14 @@ li a:hover {
     max-width: 100%;
   }
   .topNav {
-    padding-inline: 15px;
+    padding-inline: 25px;
     max-width: 95%;
   }
   .searchBar {
-    display: flex;
+    padding: 0;
+  }
+  .hamburgMenu {
+    padding: 0;
   }
   .profileIcon {
     display: none;
@@ -654,11 +702,17 @@ li a:hover {
   .formLower {
     width: 90%;
   }
+  .sidebarWidth {
+    max-width: 450px !important;
+  }
+  .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
+    width: 85% !important;
+  }
 }
 
 @media (max-width: 420px) {
   .topNav {
-    padding-inline: 10px;
+    padding-inline: 20px;
     max-width: 95%;
   }
   .brandLogo {
@@ -671,5 +725,81 @@ li a:hover {
   }
   .slide {
     font-size: 11.8px;
+  }
+}
+
+/* Sidebar Content */
+
+.sideBarContent {
+  width: 96%;
+  position: absolute;
+}
+
+.installApp {
+  width: 100%;
+  border-bottom: 0.1rem solid rgb(210, 213, 217);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  padding-block: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.appProfileLogo {
+  width: 35px;
+  height: 35px;
+  padding: 8px;
+  border: 1px solid #707070;
+  border-radius: 50%;
+}
+
+.profileLogo {
+  display: flex;
+}
+
+.appText {
+  color: #000000ce;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: start;
+  align-items: start;
+}
+
+.yellowText {
+  color: #e19f40;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.black-bold {
+  color: #000;
+}
+
+.underlineText {
+  font-weight: 300;
+  font-size: 14px;
+  border-bottom: 1px solid black;
+  padding-bottom: 3px;
+}
+
+.DownloadBtn {
+  color: #fff;
+  background: #eb7272;
+  padding: 5px 10px;
+}
+
+@media (max-width: 570px) {
+  .installApp {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 330px) {
+  .installApp {
+    padding: 10px 3px;
+    overflow: hidden;
   }
 }

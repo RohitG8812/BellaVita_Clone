@@ -13,6 +13,7 @@ import NewArrivals from './components/NewArrivals'
 import PerfumesSets from './components/PerfumesSets'
 import SkinCare from './components/SkinCare'
 import ShopAll from './components/ShopAll'
+import Account from './components/Account'
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
         <Route path='/collection/newArrivals' element={<NewArrivals />} />
         <Route path='/collection/perfumesSets' element={<PerfumesSets />} />
         <Route path='/collection/skincare' element={<SkinCare />} />
+        <Route path='/account' element={<Account />} />
+
 
 
         {/*  */}

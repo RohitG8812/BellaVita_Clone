@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import CartIcon from "../assets/icons/cart12.png"
 import ProfileIcon from '../assets/icons/profile.svg'
 import BrandLogo from "../assets/logo.svg"
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import SideNavbar from './SideNavbar'
 
 
@@ -33,11 +33,11 @@ function Navbar() {
                     </form>
                 </div>
                 <div className="brandLogo">
-                    <a href="/"><img src={BrandLogo} alt="" className='logo' /></a>
+                    <Link href="/"><img src={BrandLogo} alt="" className='logo' /></Link>
                 </div>
                 <div className="Nav_icons">
-                    <a href=""><img src={ProfileIcon} alt="" className='navIcon profileIcon' /></a>
-                    <a href=""><img src={CartIcon} alt="" className='navIcon' /></a>
+                    <Link href=""><img src={ProfileIcon} alt="" className='navIcon profileIcon' /></Link>
+                    <Link href=""><img src={CartIcon} alt="" className='navIcon' /></Link>
                 </div>
             </div>
             <div className="bottom">
