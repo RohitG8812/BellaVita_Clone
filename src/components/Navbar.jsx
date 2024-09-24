@@ -12,7 +12,7 @@ function Navbar() {
     console.log(location, location.pathname)
 
     return (
-        <div className={`mainNavbar ${location.pathname === "/" && "mainHover"} ${sidebarOpen ? "sidebarOpenHover" : ""}`}>
+        <div className={`mainNavbar ${location.pathname === "/" && "mainHover"} ${location.pathname === "/" ? sidebarOpen ? "sidebarOpenHover" : "" : ""}`}>
             <div className="topNav">
                 <div className="searchBar">
                     <div className="hamburgMenu">
@@ -33,16 +33,31 @@ function Navbar() {
                     </form>
                 </div>
                 <div className="brandLogo">
-                    <Link href="/"><img src={BrandLogo} alt="" className='logo' /></Link>
+                    <Link to="/"><img src={BrandLogo} alt="" className='logo' /></Link>
                 </div>
                 <div className="Nav_icons">
-                    <Link href=""><img src={ProfileIcon} alt="" className='navIcon profileIcon' /></Link>
-                    <Link href=""><img src={CartIcon} alt="" className='navIcon' /></Link>
+                    <Link to="/account"><img src={ProfileIcon} alt="" className='navIcon profileIcon' /></Link>
+                    <Link to=""><img src={CartIcon} alt="" className='navIcon' /></Link>
                 </div>
             </div>
-            <div className="bottom">
+            <div className="searchBarBig">
+                <form className="formLower">
+                    <button>
+                        <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+                            <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" strokeWidth="1.333" strokeLinecap="round" strokeLinejoin="round"></path>
+                        </svg>
+                    </button>
+                    <input className="input" placeholder="Search For Your Favorite Product " required="" type="text" />
+                    <button className="reset" type="reset">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+            <div className={`bottom ${location.pathname === "/" ? "" : "bottom-Slide"}`}>
                 <nav>
-                    <ul>
+                    <ul className='bottomSlider2'>
                         <li className='li'>
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/crazyDeals">Crazy Deals</NavLink>
                         </li>
@@ -73,21 +88,7 @@ function Navbar() {
                     </ul>
                 </nav>
             </div>
-            <div className="searchBarBig">
-                <form className="formLower">
-                    <button>
-                        <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
-                            <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" strokeWidth="1.333" strokeLinecap="round" strokeLinejoin="round"></path>
-                        </svg>
-                    </button>
-                    <input className="input" placeholder="Search For Your Favorite Product " required="" type="text" />
-                    <button className="reset" type="reset">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </form>
-            </div>
+
         </div>
 
     )

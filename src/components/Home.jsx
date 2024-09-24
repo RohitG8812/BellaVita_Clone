@@ -52,7 +52,7 @@ function Home() {
         <Layout>
             <div className='homeMain'>
                 <div className="topBanner">
-                    <Link ><img src={(smallSize ? bannersSm : banners)[currentBannerIdx]} alt="Banner" className={`BannerImage fade-in ${isSliding ? 'slide-in' : ""}`} /></Link>
+                    <Link to="/collection/makeup"><img src={(smallSize ? bannersSm : banners)[currentBannerIdx]} alt="Banner" className={`BannerImage fade-in ${isSliding ? 'slide-in' : ""}`} /></Link>
                     <div className="btn">
                         {(smallSize ? bannersSm : banners).map((_, index) => (
                             <button

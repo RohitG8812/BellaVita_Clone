@@ -12,7 +12,7 @@ function Makeup() {
     }
     return (
         <Layout>
-            <div>
+            <div style={{marginTop : "30px"}}>
                 <h2>MakeUp</h2>
                 <p>Total Products : {makeup.length}</p>
                 {makeup.map((items, key) => {
