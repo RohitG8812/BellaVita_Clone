@@ -806,7 +806,7 @@ li a:hover {
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 350px) {
   .installApp {
     padding: 10px 3px;
     overflow: hidden;
