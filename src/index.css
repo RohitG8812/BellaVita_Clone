@@ -629,7 +629,7 @@ li a:hover {
     display: none;
   }
   .topBanner {
-    top: -51.5px;
+    top: -51.7px;
   }
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
     width: 450px !important;
@@ -644,7 +644,7 @@ li a:hover {
     display: block;
   }
   .topBanner {
-    top: -88.3px;
+    top: -88.7px;
   }
   .css-1u2w381-MuiModal-root-MuiDrawer-root {
     top: 122.5px !important;
@@ -715,7 +715,7 @@ li a:hover {
     max-width: 450px !important;
   }
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
-    width: 85% !important;
+    width: 90% !important;
   }
 }
 
@@ -806,12 +806,15 @@ li a:hover {
   }
 }
 
+@media (max-width: 420px) {
+  .yellowText {
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 350px) {
   .installApp {
     padding: 10px 3px;
     overflow: hidden;
-  }
-  .yellowText{
-    font-size: 13px;
   }
 }
