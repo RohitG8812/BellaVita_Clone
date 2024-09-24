@@ -610,7 +610,7 @@ li a:hover {
 
 @media (min-width: 1400px) {
   .topBanner {
-    top: -86.2px;
+    top: -85.7px;
   }
   .topNav {
     padding-bottom: 5px;
@@ -632,7 +632,10 @@ li a:hover {
     top: -51.5px;
   }
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
-    width: 450px !important;
+    width: 435px !important;
+  }
+  .css-nsg84x {
+    width: 435px !important;
   }
 }
 
