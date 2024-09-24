@@ -451,6 +451,11 @@ li a:hover {
   display: none;
 }
 
+/* for deployed version */
+.css-6v2v4c {
+  display: none;
+}
+
 .css-1apkmlw-MuiButtonBase-root-MuiButton-root {
   min-width: 0px !important;
   padding: 5.7px 0px !important;
@@ -615,12 +620,13 @@ li a:hover {
 @media (max-width: 1030px) {
   .sideBarIcon {
     display: block;
+    gap: 20px;
   }
   .bottom {
     display: none;
   }
   .topBanner {
-    top: -51px;
+    top: -50px;
   }
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
     width: 450px !important;
