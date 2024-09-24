@@ -106,7 +106,7 @@ img {
 /* --Navbar  */
 
 .mainNavbar {
-  background-color: #0000000f;
+  background-color: transparent;
   width: 100%;
   position: relative;
   border-bottom: 1.5px solid rgb(210, 213, 217);
@@ -119,6 +119,7 @@ img {
   position: relative;
   overflow: hidden;
   border-bottom: 1px solid transparent;
+  background-color: #0000000f;
 }
 
 .mainHover::before {
@@ -152,7 +153,8 @@ img {
 .mainHover .navIcon,
 .mainHover .logo,
 .mainHover .form,
-.mainHover .sideBarIcon {
+.mainHover .sideBarIcon,
+.mainHover .formLower {
   position: relative;
   filter: invert(100%) brightness(200%);
   transition: filter 0.3s ease;
@@ -162,7 +164,8 @@ img {
 .mainHover:hover .navIcon,
 .mainHover:hover .logo,
 .mainHover:hover .form,
-.mainHover:hover .sideBarIcon {
+.mainHover:hover .sideBarIcon,
+.mainHover:hover .formLower {
   filter: none;
 }
 /*  */
@@ -401,8 +404,8 @@ li a:hover {
 .btn {
   display: flex;
   justify-content: center;
-  position: absolute;
-  bottom: 20px;
+  position: relative;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -440,18 +443,15 @@ li a:hover {
 
 /* Sidebar */
 
-.css-1apkmlw-MuiButtonBase-root-MuiButton-root:hover {
-  --variant-containedBg: none !important;
-  --variant-textBg: none !important;
-  --variant-outlinedBorder: none !important;
-  --variant-outlinedBg: none !important;
-}
-
 .sideBarIcon {
   height: 22px;
   width: 22px;
   transition: all 0.5s ease-in-out;
   display: none;
+}
+
+.css-1apkmlw-MuiButtonBase-root-MuiButton-root {
+  min-width: 0px !important;
 }
 
 .sideBarIcon:hover {
@@ -531,6 +531,69 @@ li a:hover {
 
 /*  */
 
+/* Lower SearchBar */
+
+.searchBarBig {
+  padding-bottom: 6px;
+  display: none;
+}
+
+.formLower button {
+  border: none;
+  background: none;
+}
+
+.formLower {
+  /* border: 1px solid red; */
+  --timing: 0.3s;
+  --width-of-input: 93%;
+  --height-of-input: 30px;
+  --border-height: 2px;
+  --input-bg: #fff;
+  --border-radius: 1px;
+  --after-border-radius: 1px;
+  margin: 0 auto;
+  position: relative;
+  width: var(--width-of-input);
+  height: var(--height-of-input);
+  display: flex;
+  align-items: center;
+  padding-inline: 0.5em;
+  border-radius: var(--border-radius);
+  transition: border-radius 0.5s ease;
+  background: transparent;
+  border-bottom: 1px solid #000;
+}
+
+.formLower:before {
+  content: "";
+  position: absolute;
+  background: var(--border-color);
+  transform: scaleX(0);
+  transform-origin: center;
+  width: 100%;
+  height: var(--border-height);
+  left: 0;
+  bottom: 0;
+  border-radius: 1px;
+  transition: transform var(--timing) ease;
+}
+
+.formLower:focus-within {
+  border-radius: var(--after-border-radius);
+}
+
+.formLower svg {
+  width: 17px;
+  margin-top: 3px;
+}
+
+.formLower:focus-within:before {
+  transform: scale(1);
+}
+
+/* Navbar */
+
 @media (min-width: 1400px) {
   .topBanner {
     top: -86.2px;
@@ -540,8 +603,7 @@ li a:hover {
   }
 }
 
-/* Navbar */
-@media (max-width: 1010px) {
+@media (max-width: 1030px) {
   .topNav {
     padding-bottom: 6px;
   }
@@ -553,5 +615,61 @@ li a:hover {
   }
   .topBanner {
     top: -51px;
+  }
+}
+
+@media (max-width: 834px) {
+  .form {
+    display: none;
+  }
+  .searchBarBig {
+    display: block;
+  }
+  .topBanner {
+    top: -87.3px;
+  }
+}
+
+@media (max-width: 750px) {
+  html {
+    scrollbar-width: none;
+  }
+  .mainNavbar {
+    max-width: 100%;
+  }
+  .topNav {
+    padding-inline: 15px;
+    max-width: 95%;
+  }
+  .searchBar {
+    display: flex;
+  }
+  .profileIcon {
+    display: none;
+  }
+  .BannerImage {
+    aspect-ratio: auto 800 / 1070;
+    object-fit: contain;
+  }
+  .formLower {
+    width: 90%;
+  }
+}
+
+@media (max-width: 420px) {
+  .topNav {
+    padding-inline: 10px;
+    max-width: 95%;
+  }
+  .brandLogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo {
+    width: 126.325px;
+  }
+  .slide {
+    font-size: 11.8px;
   }
 }

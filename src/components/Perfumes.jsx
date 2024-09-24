@@ -12,7 +12,7 @@ function Perfumes() {
         navigate(`/collection/perfumes/${id}`)
     }
     return (
-        <Layout>
+        // <Layout>
             <div>
                 <h2>Perfumes</h2>
                 <p>Total Products : {perfume.length}</p>
@@ -23,7 +23,7 @@ function Perfumes() {
                     </div>
                 })}
             </div>
-        </Layout>
+        // </Layout>
     )
 }
 

@@ -15,7 +15,7 @@ function SideNavbar({ setSidebarOpen }) {
     }
 
     const DrawerList = (
-        <Box sx={{ width: 400 }} role="presentation" onClick={() => toggleDrawer(false)}>
+        <Box sx={{ width: 300 }} role="presentation" onClick={() => toggleDrawer(false)}>
             
         </Box>
     );
