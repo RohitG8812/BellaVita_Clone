@@ -6,7 +6,7 @@ function Layout({ children }) {
     return (
         <div>
             <TopSlider />
-            <Navbar />
+            <Navbar/>
             {children}
         </div>
     )

@@ -22,6 +22,7 @@ html {
   box-sizing: border-box;
   font-size: calc(var(--font-body-scale) * 62.5%);
   height: 100%;
+  height: -webkit-fit-content;
 }
 
 body {
@@ -114,6 +115,7 @@ img {
 /* --Navbar  */
 
 .mainNavbar {
+  transition: top 0.3s ease-in-out;
   background-color: transparent;
   width: 100%;
   position: relative;
@@ -121,7 +123,6 @@ img {
   left: 0;
   border-bottom: 1.5px solid rgb(210, 213, 217);
   z-index: 1000;
-  /* border: 1px solid red; */
 }
 
 /* Only for Home Component Navbar Color TransParent to White */
@@ -177,6 +178,13 @@ img {
 .mainHover:hover .sideBarIcon,
 .mainHover:hover .formLower {
   filter: none;
+}
+/*  */
+
+/* for Scrolling ScrollBar color adjust */
+/* for other things i Use - sidebarOpenHover - directly*/
+.liElements li a {
+  color: #000000;
 }
 /*  */
 
@@ -498,6 +506,7 @@ li a:hover {
   background-color: #fff;
   cursor: default !important;
   width: 80%;
+  overflow: hidden;
 }
 
 /* for deployed version issues */
@@ -507,6 +516,20 @@ li a:hover {
   background-color: #fff;
   cursor: default !important;
   width: 80%;
+}
+
+.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper::-webkit-scrollbar {
+  width: 6px;
+  background-color: #fff;
+}
+
+.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper::-webkit-scrollbar-thumb {
+  background-color: #5e5e5e;
+  border-radius: 1.5px;
+}
+
+.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
 }
 
 /* for transparent */
@@ -632,7 +655,6 @@ li a:hover {
   }
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
     width: 435px !important;
-
   }
   .css-nsg84x {
     width: 435px !important;
@@ -865,7 +887,7 @@ li a:hover {
   background-color: #9f9d9d1a;
   align-items: center;
   gap: 10px;
-  padding: 6px 10px;
+  padding: 7px 10px;
   flex-wrap: wrap;
   flex: none;
   font-size: 13px;
@@ -877,4 +899,71 @@ li a:hover {
 
 .myOrderImg {
   width: 18px;
+}
+
+.menuOptions {
+  padding-bottom: 40px;
+  height: 62svh;
+  overflow: auto !important;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+
+  @media (max-width: 390px) {
+    height: 59svh;
+  }
+  @media (max-width: 321px) {
+    height: 38svh;
+  }
+}
+
+.menuOption {
+  padding: 10px;
+  border-bottom: 1px solid rgb(210, 213, 217);
+  font-size: 16px;
+  line-height: 29px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+}
+
+.left {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuOptionContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.menuOptLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menuOptLogo img {
+  width: 20px;
+}
+
+.right img {
+  width: 18px;
+}
+
+.right img:hover {
+  transform: scale(1.2);
+  transition: all 0.5s ease;
+}
+
+.menuOptName {
+  text-align: center;
+}
+
+.menuBanner img {
+  width: 100%;
 }

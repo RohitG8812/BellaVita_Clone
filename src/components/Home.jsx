@@ -52,7 +52,7 @@ function Home() {
         <Layout>
             <div className='homeMain'>
                 <div className="topBanner">
-                    <Link to="/collection/makeup"><img src={(smallSize ? bannersSm : banners)[currentBannerIdx]} alt="Banner" className={`BannerImage fade-in ${isSliding ? 'slide-in' : ""}`} /></Link>
+                    <Link to="/collection/shopAll"><img src={(smallSize ? bannersSm : banners)[currentBannerIdx]} alt="Banner" className={`BannerImage fade-in ${isSliding ? 'slide-in' : ""}`} /></Link>
                     <div className="btn">
                         {(smallSize ? bannersSm : banners).map((_, index) => (
                             <button
@@ -63,7 +63,7 @@ function Home() {
                             </button>
                         ))}
                     </div>
-                    <div className="make" style={{marginTop: "50px"}}>
+                    <div className="make" style={{ marginTop: "50px" }}>
                         <Perfumes />
                     </div>
                 </div>

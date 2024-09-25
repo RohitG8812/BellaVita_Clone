@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import CartIcon from "../assets/icons/cart12.png"
 import ProfileIcon from '../assets/icons/profile.svg'
 import BrandLogo from "../assets/logo.svg"
@@ -7,12 +7,52 @@ import SideNavbar from './SideNavbar'
 
 
 function Navbar() {
-    const [sidebarOpen, setSidebarOpen] = useState(false)
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [showNavbar, setShowNavbar] = useState(false);
+    const [defaultNavbar, setDefaultNavbar] = useState(true);
     const location = useLocation();
-    console.log(location, location.pathname)
+    const yAxisRef = useRef(window.scrollY);
+
+    useEffect(() => {
+        // Scroll to the top of the page when the path changes
+        window.scrollTo(0, 0);
+    }, [location.pathname]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScroll = window.scrollY;
+            console.log("Current scroll:", currentScroll, "Previous yAxis:", yAxisRef.current);
+
+            // Hide the navbar if scrolled below 200px, otherwise show it
+            if (currentScroll < 100) {
+                setShowNavbar(false);
+            } else {
+                // Show or hide the navbar based on scroll direction
+                if (yAxisRef.current > currentScroll) {
+                    setShowNavbar(true); // Scrolling up, show the navbar
+                } else {
+                    setShowNavbar(false); // Scrolling down, hide the navbar
+                }
+            }
+
+            // Update yAxisRef to current scroll position
+            yAxisRef.current = currentScroll;
+        };
+
+        // Add scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Clean up the event listener on component unmount
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
 
     return (
-        <div className={`mainNavbar ${location.pathname === "/" && "mainHover"} ${location.pathname === "/" ? sidebarOpen ? "sidebarOpenHover" : "" : ""}`}>
+        <div style={{ position: showNavbar ? "fixed" : "", top: showNavbar ? 0 : "", display: (showNavbar ? "block" : "none" || defaultNavbar ? "block" : "none"), }}
+            className={`mainNavbar ${location.pathname === "/" && "mainHover"} 
+        ${location.pathname === "/" ? sidebarOpen ? "sidebarOpenHover" : "" : ""} 
+        ${showNavbar ? "sidebarOpenHover  liElements visible" : ""}`}>
             <div className="topNav">
                 <div className="searchBar">
                     <div className="hamburgMenu">
@@ -33,11 +73,11 @@ function Navbar() {
                     </form>
                 </div>
                 <div className="brandLogo">
-                    <Link to="/"><img src={BrandLogo} alt="" className='logo' /></Link>
+                    <Link to="/"><img src={BrandLogo} alt="BrandLogo" className='logo' /></Link>
                 </div>
                 <div className="Nav_icons">
-                    <Link to="/account"><img src={ProfileIcon} alt="" className='navIcon profileIcon' /></Link>
-                    <Link to=""><img src={CartIcon} alt="" className='navIcon' /></Link>
+                    <Link to="/account"><img src={ProfileIcon} alt="Profile" className='navIcon profileIcon' /></Link>
+                    <Link to=""><img src={CartIcon} alt="Cart" className='navIcon' /></Link>
                 </div>
             </div>
             <div className="searchBarBig">

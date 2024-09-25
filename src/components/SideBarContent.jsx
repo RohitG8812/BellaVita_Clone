@@ -26,8 +26,20 @@ function SideBarContent() {
         navigate('/account')
     }
 
+    const goToNewProducts = () => {
+        navigate('/collection/newArrivals')
+    }
+
     const sideBarOptions = () => [
-        { name: "Crazy Deals", src: CrazyDeals}
+        { name: "Crazy Deals 🔥", src: CrazyDeals },
+        { name: "Shop All", src: ShopAll },
+        { name: "Bestsellers", src: BestSellers },
+        { name: "Perfumes", src: Perfumes, rightArrow: RightArrow },
+        { name: "Bath & Body", src: BathBody, banner: newLaunchBanner, rightArrow: RightArrow },
+        { name: "Makeup", src: Makeup },
+        { name: "SkinCare", src: SkinCare, rightArrow: RightArrow },
+        { name: "Special Giftings", src: SpecialGift, rightArrow: RightArrow },
+        { name: "Fragrance Finder", src: Fragrance },
     ]
 
     return (
@@ -51,8 +63,39 @@ function SideBarContent() {
                 <button className='myOrder' onClick={goToAccount}><img src={MyOrder} alt="My-Order" className='myOrderImg' />My Order</button>
                 <button className='trackOrder' onClick={goToAccount}><img src={TrackOrder} alt="Track-Order" className='myOrderImg' />Track Order</button>
             </div>
+            <div className="menuOptions">
+                {sideBarOptions().map((opt, index) => (
+                    <div className="menuOption">
+                        <div className="menuBanner" onClick={goToNewProducts}>
+                            {opt.banner ? (<div>
+                                <img src={opt.banner} alt="SidebarBanner" />
+                            </div>) : ""}
+                        </div>
+                        <div className="menuOptionContent">
+                            <div className="left">
+                                <div className="menuOptLogo" key={index}>
+                                    <img src={opt.src} alt="SidebarIcons" />
+                                </div>
+                                <div className="menuOptName">
+                                    {opt.name}
+                                </div>
+                            </div>
+                            <div className="right">
+                                {opt.rightArrow ? (<div>
+                                    <img src={opt.rightArrow} alt="Right Arrow" />
+                                </div>) : ""}
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
 
 export default SideBarContent
+
+
+//     < div className = "bottomText" >
+//         <p><span className='black-bold-text'>Made with</span> ❤️ <span className='black-bold-text'>By</span> <span className="yellowText">Rohit</span></p>
+// </div >

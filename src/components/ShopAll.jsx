@@ -18,7 +18,7 @@ function ShopAll() {
     }
     return (
         <Layout>
-            <div>
+            <div className='ShopAll'>
                 <h2>AllProducts</h2>
                 <p>Total Products : {product.length}</p>
                 {product.map((items, key) => {
