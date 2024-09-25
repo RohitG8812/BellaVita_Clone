@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Products from '../JSON/Products'
 import { useNavigate } from 'react-router-dom'
 import Layout from '../Layout/Layout';
+import Navbar from './Navbar';
 console.log(Products)
 function ShopAll() {
     const [product, setProduct] = useState([]);
@@ -19,14 +20,19 @@ function ShopAll() {
     return (
         <Layout>
             <div className='ShopAll'>
-                <h2>AllProducts</h2>
-                <p>Total Products : {product.length}</p>
-                {product.map((items, key) => {
-                    return <div className="card" key={items.id} onClick={() => handleProductClick(items.id)}>
-                        <img src={items.mainImg} alt="" />
-                        <p>{items.name}</p>
+                <div className="hide">
+                    <div className="hideDiv"></div>
+                    <div className="mainContent">
+                        <h2>AllProducts</h2>
+                        <p>Total Products : {product.length}</p>
+                        {product.map((items, key) => {
+                            return <div className="card" key={items.id} onClick={() => handleProductClick(items.id)}>
+                                <img src={items.mainImg} alt="" />
+                                <p>{items.name}</p>
+                            </div>
+                        })}
                     </div>
-                })}
+                </div>
             </div>
         </Layout>
     )

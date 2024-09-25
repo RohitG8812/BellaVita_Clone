@@ -52,7 +52,8 @@ function Navbar() {
         <div style={{ position: showNavbar ? "fixed" : "", top: showNavbar ? 0 : "", display: (showNavbar ? "block" : "none" || defaultNavbar ? "block" : "none"), }}
             className={`mainNavbar ${location.pathname === "/" && "mainHover"} 
         ${location.pathname === "/" ? sidebarOpen ? "sidebarOpenHover" : "" : ""} 
-        ${showNavbar ? "sidebarOpenHover  liElements visible" : ""}`}>
+        ${showNavbar ? "liElements sidebarOpenHover" : ""}
+        ${location.pathname === "/collection/shopAll" && "liElements"}`}>
             <div className="topNav">
                 <div className="searchBar">
                     <div className="hamburgMenu">

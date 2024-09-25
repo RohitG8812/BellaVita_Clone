@@ -385,6 +385,43 @@ li a:hover {
   color: rgba(40, 40, 40, 0.749);
 }
 
+/* Component scroll Navbar Jumping issue Code */
+
+.liElements {
+  position: absolute;
+  overflow: hidden;
+  border-bottom: 1px solid rgb(210, 213, 217);
+  background-color: #fff;
+  padding-bottom: 3px;
+}
+
+.hide {
+  position: relative;
+}
+
+.hideDiv {
+  height: 95px;
+}
+
+@media (max-width: 1030px) {
+  .hideDiv {
+    height: 60px;
+  }
+}
+
+@media (max-width: 834px) {
+  .hideDiv {
+    height: 96px;
+  }
+}
+
+@media (max-width: 750px) {
+  .hideDiv {
+    height: 135px;
+  }
+}
+
+/*  */
 /* Home */
 
 .topBanner {
