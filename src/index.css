@@ -37,6 +37,10 @@ body {
   /* border: 1px solid blue; */
 }
 
+button {
+  font-family: myFont;
+}
+
 a {
   text-decoration: none;
 }
@@ -113,6 +117,8 @@ img {
   background-color: transparent;
   width: 100%;
   position: relative;
+  top: 20;
+  left: 0;
   border-bottom: 1.5px solid rgb(210, 213, 217);
   z-index: 1000;
   /* border: 1px solid red; */
@@ -120,7 +126,7 @@ img {
 
 /* Only for Home Component Navbar Color TransParent to White */
 .mainHover {
-  position: relative;
+  position: absolute;
   overflow: hidden;
   border-bottom: 1px solid transparent;
   background-color: #0000000f;
@@ -176,7 +182,7 @@ img {
 
 /* -Top Navbar  */
 .topNav {
-  /* border: 1px solid green; */
+  position: relative;
   padding-block: 5px;
   padding-bottom: 7px;
   max-width: 1100px;
@@ -375,7 +381,6 @@ li a:hover {
 
 .topBanner {
   position: relative;
-  top: -87px;
 }
 
 .BannerImage {
@@ -520,7 +525,6 @@ li a:hover {
 
 /* for the smooth close of navbar */
 .sidebarOpenHover {
-  position: relative;
   overflow: hidden;
   .logo,
   .navIcon,
@@ -610,9 +614,6 @@ li a:hover {
 /* Navbar */
 
 @media (min-width: 1400px) {
-  .topBanner {
-    top: -85.7px;
-  }
   .topNav {
     padding-bottom: 5px;
   }
@@ -629,11 +630,9 @@ li a:hover {
   .bottom {
     display: none;
   }
-  .topBanner {
-    top: -51.5px;
-  }
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
     width: 435px !important;
+
   }
   .css-nsg84x {
     width: 435px !important;
@@ -646,9 +645,6 @@ li a:hover {
   }
   .searchBarBig {
     display: block;
-  }
-  .topBanner {
-    top: -88.3px;
   }
   .css-1u2w381-MuiModal-root-MuiDrawer-root {
     top: 122.5px !important;
@@ -721,7 +717,7 @@ li a:hover {
     border-radius: 3px;
   }
   html {
-    scrollbar-width: none;
+    scrollbar-width: thin;
   }
   .mainNavbar {
     max-width: 100%;
@@ -775,13 +771,12 @@ li a:hover {
 /* Sidebar Content */
 
 .sideBarContent {
-  width: 96%;
-  position: absolute;
+  width: 100%;
+  position: relative;
 }
 
 .installApp {
-  width: 100%;
-  border-bottom: 0.1rem solid rgb(210, 213, 217);
+  border-bottom: 1px solid rgb(210, 213, 217);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -852,4 +847,34 @@ li a:hover {
     padding: 10px 3px;
     overflow: hidden;
   }
+}
+
+.myOrderTrackOrder {
+  position: relative;
+  display: flex;
+  padding: 10px;
+  gap: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(210, 213, 217);
+}
+
+.myOrder,
+.trackOrder {
+  cursor: pointer;
+  display: flex;
+  background-color: #9f9d9d1a;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  flex-wrap: wrap;
+  flex: none;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none;
+  border-radius: 2px;
+}
+
+.myOrderImg {
+  width: 18px;
 }
