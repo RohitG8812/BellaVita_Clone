@@ -346,14 +346,14 @@ ul {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  gap: 28px;
+  gap: 25px;
 }
 
 li {
   font-size: 11.59px;
   text-transform: uppercase;
   list-style: none;
-  font-weight: 550;
+  font-weight: 600;
   letter-spacing: 2.4px;
   line-height: 21.6px;
 }
@@ -376,13 +376,18 @@ li a::after {
   transition: width 0.15s ease-in-out;
 }
 
+.navActive {
+  color: #ea803d;
+}
+
 li a:hover::after,
 .navActive::after {
   width: 100%;
+  color: #ea803d;
 }
 
 li a:hover {
-  color: rgba(40, 40, 40, 0.749);
+  color: #ea803d;
 }
 
 /* Component scroll Navbar Jumping issue Code */
@@ -749,6 +754,7 @@ li a:hover {
     padding: 4px 15px;
     padding-bottom: 9px;
     border-bottom: none;
+    color: #000;
   }
   .bottomSlider2 {
     display: flex;
@@ -769,11 +775,21 @@ li a:hover {
     text-align: center;
     color: #000000;
     text-transform: uppercase;
-    font-weight: 550;
-    padding: 2px 6px;
-    font-size: 12.5px;
+    font-weight: 600;
+    padding: 3px 6px;
+    font-size: 11.5px;
     background-color: #f2f2f2;
     border-radius: 3px;
+  }
+
+  .menuOptName {
+    color: #000;
+  }
+  
+  .bottom-Slide li a:hover::after,
+  .navActive::after {
+    width: 0%;
+    color: #ea803d;
   }
   html {
     scrollbar-width: thin;

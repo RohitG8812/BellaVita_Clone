@@ -14,6 +14,7 @@ import PerfumesSets from './components/PerfumesSets'
 import SkinCare from './components/SkinCare'
 import ShopAll from './components/ShopAll'
 import Account from './components/Account'
+import Buy1Get1 from './components/Buy1Get1'  
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='/collection/newArrivals' element={<NewArrivals />} />
         <Route path='/collection/perfumesSets' element={<PerfumesSets />} />
         <Route path='/collection/skincare' element={<SkinCare />} />
+        <Route path='/collection/bogo' element={<Buy1Get1 />} />
         <Route path='/account' element={<Account />} />
 
 

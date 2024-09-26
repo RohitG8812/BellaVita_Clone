@@ -13,6 +13,14 @@ function Navbar() {
     const location = useLocation();
     const yAxisRef = useRef(window.scrollY);
 
+    const brandLogoCLick = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth' // Enables smooth scrolling
+        });
+    
+    }
+
     useEffect(() => {
         // Scroll to the top of the page when the path changes
         window.scrollTo(0, 0);
@@ -74,7 +82,7 @@ function Navbar() {
                     </form>
                 </div>
                 <div className="brandLogo">
-                    <Link to="/"><img src={BrandLogo} alt="BrandLogo" className='logo' /></Link>
+                    <Link to="/"><img src={BrandLogo} alt="BrandLogo" className='logo' onClick={brandLogoCLick}/></Link>
                 </div>
                 <div className="Nav_icons">
                     <Link to="/account"><img src={ProfileIcon} alt="Profile" className='navIcon profileIcon' /></Link>
@@ -99,7 +107,10 @@ function Navbar() {
             <div className={`bottom ${location.pathname === "/" ? "" : "bottom-Slide"}`}>
                 <nav>
                     <ul className='bottomSlider2'>
-                        <li className='li'>
+                        <li>
+                            <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/bogo">BOGO</NavLink>
+                        </li>
+                        <li>
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/crazyDeals">Crazy Deals</NavLink>
                         </li>
                         <li>

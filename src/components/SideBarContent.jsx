@@ -14,6 +14,7 @@ import SkinCare from "../assets/icons/skinCare.svg"
 import SpecialGift from "../assets/icons/specialGift.svg"
 import Fragrance from "../assets/icons/fragrance.svg"
 import RightArrow from "../assets/icons/rightArrow.svg"
+import Bogo from "../assets/icons/bogo.svg"
 
 function SideBarContent() {
     const navigate = useNavigate()
@@ -31,15 +32,16 @@ function SideBarContent() {
     }
 
     const sideBarOptions = () => [
-        { name: "Crazy Deals 🔥", src: CrazyDeals },
-        { name: "Shop All", src: ShopAll },
-        { name: "Bestsellers", src: BestSellers },
-        { name: "Perfumes", src: Perfumes, rightArrow: RightArrow },
-        { name: "Bath & Body", src: BathBody, banner: newLaunchBanner, rightArrow: RightArrow },
-        { name: "Makeup", src: Makeup },
-        { name: "SkinCare", src: SkinCare, rightArrow: RightArrow },
-        { name: "Special Giftings", src: SpecialGift, rightArrow: RightArrow },
-        { name: "Fragrance Finder", src: Fragrance },
+        { name: "BOGO", src: Bogo, navigate: '/collection/bogo' },
+        { name: "Crazy Deals 🔥", src: CrazyDeals, navigate: '/collection/crazyDeals' },
+        { name: "Shop All", src: ShopAll, navigate: '/collection/shopAll' },
+        { name: "Bestsellers", src: BestSellers, navigate: '/collection/bestSellers' },
+        { name: "Perfumes", src: Perfumes, banner: newLaunchBanner, rightArrow: RightArrow, navigate: '/collection/perfumes' },
+        { name: "Bath & Body", src: BathBody, rightArrow: RightArrow, navigate: '/collection/bathBody' },
+        { name: "Makeup", src: Makeup, navigate: '/collection/makeup' },
+        { name: "SkinCare", src: SkinCare, rightArrow: RightArrow, navigate: '/collection/skincare' },
+        { name: "Special Giftings", src: SpecialGift, rightArrow: RightArrow, navigate: '/collection/giftSets' },
+        { name: "Fragrance Finder", src: Fragrance, navigate: '/collection/perfumes' },
     ]
 
     return (
@@ -71,25 +73,27 @@ function SideBarContent() {
                                 <img src={opt.banner} alt="SidebarBanner" />
                             </div>) : ""}
                         </div>
-                        <div className="menuOptionContent">
-                            <div className="left">
-                                <div className="menuOptLogo" key={index}>
-                                    <img src={opt.src} alt="SidebarIcons" />
+                        <Link to={opt.navigate}>
+                            <div className="menuOptionContent">
+                                <div className="left">
+                                    <div className="menuOptLogo" key={index}>
+                                        <img src={opt.src} alt="SidebarIcons" />
+                                    </div>
+                                    <div className="menuOptName">
+                                        {opt.name}
+                                    </div>
                                 </div>
-                                <div className="menuOptName">
-                                    {opt.name}
+                                <div className="right">
+                                    {opt.rightArrow ? (<div>
+                                        <img src={opt.rightArrow} alt="Right Arrow" />
+                                    </div>) : ""}
                                 </div>
                             </div>
-                            <div className="right">
-                                {opt.rightArrow ? (<div>
-                                    <img src={opt.rightArrow} alt="Right Arrow" />
-                                </div>) : ""}
-                            </div>
-                        </div>
+                        </Link>
                     </div>
                 ))}
             </div>
-        </div>
+        </div >
     )
 }
 

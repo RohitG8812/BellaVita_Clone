@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../Layout/Layout'
-import FrontBanner from '../assets/Banner/front1.webp'
-import FrontBanner2 from '../assets/Banner/front2.webp'
-import FrontBanner3 from '../assets/Banner/front3.webp'
-import FrontBannerSm from '../assets/Banner/front1mini.webp'
-import FrontBanner2Sm from '../assets/Banner/front2mini.webp'
-import FrontBanner3Sm from '../assets/Banner/front3mini.webp'
+import FrontBanner from '../assets/Banner/fNew.webp'
+import FrontBanner2 from '../assets/Banner/fNew3.webp'
+import FrontBanner3 from '../assets/Banner/fNew2.webp'
+import FrontBanner4 from '../assets/Banner/fNew4.webp'
+import FrontBannerSm from '../assets/Banner/fNewMini.webp'
+import FrontBanner2Sm from '../assets/Banner/fNewMini3.webp'
+import FrontBanner3Sm from '../assets/Banner/fNewMini2.webp'
+import FrontBanner4Sm from '../assets/Banner/fNewMini4.webp'
+import BottomBanner from '../assets/Banner/bottomBanner.webp'
+import BottomBannerMini from '../assets/Banner/bottomBannerMini.webp'
+
 import { Link } from 'react-router-dom'
 import Navbar from './Navbar'
 import Perfumes from "../components/Perfumes"
@@ -36,9 +41,9 @@ function Home() {
     console.log("Small Size:", smallSize);
 
 
-    const banners = [FrontBanner, FrontBanner2, FrontBanner3]
+    const banners = [FrontBanner, FrontBanner2, FrontBanner3, FrontBanner4]
 
-    const bannersSm = [FrontBannerSm, FrontBanner2Sm, FrontBanner3Sm]
+    const bannersSm = [FrontBannerSm, FrontBanner2Sm, FrontBanner3Sm, FrontBanner4Sm]
 
     const handleBannerChange = (index) => {
         setIsSliding(true);
@@ -52,7 +57,7 @@ function Home() {
         <Layout>
             <div className='homeMain'>
                 <div className="topBanner">
-                    <Link to="/collection/shopAll"><img src={(smallSize ? bannersSm : banners)[currentBannerIdx]} alt="Banner" className={`BannerImage fade-in ${isSliding ? 'slide-in' : ""}`} /></Link>
+                    <Link to="/collection/bogo"><img src={(smallSize ? bannersSm : banners)[currentBannerIdx]} alt="Banner" className={`BannerImage fade-in ${isSliding ? 'slide-in' : ""}`} /></Link>
                     <div className="btn">
                         {(smallSize ? bannersSm : banners).map((_, index) => (
                             <button
