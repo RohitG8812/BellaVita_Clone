@@ -14,7 +14,7 @@ import PerfumesSets from './components/PerfumesSets'
 import SkinCare from './components/SkinCare'
 import ShopAll from './components/ShopAll'
 import Account from './components/Account'
-import Buy1Get1 from './components/Buy1Get1'  
+import Buy1Get1 from './components/Buy1Get1'
 
 function App() {
   return (
@@ -38,6 +38,8 @@ function App() {
 
 
         {/*  */}
+        <Route path="/collection/bestSellers/:id" element={<Product />} />
+        <Route path="/collection/newArrivals/:id" element={<Product />} />
         <Route path="/collection/perfumes/:id" element={<Product />} />
         <Route path="/collection/bathBody/:id" element={<Product />} />
         <Route path="/collection/makeup/:id" element={<Product />} />

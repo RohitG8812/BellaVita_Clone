@@ -10,10 +10,9 @@ import FrontBanner3Sm from '../assets/Banner/fNewMini2.webp'
 import FrontBanner4Sm from '../assets/Banner/fNewMini4.webp'
 import BottomBanner from '../assets/Banner/bottomBanner.webp'
 import BottomBannerMini from '../assets/Banner/bottomBannerMini.webp'
-
-import { Link } from 'react-router-dom'
-import Navbar from './Navbar'
+import { Link, Outlet } from 'react-router-dom'
 import Perfumes from "../components/Perfumes"
+import BestSellerNewArrivals from './BestSellerNewArrivals'
 
 
 function Home() {
@@ -29,17 +28,14 @@ function Home() {
                 setSmallSize(false)
             }
         };
-
-        handleResize(); // Check on initial render
-
-        window.addEventListener('resize', handleResize); // Add resize event listener
+        handleResize();
+        window.addEventListener('resize', handleResize);
         return () => {
-            window.removeEventListener('resize', handleResize); // Cleanup event listener on unmount
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
-    console.log("Small Size:", smallSize);
-
+    // console.log("Small Size:", smallSize);
 
     const banners = [FrontBanner, FrontBanner2, FrontBanner3, FrontBanner4]
 
@@ -68,9 +64,12 @@ function Home() {
                             </button>
                         ))}
                     </div>
-                    <div className="make" style={{ marginTop: "50px" }}>
-                        <Perfumes />
-                    </div>
+                </div>
+                <div className="buy1get1Banner">
+                    <Link to="/collection/bogo"><img src={smallSize ? BottomBannerMini : BottomBanner} alt="" /></Link>
+                </div>
+                <div className="full-width">
+                    <BestSellerNewArrivals />
                 </div>
             </div>
         </Layout >

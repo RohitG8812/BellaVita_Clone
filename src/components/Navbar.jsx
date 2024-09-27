@@ -29,7 +29,7 @@ function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             const currentScroll = window.scrollY;
-            console.log("Current scroll:", currentScroll, "Previous yAxis:", yAxisRef.current);
+            // console.log("Current scroll:", currentScroll, "Previous yAxis:", yAxisRef.current);
 
             // Hide the navbar if scrolled below 200px, otherwise show it
             if (currentScroll < 100) {

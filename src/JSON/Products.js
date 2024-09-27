@@ -5,6 +5,7 @@ const Products = [
     category: "perfumes",
     name: "Luxury Perfume Gift Set For Men - 4 x 20ml",
     variant: "Eau De Parfum",
+    price: "₹519.00",
     mrp: "₹849.00",
     rating: "4.7",
     numOfReviews: "1221 Reviews",
@@ -161,33 +162,33 @@ const Products = [
     howToUse:
       "Roll the attar on your pulse points, behind your ears and wrists.",
   },
-  {
-    id: 107,
-    category: "perfumes",
-    name: "Tiger",
-    variant: "Eau De Parfum - 100ML",
-    price: "₹1799.00",
-    mrp: "₹1999.00",
-    rating: "4.9",
-    numOfReviews: "736 Reviews",
-    discount: "11%",
-    mainImg:
-      "https://bellavitaorganic.com/cdn/shop/files/Tiger-10_1_2_1.jpg?v=1720330847&width=1000",
-    innerImg1:
-      "https://bellavitaorganic.com/cdn/shop/files/Tiger-05_6a8dd804-d0fe-4633-841c-10dc23f17821.jpg?v=1715927821&width=535",
-    innerImg2:
-      "https://bellavitaorganic.com/cdn/shop/files/Tiger-09_c344fe81-1302-4dd9-9f82-969b833aa85e.jpg?v=1715849530&width=535",
-    innerImg3:
-      "https://bellavitaorganic.com/cdn/shop/files/Tiger-03_f7350b4f-06a7-4285-bfff-50fa371bf801.jpg?v=1715849530&width=535",
-    innerImg4:
-      "https://bellavitaorganic.com/cdn/shop/files/Tiger-07_cb0c571e-19a8-4cf5-829a-d09c59d4ef5d.jpg?v=1715849530&width=535",
-    description:
-      "Always lurking in the shadows, nothing escapes the eye of the tiger. Introducing a scent as fierce as it is alluring: Tiger. With its top notes of Bergamot, middle notes of Sichuan Pepper, Lavender, Star Anise, and Nutmeg, and base notes of Ambroxan and Vanilla, this fragrance prowls with undeniable potency. Let Tiger be your secret weapon, exuding confidence and intrigue with every spritz. Get ready to Roar With Confidence as you dare to unleash the predator within and make your mark with Tiger.",
-    keyBenefits:
-      "- IFRA-certified non-irritant formula - Long-lasting -  Made with imported oils from France, Spain, and Italy - For Men - Perfect to wear at formal occasions and grand events ",
-    howToUse:
-      "Hold the bottle 15-20 cm away from your body and spray the perfume on your neck, body, and pulse points.",
-  },
+  // {
+  //   id: 107,
+  //   category: "perfumes",
+  //   name: "Tiger",
+  //   variant: "Eau De Parfum - 100ML",
+  //   price: "₹1799.00",
+  //   mrp: "₹1999.00",
+  //   rating: "4.9",
+  //   numOfReviews: "736 Reviews",
+  //   discount: "11%",
+  //   mainImg:
+  //     "https://bellavitaorganic.com/cdn/shop/files/Tiger-10_1_2_1.jpg?v=1720330847&width=1000",
+  //   innerImg1:
+  //     "https://bellavitaorganic.com/cdn/shop/files/Tiger-05_6a8dd804-d0fe-4633-841c-10dc23f17821.jpg?v=1715927821&width=535",
+  //   innerImg2:
+  //     "https://bellavitaorganic.com/cdn/shop/files/Tiger-09_c344fe81-1302-4dd9-9f82-969b833aa85e.jpg?v=1715849530&width=535",
+  //   innerImg3:
+  //     "https://bellavitaorganic.com/cdn/shop/files/Tiger-03_f7350b4f-06a7-4285-bfff-50fa371bf801.jpg?v=1715849530&width=535",
+  //   innerImg4:
+  //     "https://bellavitaorganic.com/cdn/shop/files/Tiger-07_cb0c571e-19a8-4cf5-829a-d09c59d4ef5d.jpg?v=1715849530&width=535",
+  //   description:
+  //     "Always lurking in the shadows, nothing escapes the eye of the tiger. Introducing a scent as fierce as it is alluring: Tiger. With its top notes of Bergamot, middle notes of Sichuan Pepper, Lavender, Star Anise, and Nutmeg, and base notes of Ambroxan and Vanilla, this fragrance prowls with undeniable potency. Let Tiger be your secret weapon, exuding confidence and intrigue with every spritz. Get ready to Roar With Confidence as you dare to unleash the predator within and make your mark with Tiger.",
+  //   keyBenefits:
+  //     "- IFRA-certified non-irritant formula - Long-lasting -  Made with imported oils from France, Spain, and Italy - For Men - Perfect to wear at formal occasions and grand events ",
+  //   howToUse:
+  //     "Hold the bottle 15-20 cm away from your body and spray the perfume on your neck, body, and pulse points.",
+  // },
   {
     id: 108,
     category: "perfumes",
