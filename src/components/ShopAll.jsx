@@ -9,6 +9,7 @@ import PlusArrow from "../assets/icons/plus.svg"
 import DownArrow from "../assets/icons/downr.svg"
 import ShopAllBanner from "../assets/Banner/ShopAllBanner.webp"
 import ShopAllBannerMini from "../assets/Banner/ShopAllBannerMini.webp"
+import FilterLogo from "../assets/icons/filter.svg"
 
 function ShopAll() {
     const [product, setProduct] = useState([]);
@@ -65,6 +66,12 @@ function ShopAll() {
                                     <div className="sortBtn">
                                         <span className='sortText'>Sort</span>
                                         <img src={DownArrow} alt="Down" className='downIcon' />
+                                    </div>
+                                </div>
+                                <div className="miniFilter">
+                                    <div className="filterAndSortBtnMini">
+                                        <img src={FilterLogo} alt="Filter" className='filterIcon' />
+                                        <span>Filter and sort</span>
                                     </div>
                                 </div>
                                 <div className="productCount">

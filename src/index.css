@@ -403,7 +403,7 @@ li a:hover {
   position: relative;
 }
 
-.shopAllBanner{
+.shopAllBanner {
   position: relative;
 }
 
@@ -414,6 +414,8 @@ li a:hover {
     /* display: none; */
   }
 }
+
+/* hideDiv */
 
 .hideDiv {
   height: 90px;
@@ -439,9 +441,11 @@ li a:hover {
 
 @media (max-width: 750px) {
   .hideDiv {
-    height: 135px;
+    height: 132px;
   }
 }
+
+/*  */
 
 /*  */
 /* Home */
