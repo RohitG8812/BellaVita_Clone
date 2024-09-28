@@ -1,4 +1,45 @@
-.ShopAll {
+.hide {
+  position: relative;
+}
+
+.hideDiv {
+  height: 90px;
+}
+
+@media (max-width: 1065px) {
+  .hideDiv {
+    height: 136.5px;
+  }
+}
+
+@media (max-width: 1030px) {
+  .hideDiv {
+    height: 54.5px;
+  }
+}
+
+@media (max-width: 834px) {
+  .hideDiv {
+    height: 91.5px;
+  }
+}
+
+@media (max-width: 750px) {
+  .hideDiv {
+    height: 132px;
+  }
+}
+
+.shopAllBanner {
+  position: relative;
+}
+
+.shopAllBanner img {
+  display: block;
+  width: 100%;
+}
+
+.ProductPageMain {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,8 +116,9 @@
   }
 }
 
-.cardImg2:hover {
+.ProductCardImg:hover {
   scale: calc(1.05);
+  transition: scale 0.2s ease-in-out;
 }
 
 .filterBtn {

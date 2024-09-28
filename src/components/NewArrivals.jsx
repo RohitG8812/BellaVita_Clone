@@ -1,10 +1,30 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import "../css/productCard.css"
 import Products from '../JSON/Products'
 import Layout from '../Layout/Layout'
 import { useNavigate } from 'react-router-dom'
+import ProductPage from '../pages/ProductPage';
+import ShopAllBanner from "../assets/Banner/ShopAllBanner.webp"
+import ShopAllBannerMini from "../assets/Banner/ShopAllBannerMini.webp"
 
 function NewArrivals() {
   const [bath_Body] = useState(Products.filter(product => product.category === 'bathBody'))
+  const [smallBanner, setSmallBanner] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 751) {
+        setSmallBanner(true);
+      } else {
+        setSmallBanner(false)
+      }
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   console.log(bath_Body)
   const navigate = useNavigate()
   const handleProductClick = (id) => {
@@ -12,15 +32,18 @@ function NewArrivals() {
   }
   return (
     <Layout>
-      <div>
-        <h2>Bath & Body</h2>
-        <p>Total Products : {bath_Body.length}</p>
-        {bath_Body.map((items, key) => {
-          return <div className="card" key={items.id} onClick={() => handleProductClick(items.id)}>
-            <img src={items.mainImg} alt="" />
-            <p>{items.name}</p>
+      <div className="shopAllMain">
+        <div className="topSide">
+          <div className="hideDiv"></div>
+          <div className="shopAllBanner">
+            <img src={smallBanner ? ShopAllBannerMini : ShopAllBanner} alt="Banner" />
           </div>
-        })}
+        </div>
+        <div className='ProductPageMain ShopAll'>
+          <div className="hide">
+            <ProductPage product={bath_Body} heading={"Bath and Body"} handleProductClick={handleProductClick}/>
+          </div>
+        </div>
       </div>
     </Layout>
   )

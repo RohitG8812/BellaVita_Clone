@@ -67,7 +67,7 @@ function SideBarContent() {
             </div>
             <div className="menuOptions">
                 {sideBarOptions().map((opt, index) => (
-                    <div className="menuOption">
+                    <div className="menuOption" key={index}>
                         <div className="menuBanner" onClick={goToNewProducts}>
                             {opt.banner ? (<div>
                                 <img src={opt.banner} alt="SidebarBanner" />

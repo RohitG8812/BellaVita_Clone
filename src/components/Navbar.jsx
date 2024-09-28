@@ -18,7 +18,7 @@ function Navbar() {
             top: 0,
             behavior: 'smooth' // Enables smooth scrolling
         });
-    
+
     }
 
     useEffect(() => {
@@ -56,12 +56,15 @@ function Navbar() {
         };
     }, []);
 
+    // ${location.pathname === "/collection/shopAll" && "liElements"}`}>
+
     return (
         <div style={{ position: showNavbar ? "fixed" : "", top: showNavbar ? 0 : "", display: (showNavbar ? "block" : "none" || defaultNavbar ? "block" : "none"), }}
             className={`mainNavbar ${location.pathname === "/" && "mainHover"} 
         ${location.pathname === "/" ? sidebarOpen ? "sidebarOpenHover" : "" : ""} 
         ${showNavbar ? "liElements sidebarOpenHover" : ""}
-        ${location.pathname === "/collection/shopAll" && "liElements"}`}>
+        ${location.pathname === "/" ? "" : "liElements"}`}>
+
             <div className="topNav">
                 <div className="searchBar">
                     <div className="hamburgMenu">
@@ -82,7 +85,7 @@ function Navbar() {
                     </form>
                 </div>
                 <div className="brandLogo">
-                    <Link to="/"><img src={BrandLogo} alt="BrandLogo" className='logo' onClick={brandLogoCLick}/></Link>
+                    <Link to="/"><img src={BrandLogo} alt="BrandLogo" className='logo' onClick={brandLogoCLick} /></Link>
                 </div>
                 <div className="Nav_icons">
                     <Link to="/account"><img src={ProfileIcon} alt="Profile" className='navIcon profileIcon' /></Link>
