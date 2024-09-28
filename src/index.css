@@ -1085,8 +1085,9 @@ li a:hover {
   color: #000 !important;
 }
 
+/*! Product Card Main Start*/
+
 .categoryMain {
-  /* border: 1px solid red; */
   max-width: 1100px;
   width: 93%;
   padding-block: 32px;
@@ -1099,13 +1100,11 @@ li a:hover {
 }
 
 .categoryCard {
-  /* border: 1px solid blue; */
   display: flex;
   overflow-x: auto;
   flex-wrap: nowrap;
   scrollbar-width: none;
   gap: 23px;
-
   @media (max-width: 1150px) {
     gap: 20px;
   }
@@ -1122,6 +1121,7 @@ li a:hover {
 
 .card {
   /* border: 1px solid red; */
+  position: relative;
   flex-shrink: 0;
   width: 23.4%;
   /* width: 256px; */
@@ -1179,6 +1179,61 @@ li a:hover {
 
 .cardImg2:hover {
   scale: calc(1.05);
+}
+
+.card-badge {
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #fff;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+  padding-left: 10px;
+  font-weight: 550;
+  text-transform: uppercase;
+  text-align: center;
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
+}
+
+.bogoBadge {
+  padding-block: 1px;
+  width: 109px;
+  background-color: rgb(150, 118, 207);
+  border: 0.8px solid rgb(150, 118, 207);
+  @media (max-width: 480px) {
+    width: 92.05px;
+    padding-block: 0;
+  }
+}
+
+.bestSellerBadge {
+  padding-block: 1px;
+  width: 75.45px;
+  background-color: rgb(216, 162, 116);
+  border: 0.8px solid rgb(216, 162, 116);
+  @media (max-width: 480px) {
+    width: 62.9125px;
+    padding-block: 0;
+  }
+}
+
+.newBadge {
+  padding-block: 1px;
+  width: 46.55px;
+  border: 0.8px solid rgb(219, 118, 105);
+  background-color: rgb(219, 118, 105);
+  @media (max-width: 480px) {
+    width: 34.45px;
+    padding-block: 0;
+  }
 }
 
 .cardBottomText {
@@ -1343,7 +1398,7 @@ li a:hover {
 .addToCartBtn button::before {
   content: "";
   position: absolute;
-  width: 100px;
+  width: 200px;
   height: 100%;
   background-image: linear-gradient(
     120deg,
@@ -1352,8 +1407,28 @@ li a:hover {
     rgba(255, 255, 255, 0) 70%
   );
   top: 0;
-  left: -100px;
-  opacity: 0.6;
+  left: -200px;
+  opacity: 0.8;
+}
+
+.addToCartBtn button:hover::after {
+  animation: shine 2s ease-out infinite;
+}
+
+.addToCartBtn button::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -200px;
+  opacity: 0.8;
 }
 
 @keyframes shine {
@@ -1369,6 +1444,8 @@ li a:hover {
     left: 100%;
   }
 }
+
+/*! Product Card Main End*/
 
 .viewAll {
   width: 100%;
@@ -1433,17 +1510,17 @@ li a:hover {
   z-index: -1;
 }
 
-.viewAll button:hover{
+.viewAll button:hover {
   color: #fff;
 }
 
-.viewAll button:hover::before{
+.viewAll button:hover::before {
   top: -35%;
   background-color: rgb(23, 22, 21);
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
 }
 
-.viewAll button:hover::after{
+.viewAll button:hover::after {
   top: -45%;
   background-color: rgb(23, 22, 21);
   transform: translateX(-50%) scaleY(1.3) scaleX(0.8);

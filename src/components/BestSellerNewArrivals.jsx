@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Products from '../JSON/Products'
 import { useNavigate } from 'react-router-dom';
 import RatingLogo from "../assets/icons/rating.svg"
@@ -10,7 +10,9 @@ function BestSellerNewArrivals() {
   const [actCategory, setActCategory] = useState(true)
   const perfumes = Products.filter(product => product.category === 'perfumes');
   const bath_Body = Products.filter(product => product.category === 'bathBody');
-  console.log("Perfumes : ", perfumes)
+  // console.log("Perfumes : ", perfumes)
+  const categoryCardRef = useRef();
+
   const changeCategory = (category) => {
     setActCategory(false)
     setCategory(category)
@@ -25,12 +27,21 @@ function BestSellerNewArrivals() {
     navigate(`/collection/${category}`)
   }
 
+  useEffect(() => {
+    if (categoryCardRef.current) {
+      categoryCardRef.current.scrollTo({
+        left: 0,
+        behavior: 'auto'
+      })
+    }
+  }, [category]);
+
   console.log(category)
   const products = (category === 'bestSellers') ? perfumes : bath_Body
   const displayProducts = products.slice(0, 8)
-  console.log(products)
+  // console.log(products)
   console.log('Selected Category:', category);
-  console.log('Displayed Products:', displayProducts);
+  // console.log('Displayed Products:', displayProducts);
   return (
     <div className='categoryMain'>
       <div className={`categoryBtn`}>
@@ -38,11 +49,15 @@ function BestSellerNewArrivals() {
         <p className='middleArrowMain'>|</p>
         <button className={`newArrivalBtn ${category === 'newArrivals' ? 'activeTab' : ''}`} onClick={() => changeCategory('newArrivals')}>New Arrivals</button>
       </div>
-      <div className="categoryCard">
+      <div className="categoryCard" ref={categoryCardRef}>
         {displayProducts.map((product, index) => {
           return <div className="card" key={product.id} onClick={() => handleProductClick(product.id)}>
             <div className="cardImg">
               <img src={product.mainImg} alt="" className='cardImg2' />
+            </div>
+            <div className="card-badge">
+              <span className='bogoBadge'>Buy 1 get 1 Free</span>
+              <span className={`2ndBadge ${category === 'bestSellers' ? 'bestSellerBadge' : 'newBadge'}`}>{category === 'bestSellers' ? "BestSeller" : "New"}</span>
             </div>
             <div className="cardBottomText">
               <div className="topText">
