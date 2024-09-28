@@ -35,7 +35,6 @@ body {
   color: var(--card-color);
   min-height: var(--card-min-height);
   box-sizing: border-box;
-  /* border: 1px solid blue; */
 }
 
 button {
@@ -404,19 +403,37 @@ li a:hover {
   position: relative;
 }
 
+.shopAllBanner{
+  position: relative;
+}
+
+.shopAllBanner img {
+  display: block;
+  width: 100%;
+  @media (max-width: 750px) {
+    /* display: none; */
+  }
+}
+
 .hideDiv {
-  height: 95px;
+  height: 90px;
+}
+
+@media (max-width: 1065px) {
+  .hideDiv {
+    height: 136.5px;
+  }
 }
 
 @media (max-width: 1030px) {
   .hideDiv {
-    height: 60px;
+    height: 54.5px;
   }
 }
 
 @media (max-width: 834px) {
   .hideDiv {
-    height: 96px;
+    height: 91.5px;
   }
 }
 
@@ -1323,7 +1340,7 @@ li a:hover {
   gap: 4px;
   display: flex;
   align-items: center;
-  @media (max-width: 300px) {
+  @media (max-width: 350px) {
     font-size: 12px;
   }
 }

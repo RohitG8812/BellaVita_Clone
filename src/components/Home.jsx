@@ -35,8 +35,6 @@ function Home() {
         };
     }, []);
 
-    // console.log("Small Size:", smallSize);
-
     const banners = [FrontBanner, FrontBanner2, FrontBanner3, FrontBanner4]
 
     const bannersSm = [FrontBannerSm, FrontBanner2Sm, FrontBanner3Sm, FrontBanner4Sm]
