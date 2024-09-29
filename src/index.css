@@ -376,7 +376,7 @@ li a::after {
 }
 
 .navActive {
-  color: #ea803d;
+  color: #ea803d !important;
 }
 
 li a:hover::after,
@@ -505,17 +505,17 @@ li a:hover {
 
 /* for total all */
 .css-1u2w381-MuiModal-root-MuiDrawer-root {
-  top: 86.5px !important;
+  /* top: 86.5px !important; */
 }
 
 /* for deployed version issues */
 .css-y28f86 {
-  top: 86.5px !important;
+  /* top: 86.5px !important; */
 }
 
 /* for white background one */
 .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
-  top: 86.5px;
+  /* top: 86.5px; */
   border-top: 1px solid rgb(210, 213, 217);
   background-color: #fff;
   cursor: default !important;
@@ -525,7 +525,7 @@ li a:hover {
 
 /* for deployed version issues */
 .css-nsg84x {
-  top: 86.5px !important;
+  /* top: 86.5px !important; */
   border-top: 1px solid rgb(210, 213, 217);
   background-color: #fff;
   cursor: default !important;
@@ -548,12 +548,12 @@ li a:hover {
 
 /* for transparent */
 .MuiBackdrop-root.MuiModal-backdrop.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
-  top: 86.5px !important;
+  /* top: 86.5px !important; */
 }
 
 /* for deployed version issues */
 .css-919eu4 {
-  top: 86.5px !important;
+  /* top: 86.5px !important; */
 }
 
 .MuiPaper-root {
@@ -683,17 +683,17 @@ li a:hover {
     display: block;
   }
   .css-1u2w381-MuiModal-root-MuiDrawer-root {
-    top: 122.5px !important;
+    /* top: 122.5px !important; */
   }
 
   /* for deployed version issues */
   .css-y28f86 {
-    top: 122.5px !important;
+    /* top: 122.5px !important; */
   }
 
   /* for white background one */
   .MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft.css-j400xw-MuiPaper-root-MuiDrawer-paper {
-    top: 122.5px;
+    /* top: 122.5px; */
     border-top: 1px solid rgb(210, 213, 217);
     background-color: #fff;
     cursor: default !important;
@@ -702,7 +702,7 @@ li a:hover {
 
   /* for deployed version issues */
   .css-nsg84x {
-    top: 122.5px !important;
+    /* top: 122.5px !important; */
     border-top: 1px solid rgb(210, 213, 217);
     background-color: #fff;
     cursor: default !important;
@@ -711,12 +711,12 @@ li a:hover {
 
   /* for transparent */
   .MuiBackdrop-root.MuiModal-backdrop.css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
-    top: 122.5px !important;
+    /* top: 122.5px !important; */
   }
 
   /* for deployed version issues */
   .css-919eu4 {
-    top: 122.5px !important;
+    /* top: 122.5px !important; */
   }
 }
 
@@ -828,7 +828,7 @@ li a:hover {
   flex-direction: row;
   align-items: center;
   gap: 10px;
-  padding-block: 10px;
+  padding-block: 18px;
   padding-left: 10px;
   cursor: pointer;
 }
@@ -927,19 +927,11 @@ li a:hover {
 }
 
 .menuOptions {
-  padding-bottom: 40px;
-  height: 62svh;
   overflow: auto !important;
   scrollbar-width: thin;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-
-  @media (max-width: 390px) {
-    height: 59svh;
-  }
-  @media (max-width: 321px) {
-    height: 38svh;
-  }
+  color: #000;
 }
 
 .menuOption {
@@ -987,6 +979,7 @@ li a:hover {
 
 .menuOptName {
   text-align: center;
+  color: #000;
 }
 
 .menuBanner img {

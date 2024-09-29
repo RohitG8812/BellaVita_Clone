@@ -4,8 +4,8 @@ import Products from '../JSON/Products'
 import Layout from '../Layout/Layout'
 import { useNavigate } from 'react-router-dom'
 import ProductPage from '../pages/ProductPage';
-import ShopAllBanner from "../assets/Banner/ShopAllBanner.webp"
-import ShopAllBannerMini from "../assets/Banner/ShopAllBannerMini.webp"
+import ShopAllBanner from "../assets/Banner/productBanner/ShopAllBanner.webp"
+import ShopAllBannerMini from "../assets/Banner/productBanner/ShopAllBannerMini.webp"
 
 function NewArrivals() {
   const [bath_Body] = useState(Products.filter(product => product.category === 'bathBody'))

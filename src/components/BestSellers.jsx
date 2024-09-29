@@ -3,8 +3,8 @@ import "../css/productCard.css"
 import Products from '../JSON/Products'
 import Layout from '../Layout/Layout'
 import { useNavigate } from 'react-router-dom';
-import ShopAllBanner from "../assets/Banner/ShopAllBanner.webp"
-import ShopAllBannerMini from "../assets/Banner/ShopAllBannerMini.webp"
+import ShopAllBanner from "../assets/Banner/productBanner/ShopAllBanner.webp"
+import ShopAllBannerMini from "../assets/Banner/productBanner/ShopAllBannerMini.webp"
 import ProductPage from '../pages/ProductPage';
 
 function BestSellers() {
@@ -42,7 +42,7 @@ function BestSellers() {
         </div>
         <div className='ProductPageMain ShopAll'>
           <div className="hide">
-            <ProductPage product={perfume} heading={"BestSellers"} handleProductClick={handleProductClick}/>
+            <ProductPage product={perfume} heading={"BestSellers"} handleProductClick={handleProductClick} />
           </div>
         </div>
       </div>

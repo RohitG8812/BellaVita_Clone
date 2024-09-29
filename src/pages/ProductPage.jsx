@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "../css/productCard.css"
 import RatingLogo from "../assets/icons/rating.svg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
@@ -7,6 +7,20 @@ import DownArrow from "../assets/icons/downr.svg"
 import FilterLogo from "../assets/icons/filter.svg"
 
 function ProductPage({ product, heading, handleProductClick }) {
+
+    //* Products sorting price low to high
+    // const [sortedProducts, setSortedProducts] = useState([]);
+    // useEffect(() => {
+    //     const sorted = [...product].sort((a, b) => {
+    //         // Extract the numerical value from the price string
+    //         const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+    //         const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+    //         return priceA - priceB;  // Sort in ascending order
+    //     });
+    //     setSortedProducts(sorted);
+    // }, [product]);
+    //*
+
     return (
         <div className="mainContent">
             <span className='productCardHeading'>{heading}</span>

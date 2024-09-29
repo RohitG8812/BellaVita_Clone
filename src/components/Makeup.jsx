@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom'
 import Products from '../JSON/Products'
 import Layout from '../Layout/Layout'
 import ProductPage from '../pages/ProductPage';
-import ShopAllBanner from "../assets/Banner/ShopAllBanner.webp"
-import ShopAllBannerMini from "../assets/Banner/ShopAllBannerMini.webp"
+import MakeupBanner from "../assets/Banner/productBanner/makeupBanner.webp"
+import MakeupBannerMini from "../assets/Banner/productBanner/makeupBannerMini.webp"
 
 function Makeup() {
     const [makeup] = useState(Products.filter(product => product.category === 'makeup'))
@@ -36,7 +36,7 @@ function Makeup() {
                 <div className="topSide">
                     <div className="hideDiv"></div>
                     <div className="shopAllBanner">
-                        <img src={smallBanner ? ShopAllBannerMini : ShopAllBanner} alt="Banner" />
+                        <img src={smallBanner ? MakeupBannerMini : MakeupBanner} alt="Banner" />
                     </div>
                 </div>
                 <div className='ProductPageMain ShopAll'>

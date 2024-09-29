@@ -3,8 +3,8 @@ import Products from '../JSON/Products'
 import { useNavigate } from 'react-router-dom'
 import Layout from '../Layout/Layout'
 import "../css/productCard.css"
-import ShopAllBanner from "../assets/Banner/ShopAllBanner.webp"
-import ShopAllBannerMini from "../assets/Banner/ShopAllBannerMini.webp"
+import ShopAllBanner from "../assets/Banner/productBanner/ShopAllBanner.webp"
+import ShopAllBannerMini from "../assets/Banner/productBanner/ShopAllBannerMini.webp"
 import ProductPage from '../pages/ProductPage';
 
 function Bath_Body() {

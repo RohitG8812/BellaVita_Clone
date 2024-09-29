@@ -3,8 +3,8 @@ import Products from '../JSON/Products'
 import { useNavigate } from 'react-router-dom'
 import Layout from '../Layout/Layout';
 import "../css/productCard.css"
-import ShopAllBanner from "../assets/Banner/ShopAllBanner.webp"
-import ShopAllBannerMini from "../assets/Banner/ShopAllBannerMini.webp"
+import BogoBanner from "../assets/Banner/productBanner/bogoBanner.webp"
+import BogoBannerMini from "../assets/Banner/productBanner/bogoBannerMini.webp"
 import ProductPage from '../pages/ProductPage';
 
 function Perfumes() {
@@ -37,12 +37,12 @@ function Perfumes() {
                 <div className="topSide">
                     <div className="hideDiv"></div>
                     <div className="shopAllBanner">
-                        <img src={smallBanner ? ShopAllBannerMini : ShopAllBanner} alt="Banner" />
+                        <img src={smallBanner ? BogoBannerMini : BogoBanner} alt="Banner" />
                     </div>
                 </div>
                 <div className='ProductPageMain ShopAll'>
                     <div className="hide">
-                        <ProductPage product={perfume} heading={"Perfumes"} handleProductClick={handleProductClick}/>
+                        <ProductPage product={perfume} heading={"Perfumes"} handleProductClick={handleProductClick} />
                     </div>
                 </div>
             </div>

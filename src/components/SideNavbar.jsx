@@ -13,16 +13,7 @@ function SideNavbar({ setSidebarOpen }) {
         setOpen(value)
         console.log(value)
         setSidebarOpen(value)
-        if (value) {
-            scrollToTop(); // Scroll to top when opening the sidebar
-        }
     }
-
-    const scrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-        });
-    };
 
     useEffect(() => {
         const handleResize = () => {

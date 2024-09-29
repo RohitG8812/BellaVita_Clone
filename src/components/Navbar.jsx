@@ -18,7 +18,6 @@ function Navbar() {
             top: 0,
             behavior: 'smooth' // Enables smooth scrolling
         });
-
     }
 
     useEffect(() => {
@@ -29,28 +28,19 @@ function Navbar() {
     useEffect(() => {
         const handleScroll = () => {
             const currentScroll = window.scrollY;
-            // console.log("Current scroll:", currentScroll, "Previous yAxis:", yAxisRef.current);
-
-            // Hide the navbar if scrolled below 200px, otherwise show it
             if (currentScroll < 100) {
                 setShowNavbar(false);
             } else {
-                // Show or hide the navbar based on scroll direction
                 if (yAxisRef.current > currentScroll) {
                     setShowNavbar(true); // Scrolling up, show the navbar
                 } else {
                     setShowNavbar(false); // Scrolling down, hide the navbar
                 }
             }
-
-            // Update yAxisRef to current scroll position
             yAxisRef.current = currentScroll;
         };
-
         // Add scroll event listener
         window.addEventListener('scroll', handleScroll);
-
-        // Clean up the event listener on component unmount
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
