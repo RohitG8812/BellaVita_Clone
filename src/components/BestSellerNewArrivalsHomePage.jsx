@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import RatingLogo from "../assets/icons/rating.svg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
 
-function BestSellerNewArrivals() {
+function BestSellerNewArrivalsHomePage() {
   const navigate = useNavigate()
   const [category, setCategory] = useState('bestSellers')
   const [actCategory, setActCategory] = useState(true)
@@ -39,11 +39,9 @@ function BestSellerNewArrivals() {
   console.log(category)
   const products = (category === 'bestSellers') ? perfumes : bath_Body
   const displayProducts = products.slice(0, 8)
-  // console.log(products)
-  console.log('Selected Category:', category);
-  // console.log('Displayed Products:', displayProducts);
+  // console.log('Selected Category:', category);
   return (
-    <div className='categoryMain'>
+    <div className='mainDiv'>
       <div className={`categoryBtn`}>
         <button className={category === 'bestSellers' ? 'activeTab' : ''} onClick={() => changeCategory('bestSellers')}>BestSellers</button>
         <p className='middleArrowMain'>|</p>
@@ -90,4 +88,4 @@ function BestSellerNewArrivals() {
   )
 }
 
-export default BestSellerNewArrivals
+export default BestSellerNewArrivalsHomePage

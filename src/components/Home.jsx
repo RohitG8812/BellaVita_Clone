@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../Layout/Layout'
+import "../css/home.css"
 import FrontBanner from '../assets/Banner/fNew.webp'
 import FrontBanner2 from '../assets/Banner/fNew3.webp'
 import FrontBanner3 from '../assets/Banner/fNew2.webp'
@@ -12,7 +13,10 @@ import BottomBanner from '../assets/Banner/bottomBanner.webp'
 import BottomBannerMini from '../assets/Banner/bottomBannerMini.webp'
 import { Link, Outlet } from 'react-router-dom'
 import Perfumes from "../components/Perfumes"
-import BestSellerNewArrivals from './BestSellerNewArrivals'
+import FirstBanner from "../assets/Banner/HomePageBanner/homeBanner1.webp"
+import FirstBannerMini from "../assets/Banner/HomePageBanner/homeBanner1Mini.webp"
+import BestSellerNewArrivalsHomePage from './BestSellerNewArrivalsHomePage'
+import LuxuryCategoryHomePage from './LuxuryCategoryHomePage'
 
 
 function Home() {
@@ -67,7 +71,11 @@ function Home() {
                     <Link to="/collection/bogo"><img src={smallSize ? BottomBannerMini : BottomBanner} alt="" /></Link>
                 </div>
                 <div className="full-width">
-                    <BestSellerNewArrivals />
+                    <BestSellerNewArrivalsHomePage />
+                    <div className="firstBanner">
+                        <img src={smallSize ? FirstBannerMini : FirstBanner} alt="" />
+                    </div>
+                    <LuxuryCategoryHomePage />
                 </div>
             </div>
         </Layout >

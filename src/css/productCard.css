@@ -117,8 +117,8 @@
 }
 
 .ProductCardImg:hover {
-  scale: calc(1.05);
-  transition: scale 0.2s ease-in-out;
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out;
 }
 
 .filterBtn {

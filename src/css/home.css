@@ -1,0 +1,73 @@
+.firstBanner {
+  padding-block: 32px;
+  @media (max-width: 750px) {
+    padding-block: 24px;
+  }
+}
+
+.firstBanner img {
+  width: 100%;
+}
+
+.SectionHeading {
+  text-align: center;
+  border: none;
+  color: #000;
+  cursor: pointer;
+  font-size: 29.5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 37.8px;
+  margin-bottom: 30px;
+  @media (max-width: 750px) {
+    font-size: 21px;
+    margin-bottom: 20px;
+  }
+}
+
+.mainDiv {
+  padding: 20px;
+}
+
+.SectionHeading {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.catCard {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.luxuryCategoryMap {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(171px, 1fr));
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.luxuryCatImage {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.luxuryCatImage:hover {
+  transform: scale(1.05);
+}
+
+@media (min-width: 991px) {
+  .luxuryCategoryMap {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (max-width: 990px) {
+  .luxuryCategoryMap {
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+  }
+}
