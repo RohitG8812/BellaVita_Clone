@@ -753,6 +753,32 @@ const Products = [
       "- Long-lasting deo parfum - Perfect for daily wear - No Gas deo for Men - IFRA-certified non irritant deo, safe to use on skin - Made with imported oils from France, Spain and Italy",
     howToUse: "Spray the deo on your underarms for all day freshness",
   },
+  {
+    id: 129,
+    category: "perfumes",
+    name: "HOT Mess Perfume for Women - 100ml",
+    variant: "Eau De Parfum for Women",
+    price: "₹1099.00",
+    mrp: "₹1499.00",
+    rating: "4.9",
+    numOfReviews: "63 Reviews",
+    discount: "27%",
+    mainImg:
+      "https://bellavitaorganic.com/cdn/shop/files/2_e0b9be5c-f667-43bf-805a-3881fe628fdb.jpg?v=1714553667&width=1000",
+    innerImg1:
+      "https://bellavitaorganic.com/cdn/shop/files/4_1948e8bc-aac0-4919-9c0d-e8a1f6fdc6aa.jpg?v=1715928420&width=750",
+    innerImg2:
+      "https://bellavitaorganic.com/cdn/shop/files/11_8c4b76f9-37f7-4f5f-a65f-26811107e5dc.jpg?v=1714553667&width=750",
+    innerImg3:
+      "https://bellavitaorganic.com/cdn/shop/files/5_131693f1-50b2-425d-abad-e46267c36eb1.jpg?v=1714553667&width=750",
+    innerImg4:
+      "https://bellavitaorganic.com/cdn/shop/files/6_d68804a4-1707-4c3e-a7ac-d0a6ef88c623.jpg?v=1714553667&width=750",
+    description:
+      "Chaotic, crazy but always HOT, the BELLAVITA Hot Mess is for the girls who get all the attention without trying at all. BELLAVITA Hot Mess gives a hot burst of citrus mandarin, the heart of exotic roses and long-lasting passion of musk. It’s the best of floral, fruity and heavy notes, perfect to give you confidence for that hot date! Top: Wake up with the bursting energy of citrus mandarin and passionfruit Heart: Turn up the fun with floral notes of jasmine and rose  Base: Stay unapologetic with notes of musk and vanilla",
+    keyBenefits:
+      "- Long-lasting deo parfum - Perfect for daily wear - No Gas deo for Men - IFRA-certified non irritant deo, safe to use on skin - Made with imported oils from France, Spain and Italy",
+    howToUse: "Spray the deo on your underarms for all day freshness",
+  },
 
   //! Bath and Body Products
   {

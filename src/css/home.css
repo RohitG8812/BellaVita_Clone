@@ -7,6 +7,7 @@
 
 .firstBanner img {
   width: 100%;
+  display: block;
 }
 
 .SectionHeading {
@@ -26,7 +27,7 @@
 }
 
 .mainDiv {
-  padding: 2%;
+  padding-inline: 2%;
   /* border: 1px solid red; */
 }
 
@@ -36,10 +37,57 @@
   margin-bottom: 20px;
 }
 
+.catMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+}
+
 .catCard {
   overflow: hidden;
+  position: relative;
   width: 100%;
   height: 100%;
+}
+
+.cateImageName {
+  padding-bottom: 3px;
+  position: relative;
+  font-size: 16.8px;
+  line-height: 21.6px;
+  letter-spacing: 0.63px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: rgb(26, 27, 24);
+
+  @media (max-width: 750px) {
+    font-size: 14px;
+    line-height: 18px;
+    padding-bottom: 2px;
+  }
+  @media (max-width: 275px) {
+    font-size: 12px;
+    line-height: 14px;
+    padding-bottom: 1px;
+  }
+}
+
+.cateNameHover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.9px;
+  width: 0;
+  background-color: rgba(40, 40, 40, 0.423);
+  transition: width 0.25s ease-in-out;
+}
+
+.cateNameHover:hover::after {
+  width: 100%;
 }
 
 .luxuryCategoryMap {
@@ -71,4 +119,196 @@
   .luxuryCategoryMap {
     grid-template-columns: repeat(2, 1fr); /* 2 items per row */
   }
+}
+
+.sectionMain {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+
+  @media (max-width: 750px) {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.luxePerfumesImg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.relativeContainer {
+  position: relative; /* New wrapper around image and dots */
+  display: inline-block; /* Ensures that the width of the wrapper matches the image */
+}
+
+.luxePerfumesImg img {
+  width: 100%;
+  display: block;
+}
+
+.luxePerfumesCard {
+  transition: all 0.25s ease-in-out;
+}
+
+.prodCardMain {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 750px) {
+    display: block;
+  }
+}
+
+.prodCard {
+  position: relative;
+  width: 68%;
+  @media (max-width: 750px) {
+    position:unset;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+}
+
+.prodCardImgLuxury{
+  @media (max-width: 750px) {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.ProdCardImg {
+  cursor: pointer;
+  width: 100%;
+}
+
+.prodCardBottom{
+  @media (max-width: 750px) {
+    width: 60%;
+  }
+}
+
+.dotsHover {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dots {
+  animation: pulse 1.5s infinite ease-in-out;
+  position: absolute;
+  background-color: #ffffff56;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  @media (min-width: 750px) and (max-width: 1000px) {
+    width: 32px;
+    height: 32px;
+  }
+  @media (max-width: 500px) {
+    width: 32px;
+    height: 32px;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dot-1 {
+  left: 17.9%;
+  top: 68%;
+  @media (max-width: 490px) {
+    left: 17.5%;
+  }
+  @media (max-width: 385px) {
+    left: 16%;
+  }
+}
+
+.dot-2 {
+  left: 46%;
+  top: 66%;
+  @media (max-width: 385px) {
+    left: 45%;
+  }
+}
+
+.dot-3 {
+  left: 75.5%;
+  top: 68%;
+  @media (max-width: 490px) {
+    left: 75%;
+  }
+  @media (max-width: 385px) {
+    left: 74%;
+  }
+}
+
+.inner-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.innerDotActive {
+  width: 29px;
+  height: 29px;
+  transition: width 0.15s ease-in-out, height 0.15s ease-in-out;
+  @media (min-width: 750px) and (max-width: 1000px) {
+    width: 19px;
+    height: 19px;
+  }
+  @media (max-width: 500px) {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+/* Animation for pulsing effect */
+@keyframes pulse {
+  0%,
+  110% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Slightly enlarge */
+  }
+}
+
+.prodChangeLine {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.lineMain {
+  height: 34px;
+  width: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: end;
+  border-bottom: 2px solid rgba(33, 35, 38, 0.3);
+  box-sizing: border-box;
+  transition: border-bottom 0.1s ease-in-out;
+}
+
+.lineMain:hover {
+  border-bottom: 2px solid #000;
+  transition: border-bottom 0.08s ease-in-out;
+}
+
+.lineActive {
+  border-bottom: 5px solid #000 !important;
+  transition: border-bottom 0.5s ease-in-out;
 }

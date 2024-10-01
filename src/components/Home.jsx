@@ -15,8 +15,9 @@ import { Link, Outlet } from 'react-router-dom'
 import Perfumes from "../components/Perfumes"
 import FirstBanner from "../assets/Banner/HomePageBanner/homeBanner1.webp"
 import FirstBannerMini from "../assets/Banner/HomePageBanner/homeBanner1Mini.webp"
-import BestSellerNewArrivalsHomePage from './BestSellerNewArrivalsHomePage'
-import LuxuryCategoryHomePage from './LuxuryCategoryHomePage'
+import BestSellerNewArrival from '../HomePage/BestSellerNewArrival'
+import LuxuryCategories from '../HomePage/LuxuryCategories'
+import LuxePerfumes from '../HomePage/LuxePerfumes'
 
 
 function Home() {
@@ -71,11 +72,12 @@ function Home() {
                     <Link to="/collection/bogo"><img src={smallSize ? BottomBannerMini : BottomBanner} alt="" /></Link>
                 </div>
                 <div className="full-width">
-                    <BestSellerNewArrivalsHomePage />
+                    <BestSellerNewArrival />
                     <div className="firstBanner">
                         <img src={smallSize ? FirstBannerMini : FirstBanner} alt="" />
                     </div>
-                    <LuxuryCategoryHomePage />
+                    <LuxuryCategories />
+                    <LuxePerfumes />
                 </div>
             </div>
         </Layout >
