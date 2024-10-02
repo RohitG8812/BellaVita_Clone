@@ -15,6 +15,9 @@ import SkinCare from './components/SkinCare'
 import ShopAll from './components/ShopAll'
 import Account from './components/Account'
 import Buy1Get1 from './components/Buy1Get1'
+import Pages from './components/Pages'
+import FragranceFinder from './components/FragranceFinder'
+import BellaCash from './components/BellaCash'
 
 function App() {
   return (
@@ -34,6 +37,9 @@ function App() {
         <Route path='/collection/skincare' element={<SkinCare />} />
         <Route path='/collection/bogo' element={<Buy1Get1 />} />
         <Route path='/account' element={<Account />} />
+        <Route path='/pages' element={<Pages />} />
+        <Route path='/pages/fragranceFinder' element={<FragranceFinder />} />
+        <Route path='/pages/bellaCash' element={<BellaCash />} />
 
 
 

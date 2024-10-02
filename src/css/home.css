@@ -27,7 +27,6 @@
 
 .mainDiv {
   padding-inline: 2%;
-  /* border: 1px solid red; */
 }
 
 .catMain {
@@ -160,11 +159,16 @@
   position: relative;
   width: 68%;
   @media (max-width: 750px) {
-    position: unset;
     width: 100%;
     display: flex;
     flex-direction: row;
     gap: 15px;
+  }
+}
+
+.luxeCardBadge {
+  @media (max-width: 750px) {
+    display: none !important;
   }
 }
 
@@ -364,6 +368,9 @@
 }
 
 .cdBannerName {
+  position: relative;
+  display: block;
+  text-transform: uppercase;
   cursor: pointer;
   font-size: 16.8px;
   line-height: 21.6px;
@@ -373,6 +380,120 @@
   @media (max-width: 750px) {
     font-size: 14px;
     line-height: 18px;
+  }
+}
+
+/*  */
+
+/* Shop By Notes */
+
+.shopByNotesBannerMap {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 20px;
+  @media (max-width: 980px) {
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    padding-bottom: 5px;
+  }
+
+  @media (max-width: 515px) {
+    gap: 12px;
+  }
+}
+
+.sbnBannerMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  overflow: hidden;
+  @media (max-width: 750px) {
+    min-width: 33vw;
+    scroll-snap-align: start;
+  }
+}
+
+/*  */
+
+/* Why Bellavita */
+
+.whyBellaVitaSuggestionMap {
+  display: grid;
+  align-items: start;
+  justify-content: center;
+  grid-template-columns: repeat(4, 1fr);
+  margin-block: 16px;
+  gap: 30px;
+  @media (max-width: 990px) {
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.wbImgIcon {
+  display: contents;
+}
+
+.cdBannerImgMain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wbimage {
+  width: 60px;
+  height: 60px;
+}
+
+.wbSuggName {
+  width: 100%;
+  text-align: center;
+  margin-top: 16.8px;
+  @media (max-width: 750px) {
+    margin-top: 14px;
+  }
+}
+
+.wBDescription {
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 22.4px;
+  letter-spacing: 0.63px;
+  color: rgba(33, 35, 38, 0.75);
+  font-weight: 400;
+  @media (max-width: 750px) {
+   font-size: 14px;
+  }
+}
+
+.wbMain{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  flex-direction: column;
+  overflow: hidden;
+  @media (max-width: 750px) {
+    gap: 2px;
+  }
+}
+
+.bellaCashBanner{
+  padding-inline: 50px;
+  @media (max-width: 750px) {
+    padding-inline: 15px;
   }
 }
 

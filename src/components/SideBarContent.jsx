@@ -63,7 +63,7 @@ function SideBarContent() {
         { name: "Makeup", src: Makeup, navigate: '/collection/makeup' },
         { name: "SkinCare", src: SkinCare, rightArrow: RightArrow, navigate: '/collection/skincare' },
         { name: "Special Giftings", src: SpecialGift, rightArrow: RightArrow, navigate: '/collection/giftSets' },
-        { name: "Fragrance Finder", src: Fragrance, navigate: '/collection/perfumes' },
+        { name: "Fragrance Finder", src: Fragrance, navigate: '/pages/fragranceFinder' },
     ]
 
     return (

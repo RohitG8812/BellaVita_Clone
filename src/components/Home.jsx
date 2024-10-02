@@ -19,6 +19,15 @@ import BestSellerNewArrival from '../HomePage/BestSellerNewArrival'
 import LuxuryCategories from '../HomePage/LuxuryCategories'
 import LuxePerfumes from '../HomePage/LuxePerfumes'
 import CrazyDealsHome from '../HomePage/CrazyDealsHome'
+import ShopByNotes from '../HomePage/ShopByNotes'
+import SecondBanner from '../assets/Banner/HomePageBanner/fragrenceFinder.webp'
+import SecondBannerMini from '../assets/Banner/HomePageBanner/fragrenceFinderMini.webp'
+import WhyBellavita from '../HomePage/WhyBellavita'
+import AppDownloadBanner from "../assets/Banner/HomePageBanner/appDownload.webp"
+import AppDownloadBannerMini from "../assets/Banner/HomePageBanner/appDownloadMini.webp"
+import BellaCashBanner from "../assets/Banner/HomePageBanner/bellaCash.webp"
+import BellaCashBannerMini from "../assets/Banner/HomePageBanner/bellaCashMini.webp"
+import ReviewsSlider from '../HomePage/ReviewsSlider'
 
 
 function Home() {
@@ -53,6 +62,8 @@ function Home() {
         }, 0);
     };
 
+
+
     return (
         <Layout>
             <div className='homeMain'>
@@ -80,6 +91,22 @@ function Home() {
                     <LuxuryCategories />
                     <LuxePerfumes />
                     <CrazyDealsHome />
+                    <ShopByNotes />
+                    <div className="secondBanner firstBanner">
+                        <Link to='/pages/fragranceFinder'><img src={smallSize ? SecondBannerMini : SecondBanner} alt="" /></Link>
+                    </div>
+                    <WhyBellavita />
+                    <div className="thirdBanner firstBanner">
+                        <Link to='https://play.google.com/store/apps/details?id=com.bellavita.shopifyapps&hl=en'>
+                            <img src={smallSize ? AppDownloadBannerMini : AppDownloadBanner} alt="AppDownloadBanner" />
+                        </Link>
+                    </div>
+                    <div className="bellaCashBanner firstBanner">
+                        <Link to='/pages/bellaCash'>
+                            <img src={smallSize ? BellaCashBannerMini : BellaCashBanner} alt="AppDownloadBanner" />
+                        </Link>
+                    </div>
+                    <ReviewsSlider />
                 </div>
             </div>
         </Layout >
