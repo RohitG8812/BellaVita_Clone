@@ -14,7 +14,6 @@
   text-align: center;
   border: none;
   color: #000;
-  cursor: pointer;
   font-size: 29.5px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -29,12 +28,6 @@
 .mainDiv {
   padding-inline: 2%;
   /* border: 1px solid red; */
-}
-
-.SectionHeading {
-  font-size: 24px;
-  text-align: center;
-  margin-bottom: 20px;
 }
 
 .catMain {
@@ -121,7 +114,7 @@
   }
 }
 
-.sectionMain {
+.luxePerfumesSectionMain {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
@@ -167,7 +160,7 @@
   position: relative;
   width: 68%;
   @media (max-width: 750px) {
-    position:unset;
+    position: unset;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -175,7 +168,7 @@
   }
 }
 
-.prodCardImgLuxury{
+.prodCardImgLuxury {
   @media (max-width: 750px) {
     width: 40%;
     display: flex;
@@ -189,7 +182,7 @@
   width: 100%;
 }
 
-.prodCardBottom{
+.prodCardBottom {
   @media (max-width: 750px) {
     width: 60%;
   }
@@ -312,3 +305,75 @@
   border-bottom: 5px solid #000 !important;
   transition: border-bottom 0.5s ease-in-out;
 }
+
+/* CrazyDeals Section */
+
+.crazyDealsBannerMap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+  @media (max-width: 980px) {
+    gap: 20px;
+  }
+
+  @media (max-width: 750px) {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 18px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    padding-bottom: 5px;
+  }
+
+  @media (max-width: 500px) {
+    gap: 12px;
+  }
+}
+
+.cdImgBanner {
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cdBannerMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  overflow: hidden;
+  @media (max-width: 750px) {
+    min-width: 66vw;
+    scroll-snap-align: start;
+  }
+}
+
+.cdBannerImg {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cdBannerImg:hover {
+  transform: scale(1.05);
+}
+
+.cdBannerName {
+  cursor: pointer;
+  font-size: 16.8px;
+  line-height: 21.6px;
+  padding-bottom: 3px;
+  letter-spacing: 0.63px;
+  color: #000;
+  @media (max-width: 750px) {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+/*  */

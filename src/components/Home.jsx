@@ -18,6 +18,7 @@ import FirstBannerMini from "../assets/Banner/HomePageBanner/homeBanner1Mini.web
 import BestSellerNewArrival from '../HomePage/BestSellerNewArrival'
 import LuxuryCategories from '../HomePage/LuxuryCategories'
 import LuxePerfumes from '../HomePage/LuxePerfumes'
+import CrazyDealsHome from '../HomePage/CrazyDealsHome'
 
 
 function Home() {
@@ -78,6 +79,7 @@ function Home() {
                     </div>
                     <LuxuryCategories />
                     <LuxePerfumes />
+                    <CrazyDealsHome />
                 </div>
             </div>
         </Layout >

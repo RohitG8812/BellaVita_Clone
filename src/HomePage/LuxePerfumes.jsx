@@ -68,7 +68,7 @@ function LuxePerfumes() {
     console.log(selectedProduct.id)
     return (
         <div className='mainDiv'>
-            <div className="sectionMain">
+            <div className="luxePerfumesSectionMain">
                 <div className="luxePerfumesImg">
                     <div className="relativeContainer">
                         <img src={LuxePerfumesImg} alt="" />
