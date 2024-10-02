@@ -474,11 +474,11 @@
   color: rgba(33, 35, 38, 0.75);
   font-weight: 400;
   @media (max-width: 750px) {
-   font-size: 14px;
+    font-size: 14px;
   }
 }
 
-.wbMain{
+.wbMain {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -490,7 +490,7 @@
   }
 }
 
-.bellaCashBanner{
+.bellaCashBanner {
   padding-inline: 50px;
   @media (max-width: 750px) {
     padding-inline: 15px;
@@ -498,3 +498,71 @@
 }
 
 /*  */
+
+/* ReviewSlider.css */
+.reviewSlider {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.reviewSlider h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.reviewSlide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.reviewProfile {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.profileImg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.reviewText {
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.reviewName {
+  display: block;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #666;
+}
+
+/* Slick slider styling */
+.slick-next,
+.slick-prev {
+  font-size: 30px;
+  color: #333;
+  z-index: 1;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  color: #333;
+}
+
+
+.slick-slide {
+  cursor: grab;
+}
+
+.slick-slide:active {
+  cursor: grabbing;
+}
