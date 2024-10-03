@@ -27,7 +27,8 @@ import AppDownloadBanner from "../assets/Banner/HomePageBanner/appDownload.webp"
 import AppDownloadBannerMini from "../assets/Banner/HomePageBanner/appDownloadMini.webp"
 import BellaCashBanner from "../assets/Banner/HomePageBanner/bellaCash.webp"
 import BellaCashBannerMini from "../assets/Banner/HomePageBanner/bellaCashMini.webp"
-import ReviewsSlider from '../HomePage/ReviewsSlider'
+import ReviewSlider from '../HomePage/ReviewSlider'
+import ImageMapping from '../HomePage/ImageMapping'
 
 
 function Home() {
@@ -106,7 +107,8 @@ function Home() {
                             <img src={smallSize ? BellaCashBannerMini : BellaCashBanner} alt="AppDownloadBanner" />
                         </Link>
                     </div>
-                    <ReviewsSlider />
+                    <ReviewSlider />
+                    <ImageMapping />
                 </div>
             </div>
         </Layout >

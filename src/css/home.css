@@ -500,42 +500,39 @@
 /*  */
 
 /* ReviewSlider.css */
-.reviewSlider {
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 50px 0;
-}
-
-.reviewSlider h2 {
-  font-size: 24px;
-  margin-bottom: 40px;
-}
 
 .reviewSlide {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .reviewProfile {
-  width: 100px;
-  height: 100px;
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .profileImg {
-  width: 100%;
-  height: 100%;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .reviewText {
-  max-width: 600px;
+  margin-top: 40px;
+  text-align: center;
+  max-width: 720px;
+  padding-inline: 4.9%;
   font-size: 18px;
   line-height: 1.5;
   color: #333;
+  @media (max-width: 750px) {
+    margin-top: 20px;
+  }
 }
 
 .reviewName {
@@ -543,21 +540,29 @@
   font-size: 16px;
   margin-top: 10px;
   color: #666;
+
+  @media (max-width: 750px) {
+    margin-top: 5px;
+  }
 }
 
-/* Slick slider styling */
 .slick-next,
 .slick-prev {
+  display: none !important;
   font-size: 30px;
-  color: #333;
+  color: #00000092;
   z-index: 1;
+}
+
+.revSliderMain:hover .slick-next,
+.revSliderMain:hover .slick-prev {
+  display: block !important;
 }
 
 .slick-next:before,
 .slick-prev:before {
-  color: #333;
+  color: #00000090 !important;
 }
-
 
 .slick-slide {
   cursor: grab;
@@ -565,4 +570,139 @@
 
 .slick-slide:active {
   cursor: grabbing;
+}
+
+.revSliderMain {
+  max-width: 810px;
+  padding-inline: 40px;
+  margin: 0 auto;
+  @media (max-width: 750px) {
+    padding-inline: 15px;
+  }
+}
+
+.rsName {
+  font-style: italic;
+  color: rgba(33, 35, 38, 0.45);
+}
+
+.instaReview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.instaReviewHover {
+  position: relative;
+}
+
+.instaReviewHover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.9px;
+  width: 0;
+  background-color: rgba(40, 40, 40, 0.423);
+  transition: width 0.25s ease-in-out;
+}
+
+.instaReviewHover:hover::after {
+  width: 100%;
+}
+
+.icon-instagram {
+  width: 16px;
+}
+
+/* Image Mapping */
+
+.imageMapping {
+  padding-top: 27px;
+  width: 100%;
+  @media (max-width: 750px) {
+    padding-top: 18px;
+  }
+}
+
+.topImageMapping {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  @media (max-width: 1010px) {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: thin;
+  }
+  @media (max-width: 750px) {
+    gap: 5px;
+  }
+}
+
+.topSingleMapImg img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+
+  @media (max-width: 1010px) {
+    width: 33vw;
+    height: 280px;
+  }
+  @media (max-width: 750px) {
+    width: 75vw;
+    height: 240px;
+  }
+}
+
+.bottomMapSliderMain {
+  width: 100%;
+  overflow: hidden;
+}
+
+.bottomMapSlider {
+  padding-block: 15px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  gap: 20px; 
+  width: max-content;
+  animation: scroll 20s linear infinite; 
+  overflow: hidden; 
+  @media (max-width: 750px) {
+    gap: 0;
+    height: 90px;
+    padding-block: 10px;
+  }
+}
+
+.bottomSingleMapImg {
+  max-width: 150px; /
+}
+
+.bottomSingleMapImg img {
+  height: 80px;
+  max-width: 150px;
+  object-fit: cover;
+  transition: transform 0.3s ease; 
+}
+
+.mmf {
+  margin-inline: 20px;
+}
+
+/* Animation for scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); 
+  }
+}
+
+/* Hover effect */
+.bottomSingleMapImg:hover img {
+  transform: scale(1.08); 
 }
