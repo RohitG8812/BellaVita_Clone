@@ -87,7 +87,7 @@ function Home() {
                 <div className="full-width">
                     <BestSellerNewArrival />
                     <div className="firstBanner">
-                        <img src={smallSize ? FirstBannerMini : FirstBanner} alt="" />
+                        <Link to="/collection/bogo"> <img src={smallSize ? FirstBannerMini : FirstBanner} alt="" /></Link>
                     </div>
                     <LuxuryCategories />
                     <LuxePerfumes />
