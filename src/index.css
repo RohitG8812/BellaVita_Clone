@@ -1529,3 +1529,34 @@ li a:hover {
 .onHoverMenuOpt:hover {
   background-color: rgba(234, 227, 223, 0.8); /* Highlight option on hover */
 }
+
+.downArrowIndexCss {
+  filter: none !important;
+}
+
+.sideBarSubMenuLiIndexCss {
+}
+
+.sideBarSubMenuLiIndexCss ul {
+  padding-left: 25px !important;
+  margin-block: 10px !important;
+  @media (max-width: 320px) {
+    padding-left: 15px !important;
+    margin-block: 5px !important;
+  }
+}
+
+.sideBarSubMenuLiIndexCss li {
+  list-style: inside;
+  color: #000000ca !important;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-block: 8px;
+  @media (max-width: 320px) {
+    font-size: 13px;
+  }
+}
+
+.sideBarSubMenuLiIndexCss li::after {
+  background-color: #0000007c !important;
+}

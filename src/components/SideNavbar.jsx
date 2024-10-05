@@ -34,7 +34,7 @@ function SideNavbar({ setSidebarOpen }) {
     }, []);
 
     const DrawerList = (
-        <Box className="sidebarWidth" role="presentation" onClick={() => toggleDrawer(false)}>
+        <Box className="sidebarWidth" role="presentation">
             <SideBarContent />
         </Box>
     );

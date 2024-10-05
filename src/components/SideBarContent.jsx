@@ -13,7 +13,7 @@ import Makeup from "../assets/icons/makeup.svg"
 import SkinCare from "../assets/icons/skinCare.svg"
 import SpecialGift from "../assets/icons/specialGift.svg"
 import Fragrance from "../assets/icons/fragrance.svg"
-import RightArrow from "../assets/icons/rightArrow.svg"
+import downArrow from "../assets/icons/down.svg"
 import Bogo from "../assets/icons/bogo.svg"
 
 function SideBarContent() {
@@ -53,16 +53,24 @@ function SideBarContent() {
         navigate('/collection/newArrivals')
     }
 
+    const [activeIndex, setActiveIndex] = useState(null);
+
+    const handleClick = (index) => {
+        setActiveIndex(activeIndex === index ? null : index);
+        console.log(index == activeIndex)
+    };
+
+
     const sideBarOptions = () => [
         { name: "BOGO", src: Bogo, navigate: '/collection/bogo' },
         { name: "Crazy Deals 🔥", src: CrazyDeals, navigate: '/collection/crazyDeals' },
         { name: "Shop All", src: ShopAll, navigate: '/collection/shopAll' },
         { name: "Bestsellers", src: BestSellers, navigate: '/collection/bestSellers' },
-        { name: "Perfumes", src: Perfumes, banner: newLaunchBanner, rightArrow: RightArrow, navigate: '/collection/perfumes' },
-        { name: "Bath & Body", src: BathBody, rightArrow: RightArrow, navigate: '/collection/bathBody' },
+        { name: "Perfumes", src: Perfumes, banner: newLaunchBanner, downArrow: downArrow, navigateTo: '/collection/perfumes', subMenu: ["All Perfumes", "Men", "Women", "Unisex", "Oud Collection", "Attars", "Little Luxuries"] },
+        { name: "Bath & Body", src: BathBody, downArrow: downArrow, navigateTo: '/collection/bathBody', subMenu: ["Shower Gel", "Body Mist", "Body Parfum", "Body Lotion", "Travel Kit"] },
         { name: "Makeup", src: Makeup, navigate: '/collection/makeup' },
-        { name: "SkinCare", src: SkinCare, rightArrow: RightArrow, navigate: '/collection/skincare' },
-        { name: "Special Giftings", src: SpecialGift, rightArrow: RightArrow, navigate: '/collection/giftSets' },
+        { name: "SkinCare", src: SkinCare, downArrow: downArrow, navigateTo: '/collection/skincare', subMenu: ["All SkinCare", "Face Wash", "Lip Cate", "Skin Essential Combos"] },
+        { name: "Special Giftings", src: SpecialGift, downArrow: downArrow, navigateTo: '/collection/giftSets', subMenu: ["Gift Sets", "Perfume Combos"] },
         { name: "Fragrance Finder", src: Fragrance, navigate: '/pages/fragranceFinder' },
     ]
 
@@ -98,7 +106,7 @@ function SideBarContent() {
                             </div>) : ""}
                         </div>
                         <Link to={opt.navigate}>
-                            <div className="menuOptionContent">
+                            <div className="menuOptionContent" onClick={() => handleClick(index)}>
                                 <div className="left">
                                     <div className="menuOptLogo" key={index}>
                                         <img src={opt.src} alt="SidebarIcons" />
@@ -108,11 +116,22 @@ function SideBarContent() {
                                     </div>
                                 </div>
                                 <div className="right">
-                                    {opt.rightArrow ? (<div>
-                                        <img src={opt.rightArrow} alt="Right Arrow" />
+                                    {opt.downArrow ? (<div>
+                                        <img src={opt.downArrow} alt="Right Arrow" className={`rightArrowTopFooter downArrowIndexCss ${activeIndex === index ? 'rotate-arrow' : ''}`} />
                                     </div>) : ""}
                                 </div>
                             </div>
+                            {opt.subMenu && Array.isArray(opt.subMenu) && opt.name && (
+                                <div className={`footer750pxCatItems sideBarSubMenuLiIndexCss ${activeIndex === index ? 'show' : 'hide'}`}>
+                                    <ul>
+                                        {opt.subMenu.map((item, subIndex) => (
+                                            <Link to={opt.navigateTo} >
+                                                <li key={subIndex}>{item}</li>
+                                            </Link>
+                                        ))}
+                                    </ul>
+                                </div>
+                            )}
                         </Link>
                     </div>
                 ))}
