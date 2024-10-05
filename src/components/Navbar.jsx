@@ -46,6 +46,11 @@ function Navbar() {
         };
     }, []);
 
+    const perfumes = ["All Perfumes", "Men", "Women", "Unisex", "Oud Collection", "Attars", "Little Luxuries"]
+    const bathBody = ["Shower Gel", "Body Mist", "Body Parfum", "Body Lotion", "Travel Kit"]
+    const SkinCare = ["All SkinCare", "Face Wash", "Lip Cate", "Skin Essential Combos"]
+    const Gifting = ["Gift Sets", "Perfume Combos"]
+
     // ${location.pathname === "/collection/shopAll" && "liElements"}`}>
 
     return (
@@ -112,11 +117,25 @@ function Navbar() {
                         <li>
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/bestSellers">BestSellers</NavLink>
                         </li>
-                        <li>
+                        <li className='navBarHoverMenu'>
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/perfumes">Perfumes</NavLink>
+                            <div className="onHoverMenu">
+                                {perfumes.map((items, index) => {
+                                    return <div className="onHoverMenuOpt">
+                                        <li>{items}</li>
+                                    </div>
+                                })}
+                            </div>
                         </li>
-                        <li>
+                        <li className='navBarHoverMenu'>
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/bathBody">Bath & Body</NavLink>
+                            <div className="onHoverMenu">
+                                {bathBody.map((items, index) => {
+                                    return <div className="onHoverMenuOpt">
+                                        <li>{items}</li>
+                                    </div>
+                                })}
+                            </div>
                         </li>
                         <li>
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/makeup">Makeup</NavLink>
@@ -124,11 +143,25 @@ function Navbar() {
                         <li>
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/newArrivals">New Arrivals</NavLink>
                         </li>
-                        <li>
+                        <li className='navBarHoverMenu'>
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/skincare">SkinCare</NavLink>
+                            <div className="onHoverMenu">
+                                {SkinCare.map((items, index) => {
+                                    return <div className="onHoverMenuOpt">
+                                        <li>{items}</li>
+                                    </div>
+                                })}
+                            </div>
                         </li>
-                        <li>
+                        <li className='navBarHoverMenu'>
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/giftSets">Gifting</NavLink>
+                            <div className="onHoverMenu">
+                                {Gifting.map((items, index) => {
+                                    return <div className="onHoverMenuOpt">
+                                        <li>{items}</li>
+                                    </div>
+                                })}
+                            </div>
                         </li>
                     </ul>
                 </nav>
