@@ -3,6 +3,8 @@ import Products from '../JSON/Products'
 import { useNavigate } from 'react-router-dom';
 import RatingLogo from "../assets/icons/rating.svg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
+import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
+
 
 function BestSellerNewArrival() {
     const navigate = useNavigate()
@@ -72,7 +74,11 @@ function BestSellerNewArrival() {
                                         <p> {`(${product.numOfReviews})`}</p>
                                     </div>
                                 </div>
-                                <p className='cardProductPrice'>{product.price}</p>
+                                <div className="productPriceMain">
+                                    <p className='discount cardProductPrice'><img src={GreenDownArrow} alt="" className='greenArrow'/>{product.discount}</p>
+                                    <p className="mrp cardProductPrice">{product.mrp}</p>
+                                    <p className='cardProductPrice'>{product.price}</p>
+                                </div>
                             </div>
                             <div className="addToCartBtn">
                                 <button>ADD TO CART</button>

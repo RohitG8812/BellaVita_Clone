@@ -1294,8 +1294,11 @@ li a:hover {
   gap: 4px;
   display: flex;
   align-items: center;
-  @media (max-width: 350px) {
+  @media (max-width: 353px) {
     font-size: 12px;
+  }
+  @media (max-width: 334px) {
+    font-size: 10px;
   }
 }
 

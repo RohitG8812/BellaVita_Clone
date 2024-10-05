@@ -4,6 +4,7 @@ import RatingLogo from "../assets/icons/rating.svg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
 import PlusArrow from "../assets/icons/plus.svg"
 import DownArrow from "../assets/icons/downr.svg"
+import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import FilterLogo from "../assets/icons/filter.svg"
 
 function ProductPage({ product, heading, handleProductClick }) {
@@ -75,7 +76,11 @@ function ProductPage({ product, heading, handleProductClick }) {
                                         <p> {`(${product.numOfReviews})`}</p>
                                     </div>
                                 </div>
-                                <p className='cardProductPrice'>{product.price}</p>
+                                <div className="productPriceMain">
+                                    <p className='discount cardProductPrice'><img src={GreenDownArrow} alt="" className='greenArrow'/>{product.discount}</p>
+                                    <p className="mrp cardProductPrice">{product.mrp}</p>
+                                    <p className='cardProductPrice'>{product.price}</p>
+                                </div>
                             </div>
                             <div className="addToCartBtn">
                                 <button>ADD TO CART</button>

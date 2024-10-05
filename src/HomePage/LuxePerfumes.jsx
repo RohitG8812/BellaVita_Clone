@@ -4,6 +4,8 @@ import "../css/productCard.css"
 import RatingLogo from "../assets/icons/rating.svg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
 import { useNavigate } from 'react-router-dom'
+import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
+
 
 function LuxePerfumes() {
     const navigate = useNavigate()
@@ -107,7 +109,11 @@ function LuxePerfumes() {
                                             <p> {`(${selectedProduct.numOfReviews})`}</p>
                                         </div>
                                     </div>
-                                    <p className='cardProductPrice'>{selectedProduct.price}</p>
+                                    <div className="productPriceMain">
+                                        <p className='discount cardProductPrice'><img src={GreenDownArrow} alt="" className='greenArrow' />{selectedProduct.discount}</p>
+                                        <p className="mrp cardProductPrice">{selectedProduct.mrp}</p>
+                                        <p className='cardProductPrice'>{selectedProduct.price}</p>
+                                    </div>
                                 </div>
                                 <div className="addToCartBtn">
                                     <button>ADD TO CART</button>

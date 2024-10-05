@@ -5,7 +5,7 @@ import RightArrow from "../assets/icons/right.svg"
 function TopSlider() {
     const [currentIndex, setCurrentIndex] = useState(0)
     const slides = [
-        "🎁FREE Gift on all PREPAID Orders", "Get any 3 100ml PERFUMES for ₹1298", "Get any 2 100ml PERFUMES for ₹949",
+        "🎁FREE Gift on all PREPAID Orders", "Buy 1 Get 1 Free Sitewide*", "Mega Diwali Sale is Here!", "Get any 3 100ml PERFUMES for ₹999",
     ]
 
     useEffect(() => {
@@ -13,7 +13,7 @@ function TopSlider() {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
         }, 4000); // Switch content every 1 second
 
-        return () => clearInterval(intervalId); 
+        return () => clearInterval(intervalId);
     }, [slides.length]);
 
     const nextSlide = () => {
@@ -37,7 +37,7 @@ function TopSlider() {
                     })}
                 </div>
 
-                <button className='nextBtn' onClick={nextSlide}><img src={RightArrow} alt="" className='arrow'/></button>
+                <button className='nextBtn' onClick={nextSlide}><img src={RightArrow} alt="" className='arrow' /></button>
 
             </div>
         </div>

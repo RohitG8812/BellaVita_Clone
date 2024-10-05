@@ -432,3 +432,33 @@
     padding-bottom: 0px;
   }
 }
+
+.productPriceMain {
+  display: flex;
+  gap: 5px;
+}
+
+.mrp {
+  display: block;
+  font-size: 13px !important;
+  text-decoration: line-through;
+  color: #00000098;
+
+  @media (max-width: 350px) {
+    display: none !important;
+  }
+}
+
+.discount {
+  color: green;
+  @media (max-width: 300px) {
+    font-size: 12.5px !important;
+  }
+}
+
+.discount img {
+  width: 16px;
+  @media (max-width: 300px) {
+    width: 13px;
+  }
+}
