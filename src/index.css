@@ -1520,7 +1520,19 @@ li a:hover {
 }
 
 .navBarHoverMenu:hover .onHoverMenu {
+  animation: downIn 0.7s ease-in-out forwards;
   display: block;
+}
+
+@keyframes downIn {
+  from {
+    opacity: 0;
+    transform: translateY(-0%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .onHoverMenuOpt {
