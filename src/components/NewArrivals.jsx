@@ -41,7 +41,7 @@ function NewArrivals() {
         </div>
         <div className='ProductPageMain ShopAll'>
           <div className="hide">
-            <ProductPage product={bath_Body} heading={"Bath and Body"} handleProductClick={handleProductClick}/>
+            <ProductPage product={bath_Body} heading={"New Arrivals"} handleProductClick={handleProductClick}/>
           </div>
         </div>
       </div>
