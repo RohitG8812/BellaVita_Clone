@@ -49,6 +49,7 @@ function App() {
         <Route path="/collection/perfumes/:id" element={<Product />} />
         <Route path="/collection/bathBody/:id" element={<Product />} />
         <Route path="/collection/makeup/:id" element={<Product />} />
+        <Route path="/collection/shopAll/:id" element={<Product />} />
       </Routes>
     </BrowserRouter>
   )

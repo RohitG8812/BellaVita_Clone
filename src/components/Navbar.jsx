@@ -121,7 +121,7 @@ function Navbar() {
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/perfumes">Perfumes</NavLink>
                             <div className="onHoverMenu">
                                 {perfumes.map((items, index) => {
-                                    return <div className="onHoverMenuOpt">
+                                    return <div className="onHoverMenuOpt" key={index}>
                                         <li>{items}</li>
                                     </div>
                                 })}
@@ -131,7 +131,7 @@ function Navbar() {
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/bathBody">Bath & Body</NavLink>
                             <div className="onHoverMenu">
                                 {bathBody.map((items, index) => {
-                                    return <div className="onHoverMenuOpt">
+                                    return <div className="onHoverMenuOpt" key={index}>
                                         <li>{items}</li>
                                     </div>
                                 })}
@@ -147,7 +147,7 @@ function Navbar() {
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/skincare">SkinCare</NavLink>
                             <div className="onHoverMenu">
                                 {SkinCare.map((items, index) => {
-                                    return <div className="onHoverMenuOpt">
+                                    return <div className="onHoverMenuOpt" key={index}>
                                         <li>{items}</li>
                                     </div>
                                 })}
@@ -157,7 +157,7 @@ function Navbar() {
                             <NavLink className={(e) => (e.isActive ? "navActive" : "")} to="/collection/giftSets">Gifting</NavLink>
                             <div className="onHoverMenu">
                                 {Gifting.map((items, index) => {
-                                    return <div className="onHoverMenuOpt">
+                                    return <div className="onHoverMenuOpt" key={index}>
                                         <li>{items}</li>
                                     </div>
                                 })}

@@ -6,21 +6,82 @@ import PlusArrow from "../assets/icons/plus.svg"
 import DownArrow from "../assets/icons/downr.svg"
 import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import FilterLogo from "../assets/icons/filter.svg"
+import FIlter from '../components/FIlter'
 
-function ProductPage({ product, heading, handleProductClick }) {
+function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
+    const [filterMenuActive, setFilterMenuActive] = useState(false)
+    const [filterItems, setFilterItems] = useState([])
+    const [loading, setLoading] = useState(false)
 
-    //* Products sorting price low to high
-    // const [sortedProducts, setSortedProducts] = useState([]);
-    // useEffect(() => {
-    //     const sorted = [...product].sort((a, b) => {
-    //         // Extract the numerical value from the price string
-    //         const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
-    //         const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
-    //         return priceA - priceB;  // Sort in ascending order
-    //     });
-    //     setSortedProducts(sorted);
-    // }, [product]);
-    //*
+    const handleChange = (e) => {
+        const { value, checked } = e.target;
+        setLoading(true)
+
+        if (checked) {
+            setFilterItems([...filterItems, value])
+            console.log(value)
+        } else {
+            setFilterItems(filterItems.filter((category) => category !== value));
+            console.log(value)
+        }
+        setLoading(false)
+    }
+
+    const filterByPrice = (product) => {
+        const productPrice = parseFloat(product.price.replace(/[^0-9.-]+/g, ""));
+
+        if (filterItems.includes("0-500") && productPrice >= 1 && productPrice <= 500) {
+            return true;
+        }
+        if (filterItems.includes("501-1000") && productPrice > 501 && productPrice <= 1000) {
+            return true;
+        }
+        if (filterItems.includes("1001-1500") && productPrice > 1001 && productPrice <= 1500) {
+            return true;
+        }
+        if (filterItems.includes("1501+") && productPrice > 1501 && productPrice <= 4000) {
+            return true;
+        }
+        return false;
+    };
+
+    const filterByRating = (product) => {
+        const productRating = product.rating
+
+        if (filterItems.includes("1") && productRating >= 1 && productRating < 2) {
+            return true
+        }
+        if (filterItems.includes("2") && productRating >= 2 && productRating < 3) {
+            return true
+        }
+        if (filterItems.includes("3") && productRating >= 3 && productRating < 4) {
+            return true
+        }
+        if (filterItems.includes("4") && productRating >= 4 && productRating < 5) {
+            return true
+        }
+        if (filterItems.includes("5") && productRating >= 5) {
+            return true
+        }
+        return false
+    }
+
+    const filteredProducts = filterItems.length > 0
+        ? product.filter((product) =>
+            filterItems.includes(product.category) ||
+            filterItems.includes(product.variant) ||
+            filterByPrice(product) ||
+            filterByRating(product)
+        )
+        : product;
+
+    const handleFIlterActive = () => {
+        setFilterMenuActive(!filterMenuActive)
+    }
+
+    const handleOutsideClick = () => {
+        setFilterMenuActive(false);
+    };
 
     return (
         <div className="mainContent">
@@ -32,9 +93,12 @@ function ProductPage({ product, heading, handleProductClick }) {
             </div>
             <div className="filterAndProductCount">
                 <div className="filterAndSortBtn">
-                    <div className='filterBtn'>
+                    <div className='filterBtn' onClick={handleFIlterActive}>
                         <span>Filter</span>
                         <img src={PlusArrow} alt="Plus" className='plusIcon' />
+                    </div>
+                    <div className="filterMenu">
+                        <FIlter active={filterMenuActive} handleChange={handleChange} categoryFilter={categoryFilter} products={product} />
                     </div>
                     <div className="sortBtn">
                         <span className='sortText'>Sort</span>
@@ -48,49 +112,68 @@ function ProductPage({ product, heading, handleProductClick }) {
                     </div>
                 </div>
                 <div className="productCount">
-                    <p>{product.length} Products</p>
+                    {loading ? "Loading..." : <p>{filteredProducts.length === product.length ? product.length : (`${filteredProducts.length} of ${product.length}`)} Products</p>}
                 </div>
             </div>
+
+            {filterMenuActive && <div className="overlay" onClick={handleOutsideClick}></div>}
+
             <div className="productCardMain" >
-                {product.map((product, index) => {
-                    return <div className="productCard" key={product.id} onClick={() => handleProductClick(product.id)}>
-                        <div className="cardImg">
-                            <img src={product.mainImg} alt="" className='ProductCardImg' />
-                        </div>
-                        <div className="card-badge">
-                            <span className='bestSellerBadge'>BestSeller</span>
-                            <span className={"2ndBadge newBadge"}>New</span>
-                        </div>
-                        <div className="productsCardBottomText">
-                            <div className="topText">
-                                <p className='cardProductVariant'>{product.variant}</p>
-                                <p className='ProductCardName '>{product.name}</p>
-                                <div className="ProductRatingReviews">
-                                    <div className='productRating'>
-                                        <img src={RatingLogo} alt="Rating" />
-                                        <p>{product.rating}</p>
+                {filteredProducts.length > 0 ?
+                    filteredProducts.map((product, index) => {
+                        return <div className="productCard" key={product.id} onClick={() => handleProductClick(product.id)}>
+                            <div className="cardImg">
+                                <img src={product.mainImg} alt="" className='ProductCardImg' />
+                            </div>
+                            <div className="card-badge">
+                                <span className='bestSellerBadge'>BestSeller</span>
+                                <span className={"2ndBadge newBadge"}>New</span>
+                            </div>
+                            <div className="productsCardBottomText">
+                                <div className="topText">
+                                    <p className='cardProductVariant'>{product.variant}</p>
+                                    <p className='ProductCardName '>{product.name}</p>
+                                    <div className="ProductRatingReviews">
+                                        <div className='productRating'>
+                                            <img src={RatingLogo} alt="Rating" />
+                                            <p>{product.rating}</p>
+                                        </div>
+                                        <span className='middleArrow'>|</span>
+                                        <div className='productReviews'>
+                                            <img src={ReviewsLogo} alt="Reviews" />
+                                            <p> {`(${product.numOfReviews})`}</p>
+                                        </div>
                                     </div>
-                                    <span className='middleArrow'>|</span>
-                                    <div className='productReviews'>
-                                        <img src={ReviewsLogo} alt="Reviews" />
-                                        <p> {`(${product.numOfReviews})`}</p>
+                                    <div className="productPriceMain">
+                                        <p className='discount cardProductPrice'><img src={GreenDownArrow} alt="" className='greenArrow' />{product.discount}</p>
+                                        <p className="mrp cardProductPrice">{product.mrp}</p>
+                                        <p className='cardProductPrice'>{product.price}</p>
                                     </div>
                                 </div>
-                                <div className="productPriceMain">
-                                    <p className='discount cardProductPrice'><img src={GreenDownArrow} alt="" className='greenArrow'/>{product.discount}</p>
-                                    <p className="mrp cardProductPrice">{product.mrp}</p>
-                                    <p className='cardProductPrice'>{product.price}</p>
+                                <div className="addToCartBtn">
+                                    <button>ADD TO CART</button>
                                 </div>
                             </div>
-                            <div className="addToCartBtn">
-                                <button>ADD TO CART</button>
-                            </div>
                         </div>
-                    </div>
-                })}
+                    }) : <div className='noProductAvailable'>No Product Available</div>}
             </div>
         </div>
     )
 }
 
 export default ProductPage
+
+
+
+//* Products sorting price low to high
+// const [sortedProducts, setSortedProducts] = useState([]);
+// useEffect(() => {
+//     const sorted = [...product].sort((a, b) => {
+//         // Extract the numerical value from the price string
+//         const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+//         const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+//         return priceA - priceB;  // Sort in ascending order
+//     });
+//     setSortedProducts(sorted);
+// }, [product]);
+//*

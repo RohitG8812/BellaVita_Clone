@@ -94,7 +94,7 @@ function Footer() {
                                 </div>
                                 <div className="bottomTextLogos">
                                     {Logos.map((logo, index) => (
-                                        <div className="topRightLogo">
+                                        <div className="topRightLogo" key={index}>
                                             <img src={logo} alt="" key={index} className='bottomTextLogo' />
                                         </div>
                                     ))}
@@ -199,7 +199,7 @@ function Footer() {
                 <div className="tradeMark">
                     <div className="bottomTextLogos bottomTextLogosMini">
                         {Logos.map((logo, index) => (
-                            <div className="topRightLogo">
+                            <div className="topRightLogo" key={index}>
                                 <img src={logo} alt="" key={index} className='bottomTextLogo bottomTextLogoMini' />
                             </div>
                         ))}

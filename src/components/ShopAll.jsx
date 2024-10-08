@@ -7,6 +7,12 @@ import ShopAllBanner from "../assets/Banner/productBanner/ShopAllBanner.webp"
 import ShopAllBannerMini from "../assets/Banner/productBanner/ShopAllBannerMini.webp"
 import ProductPage from '../pages/ProductPage';
 
+const ShopAllCategoryFilter = [
+    { value: "perfumes", label: "Perfumes" },
+    { value: "bathBody", label: "Bath & Body" },
+    { value: "makeup", label: "Makeup" },
+]
+
 function ShopAll() {
     const [product, setProduct] = useState([]);
     const [smallBanner, setSmallBanner] = useState(false);
@@ -33,7 +39,7 @@ function ShopAll() {
     const navigate = useNavigate()
 
     const handleProductClick = (id) => {
-        navigate(`/collection/allProducts/${id}`)
+        navigate(`/collection/shopAll/${id}`)
     }
     return (
         <Layout>
@@ -46,7 +52,7 @@ function ShopAll() {
                 </div>
                 <div className='ProductPageMain ShopAll'>
                     <div className="hide">
-                        <ProductPage product={product} heading={"Shop All Products"} handleProductClick={handleProductClick}/>
+                        <ProductPage product={product} heading={"Shop All Products"} handleProductClick={handleProductClick} categoryFilter={ShopAllCategoryFilter} />
                     </div>
                 </div>
             </div>

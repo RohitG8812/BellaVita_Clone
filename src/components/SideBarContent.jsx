@@ -15,6 +15,7 @@ import SpecialGift from "../assets/icons/specialGift.svg"
 import Fragrance from "../assets/icons/fragrance.svg"
 import downArrow from "../assets/icons/down.svg"
 import Bogo from "../assets/icons/bogo.svg"
+import "../css/home.css"
 
 function SideBarContent() {
     const navigate = useNavigate()

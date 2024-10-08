@@ -7,6 +7,16 @@ import BogoBanner from "../assets/Banner/productBanner/bogoBanner.webp"
 import BogoBannerMini from "../assets/Banner/productBanner/bogoBannerMini.webp"
 import ProductPage from '../pages/ProductPage';
 
+
+const perfumesCategoryFilter = [
+    { value: "Eau De Parfum", label: "Eau De Parfum" },
+    { value: "Eau De Parfum For Women", label: "Eau De Parfum For Women" },
+    { value: "Eau De Parfum For All", label: "Eau De Parfum For All" },
+    { value: "Attar for All", label: "Attar for All" },
+    { value: "Parfum", label: "Parfum" },
+]
+
+
 function Perfumes() {
     const [perfume] = useState(Products.filter(product => product.category === 'perfumes'));
     const [smallBanner, setSmallBanner] = useState(false);
@@ -42,7 +52,7 @@ function Perfumes() {
                 </div>
                 <div className='ProductPageMain ShopAll'>
                     <div className="hide">
-                        <ProductPage product={perfume} heading={"Perfumes"} handleProductClick={handleProductClick} />
+                        <ProductPage product={perfume} heading={"Perfumes"} handleProductClick={handleProductClick} categoryFilter={perfumesCategoryFilter} />
                     </div>
                 </div>
             </div>

@@ -984,18 +984,17 @@
 
 .footer750pxCatItems ul {
   padding-left: 22px;
-  max-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 0px;
   margin-bottom: 40px;
-  transition: max-width 0.8s ease;
+  transition: max-height 0.8s ease-in-out;
 }
 
 .footer750pxCatItems .show {
-  max-width: fit-content;
+  max-height: fit-content;
 }
 
 .footer750pxCatItems.hide {
