@@ -7,6 +7,7 @@ import DownArrow from "../assets/icons/downr.svg"
 import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import FilterLogo from "../assets/icons/filter.svg"
 import FIlter from '../components/FIlter'
+import Loader from './Loader'
 
 function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
     const [filterMenuActive, setFilterMenuActive] = useState(false)
@@ -18,13 +19,30 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
         setLoading(true)
 
         if (checked) {
-            setFilterItems([...filterItems, value])
-            console.log(value)
+            console.log("load")
+            setTimeout(() => {
+                setFilterItems([...filterItems, value])
+                console.log(value)
+                setLoading(false)
+            }, 1000)
         } else {
-            setFilterItems(filterItems.filter((category) => category !== value));
-            console.log(value)
+            setTimeout(() => {
+                setFilterItems(filterItems.filter((category) => category !== value));
+                console.log(value)
+                setLoading(false)
+            }, 1000)
         }
-        setLoading(false)
+    }
+
+    const handleCLearFilter = () => {
+        {
+            filterItems.length > 0 && console.log("CLicking CLearFilter")
+            setLoading(true)
+            setTimeout(() => {
+                setFilterItems([])
+                setLoading(false)
+            }, 1000)
+        }
     }
 
     const filterByPrice = (product) => {
@@ -66,14 +84,30 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
         return false
     }
 
-    const filteredProducts = filterItems.length > 0
-        ? product.filter((product) =>
-            filterItems.includes(product.category) ||
-            filterItems.includes(product.variant) ||
-            filterByPrice(product) ||
-            filterByRating(product)
-        )
-        : product;
+    const filteredProducts = product.filter((product) => {
+        let matchesCategory = true;
+        let matchesPrice = true;
+        let matchesRating = true;
+        let matchesVariant = true;
+
+        if (filterItems.some((item) => categoryFilter.map(filter => filter.value).includes(item))) {
+            matchesCategory = filterItems.includes(product.category);
+        }
+
+        if (filterItems.some((item) => ["0-500", "501-1000", "1001-1500", "1501+"].includes(item))) {
+            matchesPrice = filterByPrice(product);
+        }
+
+        if (filterItems.some((item) => ["1", "2", "3", "4", "5"].includes(item))) {
+            matchesRating = filterByRating(product);
+        }
+
+        if (filterItems.some((item) => ["Eau De Parfum", "Attar for All", "Eau De Parfum For Women"].includes(item))) {
+            matchesVariant = filterItems.includes(product.variant);
+        }
+
+        return matchesCategory && matchesPrice && matchesRating && matchesVariant;
+    });
 
     const handleFIlterActive = () => {
         setFilterMenuActive(!filterMenuActive)
@@ -94,11 +128,11 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
             <div className="filterAndProductCount">
                 <div className="filterAndSortBtn">
                     <div className='filterBtn' onClick={handleFIlterActive}>
-                        <span>Filter</span>
-                        <img src={PlusArrow} alt="Plus" className='plusIcon' />
+                        {loading ? <span className='filterBtnLoader'><Loader /></span> : <><span>Filter</span>
+                            <img src={PlusArrow} alt="Plus" className='plusIcon' /></>}
                     </div>
                     <div className="filterMenu">
-                        <FIlter active={filterMenuActive} handleChange={handleChange} categoryFilter={categoryFilter} products={product} />
+                        <FIlter active={filterMenuActive} handleChange={handleChange} categoryFilter={categoryFilter} products={product} filteredProducts={filteredProducts} handleCLearFilter={handleCLearFilter} filterItems={filterItems} />
                     </div>
                     <div className="sortBtn">
                         <span className='sortText'>Sort</span>
@@ -112,13 +146,13 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
                     </div>
                 </div>
                 <div className="productCount">
-                    {loading ? "Loading..." : <p>{filteredProducts.length === product.length ? product.length : (`${filteredProducts.length} of ${product.length}`)} Products</p>}
+                    {loading ? <Loader /> : <p>{filteredProducts.length === product.length ? product.length : (`${filteredProducts.length} of ${product.length}`)} Products</p>}
                 </div>
             </div>
 
             {filterMenuActive && <div className="overlay" onClick={handleOutsideClick}></div>}
 
-            <div className="productCardMain" >
+            <div className={`productCardMain ${loading ? "blurBackground" : ""}`} >
                 {filteredProducts.length > 0 ?
                     filteredProducts.map((product, index) => {
                         return <div className="productCard" key={product.id} onClick={() => handleProductClick(product.id)}>

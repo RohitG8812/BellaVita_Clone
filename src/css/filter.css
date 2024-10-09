@@ -5,24 +5,33 @@
   z-index: 999;
   background-color: #fff;
   color: #000;
-  overflow: hidden; 
-  height: 0; 
+  overflow: hidden;
+  height: 0;
   width: 900px;
-  transition: height 0.35s ease-in-out; 
+  transition: height 0.35s ease-in-out;
 }
 
 .filterMenuMain.active {
-  height: 500px; 
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-
+  height: 500px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
-/* Overlay to cover the entire screen when the filter is active */
 .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 998; /* Place below the filter menu but above other elements */
-  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 998;
+}
+
+.clearFilterButton {
+  width: 160px !important;
+  background-color: transparent !important;
+}
+
+.disabledButton {
+  /* background-color: #000000ad !important; */
+  cursor: not-allowed !important;
+}

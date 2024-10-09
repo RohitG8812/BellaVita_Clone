@@ -472,3 +472,12 @@
   text-align: center;
   padding-block: 50px;
 }
+
+.filterBtnLoader{
+  filter: invert(100%) brightness(200%);
+    transition: filter 0.3s ease-in-out;
+}
+
+.blurBackground{
+  opacity: 0.5;
+}
