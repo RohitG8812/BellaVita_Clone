@@ -7,14 +7,69 @@
   color: #000;
   overflow: hidden;
   height: 0;
-  width: 900px;
+  width: 900px !important;
   transition: height 0.35s ease-in-out;
+  @media (max-width: 1022px) {
+    width: 750px !important;
+  }
+  @media (max-width: 822px) {
+    width: 650px !important;
+  }
+  @media (max-width: 750px) {
+    width: 100% !important;
+  }
 }
 
 .filterMenuMain.active {
-  height: 500px;
+  height: 335px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  @media (max-width: 822px) {
+    height: 335px !important;
+  }
+  @media (max-width: 670px) {
+    height: 500px !important;
+    overflow: auto;
+    scrollbar-width: thin;
+  }
+}
+
+.topSideFilters {
+  display: flex;
+  @media (max-width: 670px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.priceFilter{
+  width: 25%;
+  @media (max-width: 670px) {
+    width: 100%;
+  }
+}
+.productTypeFilter {
+  width: 30%;
+  @media (max-width: 670px) {
+    width: 100%;
+  }
+}
+
+.categoryFilter {
+  width: 25%;
+  @media (max-width: 670px) {
+    width: 100%;
+  }
+}
+
+.ratingFilter {
+  width: 20%;
+  @media (max-width : 750px) {
+    display: none;
+  }
+  @media (max-width: 670px) {
+    width: 100%;
+  }
 }
 
 .overlay {
@@ -26,12 +81,182 @@
   z-index: 998;
 }
 
+.bottomClearFilter {
+  gap: 20px;
+  display: flex;
+  justify-content: start;
+  padding-inline: 20px;
+  @media (max-width: 822px) {
+    padding-inline: 5px;
+  }
+  @media (max-width: 750px) {
+    justify-content: center;
+  }
+}
+
+.applyFilterButton {
+  width: 100px !important;
+  @media (max-width : 350px) {
+    width: 80px !important;
+    height: 35px !important;
+  }
+}
+
 .clearFilterButton {
   width: 160px !important;
-  background-color: transparent !important;
+  @media (max-width : 350px) {
+    width: 160px !important;
+    height: 35px !important;
+  }
 }
 
 .disabledButton {
-  /* background-color: #000000ad !important; */
   cursor: not-allowed !important;
+}
+
+.filterOptions {
+  padding-block: 20px;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @media (max-width: 822px) {
+    padding-inline: 5px;
+  }
+}
+
+.topFilter {
+  border-bottom: 0.8px solid rgb(210, 213, 217);
+}
+
+.filterCatHeadingText {
+  padding-left: 20px;
+  padding-block: 15px;
+  border-bottom: 0.8px solid rgb(210, 213, 217);
+  @media (max-width: 822px) {
+    padding-left: 5px;
+  }
+}
+
+.filterCatHeading {
+  font-size: 17px;
+  letter-spacing: 0.6px;
+  font-weight: 400;
+  color: #000000d8;
+  text-transform: capitalize;
+  @media (max-width: 822px) {
+    font-size: 16px;
+  }
+}
+
+.input-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  font-size: 15px;
+  gap: 8px;
+  color: #000000c6;
+  @media (max-width: 822px) {
+    font-size: 13px;
+  }
+  @media (max-width: 342px) {
+    font-size: 11px;
+  }
+}
+
+.ratingFilterIcon {
+  display: flex;
+  align-items: center;
+}
+
+.starIcon {
+  width: 13px;
+}
+
+.labelOrProductCount {
+  display: flex;
+  gap: 2px;
+}
+
+.labelProductCount {
+  font-size: 11px;
+  color: #0000009c;
+}
+
+.checkBox {
+  display: block;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  border: 0.8px solid rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+
+  @media (max-width : 342px) {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+.checkBox div {
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  top: -52px;
+  left: -52px;
+  position: absolute;
+  transform: rotateZ(45deg);
+  z-index: 100;
+}
+
+.checkBox input[type="checkbox"]:checked + div {
+  left: -10px;
+  top: -10px;
+}
+
+.checkBox input[type="checkbox"] {
+  position: absolute;
+  left: 50px;
+  visibility: hidden;
+}
+
+.transition {
+  transition: 300ms ease;
+}
+
+/* 750px Below Screen */
+/* .topSideFilters750px {
+  display: none;
+  /* @media (max-width: 610px) {
+    display: block !important;
+  } */
+/* }  */
+
+/* .filterMenuMainMini {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  z-index: 999;
+  background-color: #fff;
+  color: #000;
+  overflow: hidden;
+  height: 0;
+  width: 100% !important;
+  transition: height 0.35s ease-in-out;
+}
+
+.filterMenuMainMini.active {
+  height: 100px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+} */
+
+.sortFilter {
+  display: none;
+  @media (max-width: 750px) {
+    display: block !important;
+  }
 }

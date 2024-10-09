@@ -9,8 +9,17 @@ import ProductPage from '../pages/ProductPage';
 
 
 const perfumesCategoryFilter = [
+    { value: "man", label: "Man" },
+    { value: "women", label: "Women" },
+    { value: "luxury", label: "Luxury" },
+    { value: "perfumeCombo", label: "Perfume Combo" },
+    { value: "oud", label: "OUD" },
+    { value: "forAll", label: "For All" },
+]
+
+const perfumesTypeFilter = [
     { value: "Eau De Parfum", label: "Eau De Parfum" },
-    { value: "Eau De Parfum For Women", label: "Eau De Parfum For Women" },
+    { value: "Eau De Parfum For Women", label: "Eau De Parfum Women" },
     { value: "Eau De Parfum For All", label: "Eau De Parfum For All" },
     { value: "Attar for All", label: "Attar for All" },
     { value: "Parfum", label: "Parfum" },
@@ -52,7 +61,13 @@ function Perfumes() {
                 </div>
                 <div className='ProductPageMain ShopAll'>
                     <div className="hide">
-                        <ProductPage product={perfume} heading={"Perfumes"} handleProductClick={handleProductClick} categoryFilter={perfumesCategoryFilter} />
+                        <ProductPage
+                            product={perfume}
+                            heading={"Perfumes"}
+                            handleProductClick={handleProductClick}
+                            categoryFilter={perfumesCategoryFilter}
+                            productTypeFilter={perfumesTypeFilter}
+                        />
                     </div>
                 </div>
             </div>

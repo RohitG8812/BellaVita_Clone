@@ -1,10 +1,15 @@
 import React from 'react'
 import "../css/filter.css"
+import starIcon from "../assets/icons/star.svg"
+import Sort from './Sort';
 
 
-function FIlter({ active, handleChange, categoryFilter, filteredProducts, handleCLearFilter, filterItems }) {
+function FIlter({ active, handleChange, categoryFilter, filteredProducts, handleCLearFilter, filterItems, productTypeFilter, handleSortLowToHigh }) {
     const getProductCountForCategory = (category) => {
-        return filteredProducts.filter(product => product.category === category).length;
+        return filteredProducts.filter(product => product.productType === category).length;
+    }
+    const getProductCountForProductType = (productType) => {
+        return filteredProducts.filter(product => product.variant === productType).length;
     }
 
     const filterByPriceRange = (min, max) => {
@@ -18,184 +23,227 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
         }).length;
     };
 
-    return (
-        <div className={`filterMenuMain ${active ? 'active' : ''}`}>
-            <div className="topSideFilters">
-                {/* Price Filter  */}
-                <div className="topFilter innerFilter">
-                    <div className="filterSection">
-                        <h3>Price</h3>
-                        <div>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="0-500"
-                                    onChange={handleChange}
-                                    checked={filterItems.includes("0-500")}
-                                />
-                                ₹ 0 - 500 <span>({filterByPriceRange(0, 500)})</span>
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="501-1000"
-                                    onChange={handleChange}
-                                    checked={filterItems.includes("501-1000")}
-                                />
-                                ₹ 500 - 1000  <span>({filterByPriceRange(501, 1000)})</span>
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="1001-1500"
-                                    onChange={handleChange}
-                                    checked={filterItems.includes("1001-1500")}
-                                />
-                                ₹ 1000 - 1500  <span>({filterByPriceRange(1001, 1500)})</span>
-                            </label>
-                        </div>
-                        <div>
-                            <label>
-                                <input
-                                    type="checkbox"
-                                    value="1501+"
-                                    onChange={handleChange}
-                                    checked={filterItems.includes("1501+")}
-                                />
-                                ₹ 1500++   <span>({filterByPriceRange(1501)})</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
+    //* Products sorting price low to high
 
-                {/* Category Filter */}
-                <div className="topFilter innerFilter">
-                    <h3>Category</h3>
-                    {Array.isArray(categoryFilter) && categoryFilter.length > 0 ? (
-                        categoryFilter.map((filter, index) => (
-                            <div key={index}>
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        value={filter.value}
-                                        onChange={handleChange}
-                                        checked={filterItems.includes(filter.value)}
-                                    />
-                                    <span>{filter.label}</span> <span>({getProductCountForCategory(filter.value)})</span>
+
+    return (
+        <>
+            <div className={`filterMenuMain ${active ? 'active' : ''}`}>
+                <div className="topSideFilters">
+                    {/* Sort */}
+                    <div className="topFilter sortFilter">
+                        <div className="filterCatHeadingText">
+                            <span className='filterCatHeading'>Sort</span>
+                        </div>
+                        <Sort handleChange={handleChange} filterItems={filterItems} />
+                    </div>
+
+                    {/* Price Filter  */}
+                    <div className="topFilter priceFilter">
+                        <div className="filterCatHeadingText">
+                            <span className='filterCatHeading'>Price</span>
+                        </div>
+                        <div className="filterOptions">
+                            <div>
+                                <label className='input-label'>
+                                    <div className="checkBox">
+                                        <input
+                                            type="checkbox"
+                                            value="0-500"
+                                            onChange={handleChange}
+                                            checked={filterItems.includes("0-500")}
+                                        />
+                                        <div class="transition"></div>
+                                    </div>
+                                    <div className='labelOrProductCount'> <span>₹0-500</span> <span className='labelProductCount'>({filterByPriceRange(0, 500)})</span></div>
                                 </label>
                             </div>
-                        ))) : "No"}
-                </div>
+                            <div>
+                                <label className='input-label'>
+                                    <div className="checkBox">
+                                        <input
+                                            type="checkbox"
+                                            value="501-1000"
+                                            onChange={handleChange}
+                                            checked={filterItems.includes("501-1000")}
+                                        />
+                                        <div class="transition"></div>
+                                    </div>
+                                    <div className='labelOrProductCount'> <span>₹500-1000</span> <span className='labelProductCount'>({filterByPriceRange(501, 1000)})</span></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label className='input-label'>
+                                    <div className="checkBox">
+                                        <input
+                                            type="checkbox"
+                                            value="1001-1500"
+                                            onChange={handleChange}
+                                            checked={filterItems.includes("1001-1500")}
+                                        />
+                                        <div class="transition"></div>
+                                    </div>
+                                    <div className='labelOrProductCount'><span>₹1000-1500</span> <span className='labelProductCount'>({filterByPriceRange(1001, 1500)})</span></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label className='input-label'>
+                                    <div className="checkBox">
+                                        <input
+                                            type="checkbox"
+                                            value="1501+"
+                                            onChange={handleChange}
+                                            checked={filterItems.includes("1501+")}
+                                        />
+                                        <div class="transition"></div>
+                                    </div>
+                                    <div className='labelOrProductCount'><span>₹1500+</span> <span className='labelProductCount'>({filterByPriceRange(1501)})</span></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
 
-                {/* Product Type Filter */}
-                <div className="topFilter innerFilter">
-                    <h3>Product Type Filters</h3>
-                    <div>
-                        <label>
-                            <input
-                                type="checkbox"
-                                value="Eau De Parfum"
-                                onChange={handleChange}
-                                checked={filterItems.includes("Eau De Parfum")}
-                            />
-                            <span>Eau De Parfum</span> <span>({filteredProducts.filter(product => product.variant === "Eau De Parfum").length})</span>
-                        </label>
+                    {/* Category Filter */}
+                    <div className="topFilter categoryFilter">
+                        <div className="filterCatHeadingText">
+                            <span className='filterCatHeading'>Category</span>
+                        </div>
+                        <div className="filterOptions">
+                            {Array.isArray(categoryFilter) && categoryFilter.length > 0 ? (
+                                categoryFilter.map((filter, index) => (
+                                    <div key={index}>
+                                        <label className='input-label'>
+                                            <div className="checkBox">
+                                                <input
+                                                    type="checkbox"
+                                                    value={filter.value}
+                                                    onChange={handleChange}
+                                                    checked={filterItems.includes(filter.value)}
+                                                />
+                                                <div class="transition"></div>
+                                            </div>
+                                            <div className='labelOrProductCount'><span>{filter.label}</span> <span className='labelProductCount'>({getProductCountForCategory(filter.value)})</span></div>
+                                        </label>
+                                    </div>
+                                ))) : "No Options Available"}
+                        </div>
                     </div>
-                    <div>
-                        <label className='label'>
-                            <input
-                                type="checkbox"
-                                value="Attar for All"
-                                onChange={handleChange}
-                                checked={filterItems.includes("Attar for All")}
-                            />
-                            <span>Attar for All</span> <span>({filteredProducts.filter(product => product.variant === "Attar for All").length})</span>
-                        </label>
+
+                    {/* Product Type Filter */}
+                    <div className="topFilter productTypeFilter">
+                        <div className="filterCatHeadingText">
+                            <span className='filterCatHeading'>Product Type</span>
+                        </div>
+                        <div className="filterOptions">
+                            {Array.isArray(productTypeFilter) && productTypeFilter.length > 0 ? (
+                                productTypeFilter.map((filter, index) => (
+                                    <div key={index}>
+                                        <label className='input-label'>
+                                            <div className="checkBox">
+                                                <input
+                                                    type="checkbox"
+                                                    value={filter.value}
+                                                    onChange={handleChange}
+                                                    checked={filterItems.includes(filter.value)}
+                                                />
+                                                <div class="transition"></div>
+                                            </div>
+                                            <div className='labelOrProductCount'><span>{filter.label}</span> <span className='labelProductCount'>({getProductCountForProductType(filter.value)})</span></div>
+                                        </label>
+                                    </div>
+                                ))) : "No Options Available"}
+                        </div>
                     </div>
-                    <div>
-                        <label>
-                            <input
-                                type="checkbox"
-                                value="Eau De Parfum For Women"
-                                onChange={handleChange}
-                                checked={filterItems.includes("Eau De Parfum For Women")}
-                            />
-                            <span>Eau De Parfum For Women</span> <span>({filteredProducts.filter(product => product.variant === "Eau De Parfum For Women").length})</span>
-                        </label>
+
+                    {/* Rating Filter */}
+                    <div className="topFilter ratingFilter">
+                        <div className="filterCatHeadingText">
+                            <span className='filterCatHeading'>Rating</span>
+                        </div>
+                        <div className="filterOptions">
+                            <div>
+                                <label className='input-label'>
+                                    <div className="checkBox">
+                                        <input
+                                            type="checkbox"
+                                            value="1"
+                                            onChange={handleChange}
+                                            checked={filterItems.includes("1")}
+                                        />
+                                        <div class="transition"></div>
+                                    </div>
+                                    <div className='labelOrProductCount'> <span className='ratingFilterIcon'>1 <img src={starIcon} alt="" className='starIcon' /> </span> <span className='labelProductCount'>({filteredProducts.filter(product => product.rating >= 1 && product.rating < 2).length})</span></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label className='input-label'>
+                                    <div className="checkBox">
+                                        <input
+                                            type="checkbox"
+                                            value="2"
+                                            onChange={handleChange}
+                                            checked={filterItems.includes("2")}
+                                        />
+                                        <div class="transition"></div>
+                                    </div>
+                                    <div className='labelOrProductCount'> <span className='ratingFilterIcon'>2 <img src={starIcon} alt="" className='starIcon' /></span> <span className='labelProductCount'>({filteredProducts.filter(product => product.rating >= 2 && product.rating < 3).length})</span></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label className='input-label'>
+                                    <div className="checkBox">
+                                        <input
+                                            type="checkbox"
+                                            value="3"
+                                            onChange={handleChange}
+                                            checked={filterItems.includes("3")}
+                                        />
+                                        <div class="transition"></div>
+                                    </div>
+                                    <div className='labelOrProductCount'><span className='ratingFilterIcon'>3 <img src={starIcon} alt="" className='starIcon' /></span> <span className='labelProductCount'>({filteredProducts.filter(product => product.rating >= 3 && product.rating < 4).length})</span></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label className='input-label'>
+                                    <div className="checkBox">
+                                        <input
+                                            type="checkbox"
+                                            value="4"
+                                            onChange={handleChange}
+                                            checked={filterItems.includes("4")}
+                                        />
+                                        <div class="transition"></div>
+                                    </div>
+                                    <div className='labelOrProductCount'> <span className='ratingFilterIcon'>4 <img src={starIcon} alt="" className='starIcon' /></span>  <span className='labelProductCount'>({filteredProducts.filter(product => product.rating >= 4 && product.rating < 5).length})</span></div>
+                                </label>
+                            </div>
+                            <div>
+                                <label className='input-label'>
+                                    <div className="checkBox">
+                                        <input
+                                            type="checkbox"
+                                            value="5"
+                                            onChange={handleChange}
+                                            checked={filterItems.includes("5")}
+                                        />
+                                        <div class="transition"></div>
+                                    </div>
+                                    <div className='labelOrProductCount'><span className='ratingFilterIcon'>5 <img src={starIcon} alt="" className='starIcon' /> </span> <span className='labelProductCount'>({filteredProducts.filter(product => product.rating == 5).length})</span></div>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                {/* Rating Filter */}
-                <div className="topFilter innerFilter">
-                    <h3>Rating</h3>
-                    <div>
-                        <label>
-                            <input
-                                type="checkbox"
-                                value="1"
-                                onChange={handleChange}
-                                checked={filterItems.includes("1")}
-                            />
-                            <span>1 ⭐ </span> <span>({filteredProducts.filter(product => product.rating >= 1 && product.rating < 2).length})</span>
-                        </label>
-                    </div>
-                    <div>
-                        <label className='label'>
-                            <input
-                                type="checkbox"
-                                value="2"
-                                onChange={handleChange}
-                                checked={filterItems.includes("2")}
-                            />
-                            <span>2 ⭐</span> <span>({filteredProducts.filter(product => product.rating >= 2 && product.rating < 3).length})</span>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input
-                                type="checkbox"
-                                value="3"
-                                onChange={handleChange}
-                                checked={filterItems.includes("3")}
-                            />
-                            <span>3 ⭐</span> <span>({filteredProducts.filter(product => product.rating >= 3 && product.rating < 4).length})</span>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input
-                                type="checkbox"
-                                value="4"
-                                onChange={handleChange}
-                                checked={filterItems.includes("4")}
-                            />
-                            <span>4 ⭐</span>  <span>({filteredProducts.filter(product => product.rating >= 4 && product.rating < 5).length})</span>
-                        </label>
-                    </div>
-                    <div>
-                        <label>
-                            <input
-                                type="checkbox"
-                                value="5"
-                                onChange={handleChange}
-                                checked={filterItems.includes("5")}
-                            />
-                            <span>5 ⭐ </span> <span>({filteredProducts.filter(product => product.rating == 5).length})</span>
-                        </label>
-                    </div>
-                </div>
-
                 <div className="bottomClearFilter">
+                    <div className={`addToCartBtn applyFilterButton`}>
+                        < button>Apply</button>
+                    </div>
                     <div className={`addToCartBtn clearFilterButton`}>
                         < button onClick={handleCLearFilter} disabled={filterItems.length === 0} className={filterItems.length === 0 ? "disabledButton" : ""}>{filterItems.length === 0 ? "No Filter Selected" : "Clear Filter"}</button>
                     </div>
                 </div>
-            </div>
-        </div >
+            </div >
+        </>
     )
 }
 

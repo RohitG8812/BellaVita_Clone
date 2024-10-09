@@ -8,10 +8,13 @@ import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import FilterLogo from "../assets/icons/filter.svg"
 import FIlter from '../components/FIlter'
 import Loader from './Loader'
+import Sort from '../components/Sort'
 
-function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
+function ProductPage({ product, heading, handleProductClick, categoryFilter, productTypeFilter }) {
     const [filterMenuActive, setFilterMenuActive] = useState(false)
+    const [filterMenuMiniActive, setFilterMenuMiniActive] = useState(false)
     const [filterItems, setFilterItems] = useState([])
+    const [sortMenu, setSortMenu] = useState(false);
     const [loading, setLoading] = useState(false)
 
     const handleChange = (e) => {
@@ -86,12 +89,17 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
 
     const filteredProducts = product.filter((product) => {
         let matchesCategory = true;
+        let matchesProductType = true;
         let matchesPrice = true;
         let matchesRating = true;
-        let matchesVariant = true;
+        let matchesBestSeller = true;
 
         if (filterItems.some((item) => categoryFilter.map(filter => filter.value).includes(item))) {
-            matchesCategory = filterItems.includes(product.category);
+            matchesCategory = filterItems.includes(product.productType);
+        }
+
+        if (filterItems.some((item) => productTypeFilter.map(filter => filter.value).includes(item))) {
+            matchesProductType = filterItems.includes(product.variant);
         }
 
         if (filterItems.some((item) => ["0-500", "501-1000", "1001-1500", "1501+"].includes(item))) {
@@ -101,20 +109,44 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
         if (filterItems.some((item) => ["1", "2", "3", "4", "5"].includes(item))) {
             matchesRating = filterByRating(product);
         }
-
-        if (filterItems.some((item) => ["Eau De Parfum", "Attar for All", "Eau De Parfum For Women"].includes(item))) {
-            matchesVariant = filterItems.includes(product.variant);
+        if (filterItems.some((item) => "bestSeller".includes(item))) {
+            matchesBestSeller = filterItems.includes(product.bestSeller)
         }
 
-        return matchesCategory && matchesPrice && matchesRating && matchesVariant;
+        return matchesCategory && matchesProductType && matchesPrice && matchesRating && matchesBestSeller;
     });
+
+    const sortedFilteredProducts =
+        filterItems.includes("lowToHigh")
+            ? filteredProducts.sort((a, b) => {
+                const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+                const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+                return priceA - priceB;
+            })
+            : filteredProducts;
+    filterItems.includes("highToLow")
+        ? filteredProducts.sort((a, b) => {
+            const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+            const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+            return priceB - priceA;
+        })
+        : filteredProducts;
+
 
     const handleFIlterActive = () => {
         setFilterMenuActive(!filterMenuActive)
     }
 
+    const handleMiniFilterActive = () => {
+        setFilterMenuMiniActive(!filterMenuMiniActive)
+    }
+
     const handleOutsideClick = () => {
         setFilterMenuActive(false);
+    };
+
+    const handleOutsideClickMini = () => {
+        setFilterMenuMiniActive(false);
     };
 
     return (
@@ -132,29 +164,57 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
                             <img src={PlusArrow} alt="Plus" className='plusIcon' /></>}
                     </div>
                     <div className="filterMenu">
-                        <FIlter active={filterMenuActive} handleChange={handleChange} categoryFilter={categoryFilter} products={product} filteredProducts={filteredProducts} handleCLearFilter={handleCLearFilter} filterItems={filterItems} />
+                        <FIlter
+                            active={filterMenuActive}
+                            handleChange={handleChange}
+                            categoryFilter={categoryFilter}
+                            products={product}
+                            filteredProducts={filteredProducts}
+                            handleCLearFilter={handleCLearFilter}
+                            filterItems={filterItems}
+                            productTypeFilter={productTypeFilter}
+                        />
                     </div>
-                    <div className="sortBtn">
-                        <span className='sortText'>Sort</span>
-                        <img src={DownArrow} alt="Down" className='downIcon' />
+                    <div>
+                        <div className="sortBtn" onClick={() => setSortMenu(!sortMenu)}>
+                            <span className='sortText'>Sort</span>
+                            <img src={DownArrow} alt="Down" className='downIcon' />
+                        </div>
+                        <div className={`sortBtnHideMenu ${sortMenu ? "sortMenuActive" : "sortMenuDisable"}`}>
+                            <Sort handleChange={handleChange} filterItems={filterItems} />
+                        </div>
                     </div>
                 </div>
                 <div className="miniFilter">
-                    <div className="filterAndSortBtnMini">
+                    <div className="filterAndSortBtnMini" onClick={handleMiniFilterActive}>
                         <img src={FilterLogo} alt="Filter" className='filterIcon' />
                         <span>Filter and sort</span>
                     </div>
+                    <div className="filterMenuMini">
+                        <FIlter
+                            active={filterMenuMiniActive}
+                            handleChange={handleChange}
+                            categoryFilter={categoryFilter}
+                            products={product}
+                            filteredProducts={filteredProducts}
+                            handleCLearFilter={handleCLearFilter}
+                            filterItems={filterItems}
+                            productTypeFilter={productTypeFilter}
+                        />
+                    </div>
                 </div>
+
                 <div className="productCount">
                     {loading ? <Loader /> : <p>{filteredProducts.length === product.length ? product.length : (`${filteredProducts.length} of ${product.length}`)} Products</p>}
                 </div>
             </div>
 
             {filterMenuActive && <div className="overlay" onClick={handleOutsideClick}></div>}
+            {filterMenuMiniActive && <div className="overlay" onClick={handleOutsideClickMini}></div>}
 
-            <div className={`productCardMain ${loading ? "blurBackground" : ""}`} >
-                {filteredProducts.length > 0 ?
-                    filteredProducts.map((product, index) => {
+            <div className={`productCardMain ${loading ? "blurBackground" : ""} ${filterMenuActive ? "blurBackground" : ""} ${filterMenuMiniActive ? "blurBackground" : ""}`} >
+                {sortedFilteredProducts.length > 0 ?
+                    sortedFilteredProducts.map((product, index) => {
                         return <div className="productCard" key={product.id} onClick={() => handleProductClick(product.id)}>
                             <div className="cardImg">
                                 <img src={product.mainImg} alt="" className='ProductCardImg' />
@@ -196,18 +256,3 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter }) {
 }
 
 export default ProductPage
-
-
-
-//* Products sorting price low to high
-// const [sortedProducts, setSortedProducts] = useState([]);
-// useEffect(() => {
-//     const sorted = [...product].sort((a, b) => {
-//         // Extract the numerical value from the price string
-//         const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
-//         const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
-//         return priceA - priceB;  // Sort in ascending order
-//     });
-//     setSortedProducts(sorted);
-// }, [product]);
-//*
