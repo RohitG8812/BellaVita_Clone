@@ -8,9 +8,20 @@ import ShopAllBannerMini from "../assets/Banner/productBanner/ShopAllBannerMini.
 import ProductPage from '../pages/ProductPage';
 
 const ShopAllCategoryFilter = [
-    { value: "perfumes", label: "Perfumes" },
-    { value: "bathBody", label: "Bath & Body" },
-    { value: "makeup", label: "Makeup" },
+    { value: "man", label: "Man" },
+    { value: "women", label: "Women" },
+    { value: "luxury", label: "Luxury" },
+    { value: "perfumeCombo", label: "Perfume Combo" },
+    { value: "oud", label: "OUD" },
+    { value: "forAll", label: "For All" },
+]
+
+const shopAllProductType = [
+    { value: "Parfum", label: "Parfum" },
+    { value: "Eau De Parfum", label: "Eau De Parfum" },
+    { value: "ShowerGel", label: "Shower Gel" },
+    { value: "BodyWash", label: "Body Wash" },
+    { value: "BodyLotion", label: "Body Lotion" },
 ]
 
 function ShopAll() {
@@ -52,7 +63,13 @@ function ShopAll() {
                 </div>
                 <div className='ProductPageMain ShopAll'>
                     <div className="hide">
-                        <ProductPage product={product} heading={"Shop All Products"} handleProductClick={handleProductClick} categoryFilter={ShopAllCategoryFilter} />
+                        <ProductPage
+                            product={product}
+                            heading={"Shop All Products"}
+                            handleProductClick={handleProductClick}
+                            categoryFilter={ShopAllCategoryFilter}
+                            productTypeFilter={shopAllProductType}
+                        />
                     </div>
                 </div>
             </div>

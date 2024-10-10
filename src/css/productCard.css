@@ -277,6 +277,16 @@
   width: 16px;
 }
 
+.filterDownIcon {
+  width: 16px;
+  filter: invert(100%) brightness(200%);
+}
+
+.rotate-filter-arrow {
+  transform: rotate(180deg); /* Rotate arrow when active */
+  transition: transform 0.3s ease;
+}
+
 .sortText {
   width: 80%;
   text-align: center;
@@ -481,5 +491,53 @@
 }
 
 .blurBackground {
+  transition: opacity 0.5s ease-in-out;
   opacity: 0.5;
+}
+
+.sortBtnHideMenu {
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 40;
+  z-index: 999;
+  background-color: #fff;
+  color: #0000009e;
+  width: 200px;
+  font-size: 15px;
+  letter-spacing: 0.63px;
+  line-height: 21px;
+  font-weight: 500;
+  transition: height 0.35s ease-in-out;
+  padding-block: auto;
+}
+
+.hhh {
+  padding-left: 10px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.39) 0px 0px 0px 1px;
+  padding-block: 20px;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.sortMenuActive {
+  height: 119px;
+}
+
+.sortMenuActive p {
+  width: fit-content;
+  cursor: pointer;
+}
+
+.textRed {
+  color: #000 !important;
+  font-weight: 600 !important;
+}
+
+.rotate-arrow {
+  transform: rotate(180deg); /* Rotate arrow when active */
+  transition: transform 0.3s ease;
 }

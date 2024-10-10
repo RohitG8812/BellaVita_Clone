@@ -173,3 +173,20 @@ function Navbar() {
 }
 
 export default Navbar
+
+
+    // const sortedFilteredProducts =
+    //     filterItems.includes("lowToHigh")
+    //         ? filteredProducts.sort((a, b) => {
+    //             const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+    //             const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+    //             return priceA - priceB;
+    //         })
+    //         : filteredProducts;
+    // filterItems.includes("highToLow")
+    //     ? filteredProducts.sort((a, b) => {
+    //         const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+    //         const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+    //         return priceB - priceA;
+    //     })
+    //     : filteredProducts;

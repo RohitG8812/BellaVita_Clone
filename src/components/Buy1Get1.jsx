@@ -7,6 +7,23 @@ import BogoBanner from "../assets/Banner/productBanner/bogoBanner.webp"
 import BogoBannerMini from "../assets/Banner/productBanner/bogoBannerMini.webp"
 import ProductPage from '../pages/ProductPage';
 
+const perfumesCategoryFilter = [
+    { value: "man", label: "Man" },
+    { value: "women", label: "Women" },
+    { value: "luxury", label: "Luxury" },
+    { value: "perfumeCombo", label: "Perfume Combo" },
+    { value: "oud", label: "OUD" },
+    { value: "forAll", label: "For All" },
+]
+
+const perfumesTypeFilter = [
+    { value: "Parfum", label: "Parfum" },
+    { value: "Eau De Parfum", label: "Eau De Parfum" },
+    { value: "Eau De Parfum For Women", label: "Eau De Parfum Women" },
+    { value: "Eau De Parfum For All", label: "Eau De Parfum For All" },
+    { value: "Attar for All", label: "Attar for All" },
+]
+
 function Buy1Get1() {
     const [perfume] = useState(Products.filter(product => product.category === 'perfumes'));
     const [smallBanner, setSmallBanner] = useState(false);
@@ -42,7 +59,13 @@ function Buy1Get1() {
                 </div>
                 <div className='ProductPageMain ShopAll'>
                     <div className="hide">
-                        <ProductPage product={perfume} heading={"BOGO"} handleProductClick={handleProductClick} />
+                        <ProductPage
+                            product={perfume}
+                            heading={"BOGO"}
+                            handleProductClick={handleProductClick}
+                            categoryFilter={perfumesCategoryFilter}
+                            productTypeFilter={perfumesTypeFilter}
+                        />
                     </div>
                 </div>
             </div>

@@ -18,11 +18,11 @@ const perfumesCategoryFilter = [
 ]
 
 const perfumesTypeFilter = [
+    { value: "Parfum", label: "Parfum" },
     { value: "Eau De Parfum", label: "Eau De Parfum" },
     { value: "Eau De Parfum For Women", label: "Eau De Parfum Women" },
     { value: "Eau De Parfum For All", label: "Eau De Parfum For All" },
     { value: "Attar for All", label: "Attar for All" },
-    { value: "Parfum", label: "Parfum" },
 ]
 
 

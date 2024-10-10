@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import "../css/productCard.css"
 import RatingLogo from "../assets/icons/rating.svg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
-import PlusArrow from "../assets/icons/plus.svg"
 import DownArrow from "../assets/icons/downr.svg"
 import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import FilterLogo from "../assets/icons/filter.svg"
 import FIlter from '../components/FIlter'
 import Loader from './Loader'
-import Sort from '../components/Sort'
+import Money from "../assets/icons/roundMoney.svg"
+import close from "../assets/icons/roundX.svg"
 
 function ProductPage({ product, heading, handleProductClick, categoryFilter, productTypeFilter }) {
     const [filterMenuActive, setFilterMenuActive] = useState(false)
@@ -16,6 +16,8 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
     const [filterItems, setFilterItems] = useState([])
     const [sortMenu, setSortMenu] = useState(false);
     const [loading, setLoading] = useState(false)
+    const [filteredProducts, setFilteredProducts] = useState(product);
+    const [sortOptionActive, setSortOptionActive] = useState('');
 
     const handleChange = (e) => {
         const { value, checked } = e.target;
@@ -87,50 +89,78 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
         return false
     }
 
-    const filteredProducts = product.filter((product) => {
-        let matchesCategory = true;
-        let matchesProductType = true;
-        let matchesPrice = true;
-        let matchesRating = true;
-        let matchesBestSeller = true;
+    useEffect(() => {
+        const filtered = product.filter((product) => {
+            let matchesCategory = true;
+            let matchesProductType = true;
+            let matchesPrice = true;
+            let matchesRating = true;
+            let matchesBestSeller = true;
 
-        if (filterItems.some((item) => categoryFilter.map(filter => filter.value).includes(item))) {
-            matchesCategory = filterItems.includes(product.productType);
-        }
+            if (filterItems.some((item) => categoryFilter.map(filter => filter.value).includes(item))) {
+                matchesCategory = filterItems.includes(product.productType);
+            }
 
-        if (filterItems.some((item) => productTypeFilter.map(filter => filter.value).includes(item))) {
-            matchesProductType = filterItems.includes(product.variant);
-        }
+            if (filterItems.some((item) => productTypeFilter.map(filter => filter.value).includes(item))) {
+                matchesProductType = filterItems.includes(product.variantM);
+            }
+            if (filterItems.some((item) => ["0-500", "501-1000", "1001-1500", "1501+"].includes(item))) {
+                matchesPrice = filterByPrice(product);
+            }
 
-        if (filterItems.some((item) => ["0-500", "501-1000", "1001-1500", "1501+"].includes(item))) {
-            matchesPrice = filterByPrice(product);
-        }
+            if (filterItems.some((item) => ["1", "2", "3", "4", "5"].includes(item))) {
+                matchesRating = filterByRating(product);
+            }
+            if (filterItems.some((item) => "bestSeller".includes(item))) {
+                matchesBestSeller = filterItems.includes(product.bestSeller)
+            }
 
-        if (filterItems.some((item) => ["1", "2", "3", "4", "5"].includes(item))) {
-            matchesRating = filterByRating(product);
-        }
-        if (filterItems.some((item) => "bestSeller".includes(item))) {
-            matchesBestSeller = filterItems.includes(product.bestSeller)
-        }
+            return matchesCategory && matchesProductType && matchesPrice && matchesRating && matchesBestSeller;
+        });
+        setFilteredProducts(filtered)
+    }, [filterItems, product])
 
-        return matchesCategory && matchesProductType && matchesPrice && matchesRating && matchesBestSeller;
-    });
+    const handleSortLowToHigh = () => {
+        setSortOptionActive('lowToHigh')
+        setLoading(true)
 
-    const sortedFilteredProducts =
-        filterItems.includes("lowToHigh")
-            ? filteredProducts.sort((a, b) => {
-                const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
-                const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+        setTimeout(() => {
+            const sorted = [...filteredProducts].sort((a, b) => {
+                let priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+                let priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
                 return priceA - priceB;
-            })
-            : filteredProducts;
-    filterItems.includes("highToLow")
-        ? filteredProducts.sort((a, b) => {
-            const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
-            const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
-            return priceB - priceA;
-        })
-        : filteredProducts;
+            });
+            setFilteredProducts(sorted);
+            setSortMenu(false)
+            setLoading(false)
+        }, 2000)
+    }
+
+    const handleSortHighToLow = () => {
+        setSortOptionActive('highToLow')
+        setLoading(true)
+        setTimeout(() => {
+            const sorted = [...filteredProducts].sort((a, b) => {
+                let priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+                let priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+                return priceB - priceA;
+            });
+            setFilteredProducts(sorted);
+            setSortMenu(false)
+            setLoading(false)
+        }, 2000)
+    }
+
+    const handleReset = () => {
+        setSortOptionActive('allProducts')
+        setLoading(true)
+        setTimeout(() => {
+            const sortedProducts = [...product].sort((a, b) => a.name.localeCompare(b.name));
+            setFilteredProducts(sortedProducts)
+            setSortMenu(false)
+            setLoading(false)
+        }, 2000);
+    }
 
 
     const handleFIlterActive = () => {
@@ -149,6 +179,9 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
         setFilterMenuMiniActive(false);
     };
 
+    const handleOutsideClickSort = () => {
+        setSortMenu(false)
+    }
     return (
         <div className="mainContent">
             <span className='productCardHeading'>{heading}</span>
@@ -161,7 +194,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                 <div className="filterAndSortBtn">
                     <div className='filterBtn' onClick={handleFIlterActive}>
                         {loading ? <span className='filterBtnLoader'><Loader /></span> : <><span>Filter</span>
-                            <img src={PlusArrow} alt="Plus" className='plusIcon' /></>}
+                            <img src={DownArrow} alt="Down" className={`filterDownIcon ${filterMenuActive ? "rotate-filter-arrow" : ""} ${sortMenu ? "rotate-arrow" : ""}`} /></>}
                     </div>
                     <div className="filterMenu">
                         <FIlter
@@ -178,17 +211,30 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                     <div>
                         <div className="sortBtn" onClick={() => setSortMenu(!sortMenu)}>
                             <span className='sortText'>Sort</span>
-                            <img src={DownArrow} alt="Down" className='downIcon' />
+                            <img src={DownArrow} alt="Down" className={`downIcon ${sortMenu ? "rotate-arrow" : ""}`} />
                         </div>
                         <div className={`sortBtnHideMenu ${sortMenu ? "sortMenuActive" : "sortMenuDisable"}`}>
-                            <Sort handleChange={handleChange} filterItems={filterItems} />
+                            <div className="hhh">
+                                <div className='input-label'>
+                                    <img src={Money} alt="" className='moneyIcon' />
+                                    <p onClick={handleSortLowToHigh} className={sortOptionActive == 'lowToHigh' ? "textRed" : ""}>Price - Low to High</p>
+                                </div>
+                                <div className='input-label'>
+                                    <img src={Money} alt="" className='moneyIcon' />
+                                    <p onClick={handleSortHighToLow} className={sortOptionActive == 'highToLow' ? "textRed" : ""}>Price - High To Low</p>
+                                </div>
+                                <div className='input-label'>
+                                    <img src={close} alt="" className='moneyIcon' />
+                                    <p onClick={handleReset}>Remove Sort Filter</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="miniFilter">
                     <div className="filterAndSortBtnMini" onClick={handleMiniFilterActive}>
-                        <img src={FilterLogo} alt="Filter" className='filterIcon' />
-                        <span>Filter and sort</span>
+                        {loading ? <Loader /> : <><img src={FilterLogo} alt="Filter" className='filterIcon' />
+                            <span>Filter and sort</span></>}
                     </div>
                     <div className="filterMenuMini">
                         <FIlter
@@ -200,6 +246,10 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                             handleCLearFilter={handleCLearFilter}
                             filterItems={filterItems}
                             productTypeFilter={productTypeFilter}
+                            handleSortHighToLow={handleSortHighToLow}
+                            handleSortLowToHigh={handleSortLowToHigh}
+                            handleReset={handleReset}
+                            sortOptionActive={sortOptionActive}
                         />
                     </div>
                 </div>
@@ -209,12 +259,17 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                 </div>
             </div>
 
-            {filterMenuActive && <div className="overlay" onClick={handleOutsideClick}></div>}
-            {filterMenuMiniActive && <div className="overlay" onClick={handleOutsideClickMini}></div>}
+            {(filterMenuActive || filterMenuMiniActive || sortMenu) && (
+                <div className="overlay" onClick={() => {
+                    if (filterMenuActive) handleOutsideClick();
+                    if (filterMenuMiniActive) handleOutsideClickMini();
+                    if (sortMenu) handleOutsideClickSort();
+                }}></div>
+            )}
 
-            <div className={`productCardMain ${loading ? "blurBackground" : ""} ${filterMenuActive ? "blurBackground" : ""} ${filterMenuMiniActive ? "blurBackground" : ""}`} >
-                {sortedFilteredProducts.length > 0 ?
-                    sortedFilteredProducts.map((product, index) => {
+            <div className={`productCardMain ${loading || filterMenuActive || filterMenuMiniActive || sortMenu ? "blurBackground" : ""}`} >
+                {filteredProducts.length > 0 ?
+                    filteredProducts.map((product, index) => {
                         return <div className="productCard" key={product.id} onClick={() => handleProductClick(product.id)}>
                             <div className="cardImg">
                                 <img src={product.mainImg} alt="" className='ProductCardImg' />

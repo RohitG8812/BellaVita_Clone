@@ -1,15 +1,16 @@
 import React from 'react'
 import "../css/filter.css"
 import starIcon from "../assets/icons/star.svg"
-import Sort from './Sort';
+import Money from "../assets/icons/roundMoney.svg"
+import close from "../assets/icons/roundX.svg"
 
 
-function FIlter({ active, handleChange, categoryFilter, filteredProducts, handleCLearFilter, filterItems, productTypeFilter, handleSortLowToHigh }) {
+function FIlter({ active, handleChange, categoryFilter, filteredProducts, handleCLearFilter, filterItems, productTypeFilter, handleSortLowToHigh, handleSortHighToLow, handleReset, sortOptionActive }) {
     const getProductCountForCategory = (category) => {
         return filteredProducts.filter(product => product.productType === category).length;
     }
     const getProductCountForProductType = (productType) => {
-        return filteredProducts.filter(product => product.variant === productType).length;
+        return filteredProducts.filter(product => product.variantM === productType).length;
     }
 
     const filterByPriceRange = (min, max) => {
@@ -35,7 +36,20 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                         <div className="filterCatHeadingText">
                             <span className='filterCatHeading'>Sort</span>
                         </div>
-                        <Sort handleChange={handleChange} filterItems={filterItems} />
+                        <div className="filterOptions sortOptionsMini">
+                            <div className='input-label'>
+                                <img src={Money} alt="" className='moneyIcon' />
+                                <p onClick={handleSortLowToHigh} className={sortOptionActive == 'lowToHigh' ? "textRed" : ""}>Price - Low to High</p>
+                            </div>
+                            <div className='input-label'>
+                                <img src={Money} alt="" className='moneyIcon' />
+                                <p onClick={handleSortHighToLow} className={sortOptionActive == 'highToLow' ? "textRed" : ""}>Price - High To Low</p>
+                            </div>
+                            <div className='input-label'>
+                                <img src={close} alt="" className='moneyIcon' />
+                                <p onClick={handleReset}>Remove Sort Filter</p>
+                            </div>
+                        </div>
                     </div>
 
                     {/* Price Filter  */}

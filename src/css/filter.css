@@ -115,6 +115,7 @@
 }
 
 .filterOptions {
+  height: 179.2px;
   padding-block: 20px;
   padding-inline: 20px;
   display: flex;
@@ -166,6 +167,17 @@
   }
 }
 
+.sortOptionsMini{
+  font-size: 15px;
+  color: #000000c6;
+  @media (max-width: 822px) {
+    font-size: 13px;
+  }
+  @media (max-width: 342px) {
+    font-size: 11px;
+  }
+}
+
 .ratingFilterIcon {
   display: flex;
   align-items: center;
@@ -198,6 +210,16 @@
   @media (max-width : 342px) {
     width: 13px;
     height: 13px;
+  }
+}
+
+.moneyIcon{
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  @media (max-width : 342px) {
+    width: 15px;
+    height: 15px;
   }
 }
 

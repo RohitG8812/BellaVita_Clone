@@ -11,6 +11,21 @@ function Bath_Body() {
     const [bath_Body] = useState(Products.filter(product => product.category === 'bathBody'))
     const [smallBanner, setSmallBanner] = useState(false);
 
+    const bathBodyCategoryFilter = [
+        { value: "bathBodyCombo", label: "BathBody Combo" },
+        { value: "man", label: "Man" },
+        { value: "women", label: "Women" },
+        { value: "luxury", label: "Luxury" },
+        { value: "oud", label: "OUD" },
+    ]
+
+    const bathBodyProductType = [
+        { value: "ShowerGel", label: "Shower Gel" },
+        { value: "BodyWash", label: "Body Wash" },
+        { value: "BodyLotion", label: "Body Lotion" },
+        { value: "bathBodyCombo", label: "Bath & Body Combo" },
+    ]
+
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 751) {
@@ -42,7 +57,13 @@ function Bath_Body() {
                 </div>
                 <div className='ProductPageMain ShopAll'>
                     <div className="hide">
-                        <ProductPage product={bath_Body} heading={"Bath And Body"} handleProductClick={handleProductClick} />
+                        <ProductPage
+                            product={bath_Body}
+                            heading={"Bath And Body"}
+                            handleProductClick={handleProductClick}
+                            productTypeFilter={bathBodyProductType}
+                            categoryFilter={bathBodyCategoryFilter}
+                        />
                     </div>
                 </div>
             </div>

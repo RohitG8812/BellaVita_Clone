@@ -10,6 +10,20 @@ import MakeupBannerMini from "../assets/Banner/productBanner/makeupBannerMini.we
 function Makeup() {
     const [makeup] = useState(Products.filter(product => product.category === 'makeup'))
     const [smallBanner, setSmallBanner] = useState(false);
+
+    const makeupCategoryFilter = [
+        { value: "makeupSet", label: "Makeup Set" },
+        { value: "lipstickSet", label: "Lipstick Set" },
+        { value: "kajal+eyeliner", label: "Kajal + Eyeliner" },
+        { value: "luxury", label: "Luxury" },
+    ]
+
+    const makeupProductType = [
+        { value: "lipstick", label: "Lipstick" },
+        { value: "makeupKit", label: "Makeup Kit" },
+        { value: "eyeliner", label: "Eyeliner" },
+    ]
+
     console.log(makeup)
     const navigate = useNavigate()
     const handleProductClick = (id) => {
@@ -41,7 +55,13 @@ function Makeup() {
                 </div>
                 <div className='ProductPageMain ShopAll'>
                     <div className="hide">
-                        <ProductPage product={makeup} heading={"Makeup"} handleProductClick={handleProductClick}/>
+                        <ProductPage
+                            product={makeup}
+                            heading={"Makeup"}
+                            handleProductClick={handleProductClick}
+                            productTypeFilter={makeupProductType}
+                            categoryFilter={makeupCategoryFilter}
+                        />
                     </div>
                 </div>
             </div>
