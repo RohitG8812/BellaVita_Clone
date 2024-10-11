@@ -7,8 +7,25 @@ import ProductPage from '../pages/ProductPage';
 import ShopAllBanner from "../assets/Banner/productBanner/ShopAllBanner.webp"
 import ShopAllBannerMini from "../assets/Banner/productBanner/ShopAllBannerMini.webp"
 
+const ShopAllCategoryFilter = [
+  { value: "man", label: "Man" },
+  { value: "women", label: "Women" },
+  { value: "luxury", label: "Luxury" },
+  { value: "comboProducts", label: "Gift Sets" },
+  { value: "oud", label: "OUD" },
+  { value: "forAll", label: "For All" },
+]
+
+const shopAllProductType = [
+  { value: "Parfum", label: "Parfum" },
+  { value: "Eau De Parfum", label: "Eau De Parfum" },
+  { value: "ShowerGel", label: "Shower Gel" },
+  { value: "BodyWash", label: "Body Wash" },
+  { value: "BodyLotion", label: "Body Lotion" },
+]
+
 function NewArrivals() {
-  const [bath_Body] = useState(Products.filter(product => product.category === 'bathBody'))
+  const [product, setProduct] = useState([]);
   const [smallBanner, setSmallBanner] = useState(false);
 
   useEffect(() => {
@@ -25,10 +42,15 @@ function NewArrivals() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-  console.log(bath_Body)
+
+  useEffect(() => {
+    const sortedProducts = [...Products].sort((a, b) => a.name.localeCompare(b.name)); // Sort by name
+    setProduct(sortedProducts);
+  }, []);
   const navigate = useNavigate()
+
   const handleProductClick = (id) => {
-    navigate(`/collection/bathBody/${id}`)
+    navigate(`/collection/shopAll/${id}`)
   }
   return (
     <Layout>
@@ -41,7 +63,13 @@ function NewArrivals() {
         </div>
         <div className='ProductPageMain ShopAll'>
           <div className="hide">
-            <ProductPage product={bath_Body} heading={"New Arrivals"} handleProductClick={handleProductClick}/>
+            <ProductPage
+              product={product}
+              heading={"New Arrivals"}
+              handleProductClick={handleProductClick}
+              categoryFilter={ShopAllCategoryFilter}
+              productTypeFilter={shopAllProductType}
+            />
           </div>
         </div>
       </div>

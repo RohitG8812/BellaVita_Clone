@@ -12,7 +12,7 @@ function Bath_Body() {
     const [smallBanner, setSmallBanner] = useState(false);
 
     const bathBodyCategoryFilter = [
-        { value: "bathBodyCombo", label: "BathBody Combo" },
+        { value: "comboProducts", label: "BathBody Combo" },
         { value: "man", label: "Man" },
         { value: "women", label: "Women" },
         { value: "luxury", label: "Luxury" },
@@ -41,7 +41,6 @@ function Bath_Body() {
         };
     }, []);
 
-    console.log(bath_Body)
     const navigate = useNavigate()
     const handleProductClick = (id) => {
         navigate(`/collection/bathBody/${id}`)

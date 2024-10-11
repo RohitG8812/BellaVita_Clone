@@ -226,7 +226,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                                                     onChange={handleSortLowToHigh}
                                                     checked={sortOptionActive.includes('lowToHigh')}
                                                 />
-                                                <div class="transition"></div>
+                                                <div className="transition"></div>
                                             </div>
                                             <div className='labelOrProductCount'> <span>Price - Low to High</span></div>
                                         </label>
@@ -240,7 +240,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                                                     onChange={handleSortHighToLow}
                                                     checked={sortOptionActive.includes('highToLow')}
                                                 />
-                                                <div class="transition"></div>
+                                                <div className="transition"></div>
                                             </div>
                                             <div className='labelOrProductCount'> <span>Price - High to Low</span></div>
                                         </label>

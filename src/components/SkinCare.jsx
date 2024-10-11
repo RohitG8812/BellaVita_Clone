@@ -7,6 +7,21 @@ import SKinCareBanner from "../assets/Banner/productBanner/skinCareBanner.webp"
 import SkinCareBannerMini from "../assets/Banner/productBanner/skinCareBannerMini.webp"
 import ProductPage from '../pages/ProductPage';
 
+const bathBodyCategoryFilter = [
+  { value: "comboProducts", label: "BathBody Combo" },
+  { value: "man", label: "Man" },
+  { value: "women", label: "Women" },
+  { value: "luxury", label: "Luxury" },
+  { value: "oud", label: "OUD" },
+]
+
+const bathBodyProductType = [
+  { value: "ShowerGel", label: "Shower Gel" },
+  { value: "BodyWash", label: "Body Wash" },
+  { value: "BodyLotion", label: "Body Lotion" },
+  { value: "bathBodyCombo", label: "Bath & Body Combo" },
+]
+
 function SkinCare() {
   const [bath_Body] = useState(Products.filter(product => product.category === 'bathBody'))
   const [smallBanner, setSmallBanner] = useState(false);
@@ -42,7 +57,13 @@ function SkinCare() {
         </div>
         <div className='ProductPageMain ShopAll'>
           <div className="hide">
-            <ProductPage product={bath_Body} heading={"Skin Care"} handleProductClick={handleProductClick} />
+            <ProductPage
+              product={bath_Body}
+              heading={"Skin Care"}
+              handleProductClick={handleProductClick}
+              productTypeFilter={bathBodyProductType}
+              categoryFilter={bathBodyCategoryFilter}
+            />
           </div>
         </div>
       </div>

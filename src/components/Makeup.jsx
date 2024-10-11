@@ -12,7 +12,7 @@ function Makeup() {
     const [smallBanner, setSmallBanner] = useState(false);
 
     const makeupCategoryFilter = [
-        { value: "makeupSet", label: "Makeup Set" },
+        { value: "comboProducts", label: "Makeup Set" },
         { value: "lipstickSet", label: "Lipstick Set" },
         { value: "kajal+eyeliner", label: "Kajal + Eyeliner" },
         { value: "luxury", label: "Luxury" },

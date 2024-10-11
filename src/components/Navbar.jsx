@@ -2,9 +2,13 @@ import React, { useEffect, useRef, useState } from 'react'
 import CartIcon from "../assets/icons/cart12.png"
 import ProfileIcon from '../assets/icons/profile.svg'
 import BrandLogo from "../assets/logo.svg"
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import SideNavbar from './SideNavbar'
 
+const perfumes = ["All Perfumes", "Men", "Women", "Unisex", "Oud Collection", "Attars", "Little Luxuries"]
+const bathBody = ["Shower Gel", "Body Mist", "Body Parfum", "Body Lotion", "Travel Kit"]
+const SkinCare = ["All SkinCare", "Face Wash", "Lip Cate", "Skin Essential Combos"]
+const Gifting = [{ name: "Gift Sets" }, { name: "Perfume Combos" }]
 
 function Navbar() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -16,12 +20,11 @@ function Navbar() {
     const brandLogoCLick = () => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth' // Enables smooth scrolling
+            behavior: 'smooth'
         });
     }
 
     useEffect(() => {
-        // Scroll to the top of the page when the path changes
         window.scrollTo(0, 0);
     }, [location.pathname]);
 
@@ -46,12 +49,20 @@ function Navbar() {
         };
     }, []);
 
-    const perfumes = ["All Perfumes", "Men", "Women", "Unisex", "Oud Collection", "Attars", "Little Luxuries"]
-    const bathBody = ["Shower Gel", "Body Mist", "Body Parfum", "Body Lotion", "Travel Kit"]
-    const SkinCare = ["All SkinCare", "Face Wash", "Lip Cate", "Skin Essential Combos"]
-    const Gifting = ["Gift Sets", "Perfume Combos"]
+    const navigate = useNavigate()
 
-    // ${location.pathname === "/collection/shopAll" && "liElements"}`}>
+    const handleOpenPerfumes = () => {
+        navigate("/collection/perfumes")
+    }
+    const handleOpenBathBody = () => {
+        navigate("/collection/bathBody")
+    }
+    const handleOpenGiftSets = () => {
+        navigate("/collection/giftSets")
+    }
+    const handleOpenPerfumeCombos = () => {
+        navigate("/collection/perfumesSets")
+    }
 
     return (
         <div style={{ position: showNavbar ? "fixed" : "", top: showNavbar ? 0 : "", display: (showNavbar ? "block" : "none" || defaultNavbar ? "block" : "none"), }}
@@ -59,7 +70,6 @@ function Navbar() {
         ${location.pathname === "/" ? sidebarOpen ? "sidebarOpenHover" : "" : ""} 
         ${showNavbar ? "liElements sidebarOpenHover" : ""}
         ${location.pathname === "/" ? "" : "liElements"}`}>
-
             <div className="topNav">
                 <div className="searchBar">
                     <div className="hamburgMenu">
@@ -122,7 +132,7 @@ function Navbar() {
                             <div className="onHoverMenu">
                                 {perfumes.map((items, index) => {
                                     return <div className="onHoverMenuOpt" key={index}>
-                                        <li>{items}</li>
+                                        <li onClick={handleOpenPerfumes}>{items}</li>
                                     </div>
                                 })}
                             </div>
@@ -132,7 +142,7 @@ function Navbar() {
                             <div className="onHoverMenu">
                                 {bathBody.map((items, index) => {
                                     return <div className="onHoverMenuOpt" key={index}>
-                                        <li>{items}</li>
+                                        <li onClick={handleOpenBathBody}>{items}</li>
                                     </div>
                                 })}
                             </div>
@@ -148,7 +158,7 @@ function Navbar() {
                             <div className="onHoverMenu">
                                 {SkinCare.map((items, index) => {
                                     return <div className="onHoverMenuOpt" key={index}>
-                                        <li>{items}</li>
+                                        <li onClick={handleOpenBathBody}>{items}</li>
                                     </div>
                                 })}
                             </div>
@@ -158,7 +168,7 @@ function Navbar() {
                             <div className="onHoverMenu">
                                 {Gifting.map((items, index) => {
                                     return <div className="onHoverMenuOpt" key={index}>
-                                        <li>{items}</li>
+                                        <li onClick={items.name === "Gift Sets" ? handleOpenGiftSets : handleOpenPerfumeCombos}>{items.name}</li>
                                     </div>
                                 })}
                             </div>
@@ -175,18 +185,18 @@ function Navbar() {
 export default Navbar
 
 
-    // const sortedFilteredProducts =
-    //     filterItems.includes("lowToHigh")
-    //         ? filteredProducts.sort((a, b) => {
-    //             const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
-    //             const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
-    //             return priceA - priceB;
-    //         })
-    //         : filteredProducts;
-    // filterItems.includes("highToLow")
-    //     ? filteredProducts.sort((a, b) => {
-    //         const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
-    //         const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
-    //         return priceB - priceA;
-    //     })
-    //     : filteredProducts;
+// const sortedFilteredProducts =
+//     filterItems.includes("lowToHigh")
+//         ? filteredProducts.sort((a, b) => {
+//             const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+//             const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+//             return priceA - priceB;
+//         })
+//         : filteredProducts;
+// filterItems.includes("highToLow")
+//     ? filteredProducts.sort((a, b) => {
+//         const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
+//         const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
+//         return priceB - priceA;
+//     })
+//     : filteredProducts;

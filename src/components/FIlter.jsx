@@ -57,7 +57,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                             onChange={handleChange}
                                             checked={filterItems.includes("0-500")}
                                         />
-                                        <div class="transition"></div>
+                                        <div className="transition"></div>
                                     </div>
                                     <div className='labelOrProductCount'> <span>₹0-500</span> <span className='labelProductCount'>({filterByPriceRange(0, 500)})</span></div>
                                 </label>
@@ -71,7 +71,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                             onChange={handleChange}
                                             checked={filterItems.includes("501-1000")}
                                         />
-                                        <div class="transition"></div>
+                                        <div className="transition"></div>
                                     </div>
                                     <div className='labelOrProductCount'> <span>₹500-1000</span> <span className='labelProductCount'>({filterByPriceRange(501, 1000)})</span></div>
                                 </label>
@@ -85,7 +85,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                             onChange={handleChange}
                                             checked={filterItems.includes("1001-1500")}
                                         />
-                                        <div class="transition"></div>
+                                        <div className="transition"></div>
                                     </div>
                                     <div className='labelOrProductCount'><span>₹1000-1500</span> <span className='labelProductCount'>({filterByPriceRange(1001, 1500)})</span></div>
                                 </label>
@@ -99,7 +99,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                             onChange={handleChange}
                                             checked={filterItems.includes("1501+")}
                                         />
-                                        <div class="transition"></div>
+                                        <div className="transition"></div>
                                     </div>
                                     <div className='labelOrProductCount'><span>₹1500+</span> <span className='labelProductCount'>({filterByPriceRange(1501)})</span></div>
                                 </label>
@@ -124,7 +124,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                                     onChange={handleChange}
                                                     checked={filterItems.includes(filter.value)}
                                                 />
-                                                <div class="transition"></div>
+                                                <div className="transition"></div>
                                             </div>
                                             <div className='labelOrProductCount'><span>{filter.label}</span> <span className='labelProductCount'>({getProductCountForCategory(filter.value)})</span></div>
                                         </label>
@@ -150,7 +150,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                                     onChange={handleChange}
                                                     checked={filterItems.includes(filter.value)}
                                                 />
-                                                <div class="transition"></div>
+                                                <div className="transition"></div>
                                             </div>
                                             <div className='labelOrProductCount'><span>{filter.label}</span> <span className='labelProductCount'>({getProductCountForProductType(filter.value)})</span></div>
                                         </label>
@@ -174,7 +174,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                             onChange={handleChange}
                                             checked={filterItems.includes("1")}
                                         />
-                                        <div class="transition"></div>
+                                        <div className="transition"></div>
                                     </div>
                                     <div className='labelOrProductCount'> <span className='ratingFilterIcon'>1 <img src={starIcon} alt="" className='starIcon' /> </span> <span className='labelProductCount'>({filteredProducts.filter(product => product.rating >= 1 && product.rating < 2).length})</span></div>
                                 </label>
@@ -188,7 +188,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                             onChange={handleChange}
                                             checked={filterItems.includes("2")}
                                         />
-                                        <div class="transition"></div>
+                                        <div className="transition"></div>
                                     </div>
                                     <div className='labelOrProductCount'> <span className='ratingFilterIcon'>2 <img src={starIcon} alt="" className='starIcon' /></span> <span className='labelProductCount'>({filteredProducts.filter(product => product.rating >= 2 && product.rating < 3).length})</span></div>
                                 </label>
@@ -202,7 +202,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                             onChange={handleChange}
                                             checked={filterItems.includes("3")}
                                         />
-                                        <div class="transition"></div>
+                                        <div className="transition"></div>
                                     </div>
                                     <div className='labelOrProductCount'><span className='ratingFilterIcon'>3 <img src={starIcon} alt="" className='starIcon' /></span> <span className='labelProductCount'>({filteredProducts.filter(product => product.rating >= 3 && product.rating < 4).length})</span></div>
                                 </label>
@@ -216,7 +216,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                             onChange={handleChange}
                                             checked={filterItems.includes("4")}
                                         />
-                                        <div class="transition"></div>
+                                        <div className="transition"></div>
                                     </div>
                                     <div className='labelOrProductCount'> <span className='ratingFilterIcon'>4 <img src={starIcon} alt="" className='starIcon' /></span>  <span className='labelProductCount'>({filteredProducts.filter(product => product.rating >= 4 && product.rating < 5).length})</span></div>
                                 </label>
@@ -230,7 +230,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                             onChange={handleChange}
                                             checked={filterItems.includes("5")}
                                         />
-                                        <div class="transition"></div>
+                                        <div className="transition"></div>
                                     </div>
                                     <div className='labelOrProductCount'><span className='ratingFilterIcon'>5 <img src={starIcon} alt="" className='starIcon' /> </span> <span className='labelProductCount'>({filteredProducts.filter(product => product.rating == 5).length})</span></div>
                                 </label>
@@ -255,3 +255,4 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
 }
 
 export default FIlter
+

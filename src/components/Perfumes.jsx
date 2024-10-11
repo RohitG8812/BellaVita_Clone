@@ -12,7 +12,7 @@ const perfumesCategoryFilter = [
     { value: "man", label: "Man" },
     { value: "women", label: "Women" },
     { value: "luxury", label: "Luxury" },
-    { value: "perfumeCombo", label: "Perfume Combo" },
+    { value: "comboProducts", label: "Perfume Combo" },
     { value: "oud", label: "OUD" },
     { value: "forAll", label: "For All" },
 ]

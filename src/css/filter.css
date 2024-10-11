@@ -223,6 +223,7 @@
 }
 
 .labelOrProductCount {
+  cursor: pointer;
   display: flex;
   gap: 2px;
 }
