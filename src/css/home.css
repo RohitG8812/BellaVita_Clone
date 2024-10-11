@@ -993,6 +993,10 @@
   transition: max-height 0.8s ease-in-out;
 }
 
+.sideBarSubMenuLiIndexCss{
+  cursor: auto;
+}
+
 .footer750pxCatItems .show {
   max-height: fit-content;
 }
