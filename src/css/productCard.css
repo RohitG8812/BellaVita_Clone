@@ -580,7 +580,7 @@
   @media (max-width: 480px) {
     font-size: 10px;
   }
-  @media (max-width: 340px) {
+  @media (max-width: 450px) {
     bottom: 5px;
     padding-left: 5px;
   }
@@ -593,9 +593,9 @@
   background-color: rgb(100, 187, 164);
   @media (max-width: 480px) {
     width: 34.45px;
-    padding-block: 6px;
+    /* padding-block: 6px; */
   }
-  @media (max-width: 340px) {
-    padding-block: 5px;
+  @media (max-width: 450px) {
+    padding-block: 4.5px;
   }
 }

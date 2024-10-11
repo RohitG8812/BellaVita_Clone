@@ -29,6 +29,7 @@ import BellaCashBanner from "../assets/Banner/HomePageBanner/bellaCash.webp"
 import BellaCashBannerMini from "../assets/Banner/HomePageBanner/bellaCashMini.webp"
 import ReviewSlider from '../HomePage/ReviewSlider'
 import ImageMapping from '../HomePage/ImageMapping'
+import LipStickFinder from '../assets/Banner/HomePageBanner/lipstickFinder.webp'
 
 
 function Home() {
@@ -94,7 +95,12 @@ function Home() {
                     <CrazyDealsHome />
                     <ShopByNotes />
                     <div className="secondBanner firstBanner">
-                        <Link to='/pages/fragranceFinder'><img src={smallSize ? SecondBannerMini : SecondBanner} alt="" /></Link>
+                        <div >
+                            <Link to='/collection/perfumes'><img src={smallSize ? SecondBannerMini : SecondBanner} alt="" /></Link>
+                        </div>
+                        <div style={{ marginTop: "10px" }}>
+                            <Link to='/collection/makeup'><img src={LipStickFinder} alt="" /></Link>
+                        </div>
                     </div>
                     <WhyBellavita />
                     <div className="thirdBanner firstBanner">
