@@ -182,6 +182,7 @@
 }
 
 .ProdCardImg {
+  position: relative;
   cursor: pointer;
   width: 100%;
 }

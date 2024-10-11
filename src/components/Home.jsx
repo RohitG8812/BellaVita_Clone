@@ -32,7 +32,7 @@ import ImageMapping from '../HomePage/ImageMapping'
 
 
 function Home() {
-    const [currentBannerIdx, setCurrentBannerIdx] = useState(0);
+    const [currentBannerIdx, setCurrentBannerIdx] = useState(1);
     const [isSliding, setIsSliding] = useState(false);
     const [smallSize, setSmallSize] = useState(false);
 

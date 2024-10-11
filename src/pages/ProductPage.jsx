@@ -296,12 +296,18 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                     filteredProducts.map((product, index) => {
                         return <div className="productCard" key={product.id} onClick={() => handleProductClick(product.id)}>
                             <div className="cardImg">
-                                <img src={product.mainImg} alt="" className='ProductCardImg' />
+                                <div>
+                                    <img src={product.mainImg} alt="" className='ProductCardImg' />
+                                </div>
+                                <div className="card-badge-bottom">
+                                    <span className="discountBadge">{product.discount} off</span>
+                                </div>
                             </div>
                             <div className="card-badge">
-                                <span className='bestSellerBadge'>BestSeller</span>
-                                <span className={"2ndBadge newBadge"}>New</span>
+                                <span className='bestSellerBadgeHome productBestSellerBadge'>BestSeller</span>
+                                <span className="2ndBadge newBadge">New</span>
                             </div>
+
                             <div className="productsCardBottomText">
                                 <div className="topText">
                                     <p className='cardProductVariant'>{product.variant}</p>

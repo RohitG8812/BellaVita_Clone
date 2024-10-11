@@ -53,11 +53,14 @@ function BestSellerNewArrival() {
                 {displayProducts.map((product, index) => {
                     return <div className="card" key={product.id} onClick={() => handleProductClick(product.id)}>
                         <div className="cardImg">
-                            <img src={product.mainImg} alt="" className='cardImg2' />
+                            <div><img src={product.mainImg} alt="" className='cardImg2' /></div>
+                            <div className="card-badge-bottom">
+                                <span className="discountBadge">{product.discount} off</span>
+                            </div>
                         </div>
                         <div className="card-badge">
                             <span className='bogoBadge'>Buy 1 get 1 Free</span>
-                            <span className={`2ndBadge ${category === 'bestSellers' ? 'bestSellerBadge' : 'newBadge'}`}>{category === 'bestSellers' ? "BestSeller" : "New"}</span>
+                            <span className={`2ndBadge ${category === 'bestSellers' ? 'bestSellerBadgeHome' : 'newBadge'}`}>{category === 'bestSellers' ? "BestSeller" : "New"}</span>
                         </div>
                         <div className="cardBottomText">
                             <div className="topText">
@@ -75,7 +78,7 @@ function BestSellerNewArrival() {
                                     </div>
                                 </div>
                                 <div className="productPriceMain">
-                                    <p className='discount cardProductPrice'><img src={GreenDownArrow} alt="" className='greenArrow'/>{product.discount}</p>
+                                    <p className='discount cardProductPrice'><img src={GreenDownArrow} alt="" className='greenArrow' />{product.discount}</p>
                                     <p className="mrp cardProductPrice">{product.mrp}</p>
                                     <p className='cardProductPrice'>{product.price}</p>
                                 </div>

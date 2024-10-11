@@ -91,7 +91,7 @@ function LuxePerfumes() {
                                 <img src={selectedProduct.mainImg} alt="" className='ProdCardImg' />
                             </div>
                             <div className="card-badge luxeCardBadge">
-                                <span className='bestSellerBadge'>BestSeller</span>
+                                <span className='bestSellerBadgeHome'>BestSeller</span>
                                 <span className={"2ndBadge newBadge"}>New</span>
                             </div>
                             <div className="productsCardBottomText prodCardBottom">

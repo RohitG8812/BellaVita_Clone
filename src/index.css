@@ -1172,6 +1172,14 @@ li a:hover {
   @media (max-width: 480px) {
     font-size: 10px;
   }
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
+  @media (max-width: 340px) {
+    gap: 4px;
+    top: 5px;
+    padding-left: 5px;
+  }
 }
 
 .bogoBadge {
@@ -1185,7 +1193,7 @@ li a:hover {
   }
 }
 
-.bestSellerBadge {
+.bestSellerBadgeHome {
   padding-block: 1px;
   width: 75.45px;
   background-color: rgb(216, 162, 116);
@@ -1194,6 +1202,11 @@ li a:hover {
     width: 62.9125px;
     padding-block: 0;
   }
+}
+
+.productBestSellerBadge{
+  background-color: rgb(150, 118, 207);
+  border: 0.8px solid rgb(150, 118, 207);
 }
 
 .newBadge {

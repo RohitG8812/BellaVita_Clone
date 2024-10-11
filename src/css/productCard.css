@@ -104,6 +104,7 @@
 }
 
 .cardImg {
+  position: relative;
   background-color: #f2f2f2;
   overflow: hidden;
 }
@@ -539,7 +540,7 @@
   transition: transform 0.3s ease;
 }
 
-.removeSortBtn{
+.removeSortBtn {
   padding-left: 0px !important;
   width: 100%;
   display: flex !important;
@@ -547,7 +548,7 @@
   align-items: center !important;
 }
 
-.sortOptionsBig{
+.sortOptionsBig {
   display: flex;
   gap: 8px;
   flex-direction: column;
@@ -556,9 +557,45 @@
   margin-bottom: 6px;
 }
 
-.removeSortButtonSmall{
+.removeSortButtonSmall {
   height: 33px !important;
   font-size: 12px;
   width: 120px !important;
-  
+}
+
+.card-badge-bottom {
+  position: absolute;
+  z-index: 2;
+  bottom: 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #fff;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+  padding-left: 10px;
+  font-weight: 550;
+  text-transform: uppercase;
+  text-align: center;
+  @media (max-width: 480px) {
+    font-size: 10px;
+  }
+  @media (max-width: 340px) {
+    bottom: 5px;
+    padding-left: 5px;
+  }
+}
+
+.discountBadge {
+  padding: 6px;
+  width: 46.55px;
+  border: 0.8px solid rgb(113, 190, 169);
+  background-color: rgb(100, 187, 164);
+  @media (max-width: 480px) {
+    width: 34.45px;
+    padding-block: 6px;
+  }
+  @media (max-width: 340px) {
+    padding-block: 5px;
+  }
 }
