@@ -513,18 +513,15 @@
 }
 
 .hhh {
-  padding-left: 10px;
+  /* padding-left: 20px; */
   border: none;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.39) 0px 0px 0px 1px;
   padding-block: 20px;
-  display: flex;
-  gap: 8px;
-  flex-direction: column;
 }
 
 .sortMenuActive {
-  height: 119px;
+  height: 130px;
 }
 
 .sortMenuActive p {
@@ -540,4 +537,28 @@
 .rotate-arrow {
   transform: rotate(180deg); /* Rotate arrow when active */
   transition: transform 0.3s ease;
+}
+
+.removeSortBtn{
+  padding-left: 0px !important;
+  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.sortOptionsBig{
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.removeSortButtonSmall{
+  height: 33px !important;
+  font-size: 12px;
+  width: 120px !important;
+  
 }

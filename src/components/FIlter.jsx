@@ -3,6 +3,7 @@ import "../css/filter.css"
 import starIcon from "../assets/icons/star.svg"
 import Money from "../assets/icons/roundMoney.svg"
 import close from "../assets/icons/roundX.svg"
+import Sort from './Sort'
 
 
 function FIlter({ active, handleChange, categoryFilter, filteredProducts, handleCLearFilter, filterItems, productTypeFilter, handleSortLowToHigh, handleSortHighToLow, handleReset, sortOptionActive }) {
@@ -37,18 +38,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                             <span className='filterCatHeading'>Sort</span>
                         </div>
                         <div className="filterOptions sortOptionsMini">
-                            <div className='input-label'>
-                                <img src={Money} alt="" className='moneyIcon' />
-                                <p onClick={handleSortLowToHigh} className={sortOptionActive == 'lowToHigh' ? "textRed" : ""}>Price - Low to High</p>
-                            </div>
-                            <div className='input-label'>
-                                <img src={Money} alt="" className='moneyIcon' />
-                                <p onClick={handleSortHighToLow} className={sortOptionActive == 'highToLow' ? "textRed" : ""}>Price - High To Low</p>
-                            </div>
-                            <div className='input-label'>
-                                <img src={close} alt="" className='moneyIcon' />
-                                <p onClick={handleReset}>Remove Sort Filter</p>
-                            </div>
+                           <Sort handleSortHighToLow={handleSortHighToLow} handleSortLowToHigh={handleSortLowToHigh} sortOptionActive={sortOptionActive}/>
                         </div>
                     </div>
 
@@ -249,6 +239,9 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                     </div>
                 </div>
                 <div className="bottomClearFilter">
+                    <div className={`addToCartBtn removeSortButton`}>
+                        < button onClick={handleReset}>Remove Sort</button>
+                    </div>
                     <div className={`addToCartBtn applyFilterButton`}>
                         < button>Apply</button>
                     </div>

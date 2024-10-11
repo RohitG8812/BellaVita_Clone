@@ -28,8 +28,8 @@
     height: 335px !important;
   }
   @media (max-width: 670px) {
-    height: 500px !important;
-    overflow: auto;
+    height: 535px !important;
+    /* overflow: auto; */
     scrollbar-width: thin;
   }
 }
@@ -42,10 +42,11 @@
   }
 }
 
-.priceFilter{
+.priceFilter {
   width: 25%;
   @media (max-width: 670px) {
     width: 100%;
+    height: 200px;
   }
 }
 .productTypeFilter {
@@ -64,7 +65,7 @@
 
 .ratingFilter {
   width: 20%;
-  @media (max-width : 750px) {
+  @media (max-width: 750px) {
     display: none;
   }
   @media (max-width: 670px) {
@@ -95,18 +96,46 @@
 }
 
 .applyFilterButton {
-  width: 100px !important;
-  @media (max-width : 350px) {
+  width: 120px !important;
+  @media (max-width: 750px) {
+    display: none !important;
+  }
+  @media (max-width: 350px) {
+    font-size: 10px !important;
     width: 80px !important;
     height: 35px !important;
   }
 }
 
+.removeSortButton {
+  width: 125px !important;
+  display: none !important;
+  @media (max-width: 750px) {
+    display: block !important;
+  }
+  @media (max-width: 450px) {
+    width: 125px !important;
+    height: 38px !important;
+  }
+}
+
+.removeSortButton button{
+  @media (max-width: 350px) {
+    font-size: 11px !important;
+  }
+}
+
 .clearFilterButton {
   width: 160px !important;
-  @media (max-width : 350px) {
+  @media (max-width: 450px) {
     width: 160px !important;
-    height: 35px !important;
+    height: 38px !important;
+  }
+}
+
+.clearFilterButton button{
+  @media (max-width: 350px) {
+    font-size: 11px !important;
   }
 }
 
@@ -125,6 +154,12 @@
   @media (max-width: 822px) {
     padding-inline: 5px;
   }
+}
+
+.filterOptionsInner{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .topFilter {
@@ -167,7 +202,7 @@
   }
 }
 
-.sortOptionsMini{
+.sortOptionsMini {
   font-size: 15px;
   color: #000000c6;
   @media (max-width: 822px) {
@@ -207,17 +242,17 @@
   position: relative;
   overflow: hidden;
 
-  @media (max-width : 342px) {
+  @media (max-width: 342px) {
     width: 13px;
     height: 13px;
   }
 }
 
-.moneyIcon{
+.moneyIcon {
   width: 20px;
   height: 20px;
   opacity: 0.6;
-  @media (max-width : 342px) {
+  @media (max-width: 342px) {
     width: 15px;
     height: 15px;
   }
@@ -249,36 +284,13 @@
   transition: 300ms ease;
 }
 
-/* 750px Below Screen */
-/* .topSideFilters750px {
-  display: none;
-  /* @media (max-width: 610px) {
-    display: block !important;
-  } */
-/* }  */
-
-/* .filterMenuMainMini {
-  position: absolute;
-  top: 40px;
-  left: 0;
-  z-index: 999;
-  background-color: #fff;
-  color: #000;
-  overflow: hidden;
-  height: 0;
-  width: 100% !important;
-  transition: height 0.35s ease-in-out;
-}
-
-.filterMenuMainMini.active {
-  height: 100px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
-    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-} */
-
 .sortFilter {
   display: none;
   @media (max-width: 750px) {
     display: block !important;
+  }
+
+  @media (max-width: 670px) {
+    height: 200px;
   }
 }

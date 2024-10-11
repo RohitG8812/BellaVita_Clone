@@ -9,6 +9,7 @@ import FIlter from '../components/FIlter'
 import Loader from './Loader'
 import Money from "../assets/icons/roundMoney.svg"
 import close from "../assets/icons/roundX.svg"
+import Sort from '../components/Sort'
 
 function ProductPage({ product, heading, handleProductClick, categoryFilter, productTypeFilter }) {
     const [filterMenuActive, setFilterMenuActive] = useState(false)
@@ -123,7 +124,6 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
     const handleSortLowToHigh = () => {
         setSortOptionActive('lowToHigh')
         setLoading(true)
-
         setTimeout(() => {
             const sorted = [...filteredProducts].sort((a, b) => {
                 let priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
@@ -155,7 +155,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
         setSortOptionActive('allProducts')
         setLoading(true)
         setTimeout(() => {
-            const sortedProducts = [...product].sort((a, b) => a.name.localeCompare(b.name));
+            const sortedProducts = [...filteredProducts].sort((a, b) => a.name.localeCompare(b.name));
             setFilteredProducts(sortedProducts)
             setSortMenu(false)
             setLoading(false)
@@ -206,6 +206,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                             handleCLearFilter={handleCLearFilter}
                             filterItems={filterItems}
                             productTypeFilter={productTypeFilter}
+                            sortOptionActive={sortOptionActive}
                         />
                     </div>
                     <div>
@@ -215,17 +216,40 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                         </div>
                         <div className={`sortBtnHideMenu ${sortMenu ? "sortMenuActive" : "sortMenuDisable"}`}>
                             <div className="hhh">
-                                <div className='input-label'>
-                                    <img src={Money} alt="" className='moneyIcon' />
-                                    <p onClick={handleSortLowToHigh} className={sortOptionActive == 'lowToHigh' ? "textRed" : ""}>Price - Low to High</p>
+                                <div className="sortOptionsBig">
+                                    <div>
+                                        <label className='input-label'>
+                                            <div className="checkBox">
+                                                <input
+                                                    type="checkbox"
+                                                    value="lowToHigh"
+                                                    onChange={handleSortLowToHigh}
+                                                    checked={sortOptionActive.includes('lowToHigh')}
+                                                />
+                                                <div class="transition"></div>
+                                            </div>
+                                            <div className='labelOrProductCount'> <span>Price - Low to High</span></div>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label className='input-label'>
+                                            <div className="checkBox">
+                                                <input
+                                                    type="checkbox"
+                                                    value="highToLow"
+                                                    onChange={handleSortHighToLow}
+                                                    checked={sortOptionActive.includes('highToLow')}
+                                                />
+                                                <div class="transition"></div>
+                                            </div>
+                                            <div className='labelOrProductCount'> <span>Price - High to Low</span></div>
+                                        </label>
+                                    </div>
                                 </div>
-                                <div className='input-label'>
-                                    <img src={Money} alt="" className='moneyIcon' />
-                                    <p onClick={handleSortHighToLow} className={sortOptionActive == 'highToLow' ? "textRed" : ""}>Price - High To Low</p>
-                                </div>
-                                <div className='input-label'>
-                                    <img src={close} alt="" className='moneyIcon' />
-                                    <p onClick={handleReset}>Remove Sort Filter</p>
+                                <div className="removeSortBtn">
+                                    <div className={`addToCartBtn removeSortButtonSmall`}>
+                                        < button onClick={handleReset}>Remove Sort</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
