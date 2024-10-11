@@ -25,7 +25,7 @@ const shopAllProductType = [
 ]
 
 function ShopAll() {
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState(Products);
     const [smallBanner, setSmallBanner] = useState(false);
 
     useEffect(() => {

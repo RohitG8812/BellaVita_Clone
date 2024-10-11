@@ -44,7 +44,7 @@ function Perfumes() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-    console.log(perfume)
+
     const navigate = useNavigate();
 
     const handleProductClick = (id) => {

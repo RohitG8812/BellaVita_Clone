@@ -248,7 +248,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                                 </div>
                                 <div className="removeSortBtn">
                                     <div className={`addToCartBtn removeSortButtonSmall`}>
-                                        < button onClick={handleReset}>Remove Sort</button>
+                                        < button onClick={handleReset}>Clear Sort</button>
                                     </div>
                                 </div>
                             </div>
