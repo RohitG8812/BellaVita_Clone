@@ -198,7 +198,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                 return newCount;
             });
             setIsLoadingMore(false);
-        }, 50000);
+        }, 3500);
     };
 
     const handleScroll = () => {
