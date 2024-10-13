@@ -602,3 +602,10 @@
     padding-block: 4.5px;
   }
 }
+
+.productsLoader {
+  border: 0.63px solid rgba(0, 0, 0, 0.114);
+  padding-block: 8px;
+  padding-inline: 40px;
+  opacity: 0.7;
+}

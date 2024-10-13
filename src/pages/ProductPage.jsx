@@ -19,6 +19,8 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
     const [loading, setLoading] = useState(false)
     const [filteredProducts, setFilteredProducts] = useState(product);
     const [sortOptionActive, setSortOptionActive] = useState('');
+    const [displayedProducts, setDisplayedProducts] = useState(12); // Start with displaying 12 products
+    const [isLoadingMore, setIsLoadingMore] = useState(false);
 
     const handleChange = (e) => {
         const { value, checked } = e.target;
@@ -182,6 +184,43 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
     const handleOutsideClickSort = () => {
         setSortMenu(false)
     }
+
+    const loadMoreProduct = () => {
+        if (isLoadingMore || displayedProducts >= filteredProducts.length) {
+            console.log('No more products to load...');
+            return;
+        }
+        setIsLoadingMore(true);
+        setTimeout(() => {
+            setDisplayedProducts((prevDisplayedProducts) => {
+                const newCount = Math.min(prevDisplayedProducts + 12, filteredProducts.length);
+                console.log(`Updating displayedProducts: ${prevDisplayedProducts} -> ${newCount}`);
+                return newCount;
+            });
+            setIsLoadingMore(false);
+        }, 50000);
+    };
+
+    const handleScroll = () => {
+        console.log("Scroll Height: " + document.querySelector(".productCardMain").scrollHeight)
+        console.log("innerHeight: " + window.innerHeight)
+        console.log("scrollTop" + document.documentElement.scrollTop)
+
+        if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.querySelector(".productCardMain").scrollHeight) {
+            loadMoreProduct();
+        }
+    }
+
+    useEffect(() => {
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [displayedProducts, isLoadingMore]);
+
+
+
     return (
         <div className="mainContent">
             <span className='productCardHeading'>{heading}</span>
@@ -293,7 +332,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
 
             <div className={`productCardMain ${loading || filterMenuActive || filterMenuMiniActive || sortMenu ? "blurBackground" : ""}`} >
                 {filteredProducts.length > 0 ?
-                    filteredProducts.map((product, index) => {
+                    filteredProducts.slice(0, displayedProducts).map((product, index) => {
                         return <div className="productCard" key={product.id} onClick={() => handleProductClick(product.id)}>
                             <div className="cardImg">
                                 <div>
@@ -336,6 +375,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                         </div>
                     }) : <div className='noProductAvailable'>No Product Available</div>}
             </div>
+            {isLoadingMore ? <div className="productsLoader"> <Loader /></div> : ""}
         </div>
     )
 }

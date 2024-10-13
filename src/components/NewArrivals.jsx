@@ -25,7 +25,7 @@ const shopAllProductType = [
 ]
 
 function NewArrivals() {
-  const [product, setProduct] = useState([]);
+  const [product] = useState(Products.sort((a, b) => a.name.localeCompare(b.name)));
   const [smallBanner, setSmallBanner] = useState(false);
 
   useEffect(() => {
@@ -43,10 +43,6 @@ function NewArrivals() {
     };
   }, []);
 
-  useEffect(() => {
-    const sortedProducts = [...Products].sort((a, b) => a.name.localeCompare(b.name)); // Sort by name
-    setProduct(sortedProducts);
-  }, []);
   const navigate = useNavigate()
 
   const handleProductClick = (id) => {
