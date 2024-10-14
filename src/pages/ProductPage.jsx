@@ -8,6 +8,7 @@ import FilterLogo from "../assets/icons/filter.svg"
 import FIlter from '../components/FIlter'
 import Loader from './Loader'
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
+import NoResult from "../assets/icons/noResult.png"
 
 function ProductPage({ product, heading, handleProductClick, categoryFilter, productTypeFilter }) {
     const [filterMenuActive, setFilterMenuActive] = useState(false)
@@ -383,7 +384,12 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                                 </div>
                             </div>
                         </div>
-                    }) : <div className='noProductAvailable'>No Product Available</div>}
+                    }) : <div className='noProductAvailable'>
+                        <div className="no-result-detail">
+                            <img src={NoResult} alt="no-result" className='no-result-image' />
+                            <span>No Product Available</span>
+                        </div>
+                    </div>}
             </div>
             {isLoadingMore ? <div className="productsLoader"> <Loader /></div> : ""}
         </div>
