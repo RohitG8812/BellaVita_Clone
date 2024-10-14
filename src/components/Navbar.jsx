@@ -106,8 +106,6 @@ function Navbar() {
     const handleOutsideClick = () => {
         setInputBoxActive(false);
     };
-    console.log("input box " + inputBoxActive)
-    console.log("InputValuLength " + inputValueLength)
     return (
         <div style={{ position: showNavbar ? "fixed" : "", top: showNavbar ? 0 : "", display: (showNavbar ? "block" : "none" || defaultNavbar ? "block" : "none"), }}
             className={`mainNavbar ${location.pathname === "/" && "mainHover"} 
@@ -264,20 +262,3 @@ function Navbar() {
 }
 
 export default Navbar
-
-
-// const sortedFilteredProducts =
-//     filterItems.includes("lowToHigh")
-//         ? filteredProducts.sort((a, b) => {
-//             const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
-//             const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
-//             return priceA - priceB;
-//         })
-//         : filteredProducts;
-// filterItems.includes("highToLow")
-//     ? filteredProducts.sort((a, b) => {
-//         const priceA = parseFloat(a.price.replace(/[^0-9.-]+/g, ""));
-//         const priceB = parseFloat(b.price.replace(/[^0-9.-]+/g, ""));
-//         return priceB - priceA;
-//     })
-//     : filteredProducts;

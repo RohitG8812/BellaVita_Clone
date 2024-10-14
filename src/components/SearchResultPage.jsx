@@ -38,7 +38,7 @@ function SearchResultPage() {
         } else {
             console.log('No search results found in location state');
         }
-    }, [location.state, searchResultsProducts]);
+    }, [location, SearchQuery]);
 
     console.log(searchResultsProducts)
     console.log(SearchQuery);
@@ -46,7 +46,7 @@ function SearchResultPage() {
         navigate(`/collection/shopAll/${id}`)
     }
     return (
-        <Layout>
+        <Layout key={SearchQuery}>
             <div className="shopAllMain">
                 <div className="topSide">
                     <div className="hideDiv"></div>
