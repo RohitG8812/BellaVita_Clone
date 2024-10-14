@@ -153,7 +153,7 @@ img {
 .mainHover li a {
   color: #fff;
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
   transition: color 0.5s ease;
 }
 
@@ -269,6 +269,7 @@ input:focus {
 }
 
 .reset {
+  cursor: pointer;
   border: none;
   background: none;
   opacity: 0;
@@ -287,6 +288,8 @@ input:not(:placeholder-shown) ~ .reset {
 /* --- */
 
 .searchBar {
+  position: relative;
+  /* border: 1px solid red; */
   display: flex;
   align-items: center;
   gap: 20px;
@@ -387,7 +390,7 @@ li a:hover::after,
 }
 
 li a:hover {
-  color: #ea803d;
+  /* color: #ea803d; */
 }
 
 /*! Component scroll Navbar Jumping issue Code */
@@ -592,6 +595,7 @@ li a:hover {
 /* Lower SearchBar */
 
 .searchBarBig {
+  position: relative;
   padding-bottom: 6px;
   display: none;
 }
@@ -1115,6 +1119,7 @@ li a:hover {
 .cardImg {
   background-color: #f2f2f2;
   overflow: hidden;
+  transition: all 0.2s ease-in-out;
 }
 
 .cardImg2 {

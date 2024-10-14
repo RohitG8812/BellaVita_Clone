@@ -17,6 +17,7 @@ import Account from './components/Account'
 import Buy1Get1 from './components/Buy1Get1'
 import Pages from './components/Pages'
 import BellaCash from './components/BellaCash'
+import SearchResultPage from './components/SearchResultPage'
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path='/account' element={<Account />} />
         <Route path='/pages' element={<Pages />} />
         <Route path='/pages/bellaCash' element={<BellaCash />} />
+        <Route path='/collection/searchProducts' element={<SearchResultPage />} />
 
         {/*  */}
         <Route path="/collection/bestSellers/:id" element={<Product />} />

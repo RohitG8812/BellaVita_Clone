@@ -7,9 +7,7 @@ import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import FilterLogo from "../assets/icons/filter.svg"
 import FIlter from '../components/FIlter'
 import Loader from './Loader'
-import Money from "../assets/icons/roundMoney.svg"
-import close from "../assets/icons/roundX.svg"
-import Sort from '../components/Sort'
+import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
 
 function ProductPage({ product, heading, handleProductClick, categoryFilter, productTypeFilter }) {
     const [filterMenuActive, setFilterMenuActive] = useState(false)
@@ -21,6 +19,14 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
     const [sortOptionActive, setSortOptionActive] = useState('');
     const [displayedProducts, setDisplayedProducts] = useState(12); // Start with displaying 12 products
     const [isLoadingMore, setIsLoadingMore] = useState(false);
+    const [spinnerLoader, setSpinnerLoader] = useState(false);
+
+    useEffect(() => {
+        setSpinnerLoader(true)
+        setTimeout(() => {
+            setSpinnerLoader(false)
+        }, 2000)
+    }, [])
 
     const handleChange = (e) => {
         const { value, checked } = e.target;
@@ -187,7 +193,6 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
 
     const loadMoreProduct = () => {
         if (isLoadingMore || displayedProducts >= filteredProducts.length) {
-            console.log('No more products to load...');
             return;
         }
         setIsLoadingMore(true);
@@ -198,21 +203,16 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                 return newCount;
             });
             setIsLoadingMore(false);
-        }, 3500);
+        }, 2500);
     };
 
     const handleScroll = () => {
-        console.log("Scroll Height: " + document.querySelector(".productCardMain").scrollHeight)
-        console.log("innerHeight: " + window.innerHeight)
-        console.log("scrollTop" + document.documentElement.scrollTop)
-
         if (window.innerHeight + document.documentElement.scrollTop + 1 >= document.querySelector(".productCardMain").scrollHeight) {
             loadMoreProduct();
         }
     }
 
     useEffect(() => {
-
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -261,6 +261,20 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                                             <div className="checkBox">
                                                 <input
                                                     type="checkbox"
+                                                    value="allProducts"
+                                                    onChange={handleReset}
+                                                    checked={sortOptionActive.includes('allProducts')}
+                                                />
+                                                <div className="transition"></div>
+                                            </div>
+                                            <div className='labelOrProductCount'> <span>Relevance</span></div>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label className='input-label'>
+                                            <div className="checkBox">
+                                                <input
+                                                    type="checkbox"
                                                     value="lowToHigh"
                                                     onChange={handleSortLowToHigh}
                                                     checked={sortOptionActive.includes('lowToHigh')}
@@ -283,11 +297,6 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                                             </div>
                                             <div className='labelOrProductCount'> <span>Price - High to Low</span></div>
                                         </label>
-                                    </div>
-                                </div>
-                                <div className="removeSortBtn">
-                                    <div className={`addToCartBtn removeSortButtonSmall`}>
-                                        < button onClick={handleReset}>Clear Sort</button>
                                     </div>
                                 </div>
                             </div>
@@ -334,9 +343,10 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                 {filteredProducts.length > 0 ?
                     filteredProducts.slice(0, displayedProducts).map((product, index) => {
                         return <div className="productCard" key={product.id} onClick={() => handleProductClick(product.id)}>
-                            <div className="cardImg">
+                            <div className="cardImg" style={{ backgroundColor: spinnerLoader ? "#fff" : "#f2f2f2" }}>
                                 <div>
-                                    <img src={product.mainImg} alt="" className='ProductCardImg' />
+                                    {spinnerLoader ? <img src={SpinnerLoader} alt="" className='ProductCardImg' /> :
+                                        <img src={product.mainImg} alt="" className='ProductCardImg' />}
                                 </div>
                                 <div className="card-badge-bottom">
                                     <span className="discountBadge">{product.discount} off</span>

@@ -1,9 +1,23 @@
 import React from 'react'
 
-function Sort({ handleSortHighToLow, handleSortLowToHigh, sortOptionActive }) {
+function Sort({ handleSortHighToLow, handleSortLowToHigh, sortOptionActive, handleReset }) {
     return (
         <div>
             <div className="filterOptionsInner">
+                <div>
+                    <label className='input-label'>
+                        <div className="checkBox">
+                            <input
+                                type="checkbox"
+                                value="allProducts"
+                                onChange={handleReset}
+                                checked={sortOptionActive.includes('allProducts')}
+                            />
+                            <div className="transition"></div>
+                        </div>
+                        <div className='labelOrProductCount'> <span>Relevance</span></div>
+                    </label>
+                </div>
                 <div>
                     <label className='input-label'>
                         <div className="checkBox">

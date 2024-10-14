@@ -4,6 +4,9 @@ import ProfileIcon from '../assets/icons/profile.svg'
 import BrandLogo from "../assets/logo.svg"
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import SideNavbar from './SideNavbar'
+import "../css/Search.css"
+import Search from './Search'
+import Products from "../JSON/Products.js"
 
 const perfumes = ["All Perfumes", "Men", "Women", "Unisex", "Oud Collection", "Attars", "Little Luxuries"]
 const bathBody = ["Shower Gel", "Body Mist", "Body Parfum", "Body Lotion", "Travel Kit"]
@@ -14,6 +17,9 @@ function Navbar() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [showNavbar, setShowNavbar] = useState(false);
     const [defaultNavbar, setDefaultNavbar] = useState(true);
+    const [inputBoxActive, setInputBoxActive] = useState(false)
+    const [value, setValue] = useState("")
+    const [inputValueLength, setInputValueLength] = useState(false)
     const location = useLocation();
     const yAxisRef = useRef(window.scrollY);
 
@@ -64,6 +70,43 @@ function Navbar() {
         navigate("/collection/perfumesSets")
     }
 
+    const handleInputChange = (e) => {
+        let value = e.target.value
+        setValue(value)
+        if (value === "") {
+            setInputValueLength(false)
+        } else {
+            setInputValueLength(true)
+        }
+        // console.log(value)
+    }
+
+    const handleInputValueRemove = () => {
+        setValue("")
+        setInputValueLength(false)
+    }
+
+    const handleSubmitInput = (e) => {
+        e.preventDefault()
+        const inputText = value.toLowerCase()
+        console.log(inputText)
+        const searchProducts = Products.filter((item) =>
+            item.name.toLowerCase().includes(inputText) ||
+            item.category.toLowerCase().includes(inputText) ||
+            item.variantM.toLowerCase().includes(inputText)
+        );
+        console.log(searchProducts)
+        navigate(`/collection/searchProducts?query=${encodeURIComponent(inputText)}`, {
+            state: { searchResults: searchProducts } // pass the parameter to the searchResultPage
+        });
+        setInputBoxActive(false)
+    }
+
+    const handleOutsideClick = () => {
+        setInputBoxActive(false);
+    };
+    console.log("input box " + inputBoxActive)
+    console.log("InputValuLength " + inputValueLength)
     return (
         <div style={{ position: showNavbar ? "fixed" : "", top: showNavbar ? 0 : "", display: (showNavbar ? "block" : "none" || defaultNavbar ? "block" : "none"), }}
             className={`mainNavbar ${location.pathname === "/" && "mainHover"} 
@@ -72,22 +115,37 @@ function Navbar() {
         ${location.pathname === "/" ? "" : "liElements"}`}>
             <div className="topNav">
                 <div className="searchBar">
-                    <div className="hamburgMenu">
-                        <SideNavbar setSidebarOpen={setSidebarOpen} />
+                    <>
+                        <div className="hamburgMenu">
+                            <SideNavbar setSidebarOpen={setSidebarOpen} />
+                        </div>
+                        <form className="form" onSubmit={handleSubmitInput}>
+                            <button>
+                                <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+                                    <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" strokeWidth="1.333" strokeLinecap="round" strokeLinejoin="round"></path>
+                                </svg>
+                            </button>
+                            <input
+                                className="input inputBoxNavbar"
+                                placeholder="Search"
+                                required=""
+                                value={value}
+                                onChange={handleInputChange}
+                                type="text"
+                                onClick={() => setInputBoxActive(true)} />
+                            <button className="reset" type="reset" onClick={handleInputValueRemove}>
+                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </form>
+                    </>
+                    <div className="searchContentMain" style={{ display: inputBoxActive ? "block" : "none" }}>
+                        <Search
+                            inputBoxActive={inputBoxActive}
+                            inputValueLength={inputValueLength}
+                        />
                     </div>
-                    <form className="form">
-                        <button>
-                            <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
-                                <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" strokeWidth="1.333" strokeLinecap="round" strokeLinejoin="round"></path>
-                            </svg>
-                        </button>
-                        <input className="input" placeholder="Search" required="" type="text" />
-                        <button className="reset" type="reset">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                    </form>
                 </div>
                 <div className="brandLogo">
                     <Link to="/"><img src={BrandLogo} alt="BrandLogo" className='logo' onClick={brandLogoCLick} /></Link>
@@ -97,20 +155,43 @@ function Navbar() {
                     <Link to=""><img src={CartIcon} alt="Cart" className='navIcon' /></Link>
                 </div>
             </div>
+
+            {/* for disable backGround when inputBox Active */}
+            {inputBoxActive && (
+                <div className="overlay overLayNavbar" onClick={() => {
+                    if (inputBoxActive) handleOutsideClick();
+                }}></div>)}
+
             <div className="searchBarBig">
-                <form className="formLower">
-                    <button>
-                        <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
-                            <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" strokeWidth="1.333" strokeLinecap="round" strokeLinejoin="round"></path>
-                        </svg>
-                    </button>
-                    <input className="input" placeholder="Search For Your Favorite Product " required="" type="text" />
-                    <button className="reset" type="reset">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </form>
+                <>
+                    <form className="formLower" onSubmit={handleSubmitInput}>
+                        <button>
+                            <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
+                                <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" strokeWidth="1.333" strokeLinecap="round" strokeLinejoin="round"></path>
+                            </svg>
+                        </button>
+                        <input
+                            className="input inputBoxNavbar"
+                            placeholder="Search For Your Favorite Product "
+                            required=""
+                            type="text"
+                            value={value}
+                            onChange={handleInputChange}
+                            onClick={() => setInputBoxActive(true)}
+                        />
+                        <button className="reset" type="reset" onClick={handleInputValueRemove}>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </form>
+                </>
+                <div className="searchContentMainMini" style={{ display: inputBoxActive ? "block" : "none" }}>
+                    <Search
+                        inputBoxActive={inputBoxActive}
+                        inputValueLength={inputValueLength}
+                    />
+                </div>
             </div>
             <div className={`bottom ${location.pathname === "/" ? "" : "bottom-Slide"}`}>
                 <nav>
@@ -176,7 +257,6 @@ function Navbar() {
                     </ul>
                 </nav>
             </div>
-
         </div>
 
     )

@@ -38,7 +38,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                             <span className='filterCatHeading'>Sort</span>
                         </div>
                         <div className="filterOptions sortOptionsMini">
-                           <Sort handleSortHighToLow={handleSortHighToLow} handleSortLowToHigh={handleSortLowToHigh} sortOptionActive={sortOptionActive}/>
+                           <Sort handleSortHighToLow={handleSortHighToLow} handleSortLowToHigh={handleSortLowToHigh} sortOptionActive={sortOptionActive} handleReset={handleReset}/>
                         </div>
                     </div>
 
