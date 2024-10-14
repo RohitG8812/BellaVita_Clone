@@ -38,7 +38,7 @@ function SearchResultPage() {
         } else {
             console.log('No search results found in location state');
         }
-    }, [location.state]);
+    }, [location.state, searchResultsProducts]);
 
     console.log(searchResultsProducts)
     console.log(SearchQuery);
