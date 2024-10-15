@@ -33,15 +33,12 @@ function SearchResultPage() {
 
     useEffect(() => {
         if (location.state && location.state.searchResults) {
-            console.log('Search results found in location state:', location.state.searchResults);
             setSearchResultsProducts(location.state.searchResults);
         } else {
             console.log('No search results found in location state');
         }
     }, [location, SearchQuery]);
 
-    console.log(searchResultsProducts)
-    console.log(SearchQuery);
     const handleProductClick = (id) => {
         navigate(`/collection/shopAll/${id}`)
     }

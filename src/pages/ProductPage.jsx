@@ -386,8 +386,9 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                         </div>
                     }) : <div className='noProductAvailable'>
                         <div className="no-result-detail">
+                            <span style={{fontSize: "20px"}}>No Product Found !</span>
+                            <span style={{fontSize: "14px", color: "grey", marginTop: "10px", textAlign: "center"}}>Please check the spelling or try again with a less specific or different term.</span>
                             <img src={NoResult} alt="no-result" className='no-result-image' />
-                            <span>No Product Available</span>
                         </div>
                     </div>}
             </div>

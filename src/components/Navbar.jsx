@@ -78,7 +78,6 @@ function Navbar() {
         } else {
             setInputValueLength(true)
         }
-        // console.log(value)
     }
 
     const handleInputValueRemove = () => {
@@ -95,12 +94,23 @@ function Navbar() {
             item.category.toLowerCase().includes(inputText) ||
             item.variantM.toLowerCase().includes(inputText)
         );
+
+        // store recent search in localStorage
+        const recentSearches = JSON.parse(localStorage.getItem("recentSearches")) || [];
+        if (!recentSearches.includes(inputText) && inputText !== "") {
+            recentSearches.unshift(inputText)
+            if (recentSearches.length > 5) {
+                recentSearches.pop(); // limit to store last 5 searches
+            }
+            localStorage.setItem("recentSearches", JSON.stringify(recentSearches))
+        }
+
         console.log(searchProducts)
         navigate(`/collection/searchProducts?query=${encodeURIComponent(inputText)}`, {
             state: { searchResults: searchProducts } // pass the parameter to the searchResultPage
         });
         setInputBoxActive(false)
-        // setValue('')
+        setValue('')
     }
 
     const handleOutsideClick = () => {
@@ -143,6 +153,7 @@ function Navbar() {
                         <Search
                             inputBoxActive={inputBoxActive}
                             inputValueLength={inputValueLength}
+                            setInputBoxActive={setInputBoxActive}
                         />
                     </div>
                 </div>
@@ -189,6 +200,7 @@ function Navbar() {
                     <Search
                         inputBoxActive={inputBoxActive}
                         inputValueLength={inputValueLength}
+                        setInputBoxActive={setInputBoxActive}
                     />
                 </div>
             </div>
