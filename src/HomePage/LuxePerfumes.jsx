@@ -67,7 +67,6 @@ function LuxePerfumes() {
     const handleClick = (index) => {
         setSelectedProduct(product[index])
     }
-    console.log(selectedProduct.id)
     return (
         <div className='mainDiv'>
             <div className="luxePerfumesSectionMain">

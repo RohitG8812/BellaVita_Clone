@@ -20,10 +20,9 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
     const [sortOptionActive, setSortOptionActive] = useState('');
     const [displayedProducts, setDisplayedProducts] = useState(12); // Start with displaying 12 products
     const [isLoadingMore, setIsLoadingMore] = useState(false);
-    const [spinnerLoader, setSpinnerLoader] = useState(false);
+    const [spinnerLoader, setSpinnerLoader] = useState(true);
 
     useEffect(() => {
-        setSpinnerLoader(true)
         setTimeout(() => {
             setSpinnerLoader(false)
         }, 2000)
@@ -200,7 +199,6 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
         setTimeout(() => {
             setDisplayedProducts((prevDisplayedProducts) => {
                 const newCount = Math.min(prevDisplayedProducts + 12, filteredProducts.length);
-                console.log(`Updating displayedProducts: ${prevDisplayedProducts} -> ${newCount}`);
                 return newCount;
             });
             setIsLoadingMore(false);
@@ -386,8 +384,8 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                         </div>
                     }) : <div className='noProductAvailable'>
                         <div className="no-result-detail">
-                            <span style={{fontSize: "20px"}}>No Product Found !</span>
-                            <span style={{fontSize: "14px", color: "grey", marginTop: "10px", textAlign: "center"}}>Please check the spelling or try again with a less specific or different term.</span>
+                            <span style={{ fontSize: "20px" }}>No Product Found !</span>
+                            <span style={{ fontSize: "14px", color: "grey", marginTop: "10px", textAlign: "center" }}>Please check the spelling or try again with a less specific or different term.</span>
                             <img src={NoResult} alt="no-result" className='no-result-image' />
                         </div>
                     </div>}

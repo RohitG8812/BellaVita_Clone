@@ -62,8 +62,8 @@ function ReviewSlider() {
                 </div>
                 <div className="revSliderMain">
                     <Slider {...settings}>
-                        {Notes.map((review) => (
-                            <div key={review.id} className="reviewSlide">
+                        {Notes.map((review, index) => (
+                            <div key={index} className="reviewSlide">
                                 <div className="reviewProfile">
                                     <img src={review.img} alt={review.name} className="profileImg" />
                                 </div>

@@ -19,7 +19,7 @@ function CrazyDealsHome() {
                 </div>
                 <div className="crazyDealsBannerMap">
                     {Banners.map((banner, index) => (
-                        <Link to="/collection/crazyDeals">
+                        <Link to="/collection/crazyDeals" key={index}>
                             <div key={index} className={`cdBannerMain ${index === 2 ? "cdFullWidthBanner" : ""}`}>
                                 <div className="cdImgBanner">
                                     <div className="cdBannerImgMain">

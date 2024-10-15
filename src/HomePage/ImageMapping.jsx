@@ -48,8 +48,8 @@ function ImageMapping() {
     return (
         <div className='imageMapping'>
             <div className="topImageMapping">
-                {Top.map((topImg) => {
-                    return <div className="topSingleMapImg">
+                {Top.map((topImg, index) => {
+                    return <div className="topSingleMapImg" key={index}>
                         <img src={topImg} alt="Img" />
                     </div>
                 })}

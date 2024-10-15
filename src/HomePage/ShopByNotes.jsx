@@ -26,7 +26,7 @@ function ShopByNotes() {
                 </div>
                 <div className="shopByNotesBannerMap">
                     {Notes.map((banner, index) => (
-                        <Link to={`${banner.to}`}>
+                        <Link to={`${banner.to}`} key={index}>
                             <div className="sbnBannerMain" key={index}>
                                 <div className="cdImgBanner">
                                     <div className="cdBannerImgMain">

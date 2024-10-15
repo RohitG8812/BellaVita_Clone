@@ -154,6 +154,8 @@ function Navbar() {
                             inputBoxActive={inputBoxActive}
                             inputValueLength={inputValueLength}
                             setInputBoxActive={setInputBoxActive}
+                            value={value}
+                            setValue={setValue}
                         />
                     </div>
                 </div>
@@ -201,6 +203,8 @@ function Navbar() {
                         inputBoxActive={inputBoxActive}
                         inputValueLength={inputValueLength}
                         setInputBoxActive={setInputBoxActive}
+                        value={value}
+                        setValue={setValue}
                     />
                 </div>
             </div>
