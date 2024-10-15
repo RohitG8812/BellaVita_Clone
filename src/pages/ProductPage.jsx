@@ -218,7 +218,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [displayedProducts, isLoadingMore]);
+    }, [displayedProducts, isLoadingMore, filteredProducts]);
 
 
 

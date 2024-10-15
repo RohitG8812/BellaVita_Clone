@@ -100,7 +100,7 @@ function Navbar() {
             state: { searchResults: searchProducts } // pass the parameter to the searchResultPage
         });
         setInputBoxActive(false)
-        setValue('')
+        // setValue('')
     }
 
     const handleOutsideClick = () => {
