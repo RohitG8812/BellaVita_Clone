@@ -29,7 +29,7 @@ import BellaCashBanner from "../assets/Banner/HomePageBanner/bellaCash.webp"
 import BellaCashBannerMini from "../assets/Banner/HomePageBanner/bellaCashMini.webp"
 import ReviewSlider from '../HomePage/ReviewSlider'
 import ImageMapping from '../HomePage/ImageMapping'
-import LipStickFinder from '../assets/Banner/HomePageBanner/lipstickFinder.webp'
+import LipStickFinder from '../assets/Banner/HomePageBanner/lipstickFinder.jpeg'
 
 
 function Home() {
