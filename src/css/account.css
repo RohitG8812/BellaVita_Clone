@@ -1,0 +1,77 @@
+.initialBeforeLoginMain {
+  padding-block: 80px;
+  @media (max-width: 550px) {
+    padding-block: 40px;
+  }
+}
+
+.initialBeforeLogin {
+  /* border: 1px solid rgba(128, 128, 128, 0.39); */
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  border-radius: 3px;
+  padding-block: 20px;
+  padding-inline: 30px;
+  width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 25px;
+  align-items: center;
+  text-align: center;
+  @media (max-width: 550px) {
+    padding-inline: 10px;
+  }
+  @media (max-width: 340px) {
+    padding-inline: 10px;
+  }
+}
+
+.accountWelcomeBellavita {
+  text-transform: uppercase;
+  line-height: 36px;
+  letter-spacing: 3.2px;
+  font-size: 27px;
+  font-weight: 600;
+  @media (max-width: 425px) {
+    font-size: 22px;
+  }
+  @media (max-width: 355px) {
+    font-size: 18px;
+  }
+}
+
+.accountText {
+  text-align: center;
+  font-size: 18px;
+  line-height: 25.4px;
+  letter-spacing: 0.63px;
+  color: rgba(33, 35, 38, 0.75);
+  font-weight: 400;
+  @media (max-width: 750px) {
+    font-size: 16px;
+  }
+}
+
+.accountBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-register-Btn {
+  width: 220px;
+}
+
+.back-Btn {
+  width: 100px;
+}
+
+.accountEMoji{
+    font-size: 35px;
+    @media (max-width: 550px) {
+        font-size: 30px;
+    }
+}

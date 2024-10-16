@@ -1,0 +1,101 @@
+.textFields {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.loginBox {
+  padding-inline: 20px;
+  @media (max-width: 450px) {
+    gap: 12px;
+  }
+}
+
+.loginInput {
+  font-family: myFont;
+  width: 400px;
+  @media (max-width: 450px) {
+    width: 280px;
+  }
+  @media (max-width: 340px) {
+    width: 250px;
+  }
+}
+
+#outlined-basic {
+  font-family: myFont !important;
+}
+
+.forgot-Password {
+  width: 100%;
+  color: #1967d2;
+  line-height: 22px;
+  font-size: 17.2px;
+  margin-top: 2px;
+  letter-spacing: 0.83px;
+  display: flex;
+  justify-content: flex-end;
+
+  @media (max-width: 550px) {
+    font-size: 15px;
+  }
+}
+
+.loginBtn {
+  width: 100%;
+}
+
+.login_bottom {
+  width: 100%;
+}
+
+.googleBtn {
+  min-height: 38.4px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 2.6px;
+  line-height: 14.4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #fff;
+  border: 0.8px solid #000;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  gap: 5px;
+  cursor: pointer;
+  gap: 10px;
+  margin-top: 10px;
+  @media (max-width: 450px) {
+    margin-top: 5px;
+  }
+}
+
+.google-icon {
+  width: 20px;
+}
+
+.registerTextMain {
+  /* margin-top: 40px !important; */
+  width: 100%;
+  color: #000;
+  line-height: 22px;
+  font-size: 17.2px;
+  margin-top: 2px;
+  letter-spacing: 0.93px;
+  @media (max-width: 550px) {
+    font-size: 15px;
+  }
+}
+
+.registerText {
+  color: #1967d2;
+  font-weight: 550;
+  text-decoration: underline;
+}

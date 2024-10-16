@@ -29,7 +29,6 @@ function SideBarContent() {
                 const topOptionsHeight = topOptionsRef.current.offsetHeight;
                 const windowHeight = window.innerHeight;
                 const calculatedMenuHeight = windowHeight - topOptionsHeight;
-
                 setMenuHeight(`${calculatedMenuHeight}px`);
             }
         };
@@ -63,6 +62,7 @@ function SideBarContent() {
 
 
     const sideBarOptions = () => [
+        { name: "My Account", src: ProfileIcon, navigate: '/account' },
         { name: "BOGO", src: Bogo, navigate: '/collection/bogo' },
         { name: "Crazy Deals 🔥", src: CrazyDeals, navigate: '/collection/crazyDeals' },
         { name: "Shop All", src: ShopAll, navigate: '/collection/shopAll' },
@@ -110,7 +110,7 @@ function SideBarContent() {
                             <div className="menuOptionContent" onClick={() => handleClick(index)}>
                                 <div className="left">
                                     <div className="menuOptLogo" key={index}>
-                                        <img src={opt.src} alt="SidebarIcons" />
+                                        <img src={opt.src} alt="SidebarIcons" className={index === 0 ? "profileIconRounded" : ""} />
                                     </div>
                                     <div className="menuOptName">
                                         {opt.name}

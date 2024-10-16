@@ -17,6 +17,10 @@
   padding: 0;
 }
 
+input{
+  font-family: myFont;
+}
+
 html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
@@ -1592,4 +1596,8 @@ li a:hover {
 
 .sideBarSubMenuLiIndexCss li::after {
   background-color: #0000007c !important;
+}
+
+.profileIconRounded{
+  width: 16px !important;
 }

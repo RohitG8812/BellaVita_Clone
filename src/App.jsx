@@ -18,6 +18,10 @@ import Buy1Get1 from './components/Buy1Get1'
 import Pages from './components/Pages'
 import BellaCash from './components/BellaCash'
 import SearchResultPage from './components/SearchResultPage'
+import Login from './auth/Login'
+import Register from './auth/Register'
+import { ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
@@ -37,6 +41,8 @@ function App() {
         <Route path='/collection/skincare' element={<SkinCare />} />
         <Route path='/collection/bogo' element={<Buy1Get1 />} />
         <Route path='/account' element={<Account />} />
+        <Route path='/account/login' element={<Login />} />
+        <Route path='/account/register' element={<Register />} />
         <Route path='/pages' element={<Pages />} />
         <Route path='/pages/bellaCash' element={<BellaCash />} />
         <Route path='/collection/searchProducts' element={<SearchResultPage />} />
@@ -49,6 +55,17 @@ function App() {
         <Route path="/collection/makeup/:id" element={<Product />} />
         <Route path="/collection/shopAll/:id" element={<Product />} />
       </Routes>
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </BrowserRouter>
   )
 }
