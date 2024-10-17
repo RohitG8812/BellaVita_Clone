@@ -1,8 +1,5 @@
 .initialBeforeLoginMain {
-  padding-block: 80px;
-  @media (max-width: 550px) {
-    padding-block: 40px;
-  }
+  padding-block: 40px;
 }
 
 .initialBeforeLogin {

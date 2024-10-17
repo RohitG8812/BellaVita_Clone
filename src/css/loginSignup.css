@@ -13,15 +13,29 @@
   }
 }
 
-.loginInput {
+.registerInput {
   font-family: myFont;
   width: 400px;
-  @media (max-width: 450px) {
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.loginInput{
+  font-family: myFont;
+  width: 400px;
+  @media (max-width: 470px) {
     width: 280px;
   }
   @media (max-width: 340px) {
-    width: 250px;
+    width: 260px;
   }
+  @media (max-width: 325px) {
+    width: 230px;
+  }
+}
+.inputDiv{
+  width: 100%;
 }
 
 #outlined-basic {
@@ -98,4 +112,26 @@
   color: #1967d2;
   font-weight: 550;
   text-decoration: underline;
+}
+
+.registeredNameDiv{
+  display: flex;
+  width: 100%;
+  gap: 5px;
+}
+
+.nameInput{
+  font-family: mrFont;
+}
+
+.LoginRegisterHeading {
+  text-transform: uppercase;
+  line-height: 36px;
+  letter-spacing: 3.2px;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.spinnerLoginLoader{
+  width: 280px;
 }

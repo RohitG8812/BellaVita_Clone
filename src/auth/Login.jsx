@@ -19,22 +19,19 @@ function Login() {
     const [loader, setLoader] = useState(false);
     const navigate = useNavigate()
 
-    const handleBack = () => {
-        navigate(-1);
-    }
-
     const handleSubmit = async (e) => {
         e.preventDefault()
+        setLoader(true)
         try {
             await signInWithEmailAndPassword(auth, email, password)
             console.log("logged in successfully");
             toast.success("Logged in Successfully")
-            setLoader(true)
             setTimeout(() => {
                 navigate("/account")
                 setLoader(false)
             }, 2000)
         } catch (error) {
+            setLoader(false)
             console.log(error.message);
             toast.error("Invalid Email or password")
         }
@@ -42,16 +39,17 @@ function Login() {
 
     const handleGoogleSignIn = async () => {
         const provider = new GoogleAuthProvider();
+        setLoader(true)
         try {
             await signInWithPopup(auth, provider);
             console.log('Logged in with Google');
             toast.success("Logged in Successfully")
-            setLoader(true)
             setTimeout(() => {
                 navigate("/account")
                 setLoader(false)
             }, 2000)
         } catch (error) {
+            setLoader(false)
             console.log(error.message);
             toast.error("Login With Google Failed...")
         }
@@ -88,14 +86,14 @@ function Login() {
                 <div className='ProductPageMain ShopAll'>
                     <div className="hide initialBeforeLoginMain">
                         <div className='initialBeforeLogin loginBox'>
-                            {loader ? <img src={SpinnerLoader} alt="" /> : (
+                            {loader ? <img src={SpinnerLoader} alt="" className='spinnerLoginLoader' /> : (
                                 <>
                                     <div className="loginHeading">
-                                        <p className='accountWelcomeBellavita'>Login</p>
+                                        <p className='LoginRegisterHeading'>Login</p>
                                     </div>
                                     <form action="" onSubmit={handleSubmit}>
                                         <div className="textFields">
-                                            <div>
+                                            <div className='inputDiv'>
                                                 <TextField
                                                     className='loginInput'
                                                     id="outlined-basic"
@@ -111,7 +109,7 @@ function Login() {
                                                     }}
                                                 />
                                             </div>
-                                            <div>
+                                            <div className='inputDiv'>
                                                 <TextField
                                                     className='loginInput'
                                                     id="outlined-basic"
@@ -138,7 +136,6 @@ function Login() {
                                         <button onClick={handleGoogleSignIn} className='googleBtn'><img src={Google} alt="" className='google-icon' />Sign-in with Google</button>
                                     </div>
                                     <div>
-                                        <img src={Line} alt="" />
                                         <p className='registerTextMain'>Don't have an account? <span className='registerText'> <Link to='/account/register'> Register</Link></span></p>
                                     </div>
                                 </>
@@ -147,7 +144,6 @@ function Login() {
                     </div>
                 </div>
             </div>
-
         </Layout>
     )
 }
