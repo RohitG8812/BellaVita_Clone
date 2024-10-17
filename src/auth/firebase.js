@@ -4,13 +4,13 @@ import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCP-56gvO-VE3-m9rcfQFIiLqRuZ0vusSw",
-  authDomain: "bellavita-0.firebaseapp.com",
-  projectId: "bellavita-0",
-  storageBucket: "bellavita-0.appspot.com",
-  messagingSenderId: "967085873779",
-  appId: "1:967085873779:web:286eb17392b78e9556e806",
-  measurementId: "G-1D5EWYE018",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGE_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase
