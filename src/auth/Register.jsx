@@ -11,6 +11,7 @@ import Line from "../assets/icons/line.png"
 import Google from "../assets/icons/google.svg"
 import { toast } from 'react-toastify'
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
+import { InputAdornment } from '@mui/material'
 
 function Register() {
     const [email, setEmail] = useState("")
@@ -116,7 +117,7 @@ function Register() {
                                             </div>
                                             <div className='inputDiv'>
                                                 <TextField
-                                                    className='registerInput'
+                                                    className='registerInput '
                                                     id="outlined-basic"
                                                     label="Contact Number"
                                                     variant="outlined"
@@ -127,6 +128,11 @@ function Register() {
                                                     onChange={(e) => setNumber(e.target.value)}
                                                     InputLabelProps={{
                                                         style: { fontFamily: 'myFont', letterSpacing: "1px", fontSize: "17.2px" }
+                                                    }}
+                                                    slotProps={{
+                                                        input: {
+                                                            startAdornment: <InputAdornment position="start">+91 </InputAdornment>,
+                                                        },
                                                     }}
                                                 />
                                             </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import Collection from './components/Collection'
 import Perfumes from './components/Perfumes'
@@ -22,6 +22,10 @@ import Login from './auth/Login'
 import Register from './auth/Register'
 import { ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css';
+import Profile from './account/Profile'
+import Address from './account/Address'
+import Order from './account/Order'
+import CashBack from './account/CashBack'
 
 function App() {
   return (
@@ -40,7 +44,6 @@ function App() {
         <Route path='/collection/perfumesSets' element={<PerfumesSets />} />
         <Route path='/collection/skincare' element={<SkinCare />} />
         <Route path='/collection/bogo' element={<Buy1Get1 />} />
-        <Route path='/account' element={<Account />} />
         <Route path='/account/login' element={<Login />} />
         <Route path='/account/register' element={<Register />} />
         <Route path='/pages' element={<Pages />} />
@@ -54,6 +57,15 @@ function App() {
         <Route path="/collection/bathBody/:id" element={<Product />} />
         <Route path="/collection/makeup/:id" element={<Product />} />
         <Route path="/collection/shopAll/:id" element={<Product />} />
+
+        <Route path='/account' element={<Account />}>
+          <Route index element={<Navigate to="/account/profile" />} />
+          <Route path='/account/profile' element={<Profile />} />
+          <Route path='/account/address' element={<Address />} />
+          <Route path='/account/orders' element={<Order />} />
+          <Route path='/account/cashBack' element={<CashBack />} />
+        </Route>
+
       </Routes>
       <ToastContainer
         position="top-right"

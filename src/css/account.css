@@ -34,7 +34,7 @@
     font-size: 22px;
   }
   @media (max-width: 355px) {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 
@@ -66,9 +66,206 @@
   width: 100px;
 }
 
-.accountEMoji{
-    font-size: 35px;
-    @media (max-width: 550px) {
-        font-size: 30px;
-    }
+.accountEMoji {
+  font-size: 35px;
+  @media (max-width: 550px) {
+    font-size: 30px;
+  }
 }
+
+/* Account details Page */
+
+.accountDetailsMain {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  /* border: 1px solid red; */
+}
+
+.acTopSecTopSide {
+  display: flex;
+  justify-content: space-between;
+}
+
+.userNameTopHeading {
+  display: flex;
+  align-items: end;
+  text-transform: uppercase;
+  line-height: 26px;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000cf;
+  @media (max-width: 425px) {
+    font-size: 14px;
+  }
+  @media (max-width: 355px) {
+    font-size: 12px;
+  }
+}
+
+.acSecTopLeftSide {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 2px;
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: start;
+  }
+}
+
+.acSecTopRightSide {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+  font-size: 15px;
+  color: rgb(152, 151, 151);
+  line-height: 22.5px;
+  letter-spacing: normal;
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+.logOutOption {
+  width: 100%;
+  padding-bottom: 8px;
+  text-align: end;
+}
+
+.accountLogoutResetPass{
+  cursor: pointer;
+}
+
+.accountLogoutResetPass:hover{
+  opacity: 0.8;
+}
+
+.acTopSecBottomSide {
+  display: flex;
+  margin-top: 12px;
+  gap: 15px;
+}
+
+.singleLineEmailCOntact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 550px) {
+    flex-direction: column;
+    text-align: start;
+    align-items: start;
+  }
+}
+
+.middleLine {
+  border-right: 0.8px solid rgb(152, 151, 151);
+  padding-right: 20px;
+}
+
+.emailContText {
+  font-size: 15px;
+  color: rgb(103, 102, 102);
+  padding-inline: 15px;
+  @media (max-width: 550px) {
+    padding-inline: 0px;
+    font-size: 14px;
+  }
+}
+
+.spinnerLoaderContent {
+  padding-block: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accountDetailsTopSection {
+  border-bottom: 0.8px solid rgb(210, 213, 217);
+  padding-bottom: 30px;
+}
+
+.accountDetailsBottomSection {
+  margin-top: 30px;
+}
+
+.accountDetailsBottomTop {
+  /* border: 1px solid red; */
+  padding-bottom: 20px;
+}
+
+.accountDetailsNavMain {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 910px) {
+    justify-content: space-around;
+  }
+  @media (max-width: 525px) {
+    justify-content: space-between;
+  }
+}
+
+.accountDetailsNav {
+  background-color: rgb(240, 240, 240);
+  padding-block: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  padding-inline: 45px;
+  border-radius: 5px;
+  margin-inline: 20px;
+  @media (max-width: 910px) {
+    margin-inline: 0px;
+  }
+  @media (max-width: 680px) {
+    font-size: 13.5px;
+    padding-inline: 30px;
+    padding-block: 8px;
+  }
+  @media (max-width: 525px) {
+    font-size: 12.5px;
+    padding-inline: 20px;
+    padding-block: 7px;
+  }
+  @media (max-width: 425px) {
+    font-size: 11.5px;
+    padding-inline: 16px;
+    padding-block: 5px;
+  }
+  @media (max-width: 367px) {
+    font-size: 10px;
+    padding-inline: 13px;
+    padding-block: 5px;
+  }
+  @media (max-width: 322px) {
+    font-size: 10px;
+    padding-inline: 10px;
+    padding-block: 5px;
+  }
+}
+
+.accountDetailsNav:hover {
+  background-color: #000;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.accountDetailsNav {
+  color: #000000bd !important;
+  text-transform: uppercase;
+}
+
+.accountDetailsNav:hover {
+  color: #fff !important;
+}
+
+.accountActiveNav {
+  background-color: #000;
+  color: #fff !important;
+}
+
+.accountOutletComponent{
+  margin-top: 30px;
+}
+
+/* Profile Section */

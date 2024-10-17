@@ -3,13 +3,17 @@ import Layout from '../Layout/Layout'
 import { auth, db } from '../auth/firebase'
 import { doc, getDoc } from 'firebase/firestore'
 import { sendPasswordResetEmail } from 'firebase/auth'
-import { useNavigate } from 'react-router-dom'
+import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
 import "../css/account.css"
+import { toast } from 'react-toastify'
+import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
+
 
 function Account() {
   const [userDetails, setUserDetails] = useState(null)
   const [resetEmailSent, setResetEmailSent] = useState(false);
   const navigate = useNavigate()
+  const [loader, setLoader] = useState(true);
 
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async (user) => {
@@ -46,29 +50,45 @@ function Account() {
         console.log("User is not logged in");
         setUserDetails(null);
       }
+      setLoader(false)
     })
   }
 
   async function handleLogOut() {
+    setLoader(true)
     try {
       await auth.signOut()
-      window.location.href = "/account"
-      console.log("user is logged out")
+      toast.success("Log Out Successful")
+      setTimeout(() => {
+        navigate("/account")
+        setLoader(false)
+      }, 2000)
     } catch (error) {
+      setLoader(false)
+      toast.error(error.message)
       console.error("log out error", error.message)
     }
   }
 
   const handleResetPassword = async () => {
     if (userDetails && userDetails.email) {
+      setLoader(true)
       try {
         await sendPasswordResetEmail(auth, userDetails.email);
-        setResetEmailSent(true);
         console.log("Password reset email sent");
+        setTimeout(() => {
+          setLoader(false)
+          toast.success("Password reset Email sent");
+          setResetEmailSent(true);
+        }, 1000)
       } catch (error) {
+        toast.error(error.message)
+        setLoader(false)
         console.error("Error sending password reset email", error.message);
       }
     } else {
+      setLoader(false)
+      toast.error(error.message)
       console.log("No email address available for password reset");
     }
   };
@@ -91,16 +111,45 @@ function Account() {
           <div className="hideDiv"></div>
         </div>
         <div className='ProductPageMain ShopAll'>
-          <div className="hide">
-            <div>
+          <div className="hide accountDetailsMain">
+            {loader ? <div className='spinnerLoaderContent'><img src={SpinnerLoader} alt="" className='spinnerLoginLoader' /> </div> : (<div className=''>
               {userDetails ? (<div className="userDetails">
-                <p>EMail : {userDetails.email}</p>
-                <p>First Name : {userDetails.firstName}</p>
-                <p>Last Name : {userDetails.lastName}</p>
-                <button onClick={handleLogOut}>LogOut</button>
-                <div>
-                  <button onClick={handleResetPassword}>Reset Password</button>
-                  {resetEmailSent && <p>Password reset email has been sent to {userDetails.email}</p>}
+                <div className="accountDetailsTopSection">
+                  <div className="acTopSecTopSide">
+                    <div className="acSecTopLeftSide">
+                      <span className='accountWelcomeBellavita'>Welcome,</span>
+                      <span className='userNameTopHeading'> {userDetails.firstName}</span>
+                    </div>
+                    <div className="acSecTopRightSide">
+                      <p className='logOutOption accountLogoutResetPass' onClick={handleLogOut}>LogOut</p>
+                      <p className='accountLogoutResetPass' onClick={handleResetPassword}>Change Password</p>
+                    </div>
+                  </div>
+                  <div className="acTopSecBottomSide">
+                    <p className='singleLineEmailCOntact middleLine' ><span className='userNameTopHeading'>Email</span> <span className='emailContText '>{userDetails.email}</span></p>
+                    <p className='singleLineEmailCOntact' ><span className='userNameTopHeading'>Contact</span> <span className='emailContText'>+91{userDetails.number}</span></p>
+                  </div>
+                </div>
+                <div className="accountDetailsBottomSection">
+                  <div className="accountDetailsBottomTop">
+                    <div className='accountDetailsNavMain'>
+                      <NavLink to="profile" end className={(e) => `${e.isActive ? "accountActiveNav" : ""} accountDetailsNav`}>
+                        <span>Profile</span>
+                      </NavLink>
+                      <NavLink to="address" className={(e) => `${e.isActive ? "accountActiveNav" : ""} accountDetailsNav`}>
+                        <span>Address</span>
+                      </NavLink>
+                      <NavLink to="orders" className={(e) => `${e.isActive ? "accountActiveNav" : ""} accountDetailsNav`}>
+                        <span>Orders </span>
+                      </NavLink>
+                      <NavLink to="cashBack" className={(e) => `${e.isActive ? "accountActiveNav" : ""} accountDetailsNav`}>
+                        <span>Cashback </span>
+                      </NavLink>
+                    </div>
+                  </div>
+                  <div className="accountOutletComponent">
+                    <Outlet context={userDetails} />
+                  </div>
                 </div>
               </div>)
                 :
@@ -109,8 +158,8 @@ function Account() {
                     <p className='accountWelcomeBellavita'>Welcome to BellaVita</p>
                     <p className='accountEMoji'>🤩</p>
                     <div className="accountText">
-                      <p style={{fontWeight: "600", color : "black"}}>You are not Login !</p>
-                      <p>Click on Below Login Button to Login or Register Yourself.</p>
+                      <p style={{ fontWeight: "600", color: "black" }}>You are not Login !</p>
+                      <p >Click on Below Login Button to Login or Register Yourself.</p>
                       <p>or Click on Back Button to go Homepage</p>
                     </div>
                     <div className="accountBtn">
@@ -119,11 +168,11 @@ function Account() {
                     </div>
                   </div>
                 </div>)}
-            </div>
+            </div>)}
           </div>
         </div>
       </div>
-    </Layout>
+    </Layout >
   )
 }
 
