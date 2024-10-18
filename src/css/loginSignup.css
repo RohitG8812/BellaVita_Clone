@@ -38,6 +38,10 @@
   width: 100%;
 }
 
+#outlined-basic {
+  font-family: myFont !important;
+}
+
 #outlined {
   font-family: myFont !important;
 }

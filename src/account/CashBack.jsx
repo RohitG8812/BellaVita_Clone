@@ -1,8 +1,11 @@
 import React from 'react'
+import BellaCashInner from './BellaCashInner'
 
 function CashBack() {
   return (
-    <div>CashBack</div>
+    <div>
+      <BellaCashInner />
+    </div>
   )
 }
 
