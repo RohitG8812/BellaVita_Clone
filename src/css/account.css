@@ -133,11 +133,11 @@
   text-align: end;
 }
 
-.accountLogoutResetPass{
+.accountLogoutResetPass {
   cursor: pointer;
 }
 
-.accountLogoutResetPass:hover{
+.accountLogoutResetPass:hover {
   opacity: 0.8;
 }
 
@@ -183,10 +183,16 @@
 .accountDetailsTopSection {
   border-bottom: 0.8px solid rgb(210, 213, 217);
   padding-bottom: 30px;
+  @media (max-width: 450px) {
+    padding-bottom: 20px;
+  }
 }
 
 .accountDetailsBottomSection {
   margin-top: 30px;
+  @media (max-width: 450px) {
+    margin-top: 20px;
+  }
 }
 
 .accountDetailsBottomTop {
@@ -195,15 +201,19 @@
 }
 
 .accountDetailsNavMain {
+  text-align: center;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   @media (max-width: 910px) {
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    column-gap: 12px;
   }
-  @media (max-width: 525px) {
-    justify-content: space-between;
+  @media (max-width: 654px) {
+    column-gap: 8px;
   }
 }
 
@@ -216,31 +226,30 @@
   border-radius: 5px;
   margin-inline: 20px;
   @media (max-width: 910px) {
+    width: 100%;
     margin-inline: 0px;
+    padding-inline: 0px;
   }
   @media (max-width: 680px) {
     font-size: 13.5px;
-    padding-inline: 30px;
+    padding-inline: 0px;
     padding-block: 8px;
+    width: 100% !important;
   }
   @media (max-width: 525px) {
     font-size: 12.5px;
-    padding-inline: 20px;
     padding-block: 7px;
   }
   @media (max-width: 425px) {
     font-size: 11.5px;
-    padding-inline: 16px;
     padding-block: 5px;
   }
   @media (max-width: 367px) {
     font-size: 10px;
-    padding-inline: 13px;
     padding-block: 5px;
   }
   @media (max-width: 322px) {
     font-size: 10px;
-    padding-inline: 10px;
     padding-block: 5px;
   }
 }
@@ -264,8 +273,125 @@
   color: #fff !important;
 }
 
-.accountOutletComponent{
+.accountOutletComponent {
   margin-top: 30px;
+  @media (max-width: 450px) {
+    margin-top: 10px;
+  }
 }
 
 /* Profile Section */
+
+.ProfileTextFieldMain {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 60px;
+  row-gap: 25px;
+  @media (max-width: 1000px) {
+    column-gap: 30px;
+  }
+  @media (max-width: 835px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+  }
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.profileTextField {
+  width: 100%;
+}
+
+.profileTextField input {
+  letter-spacing: 1px;
+}
+
+/* Address Section */
+
+.addAddressBtn {
+  line-height: 22px !important;
+  padding-block: 10px;
+  font-size: 14px !important;
+  @media (max-width: 450px) {
+    font-size: 12px !important;
+  }
+}
+
+.noSavedAddress {
+  padding-block: 10px;
+  color: rgb(103, 102, 102);
+  font-size: 14px;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.8px;
+  line-height: 22px;
+  @media (max-width: 450px) {
+    font-size: 12px !important;
+  }
+}
+
+.addressTextFields {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  @media (max-width : 600px) {
+    gap: 14px;
+  }
+}
+
+.registerInput {
+  width: 100% !important;
+}
+
+.inputDiv {
+  width: 100% !important;
+}
+
+.firstNameLastName {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  @media (max-width: 600px) {
+    column-gap: 14px;
+  }
+  @media (max-width: 360px) {
+    row-gap: 14px;
+    grid-template-columns: 1fr;
+  }
+}
+
+.comPanyPinCodeCOn {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    row-gap: 14px;
+  }
+}
+
+.addressInput2 {
+  width: 100%;
+}
+
+.addressBtnMain {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 30px;
+  @media (max-width: 450px) {
+    margin-top: 10px;
+  }
+}
+
+.addressBtn {
+  margin-top: 0px !important;
+  width: 130px !important;
+}

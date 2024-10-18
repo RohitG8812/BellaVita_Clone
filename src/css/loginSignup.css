@@ -38,7 +38,7 @@
   width: 100%;
 }
 
-#outlined-basic {
+#outlined {
   font-family: myFont !important;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .nameInput{
-  font-family: mrFont;
+  font-family: myFont;
 }
 
 .LoginRegisterHeading {
