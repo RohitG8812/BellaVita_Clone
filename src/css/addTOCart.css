@@ -1,0 +1,334 @@
+.nabAddToCartBtnIcon {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.CartPageMainContainer {
+  display: flex;
+  overflow: hidden;
+  height: 99svh;
+}
+
+.rrr {
+  width: 318px;
+  border-right: 1px solid rgb(206, 206, 206) !important;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  @media (max-width: 750px) {
+    display: none;
+  }
+}
+
+.cartProductList {
+  padding-inline: 20px;
+  @media (max-width: 750px) {
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    height: 62svh !important;
+  }
+  @media (max-width: 530px) {
+    padding-inline: 10px;
+  }
+}
+
+.cartAndCLoseCart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cartAndCLoseCart img {
+  width: 18px;
+  height: 18px;
+  padding: 3px;
+  border: 0.4px solid rgb(206, 206, 206);
+  border-radius: 50%;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.cartAndCLoseCart img:hover {
+  opacity: 1;
+  scale: 1.08;
+  transition: scale 0.3s ease-in-out;
+  border-color: #000;
+}
+
+.cartRecommendationMini {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  /* border: 1px solid blue; */
+  display: none;
+  @media (max-width: 750px) {
+    display: flex;
+    height: 37.5svh !important;
+  }
+}
+
+.cartProductMain {
+  overflow: hidden;
+  width: 430px !important;
+  @media (max-width: 750px) {
+    width: 100% !important;
+  }
+}
+
+.css-eydqou-MuiPaper-root-MuiDrawer-paper {
+  width: 750px !important;
+  cursor: default;
+  @media (max-width: 750px) {
+    width: 87% !important;
+  }
+}
+
+.recommendedProductCardMain {
+  width: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recommendationProductsCartPage {
+  width: fit-content;
+  margin-top: 20px;
+  font-size: 16px !important;
+  letter-spacing: 2.2px !important;
+  margin-bottom: 10px;
+}
+
+.recommendedProductsCartPage {
+  padding-inline: 20px;
+  flex-direction: column;
+  display: flex;
+  gap: 10px;
+}
+
+.recommendedProductsCartPageSingle {
+  height: 88px;
+  padding-block: 8px;
+  display: flex;
+  gap: 15px;
+}
+
+.cartProductImg img {
+  cursor: pointer;
+  width: 70px;
+  height: 88px;
+  object-fit: contain;
+  scale: 1.1;
+  transition: scale 0.3s ease-in-out;
+}
+
+.cartProductImg img:hover {
+  scale: 1.2;
+}
+
+.cartProductImg {
+  background-color: #f2f2f2;
+  min-width: 70px;
+  height: 88px;
+  overflow: hidden;
+}
+
+.cartProductName {
+  width: fit-content;
+  position: relative;
+  cursor: pointer;
+  font-size: 14.2px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.63px;
+  display: -webkit-box !important;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  -webkit-font-smoothing: antialiased;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  color: rgb(26, 27, 24);
+}
+
+.cartProductName::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.4px;
+  width: 0;
+  background-color: rgba(40, 40, 40, 0.423);
+  transition: width 0.25s ease-in-out;
+}
+
+.cartProductName:hover::after {
+  width: 100%;
+}
+
+.cartProductDetails {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cartProductPrice {
+  line-height: 32px;
+  margin-right: 8px;
+  font-size: 17px;
+  letter-spacing: 0.63px;
+}
+
+.cartProductMrp {
+  margin-top: 6px;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(103, 102, 102);
+  text-decoration: line-through;
+}
+
+.cartAddToCart {
+  width: fit-content;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 25px;
+  cursor: pointer;
+  border-inline: 0.4px solid transparent;
+  border-top: 0.4px solid transparent;
+  padding-inline: 6px;
+  border-bottom: 0.4px solid rgb(206, 206, 206);
+  text-transform: uppercase;
+  transition: border 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cartAddToCart:hover {
+  border: 0.4px solid rgb(206, 206, 206);
+}
+
+.rightArrow {
+  width: 13px;
+}
+
+/* Recommended Product Mini */
+
+.recommendedProductCard {
+  width: calc(100% - 50px) !important;
+  @media (max-width: 530px) {
+    width: calc(100% - 20px) !important;
+  }
+}
+
+.cartRecommendedProductsImgMiniMain {
+  background-color: #f2f2f2;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.cartRecommendedProductsImgMini {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  padding-block: 5px;
+  transition: all 0.2s ease-in-out;
+}
+
+.cartRecommendedProductsImgMini:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+}
+
+.cartRecommendedMiniSingle {
+  min-width: 130px !important;
+}
+
+.miniProductRecommended {
+  width: fit-content;
+  margin-block: 0px !important;
+  line-height: 22px !important;
+}
+
+.miniRecommendedHeading {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.CartSectionHeading {
+  display: flex;
+  margin-block: 25px;
+}
+
+.textDesign {
+  border-bottom: 0.4px solid rgb(206, 206, 206);
+}
+
+.hhBLeft {
+  width: 20px !important;
+}
+
+.hhBRight {
+  width: calc(100% - 195px);
+}
+
+.hhLeft {
+  width: 25px;
+  @media (max-width: 530px) {
+    width: 10px;
+  }
+}
+
+.hhRight {
+  width: calc(100% - 210px);
+  @media (max-width: 530px) {
+  width: calc(100% - 190px);
+    
+  }
+}
+
+.recommendedCartBtn {
+  width: 100% !important;
+  min-height: 26px !important;
+  font-size: 10px !important;
+}
+
+.searchCardMrp {
+  display: block;
+  font-size: 13px !important;
+  text-decoration: line-through;
+  color: #00000098;
+}
+
+.marqueeContainer {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marqueeText {
+  display: block;
+  padding-left: 100%;
+  animation: scrollLeft 3s linear infinite;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

@@ -39,6 +39,19 @@ function SideNavbar({ setSidebarOpen }) {
         </Box>
     );
 
+    useEffect(() => {
+        if (open) {
+            document.documentElement.style.overflow = 'hidden';
+        } else {
+            document.documentElement.style.overflow = 'auto';
+        }
+
+        // Cleanup function to reset overflow when the component unmounts
+        return () => {
+            document.documentElement.style.overflow = 'auto';
+        };
+    }, [open]);
+
     return (
         <div className="hamburgMenu">
             <Button >

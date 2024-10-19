@@ -7,6 +7,7 @@ import SideNavbar from './SideNavbar'
 import "../css/Search.css"
 import Search from './Search'
 import Products from "../JSON/Products.js"
+import AddToCartSidebar from '../addToCart/AddToCartSidebar.jsx'
 
 const perfumes = ["All Perfumes", "Men", "Women", "Unisex", "Oud Collection", "Attars", "Little Luxuries"]
 const bathBody = ["Shower Gel", "Body Mist", "Body Parfum", "Body Lotion", "Travel Kit"]
@@ -15,6 +16,7 @@ const Gifting = [{ name: "Gift Sets" }, { name: "Perfume Combos" }]
 
 function Navbar() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
+    const [addToCartOpen, setAddToCartOpen] = useState(false);
     const [showNavbar, setShowNavbar] = useState(false);
     const [defaultNavbar, setDefaultNavbar] = useState(true);
     const [inputBoxActive, setInputBoxActive] = useState(false)
@@ -119,7 +121,7 @@ function Navbar() {
     return (
         <div style={{ position: showNavbar ? "fixed" : "", top: showNavbar ? 0 : "", display: (showNavbar ? "block" : "none" || defaultNavbar ? "block" : "none"), }}
             className={`mainNavbar ${location.pathname === "/" && "mainHover"} 
-        ${location.pathname === "/" ? sidebarOpen ? "sidebarOpenHover" : "" : ""} 
+        ${location.pathname === "/" ? sidebarOpen ? "" : "" : ""} 
         ${showNavbar ? "liElements sidebarOpenHover" : ""}
         ${location.pathname === "/" ? "" : "liElements"}`}>
             <div className="topNav">
@@ -164,7 +166,8 @@ function Navbar() {
                 </div>
                 <div className="Nav_icons">
                     <Link to="/account"><img src={ProfileIcon} alt="Profile" className='navIcon profileIcon' /></Link>
-                    <Link to=""><img src={CartIcon} alt="Cart" className='navIcon' /></Link>
+                    {/* <Link to=""><img src={CartIcon} alt="Cart" className='navIcon' /></Link> */}
+                    <AddToCartSidebar setAddToCartOpen={setAddToCartOpen} />
                 </div>
             </div>
 
