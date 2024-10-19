@@ -1601,3 +1601,10 @@ li a:hover {
 .profileIconRounded{
   width: 16px !important;
 }
+
+.bellaCashComponentMain{
+  margin-block: 50px;
+  @media (max-width: 750px) {
+    margin-block: 30px;
+  }
+}

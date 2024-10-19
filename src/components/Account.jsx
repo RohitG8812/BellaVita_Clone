@@ -127,7 +127,7 @@ function Account() {
                   </div>
                   <div className="acTopSecBottomSide">
                     <p className='singleLineEmailCOntact middleLine' ><span className='userNameTopHeading'>Email</span> <span className='emailContText '>{userDetails.email}</span></p>
-                    <p className='singleLineEmailCOntact' ><span className='userNameTopHeading'>Contact</span> <span className='emailContText'>+91{userDetails.number}</span></p>
+                    <p className='singleLineEmailCOntact' ><span className='userNameTopHeading'>Contact</span> <span className='emailContText'>{userDetails.number ? (`+91${userDetails.number}`) : "Not Available"}</span></p>
                   </div>
                 </div>
                 <div className="accountDetailsBottomSection">

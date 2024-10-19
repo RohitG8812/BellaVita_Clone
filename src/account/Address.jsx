@@ -6,8 +6,8 @@ import { auth, db } from '../auth/firebase'
 import { toast } from 'react-toastify'
 import { arrayRemove, arrayUnion, doc, getDoc, updateDoc } from 'firebase/firestore'
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
-import DustBin from "../assets/icons/bin.svg"
-import DustBin1 from "../assets/icons/binB.svg"
+import Delete from "../assets/icons/delete.svg"
+import DeleteRed from "../assets/icons/delete2.svg"
 
 function Address() {
   const [openAddInput, setOpenAddInput] = useState(false)
@@ -336,7 +336,7 @@ function Address() {
                       <div key={index} className='savedAddressSingle'>
                         <div className='SaveAsOrDelete'>
                           <p className='userNameTopHeading fullBlackText'>{address.company}</p>
-                          <img src={DustBin} alt="" onClick={() => handleDelete(address)} className='deleteAddress' />
+                          <img src={DeleteRed} alt="" onClick={() => handleDelete(address)} className='deleteAddress' />
                         </div>
                         <p className='userNameTopHeading fullBlackText'>{`${address.firstName} ${address.lastName}`}</p>
                         <p className='savedAddressText'>{`${address.addressLine1}, ${address.addressLine2}, ${address.city}, ${address.postalCode}, ${address.state}, ${address.country}`}</p>
