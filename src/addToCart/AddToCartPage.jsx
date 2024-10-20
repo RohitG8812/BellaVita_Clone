@@ -2,7 +2,7 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import RightArrow from "../assets/icons/rightArrow.svg"
 import CloseBtn from "../assets/icons/x.svg"
-import "../css/search.css"
+import "../css/Search.css"
 
 const recommendedProducts = [
   {
