@@ -85,6 +85,15 @@
   }
 }
 
+/* for Deployment Version */
+.css-na684 {
+  width: 750px !important;
+  cursor: default;
+  @media (max-width: 750px) {
+    width: 87% !important;
+  }
+}
+
 .recommendedProductCardMain {
   width: 100%;
   overflow: hidden;
@@ -294,8 +303,7 @@
 .hhRight {
   width: calc(100% - 210px);
   @media (max-width: 530px) {
-  width: calc(100% - 190px);
-    
+    width: calc(100% - 190px);
   }
 }
 
