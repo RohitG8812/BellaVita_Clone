@@ -132,8 +132,10 @@ function AddToCartPage() {
           </div>
           <div className="marqueeContainer">
             <div className="marqueeText">
-              <span>Free Gift worth ₹99 on all prepaid orders &emsp; &emsp; &emsp; &emsp;</span>
-              {/* <span>Free Gift worth ₹99 on all prepaid orders &emsp; &emsp; &emsp; &emsp;</span> */}
+              <span>Free Gift worth ₹99 on all prepaid orders </span>
+              <span>Free Gift worth ₹99 on all prepaid orders </span>
+              <span>Free Gift worth ₹99 on all prepaid orders </span>
+              <span>Free Gift worth ₹99 on all prepaid orders </span>
             </div>
           </div>
         </div>
