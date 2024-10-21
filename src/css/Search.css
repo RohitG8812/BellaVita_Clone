@@ -150,15 +150,6 @@
   }
 }
 
-.recommendedProductCard {
-  gap: 8px !important;
-  width: 100% !important;
-  overflow-x: auto; /* Enable horizontal scroll */
-  display: flex;
-  scrollbar-width: none;
-  scroll-behavior: smooth;
-}
-
 .productCardSearchMain {
   width: 24%;
   margin-top: 7px;

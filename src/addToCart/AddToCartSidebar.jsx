@@ -18,24 +18,6 @@ function AddToCartSidebar({ setAddToCartOpen }) {
         setAddToCartOpen(value)
     }
 
-    // useEffect(() => {
-    //     const handleResize = () => {
-    //         if (window.innerWidth < 1030) {
-    //             console.log("AddToCartPage Option Enabled")
-    //         } else {
-    //             toggleDrawer(false)
-    //             console.log("AddToCartPage Option disabled")
-    //         }
-    //     };
-
-    //     handleResize(); // Check on initial render
-
-    //     window.addEventListener('resize', handleResize); // Add resize event listener
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize); // Cleanup event listener on unmount
-    //     };
-    // }, []);
-
     useEffect(() => {
         if (open) {
             document.documentElement.style.overflow = 'hidden';

@@ -26,6 +26,7 @@ import Profile from './account/Profile'
 import Address from './account/Address'
 import Order from './account/Order'
 import CashBack from './account/CashBack'
+import ShippingPolicy from './components/ShippingPolicy'
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path='/account/register' element={<Register />} />
         <Route path='/pages' element={<Pages />} />
         <Route path='/pages/bellaCash' element={<BellaCash />} />
+        <Route path='/pages/shippingPolicy' element={<ShippingPolicy />} />
         <Route path='/collection/searchProducts' element={<SearchResultPage />} />
 
         {/*  */}

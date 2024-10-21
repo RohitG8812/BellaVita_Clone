@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import RightArrow from "../assets/icons/rightArrow.svg"
+import Tag from "../assets/icons/tag.svg"
 import CloseBtn from "../assets/icons/x.svg"
+import PlusBtn from "../assets/icons/plusL.svg"
+import MinusBtn from "../assets/icons/minus.svg"
+import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
+
 import "../css/Search.css"
 
 const recommendedProducts = [
@@ -89,6 +93,7 @@ const recommendedProducts = [
 ]
 
 function AddToCartPage() {
+  const [cartItems, setCartItems] = useState(recommendedProducts)
   const navigate = useNavigate()
 
   const handleProductClick = (id) => {
@@ -98,12 +103,13 @@ function AddToCartPage() {
     <div className='CartPageMainContainer'>
       {/* Cart Recommended Big */}
       <div className="rrr">
-        <div className="cartRecommendation">
-          <div className="CartSectionHeading">
-            <div className='hhBLeft textDesign'></div>
-            <p className='accountWelcomeBellavita recommendationProductsCartPage miniProductRecommended'>You May Also like</p>
-            <div className="hhBRight textDesign"></div>
-          </div>
+        {/* <div className="cartRecommendation"> */}
+        <div className="CartSectionHeading">
+          <div className='hhBLeft textDesign'></div>
+          <p className='accountWelcomeBellavita recommendationProductsCartPage miniProductRecommended'>You May Also like</p>
+          <div className="hhBRight textDesign"></div>
+        </div>
+        <div className="ttt">
           <div className="recommendedProductsCartPage">
             {recommendedProducts.map((product) => (
               <div className='recommendedProductsCartPageSingle'>
@@ -122,50 +128,107 @@ function AddToCartPage() {
             ))}
           </div>
         </div>
+        {/* </div> */}
       </div>
       <div className="cartProductMain">
         {/* Cart Main */}
         <div className="cartProductList">
-          <div className="cartAndCLoseCart">
-            <p className='accountWelcomeBellavita recommendationProductsCartPage'>Cart</p>
-            <img src={CloseBtn} alt="CLoseBtn" />
-          </div>
-          <div className="marqueeContainer">
-            <div className="marqueeText">
-              <span>Free Gift worth ₹99 on all prepaid orders </span>
-              <span>Free Gift worth ₹99 on all prepaid orders </span>
-              <span>Free Gift worth ₹99 on all prepaid orders </span>
-              <span>Free Gift worth ₹99 on all prepaid orders </span>
+          <div className="cartProductListTopSection">
+            <div className="cartAndCLoseCart">
+              <p className='accountWelcomeBellavita recommendationProductsCartPage'>Cart</p>
+              <img src={CloseBtn} alt="CLoseBtn" />
+            </div>
+            <div className="marqueeContainer">
+              <div className="marqueeText">
+                <span>Free Gift worth ₹99 on all prepaid orders </span>
+                <span>Free Gift worth ₹99 on all prepaid orders </span>
+                <span>Free Gift worth ₹99 on all prepaid orders </span>
+                <span>Free Gift worth ₹99 on all prepaid orders </span>
+              </div>
             </div>
           </div>
-        </div>
-        {/* Cart Recommended Mini */}
-        <div className="cartRecommendationMini">
-          <div className="miniRecommendedHeading">
-            <div className='hhLeft textDesign'></div>
-            <p className='accountWelcomeBellavita recommendationProductsCartPage miniProductRecommended'>You May Also like</p>
-            <div className="hhRight textDesign"></div>
-          </div>
-          <div className=' recommendedProductCardMain'>
-            <div className="recentSearchText recommendedProductCard">
-              {recommendedProducts.map((product, index) => (
-                <div className="cartRecommendedMiniSingle" key={product.id} onClick={() => handleProductClick(product.id)}>
-                  <div className="cartRecommendedProductsImgMiniMain" >
-                    <img src={product.img} alt="" className='cartRecommendedProductsImgMini' />
-                  </div>
-                  <div className="bottomCardSearch">
-                    <p className='searchCardProductName '>{product.name}</p>
-                    <div className="searchCardPrice">
-                      <p className=" cardProductPrice searchCardMrp">{product.mrp}</p>
-                      <p className='CardProductPrice searchCardP'>{product.price}</p>
-                    </div>
-                    <div>
-                      <button className='filterBtn recommendedCartBtn'>Add TO Cart</button>
-                    </div>
-                  </div>
+          <div className="cartProductListBottomSection">
+            {cartItems.length === 0 ? (
+              <div className='cartIsEmpty'>
+                <p className='emptyCartText'>Your cart is Currently empty !</p>
+                <div className='emptyCartProductsLink'>
+                  <button className='sortBtn' onClick={() => navigate('/collection/bestSellers')}>Bestsellers</button>
+                  <button className='sortBtn' onClick={() => navigate('/collection/perfumes')}>Perfumes</button>
+                  <button className='sortBtn' onClick={() => navigate('/collection/newArrivals')}>New Arrivals</button>
+                  <button className='sortBtn' onClick={() => navigate('/collection/giftSets')}>Gift Sets</button>
                 </div>
-              ))}
+              </div>
+            ) : (
+              <div className='cartItemsProductMain'>
+                {cartItems.map((items, index) => {
+                  return <div className='cartItemsProduct'>
+                    <div className="cartItemProductTop">
+                      <div className="cartItemsProductImg">
+                        <img src={items.img} alt="cartImg" />
+                      </div>
+                      <div className="cartItemsProductDetails">
+                        <div className='cartSingleNameAndCloseBtn'>
+                          <span className='cartItemSingleName'>{items.name}</span>
+                          <img src={CloseBtn} alt="" />
+                        </div>
+                        <div className='buyMoreSaveMore'>
+                          <img src={Tag} alt="" />
+                          <span>Buy More Save More</span>
+                        </div>
+                        <div className='buyMoreSaveMoreDiscount'>
+                          <img src={GreenDownArrow} alt="" className='greenArrow' />
+                          <span>{items.discount} Discount</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="cartItemProductBottom">
+                      <div className="cartQuantityBtn">
+                        <img src={MinusBtn} alt="" />
+                        <span>{index + 1}</span>
+                        <img src={PlusBtn} alt="" />
+                      </div>
+                      <div className="cartItemProductPrice">
+                        <span className='cartItemProductPriceMrp'>{items.mrp}</span>
+                        <span className='cartItemProductPPrice'>{items.price}</span>
+                      </div>
+                    </div>
+                  </div>
+                })}
+              </div>
+            )}
+
+            {/* Cart Recommended Mini */}
+            <div className="cartRecommendationMini">
+              <div className="miniRecommendedHeading">
+                <p className='accountWelcomeBellavita recommendationProductsCartPage miniProductRecommended'>You May Also like</p>
+              </div>
+              <div className=' recommendedProductCardMain'>
+                <div className="recentSearchText recommendedProductCard">
+                  {recommendedProducts.map((product, index) => (
+                    <div className="cartRecommendedMiniSingle" key={product.id} onClick={() => handleProductClick(product.id)}>
+                      <div className="cartRecommendedProductsImgMiniMain" >
+                        <img src={product.img} alt="" className='cartRecommendedProductsImgMini' />
+                      </div>
+                      <div className="bottomCardSearch">
+                        <p className='searchCardProductName '>{product.name}</p>
+                        <div className="searchCardPrice">
+                          <p className=" cardProductPrice searchCardMrp">{product.mrp}</p>
+                          <p className='CardProductPrice searchCardP'>{product.price}</p>
+                        </div>
+                        <div>
+                          <button className='filterBtn recommendedCartBtn'>Add TO Cart</button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
+          </div>
+
+          <div className="checkOutBtnMain">
+            <p className='shippingText'>Tax included. <span className='shippingPolicyLinkText' onClick={() => navigate('/pages/shippingPolicy')} >Shipping</span> calculated at checkout.</p>
+            <button className='filterBtn checkOutBtn'>{cartItems.length > 0 ? "Check out - ₹499.00" : "No Items in Your Cart"}</button>
           </div>
         </div>
       </div>
