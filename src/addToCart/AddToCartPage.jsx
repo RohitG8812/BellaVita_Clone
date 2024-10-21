@@ -92,7 +92,7 @@ const recommendedProducts = [
   }
 ]
 
-function AddToCartPage() {
+function AddToCartPage({toggleDrawer}) {
   const [cartItems, setCartItems] = useState(recommendedProducts)
   const navigate = useNavigate()
 
@@ -136,7 +136,7 @@ function AddToCartPage() {
           <div className="cartProductListTopSection">
             <div className="cartAndCLoseCart">
               <p className='accountWelcomeBellavita recommendationProductsCartPage'>Cart</p>
-              <img src={CloseBtn} alt="CLoseBtn" />
+              <img src={CloseBtn} alt="CLoseBtn" onClick={() => toggleDrawer(false)}/>
             </div>
             <div className="marqueeContainer">
               <div className="marqueeText">

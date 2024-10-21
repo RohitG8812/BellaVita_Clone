@@ -74,13 +74,13 @@ function Profile() {
             id="outlined"
             label="Contact Number"
             size='small'
-            defaultValue={`+91 ${userDetails.number}`}
+            defaultValue={`+91 ${userDetails.number ? userDetails.number : "Not Available"}`}
             InputLabelProps={{
               style: { fontFamily: 'myFont', letterSpacing: "1px", fontSize: "17.2px" }
             }}
             sx={{
               "& .MuiInputBase-input.Mui-disabled": {
-                WebkitTextFillColor: "black", // This will ensure the text is black when disabled
+                WebkitTextFillColor: "black",
               },
             }}
           />

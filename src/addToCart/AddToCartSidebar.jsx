@@ -32,7 +32,7 @@ function AddToCartSidebar({ setAddToCartOpen }) {
 
     const DrawerList = (
         <Box className="sidebarWidth" role="presentation">
-            <AddToCartPage />
+            <AddToCartPage toggleDrawer={toggleDrawer}/>
         </Box>
     );
 
