@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import AddToCartPage from './AddToCartPage';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
-import { Button } from '@mui/material'
 import CloseIcon from "../assets/icons/close.svg"
 import CartIcon from "../assets/icons/cart12.png"
 import "../css/addTOCart.css"
@@ -11,12 +10,19 @@ import "../index.css"
 
 function AddToCartSidebar({ setAddToCartOpen }) {
     const [open, setOpen] = useState(false);
+    const [cartItemCount, setCartItemCount] = useState(0);
 
     const toggleDrawer = (value) => {
         setOpen(value)
         console.log(value)
         setAddToCartOpen(value)
     }
+
+    useEffect(() => {
+        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        const totalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
+        setCartItemCount(totalCount);
+    })
 
     useEffect(() => {
         if (open) {
@@ -32,14 +38,20 @@ function AddToCartSidebar({ setAddToCartOpen }) {
 
     const DrawerList = (
         <Box className="sidebarWidth" role="presentation">
-            <AddToCartPage toggleDrawer={toggleDrawer}/>
+            <AddToCartPage toggleDrawer={toggleDrawer} />
         </Box>
     );
 
     return (
         <div className="">
             <button className='nabAddToCartBtnIcon' >
-                {open ? <img src={CloseIcon} alt="" className='closeIcon sideBarIcon' onClick={() => toggleDrawer(false)} /> : <img src={CartIcon} alt="" className='navIcon' onClick={() => toggleDrawer(true)} />}
+                <div className="cartIconWrapper">
+                <img src={CartIcon} alt="" className='navIcon' onClick={() => toggleDrawer(true)} />
+                {cartItemCount > 0 && (
+                    <span className='cartBadge'>{cartItemCount}</span>
+                )}
+                </div>
+                
             </button>
             <Drawer anchor="right" open={open} onClose={() => toggleDrawer(false)} className='sideBarMenu'>
                 {DrawerList}

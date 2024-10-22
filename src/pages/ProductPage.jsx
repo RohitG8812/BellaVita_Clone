@@ -9,6 +9,7 @@ import FIlter from '../components/FIlter'
 import Loader from './Loader'
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
 import NoResult from "../assets/icons/noResult.png"
+import { toast } from 'react-toastify'
 
 function ProductPage({ product, heading, handleProductClick, categoryFilter, productTypeFilter }) {
     const [filterMenuActive, setFilterMenuActive] = useState(false)
@@ -18,15 +19,38 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
     const [loading, setLoading] = useState(false)
     const [filteredProducts, setFilteredProducts] = useState(product);
     const [sortOptionActive, setSortOptionActive] = useState('');
-    const [displayedProducts, setDisplayedProducts] = useState(12); // Start with displaying 12 products
+    const [displayedProducts, setDisplayedProducts] = useState(12);
     const [isLoadingMore, setIsLoadingMore] = useState(false);
     const [spinnerLoader, setSpinnerLoader] = useState(true);
+    const [btnLoader, setBtnLoader] = useState(null)
 
     useEffect(() => {
         setTimeout(() => {
             setSpinnerLoader(false)
         }, 2000)
     }, [])
+
+    const handleAddProductToCart = (product) => {
+        try {
+            setBtnLoader(product.id);
+            const currCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const currProductIndex = currCartItems.findIndex(item => item.id === product.id);
+            if (currProductIndex !== -1) {
+                currCartItems[currProductIndex].quantity = (currCartItems[currProductIndex].quantity || 1) + 1
+            } else {
+                const newProduct = { ...product, quantity: 1 };
+                currCartItems.push(newProduct);
+            }
+            localStorage.setItem('cartItems', JSON.stringify(currCartItems));
+            setTimeout(() => {
+                toast.success("Product added to Cart")
+                setBtnLoader(null)
+            }, 1000)
+        } catch (error) {
+            setBtnLoader(null)
+            toast.error(error.message)
+        }
+    }
 
     const handleChange = (e) => {
         const { value, checked } = e.target;
@@ -341,11 +365,11 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
             <div className={`productCardMain ${loading || filterMenuActive || filterMenuMiniActive || sortMenu ? "blurBackground" : ""}`} >
                 {filteredProducts.length > 0 ?
                     filteredProducts.slice(0, displayedProducts).map((product, index) => {
-                        return <div className="productCard" key={product.id} onClick={() => handleProductClick(product.id)}>
+                        return <div className="productCard" key={product.id}>
                             <div className="cardImg" style={{ backgroundColor: spinnerLoader ? "#fff" : "#f2f2f2" }}>
                                 <div>
                                     {spinnerLoader ? <img src={SpinnerLoader} alt="" className='ProductCardImg' /> :
-                                        <img src={product.mainImg} alt="" className='ProductCardImg' />}
+                                        <img src={product.mainImg} alt="" className='ProductCardImg' onClick={() => handleProductClick(product.id)} />}
                                 </div>
                                 <div className="card-badge-bottom">
                                     <span className="discountBadge">{product.discount} off</span>
@@ -378,7 +402,9 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                                     </div>
                                 </div>
                                 <div className="addToCartBtn">
-                                    <button>ADD TO CART</button>
+                                    <button onClick={() => handleAddProductToCart(product)}>
+                                        {btnLoader === product.id ? <div className='btnLoader'><Loader /></div> : "ADD TO CART"}
+                                    </button>
                                 </div>
                             </div>
                         </div>

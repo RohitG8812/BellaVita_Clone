@@ -166,7 +166,6 @@ function Navbar() {
                 </div>
                 <div className="Nav_icons">
                     <Link to="/account"><img src={ProfileIcon} alt="Profile" className='navIcon profileIcon' /></Link>
-                    {/* <Link to=""><img src={CartIcon} alt="Cart" className='navIcon' /></Link> */}
                     <AddToCartSidebar setAddToCartOpen={setAddToCartOpen} />
                 </div>
             </div>

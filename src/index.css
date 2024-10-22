@@ -17,7 +17,7 @@
   padding: 0;
 }
 
-input{
+input {
   font-family: myFont;
 }
 
@@ -41,6 +41,14 @@ body {
   color: var(--card-color);
   min-height: var(--card-min-height);
   box-sizing: border-box;
+}
+
+/* toast custom css */
+.custom-toast {
+  font-size: 16.5px !important;
+  font-family: myFont !important;
+  letter-spacing: 0.83px;
+  text-transform: capitalize;
 }
 
 button {
@@ -1579,11 +1587,11 @@ li a:hover {
   background-color: #0000007c !important;
 }
 
-.profileIconRounded{
+.profileIconRounded {
   width: 16px !important;
 }
 
-.bellaCashComponentMain{
+.bellaCashComponentMain {
   margin-block: 50px;
   @media (max-width: 750px) {
     margin-block: 30px;

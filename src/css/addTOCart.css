@@ -4,6 +4,25 @@
   background-color: transparent;
 }
 
+.cartIconWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cartBadge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: rgba(0, 0, 0, 0.874);
+  color: white;
+  border-radius: 50%;
+  padding: 3px;
+  font-size: 10px;
+  font-weight: bold;
+  min-width: 11px;
+  text-align: center;
+}
+
 .CartPageMainContainer {
   display: flex;
   overflow: hidden;
@@ -13,10 +32,6 @@
 .rrr {
   width: 328px;
   border-right: 1px solid rgb(206, 206, 206) !important;
-  /* overflow: hidden; */
-  /* overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: thin; */
   scroll-behavior: smooth;
   @media (max-width: 750px) {
     display: none;
@@ -401,6 +416,9 @@
   line-height: 19.4px;
   letter-spacing: 0.4px;
   margin-block: 10px;
+  @media (max-width: 342px) {
+    text-align: center;
+  }
 }
 
 .shippingPolicyLinkText {
@@ -471,6 +489,14 @@
   letter-spacing: 0.6px;
   line-height: 18px;
   margin-right: 20px;
+  overflow: hidden;
+  text-align: left;
+  /* for text not wrapping */
+  display: -webkit-box !important;
+  text-overflow: ellipsis;
+  -webkit-font-smoothing: antialiased;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .cartItemSingleName::before {
@@ -561,12 +587,32 @@
   font-weight: 300;
   color: rgb(103, 102, 102);
   text-decoration: line-through;
+  @media (max-width: 550px) {
+    font-size: 12px;
+  }
 }
 
-.cartItemProductPricePrice {
+.cartItemProductPPrice {
+  font-size: 17.2px;
+  font-weight: 500;
+  line-height: 21.6px;
+  letter-spacing: 0.63px;
+  @media (max-width: 550px) {
+    font-size: 15.5px;
+  }
+}
+
+.cartItemsCount{
+  text-align: center;
+  margin-bottom: 10px;
+  width: 100%;
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: normal;
+  line-height: 21.6px;
+  letter-spacing: 0.63px;
+  @media (max-width: 550px) {
+    font-size: 14px;
+  }
 }
 
 .cartItemsProductMain {
