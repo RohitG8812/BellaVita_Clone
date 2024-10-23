@@ -30,12 +30,14 @@ import BellaCashBannerMini from "../assets/Banner/HomePageBanner/bellaCashMini.w
 import ReviewSlider from '../HomePage/ReviewSlider'
 import ImageMapping from '../HomePage/ImageMapping'
 import LipStickFinder from '../assets/Banner/HomePageBanner/lipstickFinder.jpeg'
+import { toast } from 'react-toastify'
 
 
 function Home() {
     const [currentBannerIdx, setCurrentBannerIdx] = useState(1);
     const [isSliding, setIsSliding] = useState(false);
     const [smallSize, setSmallSize] = useState(false);
+    const [btnLoader, setBtnLoader] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -64,7 +66,27 @@ function Home() {
         }, 0);
     };
 
-
+    const handleAddToCart = (product) => {
+        try {
+            setBtnLoader(product.id);
+            const currCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const currProductIndex = currCartItems.findIndex(item => item.id === product.id);
+            if (currProductIndex !== -1) {
+                currCartItems[currProductIndex].quantity = (currCartItems[currProductIndex].quantity || 1) + 1;
+            } else {
+                const newProduct = { ...product, quantity: 1 };
+                currCartItems.push(newProduct);
+            }
+            localStorage.setItem('cartItems', JSON.stringify(currCartItems));
+            setTimeout(() => {
+                setBtnLoader(null)
+                toast.success('Product added to Cart')
+            }, 1000)
+        } catch (error) {
+            toast.error(error.message)
+            setBtnLoader(null)
+        }
+    }
 
     return (
         <Layout>
@@ -86,12 +108,12 @@ function Home() {
                     <Link to="/collection/bogo"><img src={smallSize ? BottomBannerMini : BottomBanner} alt="" /></Link>
                 </div>
                 <div className="full-width">
-                    <BestSellerNewArrival />
+                    <BestSellerNewArrival handleAddToCart={handleAddToCart} btnLoader={btnLoader} />
                     <div className="firstBanner">
                         <Link to="/collection/bogo"> <img src={smallSize ? FirstBannerMini : FirstBanner} alt="" /></Link>
                     </div>
                     <LuxuryCategories />
-                    <LuxePerfumes />
+                    <LuxePerfumes handleAddToCart={handleAddToCart} btnLoader={btnLoader}/>
                     <CrazyDealsHome />
                     <ShopByNotes />
                     <div className="secondBanner firstBanner">

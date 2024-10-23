@@ -5,9 +5,10 @@ import RatingLogo from "../assets/icons/rating.svg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
 import { useNavigate } from 'react-router-dom'
 import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
+import Loader from '../pages/Loader'
 
 
-function LuxePerfumes() {
+function LuxePerfumes({ handleAddToCart, btnLoader }) {
     const navigate = useNavigate()
     const product = [
         {
@@ -85,8 +86,8 @@ function LuxePerfumes() {
                 </div>
                 <div className="luxePerfumesCard">
                     <div className="prodCardMain" >
-                        <div className="prodCard" key={selectedProduct.id} onClick={() => handleProductClick(selectedProduct.id)}>
-                            <div className="prodCardImgLuxury">
+                        <div className="prodCard" key={selectedProduct.id}>
+                            <div className="prodCardImgLuxury" onClick={() => handleProductClick(selectedProduct.id)}>
                                 <img src={selectedProduct.mainImg} alt="" className='ProdCardImg' />
                             </div>
                             <div className="card-badge luxeCardBadge">
@@ -96,7 +97,7 @@ function LuxePerfumes() {
                             <div className="productsCardBottomText prodCardBottom">
                                 <div className="topText">
                                     <p className='cardProductVariant'>{selectedProduct.variant}</p>
-                                    <p className='ProductCardName '>{selectedProduct.name}</p>
+                                    <p className='ProductCardName' onClick={() => handleProductClick(selectedProduct.id)}>{selectedProduct.name}</p>
                                     <div className="ProductRatingReviews">
                                         <div className='productRating'>
                                             <img src={RatingLogo} alt="Rating" />
@@ -114,8 +115,8 @@ function LuxePerfumes() {
                                         <p className='cardProductPrice'>{selectedProduct.price}</p>
                                     </div>
                                 </div>
-                                <div className="addToCartBtn">
-                                    <button>ADD TO CART</button>
+                                <div className="addToCartBtn" onClick={() => handleAddToCart(selectedProduct)}>
+                                    <button>{btnLoader === selectedProduct.id ? <div className='btnLoader'><Loader /></div> : "ADD TO CART"}</button>
                                 </div>
                             </div>
                         </div>

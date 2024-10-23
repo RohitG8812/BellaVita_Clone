@@ -383,7 +383,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                             <div className="productsCardBottomText">
                                 <div className="topText">
                                     <p className='cardProductVariant'>{product.variant}</p>
-                                    <p className='ProductCardName '>{product.name}</p>
+                                    <p className='ProductCardName' onClick={() => handleProductClick(product.id)} >{product.name}</p>
                                     <div className="ProductRatingReviews">
                                         <div className='productRating'>
                                             <img src={RatingLogo} alt="Rating" />

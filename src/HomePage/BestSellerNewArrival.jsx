@@ -4,9 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import RatingLogo from "../assets/icons/rating.svg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
 import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
+import Loader from '../pages/Loader';
 
 
-function BestSellerNewArrival() {
+function BestSellerNewArrival({ handleAddToCart, btnLoader }) {
     const navigate = useNavigate()
     const [category, setCategory] = useState('bestSellers')
     const [actCategory, setActCategory] = useState(true)
@@ -51,8 +52,8 @@ function BestSellerNewArrival() {
             </div>
             <div className="categoryCard" ref={categoryCardRef}>
                 {displayProducts.map((product, index) => {
-                    return <div className="card" key={product.id} onClick={() => handleProductClick(product.id)}>
-                        <div className="cardImg">
+                    return <div className="card" key={product.id}>
+                        <div className="cardImg" onClick={() => handleProductClick(product.id)}>
                             <div><img src={product.mainImg} alt="" className='cardImg2' /></div>
                             <div className="card-badge-bottom">
                                 <span className="discountBadge">{product.discount} off</span>
@@ -65,7 +66,7 @@ function BestSellerNewArrival() {
                         <div className="cardBottomText">
                             <div className="topText">
                                 <p className='cardProductVariant'>{product.variant}</p>
-                                <p className='cardProductName'>{product.name}</p>
+                                <p className='cardProductName' onClick={() => handleProductClick(product.id)}>{product.name}</p>
                                 <div className="ratingReviews">
                                     <div className='productRating'>
                                         <img src={RatingLogo} alt="Rating" />
@@ -83,8 +84,8 @@ function BestSellerNewArrival() {
                                     <p className='cardProductPrice'>{product.price}</p>
                                 </div>
                             </div>
-                            <div className="addToCartBtn">
-                                <button>ADD TO CART</button>
+                            <div className="addToCartBtn" onClick={() => handleAddToCart(product)}>
+                                <button>{btnLoader === product.id ? <div className='btnLoader'><Loader /></div> : "ADD TO CART"}</button>
                             </div>
                         </div>
                     </div>

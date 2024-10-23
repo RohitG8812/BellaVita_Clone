@@ -27,6 +27,7 @@ import Address from './account/Address'
 import Order from './account/Order'
 import CashBack from './account/CashBack'
 import ShippingPolicy from './components/ShippingPolicy'
+import CheckOutPage from './addToCart/CheckOutPage'
 
 function App() {
   return (
@@ -67,6 +68,9 @@ function App() {
           <Route path='/account/orders' element={<Order />} />
           <Route path='/account/cashBack' element={<CashBack />} />
         </Route>
+
+        {/* CheckOut Page */}
+        <Route path='/checkOut' element={<CheckOutPage />} />
 
       </Routes>
       <ToastContainer

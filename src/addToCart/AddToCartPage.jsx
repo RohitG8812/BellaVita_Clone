@@ -9,12 +9,27 @@ import "../css/Search.css"
 import Recommended from './Recommended'
 import RecommendedCartMini from './RecommendedCartMini'
 import { toast } from 'react-toastify'
+import CheckOutPage from './CheckOutPage'
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import app from '../auth/firebase'
+import Loader from '../pages/Loader'
 
 function AddToCartPage({ toggleDrawer }) {
   const [cartItems, setCartItems] = useState([])
   const [cartItemCount, setCartItemCount] = useState(0);
-
+  const [openCheckOutPage, setOpenCheckOutPage] = useState(false);
+  const [user, setUser] = useState(null);
+  const [btnLoader, setBtnLoader] = useState(false);
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const auth = getAuth(app);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     const cartItemsFromLocalStorage = JSON.parse(localStorage.getItem('cartItems')) || []
@@ -79,95 +94,114 @@ function AddToCartPage({ toggleDrawer }) {
 
   console.log(cartItems)
 
+  const handleCheckOut = () => {
+    if (user) {
+      setBtnLoader(true);
+      setTimeout(() => {
+        setBtnLoader(false)
+        setOpenCheckOutPage(true)
+      }, 1000)
+    } else {
+      toast.warning("Please login first to check out")
+      navigate('/account/login')
+    }
+  }
+
   const handleProductClick = (id) => {
     navigate(`/collection/shopAll/${id}`)
   }
   return (
-    <div className='CartPageMainContainer'>
-      {/* Cart Recommended Big */}
-      <Recommended setCartItems={setCartItems} />
-      <div className="cartProductMain">
-        {/* Cart Main */}
-        <div className="cartProductList">
-          <div className="cartProductListTopSection">
-            <div className="cartAndCLoseCart">
-              <p className='accountWelcomeBellavita recommendationProductsCartPage'>Cart</p>
-              <img src={CloseBtn} alt="CLoseBtn" onClick={() => toggleDrawer(false)} />
-            </div>
-            <div className="marqueeContainer">
-              <div className="marqueeText">
-                <span>Free Gift worth ₹99 on all prepaid orders </span>
-                <span>Free Gift worth ₹99 on all prepaid orders </span>
-                <span>Free Gift worth ₹99 on all prepaid orders </span>
-                <span>Free Gift worth ₹99 on all prepaid orders </span>
-              </div>
-            </div>
-          </div>
-          <div className="cartProductListBottomSection">
-            {cartItems.length === 0 ? (
-              <div className='cartIsEmpty'>
-                <p className='emptyCartText'>Your cart is Currently empty !</p>
-                <div className='emptyCartProductsLink'>
-                  <button className='sortBtn' onClick={() => navigate('/collection/bestSellers')}>Bestsellers</button>
-                  <button className='sortBtn' onClick={() => navigate('/collection/perfumes')}>Perfumes</button>
-                  <button className='sortBtn' onClick={() => navigate('/collection/newArrivals')}>New Arrivals</button>
-                  <button className='sortBtn' onClick={() => navigate('/collection/giftSets')}>Gift Sets</button>
+    <>
+      {openCheckOutPage ? <CheckOutPage setCartItems={setCartItems} cartItems={cartItems} setOpenCheckOutPage={setOpenCheckOutPage} /> :
+        <div className='CartPageMainContainer'>
+          {/* Cart Recommended Big */}
+          <Recommended setCartItems={setCartItems} handleProductClick={handleProductClick} />
+          <div className="cartProductMain">
+            {/* Cart Main */}
+            <div className="cartProductList">
+              <div className="cartProductListTopSection">
+                <div className="cartAndCLoseCart">
+                  <p className='accountWelcomeBellavita recommendationProductsCartPage'>Cart</p>
+                  <img src={CloseBtn} alt="CLoseBtn" onClick={() => toggleDrawer(false)} />
+                </div>
+                <div className="marqueeContainer">
+                  <div className="marqueeText">
+                    <span>Free Gift worth ₹99 on all prepaid orders </span>
+                    <span>Free Gift worth ₹99 on all prepaid orders </span>
+                    <span>Free Gift worth ₹99 on all prepaid orders </span>
+                    <span>Free Gift worth ₹99 on all prepaid orders </span>
+                  </div>
                 </div>
               </div>
-            ) : (
-              <div className='cartItemsProductMain'>
-                {cartItems.map((items, index) => {
-                  return <div className='cartItemsProduct' key={index}>
-                    <div className="cartItemProductTop">
-                      <div className="cartItemsProductImg">
-                        <img src={items.mainImg} alt="cartImg" />
-                      </div>
-                      <div className="cartItemsProductDetails">
-                        <div className='cartSingleNameAndCloseBtn'>
-                          <span className='cartItemSingleName'>{items.name}</span>
-                          <img src={CloseBtn} alt="" onClick={() => handleRemoveProductFromCart(items)} />
-                        </div>
-                        <div className='buyMoreSaveMore'>
-                          <img src={Tag} alt="" />
-                          <span>Buy More Save More</span>
-                        </div>
-                        <div className='buyMoreSaveMoreDiscount'>
-                          <img src={GreenDownArrow} alt="" className='greenArrow' />
-                          <span>{items.discount} Discount</span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="cartItemProductBottom">
-                      <div className="cartQuantityBtn">
-                        <img onClick={() => handleDecreaseQuantity(items)} src={MinusBtn} alt="" />
-                        <span className='itemQuantity'>{items.quantity}</span>
-                        <img onClick={() => handleIncreaseQuantity(items)} src={PlusBtn} alt="" />
-                      </div>
-                      <div className="cartItemProductPrice">
-                        <span className='cartItemProductPriceMrp'>{`₹${(parseFloat(items.mrp.replace(/[₹,]/g, '')) * items.quantity).toFixed(2)}`} </span>
-                        <span className='cartItemProductPPrice'> {`₹${(parseFloat(items.price.replace(/[₹,]/g, '')) * items.quantity).toFixed(2)}`}  </span>
-                      </div>
+              <div className="cartProductListBottomSection">
+                {cartItems.length === 0 ? (
+                  <div className='cartIsEmpty'>
+                    <p className='emptyCartText'>Your cart is Currently empty !</p>
+                    <div className='emptyCartProductsLink'>
+                      <button className='sortBtn' onClick={() => navigate('/collection/bestSellers')}>Bestsellers</button>
+                      <button className='sortBtn' onClick={() => navigate('/collection/perfumes')}>Perfumes</button>
+                      <button className='sortBtn' onClick={() => navigate('/collection/newArrivals')}>New Arrivals</button>
+                      <button className='sortBtn' onClick={() => navigate('/collection/giftSets')}>Gift Sets</button>
                     </div>
                   </div>
-                })}
+                ) : (
+                  <div className='cartItemsProductMain'>
+                    {cartItems.map((items, index) => {
+                      return <div className='cartItemsProduct' key={index}>
+                        <div className="cartItemProductTop">
+                          <div className="cartItemsProductImg" onClick={() => handleProductClick(items.id)}>
+                            <img src={items.mainImg} alt="cartImg" />
+                          </div>
+                          <div className="cartItemsProductDetails">
+                            <div className='cartSingleNameAndCloseBtn'>
+                              <span className='cartItemSingleName' onClick={() => handleProductClick(items.id)}>{items.name}</span>
+                              <img src={CloseBtn} alt="" onClick={() => handleRemoveProductFromCart(items)} />
+                            </div>
+                            <div className='buyMoreSaveMore'>
+                              <img src={Tag} alt="" />
+                              <span>Buy More Save More</span>
+                            </div>
+                            <div className='buyMoreSaveMoreDiscount'>
+                              <img src={GreenDownArrow} alt="" className='greenArrow' />
+                              <span>{items.discount} Discount</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="cartItemProductBottom">
+                          <div className="cartQuantityBtn">
+                            <img onClick={() => handleDecreaseQuantity(items)} src={MinusBtn} alt="" />
+                            <span className='itemQuantity'>{items.quantity}</span>
+                            <img onClick={() => handleIncreaseQuantity(items)} src={PlusBtn} alt="" />
+                          </div>
+                          <div className="cartItemProductPrice">
+                            <span className='cartItemProductPriceMrp'>{`₹${(parseFloat(items.mrp.replace(/[₹,]/g, '')) * items.quantity).toFixed(2)}`} </span>
+                            <span className='cartItemProductPPrice'> {`₹${(parseFloat(items.price.replace(/[₹,]/g, '')) * items.quantity).toFixed(2)}`}  </span>
+                          </div>
+                        </div>
+                      </div>
+                    })}
+                  </div>
+                )}
+                <div className='cartItemsCount'>Total Items in Your Cart : {cartItemCount}</div>
+                {/* Cart Recommended Mini */}
+                <RecommendedCartMini setCartItems={setCartItems} handleProductClick={handleProductClick} />
               </div>
-            )}
-            <div className='cartItemsCount'>Total Items in Your Cart : {cartItemCount}</div>
-            {/* Cart Recommended Mini */}
-            <RecommendedCartMini setCartItems={setCartItems} />
-          </div>
-          <div className="checkOutBtnMain">
-            <p className='shippingText'>Tax included. <span className='shippingPolicyLinkText' onClick={() => navigate('/pages/shippingPolicy')} >Shipping</span> calculated at checkout.</p>
-            <button className='filterBtn checkOutBtn' >
-              {cartItems.length > 0 ? `Check out - ₹${cartItems.reduce((total, item) => {
-                const itemPrice = parseFloat(item.price.replace(/[₹,]/g, '')) || 0; // Remove currency symbol and convert to number
-                return total + itemPrice * item.quantity; // Accumulate total price
-              }, 0).toFixed(2)}` : "No Items in Your Cart"}
-            </button>
+              <div className="checkOutBtnMain">
+                <p className='shippingText'>Tax included. <span className='shippingPolicyLinkText' onClick={() => navigate('/pages/shippingPolicy')} >Shipping</span> calculated at checkout.</p>
+                <button className='filterBtn checkOutBtn' onClick={handleCheckOut}>
+                  {btnLoader ? <div className='btnLoader'><Loader /></div> :
+                    cartItems.length > 0 ? `Check out - ₹${cartItems.reduce((total, item) => {
+                      const itemPrice = parseFloat(item.price.replace(/[₹,]/g, '')) || 0;
+                      return total + itemPrice * item.quantity;
+                    }, 0).toFixed(2)}` : "No Items in Your Cart"
+                  }
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
+      }
+    </>
   )
 }
 

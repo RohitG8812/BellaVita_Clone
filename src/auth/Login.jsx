@@ -27,7 +27,7 @@ function Login() {
             console.log("logged in successfully");
             toast.success("Logged in Successfully")
             setTimeout(() => {
-                navigate("/account")
+                navigate(-1)
                 setLoader(false)
             }, 2000)
         } catch (error) {

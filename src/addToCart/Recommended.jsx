@@ -3,7 +3,7 @@ import { toast } from 'react-toastify'
 import Loader from '../pages/Loader'
 import RecommendedProducts from '../JSON/RecommendedProducts'
 
-function Recommended({ setCartItems }) {
+function Recommended({ setCartItems, handleProductClick }) {
     const [btnLoader, setBtnLoader] = useState(null)
     const handleAddProductToCart = (product) => {
         try {
