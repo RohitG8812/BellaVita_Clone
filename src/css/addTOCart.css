@@ -603,11 +603,11 @@
   text-align: center;
   margin-block: 30px;
   width: 100%;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 21.6px;
   letter-spacing: 0.63px;
   @media (max-width: 550px) {
-    font-size: 10px;
+    font-size: 12.3px;
   }
 }

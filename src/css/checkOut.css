@@ -245,6 +245,13 @@
   font-family: myFont !important;
 }
 
+/* for production */
+.css-1se3h6u{
+  padding: 0px !important;
+  padding-left: 10px !important;
+  font-family: myFont !important;
+}
+
 .couponsVariety {
   padding-right: 4px;
   overflow: auto;
