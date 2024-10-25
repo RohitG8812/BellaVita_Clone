@@ -134,9 +134,6 @@
   font-size: 16px !important;
   letter-spacing: 2.2px !important;
   margin-bottom: 5px;
-  @media (max-width: 750px) {
-    margin-top: 10px;
-  }
 }
 
 .ttt {
@@ -602,19 +599,15 @@
   }
 }
 
-.cartItemsCount{
+.cartItemsCount {
   text-align: center;
-  margin-bottom: 10px;
+  margin-block: 30px;
   width: 100%;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 500;
   line-height: 21.6px;
   letter-spacing: 0.63px;
   @media (max-width: 550px) {
-    font-size: 14px;
+    font-size: 10px;
   }
-}
-
-.cartItemsProductMain {
-  padding-bottom: 30px;
 }

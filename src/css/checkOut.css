@@ -5,11 +5,20 @@
 }
 
 .checkOutLeftSide {
-  margin-top: 10px;
+  height: 100%;
   padding-inline: 20px;
   @media (max-width: 530px) {
     padding-inline: 10px;
   }
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.cheOutLeftSideBottomContent {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
 }
 
 .checkOutRightSideMain {
@@ -21,6 +30,8 @@
 }
 
 .checkOutLeftSideMain {
+  height: 100%;
+  background-color: whitesmoke;
   width: 328px;
   border-right: 1px solid rgb(206, 206, 206) !important;
   scroll-behavior: smooth;
@@ -36,10 +47,9 @@
   }
 }
 
-.checkOutRightSide {
+.checkOutRightSideTop {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100%;
   gap: 5px;
   @media (max-width: 750px) {
@@ -50,16 +60,415 @@
   }
 }
 
-.checkOutRightSideTop {
-  margin-top: 10px;
+.checkOutRightBottom {
+  padding-inline: 20px;
+  padding-block: 10px;
+  border-top: 0.4px solid rgb(206, 206, 206);
+}
+
+.CheckOutItemsProductMain {
+  overflow: auto;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  height: 100%;
   padding-inline: 20px;
   @media (max-width: 530px) {
     padding-inline: 10px;
   }
 }
 
-.checkOutRightBottom {
-  padding-inline: 20px;
-  padding-block: 10px;
+.checkOutPageContent {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 5px;
+  @media (max-width: 750px) {
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scroll-behavior: smooth;
+  }
+}
+
+.backBtnOrText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.cartCloseBtnDiv {
+  margin-top: 20px;
+}
+
+.cartIconOrderSummary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 28px !important;
+  margin-bottom: 15px !important;
+}
+
+.cartIconOrderSummary img {
+  width: 20px;
+  height: 18px;
+  opacity: 0.8;
+}
+
+.pricingSection {
+  border-radius: 8px;
+  padding-inline: 10px;
+  padding-block: 15px;
+  background-color: #fff;
+  color: rgb(103, 102, 102);
+  display: flex;
+  gap: 9px;
+  flex-direction: column;
+  font-size: 14px;
+  letter-spacing: 0.8px;
+  line-height: 18px;
+}
+
+.pricingSectionMini {
+  padding-block: 6px !important;
+}
+
+.couponSection {
+  padding-right: 4px;
+  overflow: auto;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.pricingDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.totalPriceLast {
+  border-top: 0.2px solid rgb(206, 206, 206);
+  padding-top: 9px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+}
+
+.QuantityAtCheckout {
+  font-size: 12px !important;
+  padding-inline: 5px !important;
+  font-weight: 500;
+  color: rgb(103, 102, 102);
+  letter-spacing: 0.73px !important;
+}
+
+.buyMoreSaveMoreCoupon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.buyMoreSaveMoreCoupon img {
+  width: 22px;
+}
+
+.pricingBottom {
+  margin-bottom: 25px;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  letter-spacing: 0.63px;
+  color: rgb(103, 102, 102);
+}
+
+.pricingBottom img {
+  width: 85px;
+}
+
+.couponPageMain {
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.couponInputBox {
+  border-radius: 8px;
+  background-color: #fff;
+  background-color: #fff;
+}
+
+.couponHeadingMain {
+  font-size: 15px !important;
+  font-weight: 600;
+  text-transform: capitalize !important;
+}
+
+.appliedCouponHeading {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.appliedCouponHeading img {
+  width: 20px;
+}
+
+.couponPageHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.couponPageHeading img {
+  width: 20px;
+  cursor: pointer;
+}
+
+.inputIconAdornment {
+  width: 20px;
+}
+
+.inputApplyBtn {
+  padding-inline: 10px !important;
+  width: auto !important;
+  color: #000;
+}
+
+.css-1ytwl2s-MuiInputBase-root-MuiOutlinedInput-root {
+  padding: 0px !important;
+  padding-left: 10px !important;
+  font-family: myFont !important;
+}
+
+.couponsVariety {
+  padding-right: 4px;
+  overflow: auto;
+  scroll-behavior: smooth;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  @media (max-width: 750px) {
+    padding-inline: 20px !important;
+  }
+  @media (max-width: 530px) {
+    padding-inline: 10px !important;
+  }
+}
+
+.couponsVariety::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  width: 4px; /* Width of the scrollbar */
+  background-color: transparent; /* Background color of the scrollbar track */
+}
+
+.couponsVariety::-webkit-scrollbar-thumb {
+  background-color: #88888879; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners of the scrollbar thumb */
+}
+
+.couponsVariety::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa; /* Color when hovering over the scrollbar thumb */
+}
+
+.singleCouponCodeDetails {
+  border-radius: 4px;
+  background-color: #fff;
+  color: rgb(103, 102, 102);
+}
+
+.codeAndApplyBtn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.singleCouponCodeDetailsTop {
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding-block: 5px;
+}
+
+.singleCouponCodeDetailsBottom {
+  padding-inline: 15px;
+  border-top: none;
+  padding-block: 15px;
+  border-bottom: 0.4px solid black;
+  border-left: 0.4px solid black;
+  border-right: 0.4px solid black;
+  border-top: 0px solid black;
+  border-style: dashed;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.couponCode {
+  border: 0.4px solid aqua;
+  border-style: dashed;
+  padding-block: 4.2px;
+  padding-inline: 8px;
+  color: #000;
+  font-size: 17px;
+  @media (max-width : 530px) {
+    font-size: 15.5px !important;
+  }
+}
+
+.couponApplyBtn {
+  padding-inline: 10px !important;
+  min-height: 30px !important;
+  width: 44px !important;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 2.6px;
+  line-height: 14.4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #fff;
+  border: 0.4px solid #000;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.couponDescription {
+  color: green;
+  font-size: 16.5px;
+  letter-spacing: 0.8px;
+  line-height: 18px;
+  text-align: left;
+  @media (max-width : 530px) {
+    font-size: 14.5px !important;
+  }
+}
+
+.couponTermsConditions {
+  font-size: 14px;
+  letter-spacing: 0.63px;
+  color: rgb(103, 102, 102);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pppp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.applyCouponBtnMain {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pricingTop {
+  height: 93dvh;
+}
+
+.pricingBottom {
+  height: 6.8dvh;
+  margin: 0 !important;
+}
+
+.cheOutLeftSideBottomContent {
+  height: 90.8%;
+}
+
+.couponSection::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  width: 4px; /* Width of the scrollbar */
+  background-color: transparent; /* Background color of the scrollbar track */
+}
+
+.couponSection::-webkit-scrollbar-thumb {
+  background-color: #88888879; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners of the scrollbar thumb */
+}
+
+.couponSection::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa; /* Color when hovering over the scrollbar thumb */
+}
+
+.disabledApplyCouponBtn {
+  cursor: not-allowed !important;
+  opacity: 0.4;
+}
+
+/*  */
+
+.applyFilterAppliedFilter {
+  width: 100% !important;
+  padding-inline: 0px !important;
+}
+
+.priceSectionMini {
+  padding-inline: 20px !important;
+  padding-top: 15px !important;
+  padding-bottom: 5px !important;
+  @media (max-width: 530px) {
+    padding-inline: 10px !important;
+  }
+  @media (max-width: 360px) {
+    font-size: 13px !important;
+    letter-spacing: 0.7px;
+    line-height: 16px;
+  }
+}
+
+.couponPageHeadingMini {
+  margin-top: 22px;
+  padding-inline: 20px !important;
+  @media (max-width: 530px) {
+    padding-inline: 10px !important;
+  }
+}
+
+.couponInputBoxMini {
+  margin-inline: 20px !important;
+  @media (max-width: 530px) {
+    margin-inline: 10px !important;
+  }
+}
+
+.couponPageMini {
+  gap: 12px !important;
+  background-color: whitesmoke;
+}
+
+.couponSectionMini {
+  height: 45%;
+  gap: 7px;
+  padding-top: 10px;
+  margin-bottom: 0px !important;
   border-top: 0.4px solid rgb(206, 206, 206);
+  padding-inline: 20px !important;
+  @media (max-width: 530px) {
+    padding-inline: 10px !important;
+  }
+}
+
+.couponHeadingMainMini {
+  padding-top: 10px !important;
+  border-top: 0.4px solid rgb(206, 206, 206);
+  padding-inline: 20px !important;
+  @media (max-width: 530px) {
+    padding-inline: 10px !important;
+  }
 }

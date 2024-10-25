@@ -92,8 +92,6 @@ function AddToCartPage({ toggleDrawer }) {
     setCartItemCount(totalCount);
   })
 
-  console.log(cartItems)
-
   const handleCheckOut = () => {
     if (user) {
       setBtnLoader(true);
@@ -112,7 +110,7 @@ function AddToCartPage({ toggleDrawer }) {
   }
   return (
     <>
-      {openCheckOutPage ? <CheckOutPage setCartItems={setCartItems} cartItems={cartItems} setOpenCheckOutPage={setOpenCheckOutPage} /> :
+      {openCheckOutPage ? <CheckOutPage setCartItems={setCartItems} cartItems={cartItems} setOpenCheckOutPage={setOpenCheckOutPage} handleRemoveProductFromCart={handleRemoveProductFromCart} cartItemCount={cartItemCount} toggleDrawer={toggleDrawer} /> :
         <div className='CartPageMainContainer'>
           {/* Cart Recommended Big */}
           <Recommended setCartItems={setCartItems} handleProductClick={handleProductClick} />
@@ -122,7 +120,7 @@ function AddToCartPage({ toggleDrawer }) {
               <div className="cartProductListTopSection">
                 <div className="cartAndCLoseCart">
                   <p className='accountWelcomeBellavita recommendationProductsCartPage'>Cart</p>
-                  <img src={CloseBtn} alt="CLoseBtn" onClick={() => toggleDrawer(false)} />
+                  <div className='cartAndCLoseCartCloseBtn'><img src={CloseBtn} alt="CLoseBtn" onClick={() => toggleDrawer(false)} /></div>
                 </div>
                 <div className="marqueeContainer">
                   <div className="marqueeText">
@@ -180,9 +178,9 @@ function AddToCartPage({ toggleDrawer }) {
                         </div>
                       </div>
                     })}
+                    <div className='cartItemsCount'>Total Items in Your Cart : {cartItemCount}</div>
                   </div>
                 )}
-                <div className='cartItemsCount'>Total Items in Your Cart : {cartItemCount}</div>
                 {/* Cart Recommended Mini */}
                 <RecommendedCartMini setCartItems={setCartItems} handleProductClick={handleProductClick} />
               </div>
