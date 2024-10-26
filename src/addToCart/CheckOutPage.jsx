@@ -41,8 +41,6 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
     const [couponCode, setCouponCode] = useState("")
     const [appliedCoupons, setAppliedCoupons] = useState(Discount)
     const [couponPageOpenMini, setCouponPageOpenMini] = useState(false);
-    const [openPaymentPage, setOpenPaymentPage] = useState(false);
-    const [showInvalidCoupon, setShowInvalidCoupon] = useState(false);
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -132,7 +130,14 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
             setBtnLoader(true);
             setTimeout(() => {
                 setBtnLoader(false)
-                setOpenPaymentPage(true)
+                navigate('/payment', {
+                    state: {
+                        cartItems,
+                        totalAmount: totalAmountAfterDiscount,
+                        couponCode,
+                        appliedCoupons
+                    }
+                });
             }, 1000)
         } catch (error) {
             toast.error(error.message)
@@ -140,146 +145,45 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
     }
 
     return (
-        <>
-            {openPaymentPage ? <PaymentPage setOpenPaymentPage={setOpenPaymentPage} />
-                :
-                <div className='checkOutPageMain'>
-                    {/* Left Side Page */}
-                    <div className="checkOutLeftSideMain">
-                        <div className="checkOutLeftSide">
-                            <div className="pricingTop">
-                                <div className="CartSectionHeading cartIconOrderSummary">
-                                    <p className='accountWelcomeBellavita recommendationProductsCartPage miniProductRecommended'>Order Summary</p>
-                                    <img src={CartIcon} alt="" />
-                                </div>
-                                <div className="cheOutLeftSideBottomContent">
-                                    <div className="pricingSection">
-                                        <div className="subTotal  pricingDiv">
-                                            <span>Subtotal</span>
-                                            <span>₹{cartTotalAmount()}</span>
-                                        </div>
-                                        <div className="couponDiscount pricingDiv">
-                                            <span>Buy More Save More - 5%</span>
-                                            <span>- ₹{initialDiscountAmount()}</span>
-                                        </div>
-                                        <div className="couponDiscount pricingDiv">
-                                            <span>Coupon Discount - {totalDiscountPercentage}%</span>
-                                            <span>- ₹{couponDiscountAmount()}</span>
-                                        </div>
-                                        <div className="shippingCost pricingDiv">
-                                            <span>Shipping</span>
-                                            <span>Free Delivery</span>
-                                        </div>
-                                        <div className="totalPriceLast pricingDiv">
-                                            <span>Total</span>
-                                            <span>₹{totalAmountAfterDiscount}</span>
-                                        </div>
-                                    </div>
-                                    {/* toggleBetween CouponPage and normal page*/}
-                                    {couponPageOpen ? <div className='couponPageMain'>
-                                        <div className="couponPageHeading">
-                                            <p className=' couponHeadingMain'>apply coupon/cashBack</p>
-                                            <img src={CloseBtn} alt="" onClick={() => setCouponPageOpen(false)} />
-                                        </div>
-                                        <div className="couponInputBox">
-                                            <TextField
-                                                className='addressInput2'
-                                                id="outlined-basic"
-                                                label="Enter Discount CODE"
-                                                variant="outlined"
-                                                type="text"
-                                                value={couponCode}
-                                                size="small"
-                                                required
-                                                onChange={(e) => setCouponCode(e.target.value)}
-                                                InputLabelProps={{
-                                                    style: { fontFamily: 'myFont', letterSpacing: "1px", fontSize: "14.2px" }
-                                                }}
-                                                sx={{
-                                                    '& .MuiOutlinedInput-root': {
-                                                        '&.Mui-focused fieldset': {
-                                                            borderColor: 'black',
-                                                            borderWidth: '0.2px'
-                                                        },
-                                                    },
-                                                    '& .MuiInputLabel-root.Mui-focused': {
-                                                        color: 'black',
-                                                    },
-                                                }}
-                                                inputProps={{
-                                                    style: { textTransform: 'uppercase' }
-                                                }}
-                                                slotProps={{
-                                                    input: {
-                                                        startAdornment: <InputAdornment position="start"><img src={DiscountIcon} alt="" className='inputIconAdornment' /> </InputAdornment>,
-                                                        endAdornment: <InputAdornment position='end'><span className='inputApplyBtn sortBtn' onClick={handleInvalidCouponCode}>APPLY</span></InputAdornment>
-                                                    },
-                                                }}
-                                            />
-                                        </div>
-                                        <p className=' couponHeadingMain'>Payment Method Offers</p>
-                                        <div className="couponsVariety">
-                                            {couponsVariety.map((coupon, index) => {
-                                                return <div className='singleCouponCodeDetails' key={index}>
-                                                    <div className="singleCouponCodeDetailsTop">
-                                                        {coupon.name}
-                                                    </div>
-                                                    <div className="singleCouponCodeDetailsBottom">
-                                                        <div className="codeAndApplyBtn">
-                                                            <span className='couponCode'>{coupon.code}</span>
-                                                            <span
-                                                                className={`couponApplyBtn ${appliedCoupons.length == 4 ? "disabledApplyCouponBtn" : ""}`}
-                                                                onClick={() => handleCouponClick(coupon)}
-                                                            >
-                                                                {loader ? <div><Loader /></div> : "Apply"}
-                                                            </span>
-                                                        </div>
-                                                        <span className='couponDescription'>{coupon.desc}</span>
-                                                        <span className='couponTermsConditions'>Terms and Conditions</span>
-                                                    </div>
-                                                </div>
-                                            })}
-                                        </div>
-                                    </div>
-                                        :
-                                        // normal page
-                                        <div className="couponSection">
-                                            <div className="pricingSection buyMoreSaveMoreCoupon applyCouponBtn applyCouponBtnMain" style={{ cursor: "pointer" }} onClick={() => setCouponPageOpen(true)}>
-                                                <div className='pppp'>
-                                                    <img src={DiscountIcon} alt="" />
-                                                    <span> APPLY Coupon</span>
-                                                </div>
-                                                <img src={RightIcon} alt="" style={{ width: '16px', paddingRight: '10px' }} />
-                                            </div>
-                                            <p className='couponHeadingMain appliedCouponHeading'>
-                                                <span>APPLIED COUPONS</span>
-                                                <img src={DownArrow} alt="" />
-                                            </p>
-                                            {appliedCoupons.map((discount, index) => (
-                                                <div className=" pricingSection buyMoreSaveMoreCoupon applyCouponBtn" key={index}>
-                                                    <img src={discount.img} alt="" />
-                                                    <span>{discount.name}</span>
-                                                </div>
-                                            ))}
-                                        </div>}
-                                </div>
-                            </div>
-                            <div className="pricingBottom">
-                                <span >Secured by </span>
-                                <img src={Ecom} alt="" />
-                            </div>
+        <div className='checkOutPageMain'>
+            {/* Left Side Page */}
+            <div className="checkOutLeftSideMain">
+                <div className="checkOutLeftSide">
+                    <div className="pricingTop">
+                        <div className="CartSectionHeading cartIconOrderSummary">
+                            <p className='accountWelcomeBellavita recommendationProductsCartPage miniProductRecommended'>Order Summary</p>
+                            <img src={CartIcon} alt="" />
                         </div>
-                    </div>
-                    {/* RightPage Main */}
-                    <div className="checkOutRightSideMain">
-                        {couponPageOpenMini ?
-                            // CouponMini Page
-                            <div className='couponPageMain couponPageMini'>
-                                <div className="couponPageHeading couponPageHeadingMini">
-                                    <p className=' couponHeadingMain'>apply coupon/cashBack</p>
-                                    <img src={CloseBtn} alt="" onClick={() => setCouponPageOpenMini(false)} />
+                        <div className="cheOutLeftSideBottomContent">
+                            <div className="pricingSection">
+                                <div className="subTotal  pricingDiv">
+                                    <span>Subtotal</span>
+                                    <span>₹{cartTotalAmount()}</span>
                                 </div>
-                                <div className="couponInputBox couponInputBoxMini">
+                                <div className="couponDiscount pricingDiv">
+                                    <span>Buy More Save More - 5%</span>
+                                    <span>- ₹{initialDiscountAmount()}</span>
+                                </div>
+                                <div className="couponDiscount pricingDiv">
+                                    <span>Coupon Discount - {totalDiscountPercentage}%</span>
+                                    <span>- ₹{couponDiscountAmount()}</span>
+                                </div>
+                                <div className="shippingCost pricingDiv">
+                                    <span>Shipping</span>
+                                    <span>Free Delivery</span>
+                                </div>
+                                <div className="totalPriceLast pricingDiv">
+                                    <span>Total</span>
+                                    <span>₹{totalAmountAfterDiscount}</span>
+                                </div>
+                            </div>
+                            {/* toggleBetween CouponPage and normal page*/}
+                            {couponPageOpen ? <div className='couponPageMain'>
+                                <div className="couponPageHeading">
+                                    <p className=' couponHeadingMain'>apply coupon/cashBack</p>
+                                    <img src={CloseBtn} alt="" onClick={() => setCouponPageOpen(false)} />
+                                </div>
+                                <div className="couponInputBox">
                                     <TextField
                                         className='addressInput2'
                                         id="outlined-basic"
@@ -315,19 +219,7 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
                                         }}
                                     />
                                 </div>
-                                <div className="couponSection  couponSectionMini">
-                                    <p className='couponHeadingMain appliedCouponHeading'>
-                                        <span>APPLIED COUPONS</span>
-                                        <img src={DownArrow} alt="" />
-                                    </p>
-                                    {appliedCoupons.map((discount, index) => (
-                                        <div className=" pricingSection pricingSectionMini buyMoreSaveMoreCoupon applyCouponBtn" key={index}>
-                                            <img src={discount.img} alt="" />
-                                            <span>{discount.name}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                                <p className=' couponHeadingMain couponHeadingMainMini'>Payment Method Offers</p>
+                                <p className=' couponHeadingMain'>Payment Method Offers</p>
                                 <div className="couponsVariety">
                                     {couponsVariety.map((coupon, index) => {
                                         return <div className='singleCouponCodeDetails' key={index}>
@@ -351,103 +243,211 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
                                     })}
                                 </div>
                             </div>
-                            :
-                            // Normal Page
-                            <div className="checkOutRightSideTop">
-                                {/* RightSide Top */}
-                                <div className="cartProductListTopSection">
-                                    <div className="cartAndCLoseCart">
-                                        <p className='accountWelcomeBellavita recommendationProductsCartPage backBtnOrText'><img src={BackBtn} alt="" onClick={() => setOpenCheckOutPage(false)} />
-                                            <span>{document.body.offsetWidth < 750 ? "Order Summary" : "Back to cart"}</span>
-                                        </p>
-                                        <div className='cartCloseBtnDiv'>
-                                            <img src={CloseBtn} alt="CLoseBtn" onClick={() => toggleDrawer(false)} />
+                                :
+                                // normal page
+                                <div className="couponSection">
+                                    <div className="pricingSection buyMoreSaveMoreCoupon applyCouponBtn applyCouponBtnMain" style={{ cursor: "pointer" }} onClick={() => setCouponPageOpen(true)}>
+                                        <div className='pppp'>
+                                            <img src={DiscountIcon} alt="" />
+                                            <span> APPLY Coupon</span>
                                         </div>
+                                        <img src={RightIcon} alt="" style={{ width: '16px', paddingRight: '10px' }} />
                                     </div>
-                                    <div className="marqueeContainer">
-                                        <div className="marqueeText">
-                                            <span>Buy more save more 5% instant discount at checkout</span>
-                                            <span>Buy more save more 5% instant discount at checkout</span>
-                                            <span>Buy more save more 5% instant discount at checkout</span>
-                                            <span>Buy more save more 5% instant discount at checkout</span>
+                                    <p className='couponHeadingMain appliedCouponHeading'>
+                                        <span>APPLIED COUPONS</span>
+                                        <img src={DownArrow} alt="" />
+                                    </p>
+                                    {appliedCoupons.map((discount, index) => (
+                                        <div className=" pricingSection buyMoreSaveMoreCoupon applyCouponBtn" key={index}>
+                                            <img src={discount.img} alt="" />
+                                            <span>{discount.name}</span>
                                         </div>
-                                    </div>
-                                </div>
-                                <div className='CheckOutItemsProductMain'>
-                                    {cartItems.map((items, index) => {
-                                        return <div className='cartItemsProduct' key={index}>
-                                            <div className="cartItemProductTop">
-                                                <div className="cartItemsProductImg" onClick={() => handleProductClick(items.id)}>
-                                                    <img src={items.mainImg} alt="cartImg" />
-                                                </div>
-                                                <div className="cartItemsProductDetails">
-                                                    <div className='cartSingleNameAndCloseBtn'>
-                                                        <span className='cartItemSingleName' onClick={() => handleProductClick(items.id)}>{items.name}</span>
-                                                    </div>
-                                                    <div className='buyMoreSaveMore'>
-                                                        <img src={Tag} alt="" />
-                                                        <span>Buy More Save More</span>
-                                                    </div>
-                                                    <div className='buyMoreSaveMoreDiscount'>
-                                                        <img src={GreenDownArrow} alt="" className='greenArrow' />
-                                                        <span>{items.discount} Discount</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="cartItemProductBottom">
-                                                <div className="cartQuantityBtn QuantityAtCheckout">
-                                                    <span className='itemQuantity'>Quantity {items.quantity}</span>
-                                                </div>
-                                                <div className="cartItemProductPrice">
-                                                    <span className='cartItemProductPriceMrp'>{`₹${(parseFloat(items.mrp.replace(/[₹,]/g, '')) * items.quantity).toFixed(2)}`} </span>
-                                                    <span className='cartItemProductPPrice'> {`₹${(parseFloat(items.price.replace(/[₹,]/g, '')) * items.quantity).toFixed(2)}`}  </span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    })}
-                                </div>
-                                {/* checkOutMini */}
-                                <div className="checkOutLeftSideMini">
-                                    <div onClick={() => setCouponPageOpenMini(true)}>
-                                        <span className='couponApplyBtn applyFilterAppliedFilter'>Apply Coupon & applied Coupons</span>
-                                    </div>
-                                    <div className="pricingSection priceSectionMini">
-                                        <div className="subTotal  pricingDiv">
-                                            <span>Subtotal</span>
-                                            <span>₹{cartTotalAmount()}</span>
-                                        </div>
-                                        <div className="couponDiscount pricingDiv">
-                                            <span>Buy More Save More - 5%</span>
-                                            <span>- ₹{initialDiscountAmount()}</span>
-                                        </div>
-                                        <div className="couponDiscount pricingDiv">
-                                            <span>Coupon Discount - {totalDiscountPercentage}%</span>
-                                            <span>- ₹{couponDiscountAmount()}</span>
-                                        </div>
-                                        <div className="shippingCost pricingDiv">
-                                            <span>Shipping</span>
-                                            <span>Free Delivery</span>
-                                        </div>
-                                        <div className="totalPriceLast pricingDiv">
-                                            <span>Total</span>
-                                            <span>₹{totalAmountAfterDiscount}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="checkOutRightBottom">
-                                    <p className='shippingText'>Tax included. <span className='shippingPolicyLinkText' onClick={() => navigate('/pages/shippingPolicy')} >Shipping</span> calculated at Payment Page.</p>
-                                    <button className='filterBtn checkOutBtn' onClick={handlePaymentPage}>
-                                        {btnLoader ? <div className='btnLoader'><Loader /></div> :
-                                            "Go to Payment Page"
-                                        }
-                                    </button>
-                                </div>
-                            </div>
-                        }
+                                    ))}
+                                </div>}
+                        </div>
+                    </div>
+                    <div className="pricingBottom">
+                        <span >Secured by </span>
+                        <img src={Ecom} alt="" />
                     </div>
                 </div>
-            }
-        </>
+            </div>
+            {/* RightPage Main */}
+            <div className="checkOutRightSideMain">
+                {couponPageOpenMini ?
+                    // CouponMini Page
+                    <div className='couponPageMain couponPageMini'>
+                        <div className="couponPageHeading couponPageHeadingMini">
+                            <p className=' couponHeadingMain'>apply coupon/cashBack</p>
+                            <img src={CloseBtn} alt="" onClick={() => setCouponPageOpenMini(false)} />
+                        </div>
+                        <div className="couponInputBox couponInputBoxMini">
+                            <TextField
+                                className='addressInput2'
+                                id="outlined-basic"
+                                label="Enter Discount CODE"
+                                variant="outlined"
+                                type="text"
+                                value={couponCode}
+                                size="small"
+                                required
+                                onChange={(e) => setCouponCode(e.target.value)}
+                                InputLabelProps={{
+                                    style: { fontFamily: 'myFont', letterSpacing: "1px", fontSize: "14.2px" }
+                                }}
+                                sx={{
+                                    '& .MuiOutlinedInput-root': {
+                                        '&.Mui-focused fieldset': {
+                                            borderColor: 'black',
+                                            borderWidth: '0.2px'
+                                        },
+                                    },
+                                    '& .MuiInputLabel-root.Mui-focused': {
+                                        color: 'black',
+                                    },
+                                }}
+                                inputProps={{
+                                    style: { textTransform: 'uppercase' }
+                                }}
+                                slotProps={{
+                                    input: {
+                                        startAdornment: <InputAdornment position="start"><img src={DiscountIcon} alt="" className='inputIconAdornment' /> </InputAdornment>,
+                                        endAdornment: <InputAdornment position='end'><span className='inputApplyBtn sortBtn' onClick={handleInvalidCouponCode}>APPLY</span></InputAdornment>
+                                    },
+                                }}
+                            />
+                        </div>
+                        <div className="couponSection  couponSectionMini">
+                            <p className='couponHeadingMain appliedCouponHeading'>
+                                <span>APPLIED COUPONS</span>
+                                <img src={DownArrow} alt="" />
+                            </p>
+                            {appliedCoupons.map((discount, index) => (
+                                <div className=" pricingSection pricingSectionMini buyMoreSaveMoreCoupon applyCouponBtn" key={index}>
+                                    <img src={discount.img} alt="" />
+                                    <span>{discount.name}</span>
+                                </div>
+                            ))}
+                        </div>
+                        <p className=' couponHeadingMain couponHeadingMainMini'>Payment Method Offers</p>
+                        <div className="couponsVariety">
+                            {couponsVariety.map((coupon, index) => {
+                                return <div className='singleCouponCodeDetails' key={index}>
+                                    <div className="singleCouponCodeDetailsTop">
+                                        {coupon.name}
+                                    </div>
+                                    <div className="singleCouponCodeDetailsBottom">
+                                        <div className="codeAndApplyBtn">
+                                            <span className='couponCode'>{coupon.code}</span>
+                                            <span
+                                                className={`couponApplyBtn ${appliedCoupons.length == 4 ? "disabledApplyCouponBtn" : ""}`}
+                                                onClick={() => handleCouponClick(coupon)}
+                                            >
+                                                {loader ? <div><Loader /></div> : "Apply"}
+                                            </span>
+                                        </div>
+                                        <span className='couponDescription'>{coupon.desc}</span>
+                                        <span className='couponTermsConditions'>Terms and Conditions</span>
+                                    </div>
+                                </div>
+                            })}
+                        </div>
+                    </div>
+                    :
+                    // Normal Page
+                    <div className="checkOutRightSideTop">
+                        {/* RightSide Top */}
+                        <div className="cartProductListTopSection">
+                            <div className="cartAndCLoseCart">
+                                <p className='accountWelcomeBellavita recommendationProductsCartPage backBtnOrText'><img src={BackBtn} alt="" onClick={() => setOpenCheckOutPage(false)} />
+                                    <span>{document.body.offsetWidth < 750 ? "Order Summary" : "Back to cart"}</span>
+                                </p>
+                                <div className='cartCloseBtnDiv'>
+                                    <img src={CloseBtn} alt="CLoseBtn" onClick={() => toggleDrawer(false)} />
+                                </div>
+                            </div>
+                            <div className="marqueeContainer">
+                                <div className="marqueeText">
+                                    <span>Buy more save more 5% instant discount at checkout</span>
+                                    <span>Buy more save more 5% instant discount at checkout</span>
+                                    <span>Buy more save more 5% instant discount at checkout</span>
+                                    <span>Buy more save more 5% instant discount at checkout</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='CheckOutItemsProductMain'>
+                            {cartItems.map((items, index) => {
+                                return <div className='cartItemsProduct' key={index}>
+                                    <div className="cartItemProductTop">
+                                        <div className="cartItemsProductImg" onClick={() => handleProductClick(items.id)}>
+                                            <img src={items.mainImg} alt="cartImg" />
+                                        </div>
+                                        <div className="cartItemsProductDetails">
+                                            <div className='cartSingleNameAndCloseBtn'>
+                                                <span className='cartItemSingleName' onClick={() => handleProductClick(items.id)}>{items.name}</span>
+                                            </div>
+                                            <div className='buyMoreSaveMore'>
+                                                <img src={Tag} alt="" />
+                                                <span>Buy More Save More</span>
+                                            </div>
+                                            <div className='buyMoreSaveMoreDiscount'>
+                                                <img src={GreenDownArrow} alt="" className='greenArrow' />
+                                                <span>{items.discount} Discount</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="cartItemProductBottom">
+                                        <div className="cartQuantityBtn QuantityAtCheckout">
+                                            <span className='itemQuantity'>Quantity {items.quantity}</span>
+                                        </div>
+                                        <div className="cartItemProductPrice">
+                                            <span className='cartItemProductPriceMrp'>{`₹${(parseFloat(items.mrp.replace(/[₹,]/g, '')) * items.quantity).toFixed(2)}`} </span>
+                                            <span className='cartItemProductPPrice'> {`₹${(parseFloat(items.price.replace(/[₹,]/g, '')) * items.quantity).toFixed(2)}`}  </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            })}
+                        </div>
+                        {/* checkOutMini */}
+                        <div className="checkOutLeftSideMini">
+                            <div onClick={() => setCouponPageOpenMini(true)}>
+                                <span className='couponApplyBtn applyFilterAppliedFilter'>Apply Coupon & applied Coupons</span>
+                            </div>
+                            <div className="pricingSection priceSectionMini">
+                                <div className="subTotal  pricingDiv">
+                                    <span>Subtotal</span>
+                                    <span>₹{cartTotalAmount()}</span>
+                                </div>
+                                <div className="couponDiscount pricingDiv">
+                                    <span>Buy More Save More - 5%</span>
+                                    <span>- ₹{initialDiscountAmount()}</span>
+                                </div>
+                                <div className="couponDiscount pricingDiv">
+                                    <span>Coupon Discount - {totalDiscountPercentage}%</span>
+                                    <span>- ₹{couponDiscountAmount()}</span>
+                                </div>
+                                <div className="shippingCost pricingDiv">
+                                    <span>Shipping</span>
+                                    <span>Free Delivery</span>
+                                </div>
+                                <div className="totalPriceLast pricingDiv">
+                                    <span>Total</span>
+                                    <span>₹{totalAmountAfterDiscount}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="checkOutRightBottom">
+                            <p className='shippingText'>Tax included. <span className='shippingPolicyLinkText' onClick={() => navigate('/pages/shippingPolicy')} >Shipping</span> calculated at Payment Page.</p>
+                            <button className='filterBtn checkOutBtn' onClick={handlePaymentPage}>
+                                {btnLoader ? <div className='btnLoader'><Loader /></div> :
+                                    "Go to Payment Page"
+                                }
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
     )
 }
 

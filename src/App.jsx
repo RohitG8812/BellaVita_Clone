@@ -27,7 +27,7 @@ import Address from './account/Address'
 import Order from './account/Order'
 import CashBack from './account/CashBack'
 import ShippingPolicy from './components/ShippingPolicy'
-import CheckOutPage from './addToCart/CheckOutPage'
+import PaymentPage from './addToCart/PaymentPage'
 
 function App() {
   return (
@@ -70,7 +70,7 @@ function App() {
         </Route>
 
         {/* CheckOut Page */}
-        <Route path='/checkOut' element={<CheckOutPage />} />
+        <Route path='/payment' element={<PaymentPage />} />
 
       </Routes>
       <ToastContainer
