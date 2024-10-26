@@ -42,6 +42,7 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
     const [appliedCoupons, setAppliedCoupons] = useState(Discount)
     const [couponPageOpenMini, setCouponPageOpenMini] = useState(false);
     const [openPaymentPage, setOpenPaymentPage] = useState(false);
+    const [showInvalidCoupon, setShowInvalidCoupon] = useState(false);
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -92,6 +93,15 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
         } catch (error) {
             toast.error(error.message);
             console.log(error.message)
+        }
+    }
+
+    const handleInvalidCouponCode = () => {
+        if (couponCode.length > 0) {
+            toast.error("Invalid coupon code")
+            setCouponCode("")
+        } else {
+            toast.warning("Please enter a code first.")
         }
     }
 
@@ -196,10 +206,13 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
                                                         color: 'black',
                                                     },
                                                 }}
+                                                inputProps={{
+                                                    style: { textTransform: 'uppercase' }
+                                                }}
                                                 slotProps={{
                                                     input: {
                                                         startAdornment: <InputAdornment position="start"><img src={DiscountIcon} alt="" className='inputIconAdornment' /> </InputAdornment>,
-                                                        endAdornment: <InputAdornment position='end'><span className='inputApplyBtn sortBtn'>APPLY</span></InputAdornment>
+                                                        endAdornment: <InputAdornment position='end'><span className='inputApplyBtn sortBtn' onClick={handleInvalidCouponCode}>APPLY</span></InputAdornment>
                                                     },
                                                 }}
                                             />
@@ -291,10 +304,13 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
                                                 color: 'black',
                                             },
                                         }}
+                                        inputProps={{
+                                            style: { textTransform: 'uppercase' }
+                                        }}
                                         slotProps={{
                                             input: {
                                                 startAdornment: <InputAdornment position="start"><img src={DiscountIcon} alt="" className='inputIconAdornment' /> </InputAdornment>,
-                                                endAdornment: <InputAdornment position='end'><span className='inputApplyBtn sortBtn'>APPLY</span></InputAdornment>
+                                                endAdornment: <InputAdornment position='end'><span className='inputApplyBtn sortBtn' onClick={handleInvalidCouponCode}>APPLY</span></InputAdornment>
                                             },
                                         }}
                                     />

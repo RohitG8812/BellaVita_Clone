@@ -246,7 +246,7 @@
 }
 
 /* for production */
-.css-1se3h6u{
+.css-1se3h6u {
   padding: 0px !important;
   padding-left: 10px !important;
   font-family: myFont !important;
@@ -326,7 +326,7 @@
   padding-inline: 8px;
   color: #000;
   font-size: 17px;
-  @media (max-width : 530px) {
+  @media (max-width: 530px) {
     font-size: 15.5px !important;
   }
 }
@@ -360,7 +360,7 @@
   letter-spacing: 0.8px;
   line-height: 18px;
   text-align: left;
-  @media (max-width : 530px) {
+  @media (max-width: 530px) {
     font-size: 14.5px !important;
   }
 }
@@ -478,4 +478,14 @@
   @media (max-width: 530px) {
     padding-inline: 10px !important;
   }
+}
+
+.invalidCoupon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 14px;
+  color: red;
+  padding-left: 20px;
+  letter-spacing: 0.63px;
 }
