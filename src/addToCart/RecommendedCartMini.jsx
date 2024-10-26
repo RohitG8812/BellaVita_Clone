@@ -36,12 +36,12 @@ function RecommendedCartMini({ setCartItems, handleProductClick }) {
             <div className=' recommendedProductCardMain'>
                 <div className="recentSearchText recommendedProductCard">
                     {RecommendedProducts.map((product, index) => (
-                        <div className="cartRecommendedMiniSingle" key={product.id} onClick={() => handleProductClick(product.id)}>
+                        <div className="cartRecommendedMiniSingle" key={product.id} >
                             <div className="cartRecommendedProductsImgMiniMain" >
-                                <img src={product.mainImg} alt="" className='cartRecommendedProductsImgMini' />
+                                <img src={product.mainImg} alt="" className='cartRecommendedProductsImgMini' onClick={() => handleProductClick(product.id)} />
                             </div>
                             <div className="bottomCardSearch">
-                                <p className='searchCardProductName '>{product.name}</p>
+                                <p className='searchCardProductName ' onClick={() => handleProductClick(product.id)}>{product.name}</p>
                                 <div className="searchCardPrice">
                                     <p className=" cardProductPrice searchCardMrp">{product.mrp}</p>
                                     <p className='CardProductPrice searchCardP'>{product.price}</p>

@@ -69,9 +69,7 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
                     toast.error("only 1 coupon can be applied at a time.");
                     return;
                 }, 500)
-            }
-
-            if (!isCouponAlreadyApplied) {
+            } else if (!isCouponAlreadyApplied) {
                 const newCoupon = {
                     name: coupon.name,
                     img: coupon.img,
