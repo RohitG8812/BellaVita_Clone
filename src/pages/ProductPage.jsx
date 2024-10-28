@@ -9,7 +9,7 @@ import FIlter from '../components/FIlter'
 import Loader from './Loader'
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
 import NoResult from "../assets/icons/noResult.png"
-import { toast } from 'react-toastify'
+import toast from 'react-hot-toast'
 
 function ProductPage({ product, heading, handleProductClick, categoryFilter, productTypeFilter }) {
     const [filterMenuActive, setFilterMenuActive] = useState(false)

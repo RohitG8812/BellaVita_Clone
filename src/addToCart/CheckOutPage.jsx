@@ -16,7 +16,7 @@ import DownArrow from "../assets/icons/down.svg"
 import RightIcon from "../assets/icons/rightArrow.svg"
 import { useNavigate } from 'react-router-dom';
 import { InputAdornment, TextField } from '@mui/material';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 import PaymentPage from './PaymentPage';
 
 const CouponsVariety = [
@@ -99,7 +99,7 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
             toast.error("Invalid coupon code")
             setCouponCode("")
         } else {
-            toast.warning("Please enter a code first.")
+            toast.error("Please enter a code first.")
         }
     }
 

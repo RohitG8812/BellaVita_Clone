@@ -5,7 +5,7 @@ import { doc, getDoc } from 'firebase/firestore'
 import { sendPasswordResetEmail } from 'firebase/auth'
 import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom'
 import "../css/account.css"
-import { toast } from 'react-toastify'
+import toast from 'react-hot-toast'
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
 
 

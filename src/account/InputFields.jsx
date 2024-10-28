@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import IndianFlag from "../assets/icons/india.svg"
 import { InputAdornment, TextField } from '@mui/material'
 import { auth, db } from '../auth/firebase';
-import { toast } from 'react-toastify';
+import toast from 'react-hot-toast';
 import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
 import Ecom from "../assets/icons/ecom.svg"
 import "../css/paymentPage.css"

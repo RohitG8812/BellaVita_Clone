@@ -8,7 +8,6 @@ import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import "../css/Search.css"
 import Recommended from './Recommended'
 import RecommendedCartMini from './RecommendedCartMini'
-// import { toast } from 'react-toastify'
 import CheckOutPage from './CheckOutPage'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import app from '../auth/firebase'
@@ -101,7 +100,7 @@ function AddToCartPage({ toggleDrawer }) {
         setOpenCheckOutPage(true)
       }, 1000)
     } else {
-      toast.warning("Please login first to check out")
+      toast.error("Please login first to check out")
       navigate('/account/login')
     }
   }

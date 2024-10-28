@@ -30,7 +30,7 @@ import BellaCashBannerMini from "../assets/Banner/HomePageBanner/bellaCashMini.w
 import ReviewSlider from '../HomePage/ReviewSlider'
 import ImageMapping from '../HomePage/ImageMapping'
 import LipStickFinder from '../assets/Banner/HomePageBanner/lipstickFinder.jpeg'
-import { toast } from 'react-toastify'
+import toast from 'react-hot-toast'
 
 
 function Home() {

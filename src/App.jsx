@@ -20,8 +20,6 @@ import BellaCash from './components/BellaCash'
 import SearchResultPage from './components/SearchResultPage'
 import Login from './auth/Login'
 import Register from './auth/Register'
-import { ToastContainer } from "react-toastify"
-import 'react-toastify/dist/ReactToastify.css';
 import Profile from './account/Profile'
 import Address from './account/Address'
 import Order from './account/Order'
@@ -41,11 +39,10 @@ function App() {
         containerStyle={{}}
         toastOptions={{
           className: '',
-          duration: 3000,
+          duration: 5000,
           style: {
-            fontFamily: "myFont",
-            background: '#fff',
-            color: '#000',
+            background: '#363636',
+            color: '#fff',
           },
 
           success: {
@@ -98,18 +95,6 @@ function App() {
         <Route path='/payment' element={<PaymentPage />} />
 
       </Routes>
-      <ToastContainer
-        position="top-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        toastClassName="custom-toast"
-      />
     </BrowserRouter>
   )
 }

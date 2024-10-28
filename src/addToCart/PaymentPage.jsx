@@ -7,7 +7,7 @@ import PlusRounded from "../assets/icons/plusRounded.svg"
 import Ecom from "../assets/icons/ecom.svg"
 
 import { auth, db } from '../auth/firebase'
-import { toast } from 'react-toastify'
+import toast from 'react-hot-toast'
 import { doc, getDoc } from 'firebase/firestore'
 import InputFields from '../account/InputFields'
 

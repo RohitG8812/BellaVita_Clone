@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import PlusRounded from "../assets/icons/plusRounded.svg"
 import { auth, db } from '../auth/firebase'
-import { toast } from 'react-toastify'
+import toast from 'react-hot-toast'
 import { arrayRemove, doc, getDoc, updateDoc } from 'firebase/firestore'
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
 import DeleteRed from "../assets/icons/delete2.svg"

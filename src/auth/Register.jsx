@@ -9,7 +9,7 @@ import "../css/account.css"
 import "../css/loginSignup.css"
 import Line from "../assets/icons/line.png"
 import Google from "../assets/icons/google.svg"
-import { toast } from 'react-toastify'
+import toast from 'react-hot-toast'
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
 import { InputAdornment } from '@mui/material'
 
