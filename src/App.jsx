@@ -28,10 +28,35 @@ import Order from './account/Order'
 import CashBack from './account/CashBack'
 import ShippingPolicy from './components/ShippingPolicy'
 import PaymentPage from './addToCart/PaymentPage'
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <BrowserRouter>
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        gutter={8}
+        containerClassName=""
+        containerStyle={{}}
+        toastOptions={{
+          className: '',
+          duration: 3000,
+          style: {
+            fontFamily: "myFont",
+            background: '#fff',
+            color: '#000',
+          },
+
+          success: {
+            duration: 3000,
+            theme: {
+              primary: 'green',
+              secondary: 'black',
+            },
+          },
+        }}
+      />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/collection' element={<Collection />} />

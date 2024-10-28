@@ -8,11 +8,12 @@ import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import "../css/Search.css"
 import Recommended from './Recommended'
 import RecommendedCartMini from './RecommendedCartMini'
-import { toast } from 'react-toastify'
+// import { toast } from 'react-toastify'
 import CheckOutPage from './CheckOutPage'
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import app from '../auth/firebase'
 import Loader from '../pages/Loader'
+import toast from 'react-hot-toast'
 
 function AddToCartPage({ toggleDrawer }) {
   const [cartItems, setCartItems] = useState([])
