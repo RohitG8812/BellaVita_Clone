@@ -274,10 +274,6 @@ function InputFields({ setOpenAddInput }) {
                     <button className='googleBtn addressBtn ' onClick={() => setOpenAddInput(false)}>Cancel</button>
                     <button className='filterBtn addressBtn'>{loader ? <div className='btnLoader'><Loader /></div> : "Save"}</button>
                 </div>
-                <div className="pricingBottom">
-                    <span >Secured by </span>
-                    <img src={Ecom} alt="" />
-                </div>
             </form >
         </>
     )

@@ -1,39 +1,61 @@
 .paymentPageMain {
-  /* border: 1px solid red; */
-  display: flex;
   margin: 0 auto;
-  height: 100dvh;
-  padding-inline: 50px;
+  overflow: hidden;
+  display: flex;
+  max-height: 85dvh;
   max-width: 1100px;
   @media (max-width: 750px) {
-    padding-inline: 15px;
+    padding-inline: 0px;
+    max-height: 99.85dvh;
+  }
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.paymentPageInnerMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 50px;
+  height: 100dvh;
+  @media (max-width: 920px) {
+    padding-inline: 20px;
+  }
+  @media (max-width: 750px) {
+    padding-inline: 0px;
   }
 }
 
 .paymentPageLeftMain {
-  -inline: 20px;
-  width: 40%;
-  /* border: 1px solid blue; */
+  min-width: 40%;
   border-right: 0.4px solid rgb(206, 206, 206);
+  @media (max-width: 750px) {
+    display: none;
+  }
 }
 
 .paymentPageRightMain {
-  width: 59.5%;
-  /* border: 1px solid green; */
+  min-width: 59.5%;
+  @media (max-width: 750px) {
+    width: 100dvw;
+    height: 99.85dvh;
+  }
 }
 
 .PaymentLeftSide {
-  
+  min-width: 100%;
 }
 
 .PaymentPageLoader {
+  width: 100%;
+  height: 65dvh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .PaymentPageLoader img {
-  width: 70%;
+  width: 100dvw;
 }
 
 .paymentPageTopMini {
@@ -43,7 +65,11 @@
   }
 }
 
-.paymentPageBottom {
+.paymentPageContent {
+  padding-inline: 20px;
+  @media (max-width: 750px) {
+    padding-inline: 10px;
+  }
 }
 
 .paymentPageHeading {
@@ -53,6 +79,9 @@
   border-bottom: 0.4px solid rgb(206, 206, 206);
   padding-block: 20px;
   padding-inline: 20px;
+  @media (max-width: 750px) {
+    padding-inline: 10px;
+  }
 }
 
 .orderTotalAndCloseBtn img {
@@ -67,25 +96,58 @@
 }
 
 .addressMainPaymentPage {
-  padding-block: 20px;
+  padding-top: 20px;
 }
 
 .PaymentPageAddMain {
-  padding-inline: 20px !important;
+  padding-inline: 20px;
+}
+
+.addressMapping {
+  padding-right: 4px;
+  height: 60dvh;
+  margin-bottom: 10px;
+  overflow: auto;
+}
+
+.addressMapping::-webkit-scrollbar {
+  scroll-behavior: smooth;
+  width: 4px; /* Width of the scrollbar */
+  background-color: transparent; /* Background color of the scrollbar track */
+}
+
+.addressMapping::-webkit-scrollbar-thumb {
+  background-color: #88888879; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners of the scrollbar thumb */
+}
+
+.addressMapping::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa; /* Color when hovering over the scrollbar thumb */
 }
 
 .savedAddHeadPaymentPage {
   font-size: 16px !important;
   letter-spacing: 1.83px !important;
-  text-align: center;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 .savedAddMainPaymentPage {
-  grid-template-columns: 1fr !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  @media (max-width: 1050px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .savedAddressSinglePaymentPage {
-  padding: 5px !important;
+  padding-inline: 10px !important;
+  padding-block: 5px;
+  border: 0.8px solid rgba(0, 0, 0, 0.38);
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .paymentPageFont {
@@ -99,7 +161,29 @@
   line-height: 16px !important;
 }
 
-.inputFiledMain{
+.inputFiledMain {
   padding-inline: 20px;
   padding-block: 20px;
+}
+
+.selectedAddressPaymentPage {
+  background-color: rgba(220, 220, 220, 0.578);
+}
+
+.pricingBottom {
+  position: absolute;
+  bottom: 2px;
+}
+
+.addAddressBtnPaymentPage {
+  margin-bottom: 10px !important;
+}
+
+/* RightSide */
+
+.paymentOptionsHeadPaymentPage {
+  font-size: 16px !important;
+  letter-spacing: 1.83px !important;
+  text-align: left;
+  margin-block: 10px;
 }
