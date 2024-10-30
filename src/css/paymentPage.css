@@ -453,8 +453,14 @@
 }
 
 .animationSuccess {
+  max-width: 420px;
+  min-width: 280px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); 
+
+  @media (max-width: 285px) {
+    min-width: 200px;
+  }
 }

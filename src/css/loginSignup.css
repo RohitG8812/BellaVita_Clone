@@ -85,7 +85,6 @@
   transition: all 0.2s ease-in;
   position: relative;
   overflow: hidden;
-  z-index: 1;
   gap: 5px;
   cursor: pointer;
   gap: 10px;
