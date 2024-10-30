@@ -394,6 +394,10 @@
   -webkit-box-orient: vertical;
 }
 
+.disabledText{
+  opacity: 0;
+}
+
 .addLineHeight {
   line-height: 20px !important;
 }

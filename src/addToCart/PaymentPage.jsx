@@ -7,7 +7,7 @@ import PlusRounded from "../assets/icons/plusRounded.svg"
 import Ecom from "../assets/icons/ecom.svg"
 import { auth, db } from '../auth/firebase'
 import toast from 'react-hot-toast'
-import { doc, getDoc } from 'firebase/firestore'
+import { arrayUnion, doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
 import InputFields from '../account/InputFields'
 import Cash from "../assets/icons/PaymentMethods/cash.svg"
 import UPI from "../assets/icons/PaymentMethods/upi.svg"
@@ -20,6 +20,7 @@ import Delivery from "../assets/icons/PaymentMethods/delivery.svg"
 import AnimationJSON from "../assets/icons/animation/paymentSuccess.json"
 import Lottie from "lottie-react"
 import Loader from '../pages/Loader'
+import { onAuthStateChanged } from 'firebase/auth'
 
 const paymentMethods = [
   { name: "Cash on Delivery", img: Cash },
@@ -46,6 +47,7 @@ function PaymentPage({ setOpenPaymentPage }) {
   const [selectedPaymentMethod, setSelectedPaymentMethod] = useState(null)
   const [addressPageOpen, setAddressPageOpen] = useState(false);
   const [shoeAnimation, setShowAnimation] = useState(false)
+  const [orders, setOrders] = useState([])
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,13 +64,8 @@ function PaymentPage({ setOpenPaymentPage }) {
   }, [])
 
   useEffect(() => {
-    setLoader(true)
-    const fetchAddress = async () => {
-      const user = auth.currentUser;
-      if (!user) {
-        return;
-      }
-
+    setLoader(true);
+    const fetchAddress = async (user) => {
       try {
         const userDocRef = doc(db, "Users", user.uid);
         const userDoc = await getDoc(userDocRef);
@@ -76,14 +73,23 @@ function PaymentPage({ setOpenPaymentPage }) {
           const userData = userDoc.data();
           setSaveAdd(userData.addresses || []);
         }
-        setLoader(false)
       } catch (error) {
-        setLoader(false)
         console.log("Error fetching addresses:", error.message);
         toast.error("Failed to fetch saved addresses");
+      } finally {
+        setLoader(false);
       }
-    }
-    fetchAddress()
+    };
+
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        fetchAddress(user);
+      } else {
+        setLoader(false); // stop loading if there's no user
+      }
+    });
+
+    return () => unsubscribe(); // Clean up the listener on unmount
   }, [openAddInput, setSaveAdd])
 
   const handleSelectedAddress = (add) => {
@@ -110,6 +116,7 @@ function PaymentPage({ setOpenPaymentPage }) {
           setShowAnimation(true);
           setTimeout(() => {
             setShowAnimation(false);
+            handlePaymentSuccessFul();
             navigate('/')
           }, 3000)
         }, 3000)
@@ -117,6 +124,51 @@ function PaymentPage({ setOpenPaymentPage }) {
         console.log("Error: Both payment method and address must be selected.");
         toast.error("Error: Both payment method and address must be selected.")
       }
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+
+  const handlePaymentSuccessFul = async () => {
+    const user = auth.currentUser;
+    if (!user) {
+      toast.error("User is not logged in")
+      return;
+    }
+
+    try {
+      const userDocRef = doc(db, "Users", user.uid);
+      const userDoc = await getDoc(userDocRef);
+
+      const orderItems = cartItems.map(item => ({
+        name: item.name,
+        id: item.id,
+        mainImg: item.mainImg,
+        discount: item.discount,
+        price: item.price,
+        mrp: item.mrp,
+        quantity: item.quantity,
+      }))
+
+      const orderData = {
+        items: orderItems,
+        date: new Date().toISOString(),
+        totalAmount,
+        selectedAdd
+      };
+
+      if (userDoc.exists()) {
+        await updateDoc(userDocRef, {
+          myOrders: arrayUnion(orderData)
+        })
+      } else {
+        await setDoc(userDocRef, {
+          myOrders: [orderData]
+        })
+      }
+      setOrders(orderData)
+      console.log(orderData)
+      localStorage.removeItem('cartItems');
     } catch (error) {
       console.log(error.message)
     }
@@ -255,7 +307,7 @@ function PaymentPage({ setOpenPaymentPage }) {
                     <span className='paymentOptFont paymentOptAmountFont'>Name :&nbsp;{selectedAdd.firstName + " " + selectedAdd.lastName}</span>
                     <span className='chosenFullAddress'>{selectedAdd.company + ", " + selectedAdd.addressLine1 + ", " + selectedAdd.addressLine2 + ", " + selectedAdd.city + ", " + selectedAdd.postalCode + ", " + selectedAdd.state + ", " + selectedAdd.country + ", Mo : " + selectedAdd.contactNumber}</span>
                   </> : <div className='addressNotSelectedText'>
-                    <span className='chosenFullAddress'>.</span>
+                    <span className='disabledText'>.</span>
                     <span className='paymentOptFont paymentOptAmountFont addressNotSelect'>address not selected!, please select address first.</span>
                   </div>}
                 </div>

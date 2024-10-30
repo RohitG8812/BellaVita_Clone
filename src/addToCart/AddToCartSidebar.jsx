@@ -46,12 +46,11 @@ function AddToCartSidebar({ setAddToCartOpen }) {
         <div className="">
             <button className='nabAddToCartBtnIcon' >
                 <div className="cartIconWrapper">
-                <img src={CartIcon} alt="" className='navIcon' onClick={() => toggleDrawer(true)} />
-                {cartItemCount > 0 && (
-                    <span className='cartBadge'>{cartItemCount}</span>
-                )}
+                    <img src={CartIcon} alt="" className='navIcon' onClick={() => toggleDrawer(true)} />
+                    {cartItemCount > 0 && (
+                        <span className='cartBadge'>{cartItemCount}</span>
+                    )}
                 </div>
-                
             </button>
             <Drawer anchor="right" open={open} onClose={() => toggleDrawer(false)} className='sideBarMenu'>
                 {DrawerList}
