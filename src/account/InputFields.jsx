@@ -3,7 +3,7 @@ import IndianFlag from "../assets/icons/india.svg"
 import { InputAdornment, TextField } from '@mui/material'
 import { auth, db } from '../auth/firebase';
 import toast from 'react-hot-toast';
-import { arrayUnion, doc, updateDoc } from 'firebase/firestore'
+import { arrayUnion, doc, getDoc, setDoc, updateDoc } from 'firebase/firestore'
 import Ecom from "../assets/icons/ecom.svg"
 import "../css/paymentPage.css"
 import Loader from '../pages/Loader';
@@ -59,14 +59,16 @@ function InputFields({ setOpenAddInput }) {
         setLoader(true)
         try {
             const userDocRef = doc(db, "Users", user.uid);
-            await updateDoc(userDocRef);
+            const userDoc = await getDoc(userDocRef);
 
             if (userDoc.exists()) {
                 await updateDoc(userDocRef, {
                     addresses: arrayUnion(address)
                 });
             } else {
-                await setDoc(userDocRef, { addresses: [address] });
+                await setDoc(userDocRef, {
+                    addresses: [address]
+                });
             }
 
             toast.success("Address saved successfully");
@@ -278,7 +280,7 @@ function InputFields({ setOpenAddInput }) {
                 </div>
                 <div className="addressBtnMain">
                     <button className='googleBtn addressBtn ' onClick={() => setOpenAddInput(false)}>Cancel</button>
-                    <button className='filterBtn addressBtn'>{loader ? <div className='btnLoader'><Loader /></div> : "Save"}</button>
+                    <button type='submit' className='filterBtn addressBtn'>{loader ? <div className='btnLoader'><Loader /></div> : "Save"}</button>
                 </div>
             </form >
         </>

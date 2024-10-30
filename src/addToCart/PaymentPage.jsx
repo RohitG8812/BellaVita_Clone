@@ -162,7 +162,7 @@ function PaymentPage({ setOpenPaymentPage }) {
                       )
                         :
                         (
-                          <div className='noSavedAddress'>No Saved Address, Click above To Save Address</div>
+                          <div className='noSavedAddress paymentPageNoSavedAdd'>No Saved Address, Click above To Save Address</div>
                         )}
                     </div>}
                   </div>
@@ -204,7 +204,7 @@ function PaymentPage({ setOpenPaymentPage }) {
                       )
                         :
                         (
-                          <div className='noSavedAddress'>No Saved Address, Click above To Save Address</div>
+                          <div className='noSavedAddress paymentPageNoSavedAdd'>No Saved Address, Click above To Save Address</div>
                         )}
                     </div>}
                   </div>
@@ -245,7 +245,7 @@ function PaymentPage({ setOpenPaymentPage }) {
                   <span className='paymentOptFont paymentOptAmountFont deliverHeadAndSelectAddress'>
                     <span className='deliveryIconAndText'>
                       <img src={Delivery} alt="" />
-                      <span className='yyyy'>Deliver To,</span>
+                      <span className='yyyy'>Deliver To</span>
                     </span>
                     <span className='selectAddress750Px' onClick={() => setAddressPageOpen(true)}>
                       Select Address
@@ -255,8 +255,8 @@ function PaymentPage({ setOpenPaymentPage }) {
                     <span className='paymentOptFont paymentOptAmountFont'>Name :&nbsp;{selectedAdd.firstName + " " + selectedAdd.lastName}</span>
                     <span className='chosenFullAddress'>{selectedAdd.company + ", " + selectedAdd.addressLine1 + ", " + selectedAdd.addressLine2 + ", " + selectedAdd.city + ", " + selectedAdd.postalCode + ", " + selectedAdd.state + ", " + selectedAdd.country + ", Mo : " + selectedAdd.contactNumber}</span>
                   </> : <div className='addressNotSelectedText'>
-                    <span className='paymentOptFont paymentOptAmountFont addressNotSelect'>address not selected!,</span>
-                    <span className='chosenFullAddress'>please select address first.</span>
+                    <span className='chosenFullAddress'>.</span>
+                    <span className='paymentOptFont paymentOptAmountFont addressNotSelect'>address not selected!, please select address first.</span>
                   </div>}
                 </div>
               </div>

@@ -67,6 +67,10 @@
   cursor: pointer;
 }
 
+.cartAndCLoseCartCartPage img{
+  margin-top: 20px !important;
+}
+
 .cartAndCLoseCart img:hover {
   opacity: 1;
   scale: 1.08;

@@ -118,7 +118,7 @@ function AddToCartPage({ toggleDrawer }) {
             {/* Cart Main */}
             <div className="cartProductList">
               <div className="cartProductListTopSection">
-                <div className="cartAndCLoseCart">
+                <div className="cartAndCLoseCart cartAndCLoseCartCartPage">
                   <p className='accountWelcomeBellavita recommendationProductsCartPage'>Cart</p>
                   <div className='cartAndCLoseCartCloseBtn'><img src={CloseBtn} alt="CLoseBtn" onClick={() => toggleDrawer(false)} /></div>
                 </div>
