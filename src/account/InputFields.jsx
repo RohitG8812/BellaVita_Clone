@@ -59,9 +59,15 @@ function InputFields({ setOpenAddInput }) {
         setLoader(true)
         try {
             const userDocRef = doc(db, "Users", user.uid);
-            await updateDoc(userDocRef, {
-                addresses: arrayUnion(address)
-            });
+            await updateDoc(userDocRef);
+
+            if (userDoc.exists()) {
+                await updateDoc(userDocRef, {
+                    addresses: arrayUnion(address)
+                });
+            } else {
+                await setDoc(userDocRef, { addresses: [address] });
+            }
 
             toast.success("Address saved successfully");
             // Update the local state to reflect the new address
