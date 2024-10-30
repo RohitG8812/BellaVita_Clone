@@ -144,6 +144,8 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
         }
     }
 
+    console.log("Cart Itens : " + cartItems)
+
     return (
         <div className='checkOutPageMain'>
             {/* Left Side Page */}
@@ -410,8 +412,8 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
                         </div>
                         {/* checkOutMini */}
                         <div className="checkOutLeftSideMini">
-                            <div onClick={() => setCouponPageOpenMini(true)}>
-                                <span className='couponApplyBtn applyFilterAppliedFilter'>Apply Coupon & applied Coupons</span>
+                            <div onClick={() => setCouponPageOpenMini(true)} className='applyCouponBtnCartPage'>
+                                <span className='couponApplyBtnMain'>Apply Coupon</span>
                             </div>
                             <div className="pricingSection priceSectionMini">
                                 <div className="subTotal  pricingDiv">
