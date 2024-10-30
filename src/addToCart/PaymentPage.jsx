@@ -114,8 +114,8 @@ function PaymentPage({ setOpenPaymentPage }) {
           }, 3000)
         }, 3000)
       } else {
-        console.log("Payment Error: Both payment method and address must be selected.");
-        toast.error("Payment Error: Both payment method and address must be selected.")
+        console.log("Error: Both payment method and address must be selected.");
+        toast.error("Error: Both payment method and address must be selected.")
       }
     } catch (error) {
       console.log(error.message)
