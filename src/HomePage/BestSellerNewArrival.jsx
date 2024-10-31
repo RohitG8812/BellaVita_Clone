@@ -13,7 +13,6 @@ function BestSellerNewArrival({ handleAddToCart, btnLoader }) {
     const [actCategory, setActCategory] = useState(true)
     const perfumes = Products.filter(product => product.category === 'perfumes');
     const bath_Body = Products.filter(product => product.category === 'bathBody');
-    // console.log("Perfumes : ", perfumes)
     const categoryCardRef = useRef();
 
     const changeCategory = (category) => {
@@ -39,10 +38,8 @@ function BestSellerNewArrival({ handleAddToCart, btnLoader }) {
         }
     }, [category]);
 
-    console.log(category)
     const products = (category === 'bestSellers') ? perfumes : bath_Body
     const displayProducts = products.slice(0, 8)
-    // console.log('Selected Category:', category);
     return (
         <div className='mainDiv'>
             <div className={`categoryBtn`}>

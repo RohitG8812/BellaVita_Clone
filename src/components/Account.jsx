@@ -18,7 +18,6 @@ function Account() {
   const fetchUserData = async () => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
-        console.log(user);
         // If the user is logged in with Google, use the available user data
         const { email, displayName } = user;
         const firstName = displayName?.split(' ')[0] || '';
@@ -36,7 +35,6 @@ function Account() {
             firstName: firstName || docSnap.data().firstName,
             lastName: lastName || docSnap.data().lastName,
           });
-          console.log(docSnap.data());
         } else {
           // If no Firestore data exists, use Google user data
           setUserDetails({

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { json, useNavigate } from 'react-router-dom'
 import Tag from "../assets/icons/tag.svg"
 import CloseBtn from "../assets/icons/x.svg"
@@ -13,10 +13,10 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import app from '../auth/firebase'
 import Loader from '../pages/Loader'
 import toast from 'react-hot-toast'
+import { CartContext } from '../context/CartContext'
 
 function AddToCartPage({ toggleDrawer }) {
-  const [cartItems, setCartItems] = useState([])
-  const [cartItemCount, setCartItemCount] = useState(0);
+  const { cartItems, updateCart } = useContext(CartContext);
   const [openCheckOutPage, setOpenCheckOutPage] = useState(false);
   const [user, setUser] = useState(null);
   const [btnLoader, setBtnLoader] = useState(false);
@@ -31,66 +31,33 @@ function AddToCartPage({ toggleDrawer }) {
     return () => unsubscribe();
   }, []);
 
-  useEffect(() => {
-    const cartItemsFromLocalStorage = JSON.parse(localStorage.getItem('cartItems')) || []
-    setCartItems(cartItemsFromLocalStorage)
-  }, [])
-
-  const handleRemoveProductFromCart = (prevProduct) => {
-    try {
-      toast.success("Product Removed from cart")
-      const updateCartItems = cartItems.filter((product => product.id !== prevProduct.id))
-      setCartItems(updateCartItems)
-      localStorage.setItem('cartItems', JSON.stringify(updateCartItems))
-    } catch (error) {
-      toast.error(error.message)
-    }
-  }
+  const handleRemoveProductFromCart = (product) => {
+    const updatedCartItems = cartItems.filter((item) => item.id !== product.id);
+    updateCart(updatedCartItems);
+    toast.success("Product removed from cart");
+  };
 
   const handleDecreaseQuantity = (product) => {
-    try {
-      const currCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      const currProductIndex = currCartItems.findIndex(item => item.id === product.id);
-      if (currProductIndex !== -1) {
-        const updatedCardItems = [...currCartItems];
-        if (updatedCardItems[currProductIndex].quantity > 1) {
-          updatedCardItems[currProductIndex].quantity -= 1;
-          toast.success("Product quantity decreased to " + updatedCardItems[currProductIndex].quantity);
-        } else {
-          toast.success("Product remove from cart")
-          updatedCardItems.splice(currProductIndex, 1)
-        }
-        localStorage.setItem('cartItems', JSON.stringify(updatedCardItems));
-        setCartItems(updatedCardItems)
-      }
-    } catch (error) {
-      toast.error(error.message);
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === product.id
+        ? { ...item, quantity: item.quantity > 1 ? item.quantity - 1 : 1 }
+        : item
+    );
+    updateCart(updatedCartItems);
+    if (product.quantity > 1) {
+    } else {
+      handleRemoveProductFromCart(product);
     }
-  }
+  };
 
   const handleIncreaseQuantity = (product) => {
-    try {
-      const currCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      const currProductIndex = currCartItems.findIndex(item => item.id === product.id);
-      if (currProductIndex !== -1) {
-        const updatedCardItems = [...currCartItems];
-        if (updatedCardItems[currProductIndex].quantity > 0) {
-          updatedCardItems[currProductIndex].quantity += 1
-          toast.success("Product quantity increased to " + updatedCardItems[currProductIndex].quantity);
-        }
-        localStorage.setItem('cartItems', JSON.stringify(updatedCardItems));
-        setCartItems(updatedCardItems)
-      }
-    } catch (error) {
-      toast.error(error.message);
-    }
-  }
+    const updatedCartItems = cartItems.map((item) =>
+      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    updateCart(updatedCartItems);
+  };
 
-  useEffect(() => {
-    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    const totalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-    setCartItemCount(totalCount);
-  })
+  const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
   const handleCheckOut = () => {
     if (user) {
@@ -110,10 +77,10 @@ function AddToCartPage({ toggleDrawer }) {
   }
   return (
     <>
-      {openCheckOutPage ? <CheckOutPage setCartItems={setCartItems} cartItems={cartItems} setOpenCheckOutPage={setOpenCheckOutPage} handleRemoveProductFromCart={handleRemoveProductFromCart} cartItemCount={cartItemCount} toggleDrawer={toggleDrawer} /> :
+      {openCheckOutPage ? <CheckOutPage setCartItems={updateCart} cartItems={cartItems} setOpenCheckOutPage={setOpenCheckOutPage} handleRemoveProductFromCart={handleRemoveProductFromCart} cartItemCount={cartItemCount} toggleDrawer={toggleDrawer} /> :
         <div className='CartPageMainContainer'>
           {/* Cart Recommended Big */}
-          <Recommended setCartItems={setCartItems} handleProductClick={handleProductClick} />
+          <Recommended setCartItems={updateCart} handleProductClick={handleProductClick} />
           <div className="cartProductMain">
             {/* Cart Main */}
             <div className="cartProductList">
@@ -182,7 +149,7 @@ function AddToCartPage({ toggleDrawer }) {
                   </div>
                 )}
                 {/* Cart Recommended Mini */}
-                <RecommendedCartMini setCartItems={setCartItems} handleProductClick={handleProductClick} />
+                <RecommendedCartMini setCartItems={updateCart} handleProductClick={handleProductClick} />
               </div>
               <div className="checkOutBtnMain">
                 <p className='shippingText'>Tax included. <span className='shippingPolicyLinkText' onClick={() => navigate('/pages/shippingPolicy')} >Shipping</span> calculated at checkout.</p>

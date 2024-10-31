@@ -42,7 +42,6 @@ function Buy1Get1() {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-    console.log(perfume)
     const navigate = useNavigate();
 
     const handleProductClick = (id) => {

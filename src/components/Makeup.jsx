@@ -24,7 +24,6 @@ function Makeup() {
         { value: "eyeliner", label: "Eyeliner" },
     ]
 
-    console.log(makeup)
     const navigate = useNavigate()
     const handleProductClick = (id) => {
         navigate(`/collection/makeup/${id}`)

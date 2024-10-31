@@ -57,7 +57,6 @@ function SideBarContent() {
 
     const handleClick = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
-        console.log(index == activeIndex)
     };
 
 

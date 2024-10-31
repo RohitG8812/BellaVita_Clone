@@ -1,24 +1,17 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import toast from 'react-hot-toast'
 import Loader from '../pages/Loader'
 import RecommendedProducts from '../JSON/RecommendedProducts'
+import { CartContext } from '../context/CartContext'
 
-function RecommendedCartMini({ setCartItems, handleProductClick }) {
+function RecommendedCartMini({ handleProductClick }) {
+    const { addToCart } = useContext(CartContext);
     const [btnLoader, setBtnLoader] = useState(null)
     const handleAddProductToCart = (product) => {
         try {
             setBtnLoader(product.id);
-            const currCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            const currProductIndex = currCartItems.findIndex(item => item.id === product.id);
-            if (currProductIndex !== -1) {
-                currCartItems[currProductIndex].quantity = (currCartItems[currProductIndex].quantity || 1) + 1
-            } else {
-                const newProduct = { ...product, quantity: 1 };
-                currCartItems.push(newProduct);
-            }
-            localStorage.setItem('cartItems', JSON.stringify(currCartItems));
             setTimeout(() => {
-                setCartItems(currCartItems);
+                addToCart(product)
                 toast.success("Product added to Cart");
                 setBtnLoader(null);
             }, 1000);

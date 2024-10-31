@@ -12,7 +12,6 @@ function Address() {
   const [savedAdd, setSaveAdd] = useState([])
   const [loader, setLoader] = useState(false);
 
-  console.log(savedAdd)
 
   useEffect(() => {
     setLoader(true)

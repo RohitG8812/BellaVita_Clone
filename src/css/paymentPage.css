@@ -130,7 +130,8 @@
 
 .paymentOptionsMain {
   border-block: 0.4px solid rgb(206, 206, 206);
-  padding-right: 4px;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
   height: 44dvh;
   overflow: auto;
   @media (max-width: 750px) {
@@ -256,21 +257,6 @@
   background-color: #aaa;
 }
 
-.paymentOptionsMain::-webkit-scrollbar {
-  scroll-behavior: smooth;
-  width: 4px; /* Width of the scrollbar */
-  background-color: transparent; /* Background color of the scrollbar track */
-}
-
-.paymentOptionsMain::-webkit-scrollbar-thumb {
-  background-color: #88888879; /* Color of the scrollbar thumb */
-  border-radius: 4px; /* Rounded corners of the scrollbar thumb */
-}
-
-.paymentOptionsMain::-webkit-scrollbar-thumb:hover {
-  background-color: #aaa; /* Color when hovering over the scrollbar thumb */
-}
-
 /*  */
 
 .savedAddHeadPaymentPage {
@@ -394,7 +380,7 @@
   -webkit-box-orient: vertical;
 }
 
-.disabledText{
+.disabledText {
   opacity: 0;
 }
 
@@ -418,7 +404,7 @@
   -webkit-font-smoothing: antialiased;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  @media (max-width : 374px) {
+  @media (max-width: 374px) {
     font-size: 10px !important;
   }
 }
@@ -456,7 +442,7 @@
   margin-block: 5px !important;
 }
 
-.animationMain{
+.animationMain {
   height: 100dvh;
   width: 100dvw;
   background-color: rgba(0, 0, 0, 0.6);
@@ -472,13 +458,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); 
+  transform: translate(-50%, -50%);
 
   @media (max-width: 285px) {
     min-width: 200px;
   }
 }
 
-.paymentPageNoSavedAdd{
+.paymentPageNoSavedAdd {
   padding-block: 130px !important;
 }

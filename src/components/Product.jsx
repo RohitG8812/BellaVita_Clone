@@ -10,7 +10,6 @@ function Product() {
     if (!product) {
         return <h2>Product Not Found</h2>
     }
-    console.log(product)
     return (
         <Layout>
             <div>

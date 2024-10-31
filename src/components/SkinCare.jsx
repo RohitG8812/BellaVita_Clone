@@ -41,7 +41,6 @@ function SkinCare() {
     };
   }, []);
 
-  console.log(bath_Body)
   const navigate = useNavigate()
   const handleProductClick = (id) => {
     navigate(`/collection/bathBody/${id}`)

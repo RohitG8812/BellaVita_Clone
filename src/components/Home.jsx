@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Layout from '../Layout/Layout'
 import "../css/home.css"
 import FrontBanner from '../assets/Banner/fNew.webp'
@@ -12,7 +12,6 @@ import FrontBanner4Sm from '../assets/Banner/fNewMini4.webp'
 import BottomBanner from '../assets/Banner/bottomBanner.webp'
 import BottomBannerMini from '../assets/Banner/bottomBannerMini.webp'
 import { Link, Outlet } from 'react-router-dom'
-import Perfumes from "../components/Perfumes"
 import FirstBanner from "../assets/Banner/HomePageBanner/homeBanner1.webp"
 import FirstBannerMini from "../assets/Banner/HomePageBanner/homeBanner1Mini.webp"
 import BestSellerNewArrival from '../HomePage/BestSellerNewArrival'
@@ -31,9 +30,11 @@ import ReviewSlider from '../HomePage/ReviewSlider'
 import ImageMapping from '../HomePage/ImageMapping'
 import LipStickFinder from '../assets/Banner/HomePageBanner/lipstickFinder.jpeg'
 import toast from 'react-hot-toast'
+import { CartContext } from '../context/CartContext'
 
 
 function Home() {
+    const { addToCart } = useContext(CartContext);
     const [currentBannerIdx, setCurrentBannerIdx] = useState(1);
     const [isSliding, setIsSliding] = useState(false);
     const [smallSize, setSmallSize] = useState(false);
@@ -69,24 +70,16 @@ function Home() {
     const handleAddToCart = (product) => {
         try {
             setBtnLoader(product.id);
-            const currCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            const currProductIndex = currCartItems.findIndex(item => item.id === product.id);
-            if (currProductIndex !== -1) {
-                currCartItems[currProductIndex].quantity = (currCartItems[currProductIndex].quantity || 1) + 1;
-            } else {
-                const newProduct = { ...product, quantity: 1 };
-                currCartItems.push(newProduct);
-            }
-            localStorage.setItem('cartItems', JSON.stringify(currCartItems));
+            addToCart(product); // add the product using the context
             setTimeout(() => {
-                setBtnLoader(null)
-                toast.success('Product added to Cart')
-            }, 1000)
+                setBtnLoader(null);
+                toast.success('Product added to Cart');
+            }, 1000);
         } catch (error) {
-            toast.error(error.message)
-            setBtnLoader(null)
+            toast.error(error.message);
+            setBtnLoader(null);
         }
-    }
+    };
 
     return (
         <Layout>
@@ -113,7 +106,7 @@ function Home() {
                         <Link to="/collection/bogo"> <img src={smallSize ? FirstBannerMini : FirstBanner} alt="" /></Link>
                     </div>
                     <LuxuryCategories />
-                    <LuxePerfumes handleAddToCart={handleAddToCart} btnLoader={btnLoader}/>
+                    <LuxePerfumes handleAddToCart={handleAddToCart} btnLoader={btnLoader} />
                     <CrazyDealsHome />
                     <ShopByNotes />
                     <div className="secondBanner firstBanner">

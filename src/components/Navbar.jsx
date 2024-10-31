@@ -90,7 +90,6 @@ function Navbar() {
     const handleSubmitInput = (e) => {
         e.preventDefault()
         const inputText = value.toLowerCase()
-        console.log(inputText)
         const searchProducts = Products.filter((item) =>
             item.name.toLowerCase().includes(inputText) ||
             item.category.toLowerCase().includes(inputText) ||
@@ -107,7 +106,6 @@ function Navbar() {
             localStorage.setItem("recentSearches", JSON.stringify(recentSearches))
         }
 
-        console.log(searchProducts)
         navigate(`/collection/searchProducts?query=${encodeURIComponent(inputText)}`, {
             state: { searchResults: searchProducts } // pass the parameter to the searchResultPage
         });

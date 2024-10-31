@@ -11,17 +11,16 @@ function SideNavbar({ setSidebarOpen }) {
 
     const toggleDrawer = (value) => {
         setOpen(value)
-        console.log(value)
         setSidebarOpen(value)
     }
 
     useEffect(() => {
         const handleResize = () => {
             if (window.innerWidth < 1030) {
-                console.log("SIdebar Option Enabled")
+                console.log("Sidebar Option Enabled")
             } else {
                 toggleDrawer(false)
-                console.log("SIdebar Option disabled")
+                console.log("Sidebar Option disabled")
             }
         };
 

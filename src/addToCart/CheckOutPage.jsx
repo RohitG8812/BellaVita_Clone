@@ -33,7 +33,7 @@ const Discount = [
 ]
 
 
-function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemoveProductFromCart, cartItemCount }) {
+function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer }) {
     const [couponsVariety, setCouponVariety] = useState(CouponsVariety)
     const [loader, setLoader] = useState(false);
     const [btnLoader, setBtnLoader] = useState(false);
@@ -144,7 +144,6 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer, handleRemo
         }
     }
 
-    console.log("Cart Itens : " + cartItems)
 
     return (
         <div className='checkOutPageMain'>

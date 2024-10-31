@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "../css/productCard.css"
 import RatingLogo from "../assets/icons/rating.svg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
@@ -10,8 +10,10 @@ import Loader from './Loader'
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
 import NoResult from "../assets/icons/noResult.png"
 import toast from 'react-hot-toast'
+import { CartContext } from '../context/CartContext'
 
 function ProductPage({ product, heading, handleProductClick, categoryFilter, productTypeFilter }) {
+    const { addToCart } = useContext(CartContext)
     const [filterMenuActive, setFilterMenuActive] = useState(false)
     const [filterMenuMiniActive, setFilterMenuMiniActive] = useState(false)
     const [filterItems, setFilterItems] = useState([])
@@ -33,16 +35,8 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
     const handleAddProductToCart = (product) => {
         try {
             setBtnLoader(product.id);
-            const currCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-            const currProductIndex = currCartItems.findIndex(item => item.id === product.id);
-            if (currProductIndex !== -1) {
-                currCartItems[currProductIndex].quantity = (currCartItems[currProductIndex].quantity || 1) + 1
-            } else {
-                const newProduct = { ...product, quantity: 1 };
-                currCartItems.push(newProduct);
-            }
-            localStorage.setItem('cartItems', JSON.stringify(currCartItems));
             setTimeout(() => {
+                addToCart(product)
                 toast.success("Product added to Cart")
                 setBtnLoader(null)
             }, 1000)
@@ -57,16 +51,13 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
         setLoading(true)
 
         if (checked) {
-            console.log("load")
             setTimeout(() => {
                 setFilterItems([...filterItems, value])
-                console.log(value)
                 setLoading(false)
             }, 1000)
         } else {
             setTimeout(() => {
                 setFilterItems(filterItems.filter((category) => category !== value));
-                console.log(value)
                 setLoading(false)
             }, 1000)
         }

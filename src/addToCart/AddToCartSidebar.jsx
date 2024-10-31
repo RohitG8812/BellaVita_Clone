@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import AddToCartPage from './AddToCartPage';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
@@ -6,23 +6,18 @@ import CloseIcon from "../assets/icons/close.svg"
 import CartIcon from "../assets/icons/cart12.png"
 import "../css/addTOCart.css"
 import "../index.css"
+import { CartContext } from '../context/CartContext';
 
 
 function AddToCartSidebar({ setAddToCartOpen }) {
+    const { cartItems } = useContext(CartContext)
     const [open, setOpen] = useState(false);
-    const [cartItemCount, setCartItemCount] = useState(0);
+    const cartItemCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
     const toggleDrawer = (value) => {
         setOpen(value)
-        console.log(value)
         setAddToCartOpen(value)
     }
-
-    useEffect(() => {
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-        const totalCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
-        setCartItemCount(totalCount);
-    })
 
     useEffect(() => {
         if (open) {

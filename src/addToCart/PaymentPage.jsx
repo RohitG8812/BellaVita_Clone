@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "../css/paymentPage.css"
 import { useLocation, useNavigate } from 'react-router-dom'
 import CloseBtn from "../assets/icons/x.svg"
@@ -21,6 +21,7 @@ import AnimationJSON from "../assets/icons/animation/paymentSuccess.json"
 import Lottie from "lottie-react"
 import Loader from '../pages/Loader'
 import { onAuthStateChanged } from 'firebase/auth'
+import { CartContext } from '../context/CartContext'
 
 const paymentMethods = [
   { name: "Cash on Delivery", img: Cash },
@@ -33,10 +34,10 @@ const paymentMethods = [
 ]
 
 function PaymentPage({ setOpenPaymentPage }) {
+  const { cartItems, clearCart } = useContext(CartContext)
   const navigate = useNavigate()
   const location = useLocation()
-  const { cartItems, totalAmount, couponCode, appliedCoupons } = location.state || {}
-  console.log('Applied Coupons:', appliedCoupons);
+  const { totalAmount, appliedCoupons } = location.state || {}
   const [openAddInput, setOpenAddInput] = useState(false)
   const [savedAdd, setSaveAdd] = useState([])
   const [loader, setLoader] = useState(false);
@@ -95,14 +96,12 @@ function PaymentPage({ setOpenPaymentPage }) {
   const handleSelectedAddress = (add) => {
     setSelectedAddId(add.company)
     setAddressPageOpen(false)
-    console.log(add.company)
     setSelect(true)
     setSelectedAdd(add)
   }
 
   const handleSelectedPaymentMethod = (paymentMethod) => {
     setSelectedPaymentMethod(paymentMethod.name)
-    console.log(paymentMethod.name)
     setSelect(true)
     setSelectedPayment(paymentMethod.name)
   }
@@ -167,15 +166,12 @@ function PaymentPage({ setOpenPaymentPage }) {
         })
       }
       setOrders(orderData)
-      console.log(orderData)
-      localStorage.removeItem('cartItems');
+      // localStorage.removeItem('cartItems');
+      clearCart()
     } catch (error) {
       console.log(error.message)
     }
   }
-
-  console.log('Selected payment : ' + selectedPayment)
-  console.log("Selected address : " + selectedAdd.firstName)
 
   return (
     <div className="paymentPageInnerMain">
