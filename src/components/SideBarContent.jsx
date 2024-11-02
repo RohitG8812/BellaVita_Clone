@@ -15,6 +15,8 @@ import SpecialGift from "../assets/icons/specialGift.svg"
 import Fragrance from "../assets/icons/fragrance.svg"
 import downArrow from "../assets/icons/down.svg"
 import Bogo from "../assets/icons/bogo.svg"
+import Pages from "../assets/icons/pages.svg"
+import Collection from "../assets/icons/collection.svg"
 import "../css/home.css"
 
 function SideBarContent() {
@@ -72,6 +74,8 @@ function SideBarContent() {
         { name: "SkinCare", src: SkinCare, downArrow: downArrow, navigateTo: '/collection/skincare', subMenu: ["All SkinCare", "Face Wash", "Lip Cate", "Skin Essential Combos"] },
         { name: "Special Giftings", src: SpecialGift, downArrow: downArrow, navigateTo: '/collection/giftSets', subMenu: ["Gift Sets", "Perfume Combos"] },
         { name: "Fragrance Finder", src: Fragrance, navigate: '/pages/fragranceFinder' },
+        { name: "Collections", src: Collection, navigate: '/collection' },
+        { name: "Pages", src: Pages, navigate: '/pages' },
     ]
 
     return (

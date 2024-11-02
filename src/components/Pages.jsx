@@ -18,7 +18,7 @@ function Pages() {
                     <div className="pageSectionMain">
                         <img src={NotFound} alt="" />
                         <span className='pageNotFoundText'>Page Not Found !</span>
-                        <button className='sortBtn'>Return To Shop</button>
+                        <button className='sortBtn' onClick={handleNavigate}>Return To Shop</button>
                     </div>
                 </div>
             </div>
