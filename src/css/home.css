@@ -660,10 +660,12 @@
 .bottomMapSliderMain {
   width: 100%;
   overflow: hidden;
+  box-sizing: border-box;
+  white-space: nowrap;
+  padding-block: 15px;
 }
 
 .bottomMapSlider {
-  padding-block: 15px;
   height: 120px;
   display: flex;
   align-items: center;
@@ -952,7 +954,7 @@
   color: #fffffff2;
 }
 
-.tradeMarkText::after{
+.tradeMarkText::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -963,7 +965,7 @@
   background-color: #ffffffdd;
 }
 
-.tradeMarkText:hover::after{
+.tradeMarkText:hover::after {
   width: 100%;
 }
 
@@ -994,7 +996,7 @@
   transition: max-height 0.8s ease-in-out;
 }
 
-.sideBarSubMenuLiIndexCss{
+.sideBarSubMenuLiIndexCss {
   cursor: auto;
 }
 
@@ -1034,7 +1036,7 @@
   transition: width 0.25s ease-in-out;
 }
 
-.footer750pxCatItems li:hover::after{
+.footer750pxCatItems li:hover::after {
   width: 100%;
 }
 
@@ -1098,7 +1100,7 @@
   }
 }
 
-.secondBanner{
+.secondBanner {
   display: flex;
   gap: 10px;
   justify-content: center;
