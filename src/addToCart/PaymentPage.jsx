@@ -37,7 +37,7 @@ function PaymentPage({ setOpenPaymentPage }) {
   const { cartItems, clearCart } = useContext(CartContext)
   const navigate = useNavigate()
   const location = useLocation()
-  const { totalAmount, appliedCoupons } = location.state || {}
+  const { totalAmount, appliedCoupons, totalDiscount } = location.state || {}
   const [openAddInput, setOpenAddInput] = useState(false)
   const [savedAdd, setSaveAdd] = useState([])
   const [loader, setLoader] = useState(false);
@@ -49,6 +49,9 @@ function PaymentPage({ setOpenPaymentPage }) {
   const [addressPageOpen, setAddressPageOpen] = useState(false);
   const [shoeAnimation, setShowAnimation] = useState(false)
   const [orders, setOrders] = useState([])
+  const [selectedCoupons, setSelectedCoupons] = useState(appliedCoupons)
+
+  console.log(selectedCoupons)
 
   useEffect(() => {
     const handleResize = () => {
@@ -117,6 +120,7 @@ function PaymentPage({ setOpenPaymentPage }) {
             setShowAnimation(false);
             handlePaymentSuccessFul();
             navigate('/')
+            toast.success("Order Placed Successfully 🤩")
           }, 3000)
         }, 3000)
       } else {
@@ -125,6 +129,8 @@ function PaymentPage({ setOpenPaymentPage }) {
       }
     } catch (error) {
       console.log(error.message)
+      toast.success("Order Cannot Placed 😔")
+
     }
   }
 
@@ -140,6 +146,7 @@ function PaymentPage({ setOpenPaymentPage }) {
       const userDoc = await getDoc(userDocRef);
 
       const orderItems = cartItems.map(item => ({
+        category: item.category,
         name: item.name,
         id: item.id,
         mainImg: item.mainImg,
@@ -149,11 +156,20 @@ function PaymentPage({ setOpenPaymentPage }) {
         quantity: item.quantity,
       }))
 
+      const appliedCoupon = selectedCoupons.map(coupon => ({
+        name: coupon.name,
+        id: coupon.id,
+      }))
+
       const orderData = {
         items: orderItems,
-        date: new Date().toISOString(),
+        date: new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear(),
         totalAmount,
-        selectedAdd
+        selectedPayment,
+        orderId: Math.floor(100000 + Math.random() * 900000),
+        selectedAdd,
+        totalDiscount,
+        appliedCoupon
       };
 
       if (userDoc.exists()) {

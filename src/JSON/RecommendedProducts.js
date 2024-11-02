@@ -1,5 +1,6 @@
 const RecommendedProducts = [
   {
+    category: "perfumes",
     id: 106,
     name: "TAAJ Gold OUD Attar - 12ml",
     mainImg:
@@ -9,6 +10,7 @@ const RecommendedProducts = [
     discount: "30%",
   },
   {
+    category: "perfumes",
     id: 110,
     name: "SENORITA Woman Perfume - 100ml",
     mainImg:
@@ -18,6 +20,7 @@ const RecommendedProducts = [
     discount: "43%",
   },
   {
+    category: "perfumes",
     id: 112,
     name: "Hot & Classy",
     mainImg:
@@ -27,6 +30,7 @@ const RecommendedProducts = [
     discount: "26%",
   },
   {
+    category: "perfumes",
     id: 101,
     name: "Luxury Perfume Gift Set For Men - 4 x 20ml",
     mainImg:
@@ -37,6 +41,7 @@ const RecommendedProducts = [
     discount: "39%",
   },
   {
+    category: "perfumes",
     id: 102,
     name: "CEO Man Luxury Perfume - 100ml",
     price: "₹475.00",
@@ -46,6 +51,7 @@ const RecommendedProducts = [
       "https://bellavitaorganic.com/cdn/shop/files/1_f3651453-9ace-4b6e-b0ac-4ee2b9e5e7cd.jpg?v=1714548565&width=1000",
   },
   {
+    category: "perfumes",
     id: 105,
     name: "DATE Woman Perfume - 100ml",
     price: "₹549.00",
@@ -55,6 +61,7 @@ const RecommendedProducts = [
       "https://bellavitaorganic.com/cdn/shop/files/1_d5115b80-e607-4477-9205-b78447cd0e10.jpg?v=1714549127&width=1000",
   },
   {
+    category: "perfumes",
     id: 109,
     name: "D.I.V.A. Woman - 100ml",
     price: "₹849.00",
@@ -64,6 +71,7 @@ const RecommendedProducts = [
       "https://bellavitaorganic.com/cdn/shop/files/1_7123d0a0-0394-404c-88ce-1a9be9a12f17.jpg?v=1714549259&width=1000",
   },
   {
+    category: "perfumes",
     id: 114,
     name: "BLU Man - 100ml",
     price: "₹849.00",
@@ -73,6 +81,7 @@ const RecommendedProducts = [
       "https://bellavitaorganic.com/cdn/shop/files/1_882dadd1-43e2-4c85-a8a6-0da791b34d8f.jpg?v=1714548090&width=1000",
   },
   {
+    category: "perfumes",
     id: 117,
     name: "Honey Oud Unisex Perfume - 100ml",
     price: "₹549.00",
@@ -82,6 +91,7 @@ const RecommendedProducts = [
       "https://bellavitaorganic.com/cdn/shop/files/Honey-Oud_1_0194a97a-68e8-4039-9f4f-86ae427f4707.jpg?v=1714553484&width=1000",
   },
   {
+    category: "perfumes",
     id: 118,
     name: "OCEAN Man - 100ml",
     price: "₹849.00",

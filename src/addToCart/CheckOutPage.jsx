@@ -120,10 +120,13 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer }) {
 
     const couponDiscountAmount = () => {
         const discountedAmount = cartTotalAmount() - initialDiscountAmount();
-        return ((discountedAmount * totalDiscountPercentage) / 100).toFixed(2)
+        return (discountedAmount * totalDiscountPercentage) / 100;
     };
 
     const totalAmountAfterDiscount = (cartTotalAmount() - initialDiscountAmount() - couponDiscountAmount()).toFixed(2)
+
+    const totalDiscount = (initialDiscountAmount() + couponDiscountAmount()).toFixed(2);
+    console.log(totalDiscount)
 
     const handlePaymentPage = () => {
         try {
@@ -135,7 +138,8 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer }) {
                         cartItems,
                         totalAmount: totalAmountAfterDiscount,
                         couponCode,
-                        appliedCoupons
+                        appliedCoupons,
+                        totalDiscount
                     }
                 });
             }, 1000)
