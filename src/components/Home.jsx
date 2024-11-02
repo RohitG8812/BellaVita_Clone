@@ -19,8 +19,6 @@ import LuxuryCategories from '../HomePage/LuxuryCategories'
 import LuxePerfumes from '../HomePage/LuxePerfumes'
 import CrazyDealsHome from '../HomePage/CrazyDealsHome'
 import ShopByNotes from '../HomePage/ShopByNotes'
-import SecondBanner from '../assets/Banner/HomePageBanner/fragrenceFinder.webp'
-import SecondBannerMini from '../assets/Banner/HomePageBanner/fragrenceFinderMini.webp'
 import WhyBellavita from '../HomePage/WhyBellavita'
 import AppDownloadBanner from "../assets/Banner/HomePageBanner/appDownload.webp"
 import AppDownloadBannerMini from "../assets/Banner/HomePageBanner/appDownloadMini.webp"
@@ -28,7 +26,8 @@ import BellaCashBanner from "../assets/Banner/HomePageBanner/bellaCash.webp"
 import BellaCashBannerMini from "../assets/Banner/HomePageBanner/bellaCashMini.webp"
 import ReviewSlider from '../HomePage/ReviewSlider'
 import ImageMapping from '../HomePage/ImageMapping'
-import LipStickFinder from '../assets/Banner/HomePageBanner/lipstickFinder.jpeg'
+import FragrenceFinderNew from '../assets/Banner/HomePageBanner/fragrenceFinderNew.webp'
+import LipStickFinderNew from '../assets/Banner/HomePageBanner/lipstickFinderNew.webp'
 import toast from 'react-hot-toast'
 import { CartContext } from '../context/CartContext'
 
@@ -111,10 +110,10 @@ function Home() {
                     <ShopByNotes />
                     <div className="secondBanner firstBanner">
                         <div >
-                            <Link to='/collection/perfumes'><img src={smallSize ? SecondBannerMini : SecondBanner} alt="" /></Link>
+                            <Link to='/collection/perfumes'><img src={FragrenceFinderNew} alt="" /></Link>
                         </div>
-                        <div style={{ marginTop: "10px" }}>
-                            <Link to='/collection/makeup'><img src={LipStickFinder} alt="" /></Link>
+                        <div>
+                            <Link to='/collection/makeup'><img src={LipStickFinderNew} alt="" /></Link>
                         </div>
                     </div>
                     <WhyBellavita />

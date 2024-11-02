@@ -51,7 +51,6 @@ function PaymentPage({ setOpenPaymentPage }) {
   const [orders, setOrders] = useState([])
   const [selectedCoupons, setSelectedCoupons] = useState(appliedCoupons)
 
-  console.log(selectedCoupons)
 
   useEffect(() => {
     const handleResize = () => {

@@ -17,8 +17,6 @@ function Order() {
   const [fullOrderDetailsOpen, setFullOrderDetailsOpen] = useState(false)
   const [selectedOrder, setSelectedOrder] = useState(null)
 
-  console.log(orders)
-
   useEffect(() => {
     const myOrders = async () => {
       setLoader(true)
@@ -127,10 +125,10 @@ function Order() {
                   </div>
                   <div className="shippingCost pricingDiv">
                     <span>Shipping</span>
-                    <span>Free Delivery</span>
+                    <span style={{color: "green"}}>Free Delivery</span>
                   </div>
                   <div className="totalPriceLast pricingDiv">
-                    <span> <span className='paidViaText'>Paid via:</span> {selectedOrder.selectedPayment}</span>
+                    <span className='paidViaText'> Paid via: <span style={{color: "green"}}>{selectedOrder.selectedPayment}</span></span>
                     <span>₹{selectedOrder.totalAmount}</span>
                   </div>
                 </div>

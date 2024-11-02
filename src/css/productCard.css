@@ -619,10 +619,12 @@
 
 
 .no-result-image{
-  width: 320px;
-
-  @media (max-width : 370px) {
-    width: 260px;
+  width: 250px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+  @media (max-width : 450px) {
+    padding-top: 30px;
+    width: 180px;
   }
 }
 

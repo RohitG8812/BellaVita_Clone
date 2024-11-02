@@ -1097,3 +1097,13 @@
     padding-left: 10px;
   }
 }
+
+.secondBanner{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 750px) {
+    flex-direction: column;
+  }
+}

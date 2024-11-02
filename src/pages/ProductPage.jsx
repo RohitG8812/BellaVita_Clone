@@ -10,6 +10,7 @@ import Loader from './Loader'
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
 import NoResult from "../assets/icons/noResult.png"
 import toast from 'react-hot-toast'
+import NotFound from "../assets/icons/404.jpg"
 import { CartContext } from '../context/CartContext'
 
 function ProductPage({ product, heading, handleProductClick, categoryFilter, productTypeFilter }) {
@@ -403,7 +404,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                         <div className="no-result-detail">
                             <span style={{ fontSize: "20px" }}>No Product Found !</span>
                             <span style={{ fontSize: "14px", color: "grey", marginTop: "10px", textAlign: "center" }}>Please check the spelling or try again with a less specific or different term.</span>
-                            <img src={NoResult} alt="no-result" className='no-result-image' />
+                            <img src={NotFound} alt="no-result" className='no-result-image' />
                         </div>
                     </div>}
             </div>
