@@ -135,6 +135,10 @@ function Order() {
                   </div>
                 </div>
               </div>
+              <div className='thankYouText'>
+                <p>Thank You For Shopping With US ❤️ </p>
+                <p> © 2024, Bella Vita Organic (IDAM Natural Wellness Pvt. Ltd.).</p>
+              </div>
             </div>
             :
             <div className='myOrderMain'>

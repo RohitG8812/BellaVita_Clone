@@ -46,7 +46,7 @@ function SideBarContent() {
     }
 
     const goToAccount = () => {
-        navigate('/account')
+        navigate('/account/orders')
     }
 
     const goToNewProducts = () => {

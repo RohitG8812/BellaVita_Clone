@@ -137,7 +137,7 @@
   font-weight: 500 !important;
   font-size: 13px;
   letter-spacing: 0.8px;
-  padding-top: 10px;
+  padding-top: 15px;
   padding-bottom: 5px;
   color: green;
   margin-bottom: 0px !important;
@@ -245,4 +245,12 @@
   font-size: 14px;
   letter-spacing: 0.8px;
   line-height: 18px;
+}
+
+.thankYouText{
+  color: rgb(103, 102, 102);
+  font-size: 13px;
+  text-align: center;
+  padding-top: 20px;
+  padding-inline: 10px;
 }
