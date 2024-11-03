@@ -42,8 +42,7 @@
 
 /*  */
 
-.singleProductPageMain{
-    
+.singleProductPageMain {
 }
 
 .singleProductPageMainTopSide {
@@ -56,17 +55,204 @@
 }
 
 .leftSideSectionProductPage {
-  border: 1px solid red;
-  width: 50%;
+  /* border: 1px solid red; */
+  width: 48%;
+  padding-right: 2px;
   @media (max-width: 750px) {
     width: 100%;
   }
 }
 
-.rightSideSectionProductPage {
-  border: 1px solid blue;
-  width: 50%;
-  @media (max-width: 750px) {
-    width: 100%;
+.productPageLeftSideMainImg img {
+  width: 100%;
+  display: block;
+}
+
+.productMainImgBorder {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgb(207, 207, 207);
+}
+
+.productMainImgBorder img {
+  position: relative;
+  transition: scale 0.5s ease-in-out;
+}
+
+.productMainImgBorder img:hover {
+  scale: 1.07;
+}
+
+.productPageLeftSideImgMapping {
+  margin-top: 10px;
+  box-sizing: content-box;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 5px;
+  overflow: auto;
+  scrollbar-width: thin;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.imgMappingSingleImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border: 1px solid rgb(207, 207, 207);
+  transition: border 0.3s ease-in-out;
+}
+
+.imgMappingSingleImg img {
+  cursor: pointer;
+  width: 100%;
+  overflow: hidden;
+  transition: scale 0.5s ease-in-out;
+}
+
+.selectedImgBorder {
+  border: 1px solid black !important;
+}
+
+.imgMappingSingleImg img:hover {
+  scale: 1.1;
+}
+
+.productPageSpinnerLoader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  scale: 0.5;
+  align-items: center;
+}
+
+.productCardZoomBtn {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgb(207, 207, 207);
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  @media (max-width: 1100px) {
+    top: 10px;
+    right: 10px;
   }
+  @media (min-width: 750px) and (max-width: 950px) {
+    padding: 8px;
+  }
+  @media (max-width: 400px) {
+    padding: 7px;
+    top: 5px;
+    right: 5px;
+  }
+}
+
+.productCardZoomBtn img {
+  width: 15px;
+  opacity: 0.7;
+  @media (min-width: 750px) and (max-width: 950px) {
+    width: 13px;
+  }
+  @media (max-width: 400px) {
+    width: 11px;
+  }
+}
+
+/*  rightSideSectionProductPage */
+
+.rightSideSectionProductPage {
+  /* border: 1px solid blue; */
+  width: 52%;
+  padding-left: 50px;
+  padding-top: 10px;
+  @media (max-width: 750px) {
+    margin-top: 20px;
+    width: 100%;
+    padding-left: 0px;
+  }
+}
+
+.rightSideProductName h2 {
+  line-height: 37.8px;
+  letter-spacing: 0.63px;
+  color: rgb(26, 27, 24);
+  word-break: break-word;
+  font-size: 29.4px;
+  @media (max-width: 550px) {
+    font-size: 21px;
+    line-height: 25.4px;
+  }
+}
+
+.ppPageVariant  {
+  font-size: 13px;
+  line-height: 22.8px;
+  font-weight: 500;
+  letter-spacing: 0.73px;
+  color: rgba(33, 35, 38, 0.75);
+  text-transform: uppercase;
+  @media (max-width: 550px) {
+    font-size: 12px;
+    line-height: 18.5px;
+  }
+}
+
+.productRatingAndShare {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.productPageShareIcon img {
+  width: 20px;
+  cursor: pointer;
+}
+
+.pricingAndQuantity {
+  margin-top: 10px;
+  gap: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.priceAndDiscountSection {
+  display: flex;
+  gap: 7px;
+  justify-content: start;
+  align-items: center;
+}
+
+.productPageDiscountPercentage {
+  color: rgb(204, 12, 57);
+  font-size: 19px;
+  line-height: 19px;
+  letter-spacing: 0.63px;
+}
+
+.productPagePriceSection {
+  font-size: 22.5px;
+  line-height: 22.5px;
+  letter-spacing: 0.63px;
+  font-weight: 500;
+}
+
+.productPageMrpSection {
+  font-size: 13px;
+  line-height: 19.6px;
+  letter-spacing: 0.63px;
+  color: rgba(33, 35, 38, 0.75);
+}
+
+.ppAddToCartBtn{
+  width: 100% !important;
 }

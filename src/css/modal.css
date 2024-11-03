@@ -1,0 +1,74 @@
+.modalWrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1001;
+  height: 100dvh;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modalMain {
+  overflow: auto;
+  height: 100dvh;
+  scrollbar-width: thin;
+}
+
+.productCardModalCloseBtn {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  z-index: 2;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgb(207, 207, 207);
+  background-color: #fff;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  @media (max-width: 750px) {
+    top: 20px;
+    right: 25px;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+  }
+  @media (max-width: 450px) {
+    top: 10px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 7px;
+  }
+}
+
+.modalImgMapping {
+  overflow: auto !important;
+}
+
+.productCardModalCloseBtn img {
+  transition: all 0.35s ease-in-out;
+}
+
+.productCardModalCloseBtn:hover img {
+  transform: scale(0.8) rotate(90deg);
+}
+
+.modalMapSingleImg {
+  width: 100% !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
