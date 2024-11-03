@@ -106,7 +106,7 @@ function Product() {
                             </div>
                             <div className="rightSideSectionProductPage">
                                 <div className="rightSideProductName">
-                                    <h2>{product.name}</h2>
+                                    <p className='ppPageName'>{product.name}</p>
                                     <p className='ppPageVariant'>{product.variant}</p>
                                     <p className='ppPageVariant' style={{ marginBottom: "10px" }}>
                                         Category: <span style={{ color: "green" }}>{product.category}</span>

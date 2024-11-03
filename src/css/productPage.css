@@ -180,7 +180,8 @@
   }
 }
 
-.rightSideProductName h2 {
+.ppPageName {
+  font-weight: 500;
   line-height: 37.8px;
   letter-spacing: 0.63px;
   color: rgb(26, 27, 24);
