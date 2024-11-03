@@ -21,8 +21,9 @@ function BestSellerNewArrival({ handleAddToCart, btnLoader }) {
         setActCategory(true)
     }
 
-    const handleProductClick = (id) => {
-        navigate(`/collection/${category}/${id}`)
+    const handleProductClick = (product) => {
+        const formattedName = product.name.replace(/\s+/g, '-');
+        navigate(`/collection/${category}/${product.id}/${formattedName}`)
     }
 
     const viewAllProducts = (category) => {
@@ -50,7 +51,7 @@ function BestSellerNewArrival({ handleAddToCart, btnLoader }) {
             <div className="categoryCard" ref={categoryCardRef}>
                 {displayProducts.map((product, index) => {
                     return <div className="card" key={product.id}>
-                        <div className="cardImg" onClick={() => handleProductClick(product.id)}>
+                        <div className="cardImg" onClick={() => handleProductClick(product)}>
                             <div><img src={product.mainImg} alt="" className='cardImg2' /></div>
                             <div className="card-badge-bottom">
                                 <span className="discountBadge">{product.discount} off</span>
@@ -63,7 +64,7 @@ function BestSellerNewArrival({ handleAddToCart, btnLoader }) {
                         <div className="cardBottomText">
                             <div className="topText">
                                 <p className='cardProductVariant'>{product.variant}</p>
-                                <p className='cardProductName' onClick={() => handleProductClick(product.id)}>{product.name}</p>
+                                <p className='cardProductName' onClick={() => handleProductClick(product)}>{product.name}</p>
                                 <div className="ratingReviews">
                                     <div className='productRating'>
                                         <img src={RatingLogo} alt="Rating" />

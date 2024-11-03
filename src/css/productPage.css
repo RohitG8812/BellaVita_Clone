@@ -2,7 +2,7 @@
   overflow: hidden;
   white-space: nowrap;
   background-color: rgb(255, 245, 121);
-  padding: 15px;
+  padding: 10px;
   box-sizing: border-box;
   width: 100%;
   @media (max-width: 750px) {

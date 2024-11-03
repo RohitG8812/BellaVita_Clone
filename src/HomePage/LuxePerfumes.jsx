@@ -57,8 +57,9 @@ function LuxePerfumes({ handleAddToCart, btnLoader }) {
     const [selectedProduct, setSelectedProduct] = useState(product[0])
 
 
-    const handleProductClick = (id) => {
-        navigate(`/collection/perfumes/${id}`)
+    const handleProductClick = (product) => {
+        const formattedName = product.name.replace(/\s+/g, '-');
+        navigate(`/collection/perfumes/${product.id}/${formattedName}`)
     }
 
     const handleHover = (index) => {
@@ -87,7 +88,7 @@ function LuxePerfumes({ handleAddToCart, btnLoader }) {
                 <div className="luxePerfumesCard">
                     <div className="prodCardMain" >
                         <div className="prodCard" key={selectedProduct.id}>
-                            <div className="prodCardImgLuxury" onClick={() => handleProductClick(selectedProduct.id)}>
+                            <div className="prodCardImgLuxury" onClick={() => handleProductClick(selectedProduct)}>
                                 <img src={selectedProduct.mainImg} alt="" className='ProdCardImg' />
                             </div>
                             <div className="card-badge luxeCardBadge">
@@ -97,7 +98,7 @@ function LuxePerfumes({ handleAddToCart, btnLoader }) {
                             <div className="productsCardBottomText prodCardBottom">
                                 <div className="topText">
                                     <p className='cardProductVariant'>{selectedProduct.variant}</p>
-                                    <p className='ProductCardName' onClick={() => handleProductClick(selectedProduct.id)}>{selectedProduct.name}</p>
+                                    <p className='ProductCardName' onClick={() => handleProductClick(selectedProduct)}>{selectedProduct.name}</p>
                                     <div className="ProductRatingReviews">
                                         <div className='productRating'>
                                             <img src={RatingLogo} alt="Rating" />

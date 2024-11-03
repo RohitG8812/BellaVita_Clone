@@ -100,9 +100,9 @@ function Search({ inputBoxActive, inputValueLength, setInputBoxActive, value, se
         localStorage.setItem("recentSearches", JSON.stringify(updatedSearches));
     }
 
-    const handleProductClick = (id) => {
-        navigate(`/collection/perfumes/${id}`)
-        setInputBoxActive(false)
+    const handleProductClick = (product) => {
+        const formattedName = product.name.replace(/\s+/g, '-');
+        navigate(`/collection/perfumes/${product.id}/${formattedName}`)
     }
 
     const handleSuggestionProductClick = (id) => {
@@ -167,7 +167,7 @@ function Search({ inputBoxActive, inputValueLength, setInputBoxActive, value, se
                     <div className='iii'>
                         <div className="recentSearchText recommendedProductCard">
                             {recommendedProducts.map((product, index) => (
-                                <div className="productCardSearchMain" key={product.id} onClick={() => handleProductClick(product.id)}>
+                                <div className="productCardSearchMain" key={product.id} onClick={() => handleProductClick(product)}>
                                     <div className="cardImage" style={{ backgroundColor: spinnerLoader ? "#fff" : "#f2f2f2" }}>
                                         <div>
                                             {spinnerLoader ? <img src={SpinnerLoader} alt="" className='searchProductCardImg' /> :
@@ -232,7 +232,7 @@ function Search({ inputBoxActive, inputValueLength, setInputBoxActive, value, se
                             <div className='iii'>
                                 <div className="recentSearchText recommendedProductCard">
                                     {recommendedProducts.map((product, index) => (
-                                        <div className="productCardSearchMain" key={index} onClick={() => handleProductClick(product.id)}>
+                                        <div className="productCardSearchMain" key={index} onClick={() => handleProductClick(product)}>
                                             <div className="cardImage" style={{ backgroundColor: spinnerLoader ? "#fff" : "#f2f2f2" }}>
                                                 <div>
                                                     {spinnerLoader ? <img src={SpinnerLoader} alt="" className='searchProductCardImg' /> :

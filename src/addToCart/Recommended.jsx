@@ -33,11 +33,11 @@ function Recommended({ handleProductClick }) {
                     {RecommendedProducts.map((product, index) => (
                         <div className='recommendedProductsCartPageSingle' key={index}>
                             <div className="cartProductImg">
-                                <img src={product.mainImg} alt="cartRecommendedProductImg" onClick={() => handleProductClick(product.id)} />
+                                <img src={product.mainImg} alt="cartRecommendedProductImg" onClick={() => handleProductClick(product)} />
                             </div>
                             <div className="cartProductDetails">
                                 <div className="namePriceCart">
-                                    <span className='cartProductName' onClick={() => handleProductClick(product.id)}>{product.name}</span>
+                                    <span className='cartProductName' onClick={() => handleProductClick(product)}>{product.name}</span>
                                     <span className='cartProductPrice'>{product.price}</span>
                                     <span className='cartProductMrp'>{product.mrp}</span>
                                 </div>

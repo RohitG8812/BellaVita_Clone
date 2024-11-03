@@ -384,12 +384,12 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer }) {
                             {cartItems.map((items, index) => {
                                 return <div className='cartItemsProduct' key={index}>
                                     <div className="cartItemProductTop">
-                                        <div className="cartItemsProductImg" onClick={() => handleProductClick(items.id)}>
+                                        <div className="cartItemsProductImg">
                                             <img src={items.mainImg} alt="cartImg" />
                                         </div>
                                         <div className="cartItemsProductDetails">
                                             <div className='cartSingleNameAndCloseBtn'>
-                                                <span className='cartItemSingleName' onClick={() => handleProductClick(items.id)}>{items.name}</span>
+                                                <span className='cartItemSingleName'>{items.name}</span>
                                             </div>
                                             <div className='buyMoreSaveMore'>
                                                 <img src={Tag} alt="" />
