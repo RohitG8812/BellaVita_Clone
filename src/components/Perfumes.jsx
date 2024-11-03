@@ -47,8 +47,9 @@ function Perfumes() {
 
     const navigate = useNavigate();
 
-    const handleProductClick = (id) => {
-        navigate(`/collection/perfumes/${id}`)
+    const handleProductClick = (product) => {
+        const formattedName = product.name.replace(/\s+/g, '-');
+        navigate(`/collection/perfumes/${product.id}/${formattedName}`)
     }
     return (
         <Layout>

@@ -78,12 +78,12 @@ function App() {
           <Route path='/collection/searchProducts' element={<SearchResultPage />} />
 
           {/*  */}
-          <Route path="/collection/bestSellers/:id" element={<Product />} />
-          <Route path="/collection/newArrivals/:id" element={<Product />} />
-          <Route path="/collection/perfumes/:id" element={<Product />} />
-          <Route path="/collection/bathBody/:id" element={<Product />} />
-          <Route path="/collection/makeup/:id" element={<Product />} />
-          <Route path="/collection/shopAll/:id" element={<Product />} />
+          <Route path="/collection/bestSellers/:id/:name" element={<Product />} />
+          <Route path="/collection/newArrivals/:id/:name" element={<Product />} />
+          <Route path="/collection/perfumes/:id/:name" element={<Product />} />
+          <Route path="/collection/bathBody/:id/:name" element={<Product />} />
+          <Route path="/collection/makeup/:id/:name" element={<Product />} />
+          <Route path="/collection/shopAll/:id/:name" element={<Product />} />
 
           <Route path='/account' element={<Account />}>
             <Route index element={<Navigate to="/account/profile" />} />

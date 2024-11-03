@@ -361,7 +361,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                             <div className="cardImg" style={{ backgroundColor: spinnerLoader ? "#fff" : "#f2f2f2" }}>
                                 <div>
                                     {spinnerLoader ? <img src={SpinnerLoader} alt="" className='ProductCardImg' /> :
-                                        <img src={product.mainImg} alt="" className='ProductCardImg' onClick={() => handleProductClick(product.id)} />}
+                                        <img src={product.mainImg} alt="" className='ProductCardImg' onClick={() => handleProductClick(product)} />}
                                 </div>
                                 <div className="card-badge-bottom">
                                     <span className="discountBadge">{product.discount} off</span>
@@ -375,7 +375,7 @@ function ProductPage({ product, heading, handleProductClick, categoryFilter, pro
                             <div className="productsCardBottomText">
                                 <div className="topText">
                                     <p className='cardProductVariant'>{product.variant}</p>
-                                    <p className='ProductCardName' onClick={() => handleProductClick(product.id)} >{product.name}</p>
+                                    <p className='ProductCardName' onClick={() => handleProductClick(product)} >{product.name}</p>
                                     <div className="ProductRatingReviews">
                                         <div className='productRating'>
                                             <img src={RatingLogo} alt="Rating" />

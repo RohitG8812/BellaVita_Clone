@@ -1,15 +1,33 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Products from '../JSON/Products';
 import Layout from '../Layout/Layout';
 import "../css/productPage.css"
+import NotFound from "../assets/icons/404.jpg"
 
 function Product() {
     const { id } = useParams()
     const product = Products.find((item) => item.id === parseInt(id));
+    const navigate = useNavigate()
+    const handleNavigate = () => {
+        navigate('/collection/shopAll')
+    }
 
     if (!product) {
-        return <h2>Product Not Found</h2>
+        return <Layout>
+            <div className="shopAllMain">
+                <div className="topSide">
+                    <div className="hideDiv"></div>
+                </div>
+                <div className="ProductPageMain">
+                    <div className="pageSectionMain">
+                        <img src={NotFound} alt="" />
+                        <span className='pageNotFoundText'>Product Not Found !</span>
+                        <button className='sortBtn' onClick={handleNavigate}>Return To Shop</button>
+                    </div>
+                </div>
+            </div>
+        </Layout>
     }
     return (
         <Layout>

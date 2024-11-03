@@ -43,9 +43,10 @@ function GiftSets() {
     };
   }, []);
 
-  const handleProductClick = (id) => {
-    navigate(`/collection/shopAll/${id}`)
-  }
+  const handleProductClick = (product) => {
+    const formattedName = product.name.replace(/\s+/g, '-');
+    navigate(`/collection/shopAll/${product.id}/${formattedName}`)
+}
   return (
     <Layout>
       <div className="shopAllMain">

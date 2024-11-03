@@ -45,9 +45,10 @@ function NewArrivals() {
 
   const navigate = useNavigate()
 
-  const handleProductClick = (id) => {
-    navigate(`/collection/shopAll/${id}`)
-  }
+  const handleProductClick = (product) => {
+    const formattedName = product.name.replace(/\s+/g, '-');
+    navigate(`/collection/newArrivals/${product.id}/${formattedName}`)
+}
   return (
     <Layout>
       <div className="shopAllMain">

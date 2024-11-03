@@ -5,8 +5,8 @@
   padding: 15px;
   box-sizing: border-box;
   width: 100%;
-  @media (max-width: 450px) {
-    padding: 10px;
+  @media (max-width: 750px) {
+    padding: 5px;
   }
 }
 
@@ -18,7 +18,7 @@
   line-height: normal;
   text-transform: uppercase;
   font-weight: 500;
-  @media (max-width: 450px) {
+  @media (max-width: 750px) {
     font-size: 14px;
   }
 }

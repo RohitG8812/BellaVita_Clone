@@ -42,9 +42,10 @@ function SkinCare() {
   }, []);
 
   const navigate = useNavigate()
-  const handleProductClick = (id) => {
-    navigate(`/collection/bathBody/${id}`)
-  }
+  const handleProductClick = (product) => {
+    const formattedName = product.name.replace(/\s+/g, '-');
+    navigate(`/collection/bathBody/${product.id}/${formattedName}`)
+}
   return (
     <Layout>
       <div className="shopAllMain">

@@ -25,8 +25,9 @@ function Makeup() {
     ]
 
     const navigate = useNavigate()
-    const handleProductClick = (id) => {
-        navigate(`/collection/makeup/${id}`)
+    const handleProductClick = (product) => {
+        const formattedName = product.name.replace(/\s+/g, '-');
+        navigate(`/collection/makeup/${product.id}/${formattedName}`)
     }
 
     useEffect(() => {
