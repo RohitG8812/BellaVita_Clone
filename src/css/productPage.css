@@ -1,7 +1,7 @@
 .productPageMarqueeText {
   overflow: hidden;
   white-space: nowrap;
-  background-color: rgb(255, 245, 121);
+  background-color: #ffd200;
   padding: 12px;
   box-sizing: border-box;
   width: 100%;
@@ -432,13 +432,119 @@
   letter-spacing: 0.83px;
 }
 
-.ppBannerSection{
-  margin-block: 30px;
+.ppBannerSection {
+  margin-top: 30px;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.ppBannerSection img{
+.ppBannerSection img {
   width: 100%;
+}
+
+/* accordion */
+
+.ppAccordionMenu {
+  margin: 0 auto;
+}
+
+.ppFirstAccordion {
+  word-wrap: break-word;
+  border-bottom: 1px solid rgb(207, 207, 207);
+}
+
+.ppAccordionInside {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0px;
+  margin-bottom: 25px;
+  transition: max-height 0.8s ease-in-out;
+  @media (max-width: 550px) {
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+}
+
+.ppFooterHeading750 {
+  font-size: 18px;
+  line-height: 20px;
+  letter-spacing: 1.5px;
+  font-weight: 500;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  padding-block: 20px;
+  padding-inline: 5px;
+  word-wrap: break-word;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 550px) {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  transition: color 0.3s ease-in-out;
+}
+
+.ppFooterHeading750:hover {
+  color: rgba(33, 35, 38, 0.631);
+  .ppRightArrowTopFooter {
+    opacity: 0.6;
+  }
+}
+
+.sideBarSubMenuLiIndexCss {
+  cursor: auto;
+}
+
+.ppFooter750pxCatItems .show {
+  max-height: fit-content;
+}
+
+.ppFooter750pxCatItems.hide {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.ppFooter750pxCatItems {
+  position: relative;
+  cursor: pointer;
+  color: rgba(33, 35, 38, 0.75);
+  font-weight: 500;
+  text-transform: capitalize;
+  background-color: #fff !important;
+  font-size: 15px;
+  line-height: 22.5px;
+  letter-spacing: 0.8px;
+  word-wrap: break-word;
+  white-space: wrap;
+  text-align: start;
+  box-sizing: border-box;
+  @media (max-width: 550px) {
+    font-size: 14px;
+    line-height: 21.5px;
+  }
+}
+
+.ppRightArrowTopFooter {
+  width: 20px;
+  @media (max-width: 550px) {
+    width: 17px;
+  }
+}
+
+.ppRotate-arrow {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.ppAccordionOtherInfo{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
