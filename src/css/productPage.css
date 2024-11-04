@@ -2,11 +2,11 @@
   overflow: hidden;
   white-space: nowrap;
   background-color: rgb(255, 245, 121);
-  padding: 10px;
+  padding: 12px;
   box-sizing: border-box;
   width: 100%;
-  @media (max-width: 750px) {
-    padding: 5px;
+  @media (max-width: 550px) {
+    padding: 8px;
   }
 }
 
@@ -18,7 +18,7 @@
   line-height: normal;
   text-transform: uppercase;
   font-weight: 500;
-  @media (max-width: 750px) {
+  @media (max-width: 550px) {
     font-size: 14px;
   }
 }
@@ -136,7 +136,7 @@
   border-radius: 50%;
   border: 1px solid rgb(207, 207, 207);
   background-color: #fff;
-  padding: 10px;
+  padding: 14px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,10 +148,10 @@
   @media (min-width: 750px) and (max-width: 950px) {
     padding: 8px;
   }
-  @media (max-width: 400px) {
+  @media (max-width: 450px) {
     padding: 7px;
-    top: 5px;
-    right: 5px;
+    top: 8px;
+    right: 8px;
   }
 }
 
@@ -183,17 +183,18 @@
 .ppPageName {
   font-weight: 500;
   line-height: 37.8px;
+  margin-bottom: 2px;
   letter-spacing: 0.63px;
   color: rgb(26, 27, 24);
   word-break: break-word;
-  font-size: 29.4px;
+  font-size: 30.4px;
   @media (max-width: 550px) {
-    font-size: 21px;
+    font-size: 23px;
     line-height: 25.4px;
   }
 }
 
-.ppPageVariant  {
+.ppPageVariant {
   font-size: 13px;
   line-height: 22.8px;
   font-weight: 500;
@@ -201,7 +202,7 @@
   color: rgba(33, 35, 38, 0.75);
   text-transform: uppercase;
   @media (max-width: 550px) {
-    font-size: 12px;
+    font-size: 11px;
     line-height: 18.5px;
   }
 }
@@ -210,6 +211,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.productRatingProductPage {
+  @media (max-width: 550px) {
+    font-size: 12px !important;
+  }
+}
+
+.productReviewsProductPage {
+  @media (max-width: 550px) {
+    font-size: 12px !important;
+  }
 }
 
 .productPageShareIcon img {
@@ -223,7 +236,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .priceAndDiscountSection {
@@ -238,6 +251,9 @@
   font-size: 19px;
   line-height: 19px;
   letter-spacing: 0.63px;
+  @media (max-width: 550px) {
+    font-size: 17px;
+  }
 }
 
 .productPagePriceSection {
@@ -245,6 +261,9 @@
   line-height: 22.5px;
   letter-spacing: 0.63px;
   font-weight: 500;
+  @media (max-width: 550px) {
+    font-size: 19px;
+  }
 }
 
 .productPageMrpSection {
@@ -254,6 +273,172 @@
   color: rgba(33, 35, 38, 0.75);
 }
 
-.ppAddToCartBtn{
+.ppAddToCartBtn {
   width: 100% !important;
+  margin-bottom: 30px;
+}
+
+.cartQuantityBtnProductPage {
+  gap: 14px !important;
+  padding-block: 2.5px !important;
+  @media (max-width: 550px) {
+    gap: 12px !important;
+    padding-block: 1.75px !important;
+  }
+}
+
+.ppBenefitsSection {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  @media (max-width: 550px) {
+    column-gap: 5px;
+  }
+}
+
+.benefitSingle {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.6px;
+  color: rgb(38, 32, 32);
+  text-transform: uppercase;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  word-break: break-word;
+  text-align: center;
+  gap: 10px;
+  background-color: #f2f2f2;
+  padding-block: 10px;
+  padding-inline: 3px;
+  @media (max-width: 550px) {
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+
+.benefitSingle img {
+  width: 35px;
+}
+
+.ppDescription {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  font-size: 16px !important;
+  line-height: 24.6px;
+  color: rgba(33, 35, 38, 0.75);
+  letter-spacing: 0.63px;
+}
+
+.productPageDescriptionText {
+  margin-bottom: 20px;
+}
+
+.notesHeading {
+  letter-spacing: 0.83px;
+  color: rgb(38, 32, 32);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.expanded {
+  line-height: 25px;
+  margin-block: 10px;
+  opacity: 0;
+}
+
+.readMoreReadLessBtn {
+  width: 120px !important;
+  min-height: 33px !important;
+  margin-bottom: 30px;
+}
+
+.ppExclusiveOfferHeading {
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 0.83px;
+  line-height: 22px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5px;
+  font-weight: 600;
+  margin-bottom: 20px;
+
+  @media (max-width: 550px) {
+    font-size: 14.5px;
+  }
+}
+
+.ppExclusiveOfferHeading img {
+  width: 22px;
+  @media (max-width: 550px) {
+    width: 18px;
+  }
+}
+
+.ppExclusiveOffers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10px;
+  overflow: auto;
+  scrollbar-width: smooth;
+  padding-bottom: 2px;
+  scrollbar-width: thin;
+}
+
+.offerSinglePP {
+  min-width: 171px;
+  background-color: #f2f2f2;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  padding-inline: 2px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.offerSingleIconName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  letter-spacing: 0.83px;
+}
+
+.offerSingleIconName img {
+  width: 18px;
+}
+
+.offerSingleDesc {
+  margin-top: 2px;
+  padding-bottom: 5px;
+  font-weight: 500;
+  font-size: 12px;
+  padding-inline: 4px;
+  border-top: 0.4px solid transparent;
+  border-left: 0.4px solid transparent;
+  border-right: 0.4px solid transparent;
+  border-bottom: 2px solid black;
+  border-style: dashed;
+}
+
+.offerSingleCode {
+  margin-top: 5px;
+  font-size: 15px;
+  letter-spacing: 0.83px;
+}
+
+.ppBannerSection{
+  margin-block: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ppBannerSection img{
+  width: 100%;
 }

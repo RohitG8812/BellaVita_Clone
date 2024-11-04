@@ -12,6 +12,34 @@ import ShareIcon from "../assets/icons/share.svg"
 import ProductImageModal from '../pages/ProductImageModal';
 import PlusBtn from "../assets/icons/plusL.svg"
 import MinusBtn from "../assets/icons/minus.svg"
+import Gender from "../assets/icons/gender.svg"
+import Cleanses from "../assets/icons/cleanses.svg"
+import All_skin from "../assets/icons/all_skin.svg"
+import Fragrant from "../assets/icons/fragrant.svg"
+import DiscountIcon from "../assets/icons/discount.svg"
+import OfferIcon from "../assets/icons/offer.svg"
+import FragrenceFinderNew from '../assets/Banner/FragrenceFinderMini.jpeg'
+import LipStickFinderNew from '../assets/Banner/PerfumeBoxMini.jpeg'
+
+const Benefits = [
+    { name: "All Skin Types", img: All_skin },
+    { name: "Cleanses & Nourishes", img: Cleanses },
+    { name: "Gender Neutral", img: Gender },
+    { name: "Fragrant", img: Fragrant },
+]
+
+const descriptionTextStyle = {
+    WebkitLineClamp: 3,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+    display: '-webkit-box'
+}
+
+const Offers = [
+    { name: "6 FOR ₹999", code: "Self Love Kit", desc: "Any 1 Perfume + 6 Bestsellers for ₹999 only." },
+    { name: "3 FOR ₹1298", code: "Ultimate Perfume Box", desc: "Get any 3 Perfumes for just ₹1298 only." },
+    { name: "HDFC5", code: "HDFC5", desc: "Get 5% OFF on HDFC Credit and Debit cards" },
+]
 
 function Product() {
     const { id } = useParams()
@@ -20,6 +48,7 @@ function Product() {
     const [selectedImg, setSelectedImg] = useState(0)
     const [loader, setLoader] = useState(true)
     const [productImgModalOpen, setProductImgModalOpen] = useState(false)
+    const [openDescriptions, setOpenDescriptions] = useState(false)
 
     const closeModal = () => setProductImgModalOpen(false);
 
@@ -114,12 +143,12 @@ function Product() {
                                 </div>
                                 <div className='productRatingAndShare'>
                                     <div className="ProductRatingReviews">
-                                        <div className='productRating'>
+                                        <div className='productRating productRatingProductPage'>
                                             <img src={RatingLogo} alt="Rating" />
                                             <p>{product.rating}</p>
                                         </div>
                                         <span className='middleArrow'>|</span>
-                                        <div className='productReviews'>
+                                        <div className='productReviews productReviewsProductPage'>
                                             <img src={ReviewsLogo} alt="Reviews" />
                                             <p> {`(${product.numOfReviews})`}</p>
                                         </div>
@@ -142,7 +171,7 @@ function Product() {
                                         </div>
                                     </div>
                                     <div className="productPageQuantitySection">
-                                        <div className="cartQuantityBtn">
+                                        <div className="cartQuantityBtn cartQuantityBtnProductPage">
                                             <img src={MinusBtn} alt="" />
                                             <span className='itemQuantity'>{1}</span>
                                             <img src={PlusBtn} alt="" />
@@ -151,6 +180,44 @@ function Product() {
                                 </div>
                                 <div className="ppAddToCartBtn filterBtn">
                                     Add To Cart
+                                </div>
+                                <div className="ppBenefitsSection">
+                                    {Benefits.map((benefit, index) => {
+                                        return <div className='benefitSingle'>
+                                            <img src={benefit.img} alt="" />
+                                            <span>{benefit.name}</span>
+                                        </div>
+                                    })}
+                                </div>
+                                <div className="ppDescriptionAndReadMoreBtn">
+                                    <div className='ppDescription' style={openDescriptions ? null : descriptionTextStyle}>
+                                        <p className='productPageDescriptionText'>{product.description}</p>
+                                        <p className='ppDescriptionNotes' ><h5 className='notesHeading'>Notes — </h5> {product.note}</p>
+                                        <p className='expanded'>.</p>
+                                    </div>
+                                    <button onClick={() => setOpenDescriptions(!openDescriptions)} className='readMoreReadLessBtn sortBtn'>{openDescriptions ? "Read Less" : "Read More"}</button>
+                                </div>
+                                <div>
+                                    <div className='ppExclusiveOfferHeading'>
+                                        <img src={OfferIcon} alt="" />
+                                        <span>Exclusive Offers</span>
+                                    </div>
+                                    <div className="ppExclusiveOffers">
+                                        {Offers.map((offer, index) => {
+                                            return <div className='offerSinglePP'>
+                                                <div className='offerSingleIconName'>
+                                                    <img src={DiscountIcon} alt="" />
+                                                    <span>{offer.name}</span>
+                                                </div>
+                                                <span className='offerSingleDesc'>{offer.desc}</span>
+                                                <span className='offerSingleCode'>{offer.code}</span>
+                                            </div>
+                                        })}
+                                    </div>
+                                </div>
+                                <div className="ppBannerSection">
+                                    <img src={FragrenceFinderNew} alt="Banner" />
+                                    <img src={LipStickFinderNew} alt="Banner" />
                                 </div>
                             </div>
                         </div>
