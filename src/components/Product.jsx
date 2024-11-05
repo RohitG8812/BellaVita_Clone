@@ -23,13 +23,52 @@ import LipStickFinderNew from '../assets/Banner/PerfumeBoxMini.jpeg'
 import Loader from '../pages/Loader';
 import { CartContext } from '../context/CartContext';
 import toast from 'react-hot-toast';
-import rightArrow from "../assets/icons/rightArrow.svg"
 import downArrow from "../assets/icons/down.svg"
-import Fb from "../assets/icons/fb.svg"
-import Twitter from "../assets/icons/twitter.svg"
-import Pinterest from "../assets/icons/pinterest.svg"
-import Insta from "../assets/icons/insta.svg"
-import YT from "../assets/icons/yt.svg"
+import Ambergris from "../assets/Notes/Perfumes/ambergis.avif"
+import Jasmine from "../assets/Notes/Perfumes/jasmine.avif"
+import Lavender from "../assets/Notes/Perfumes/lavender.avif"
+import Lemon from "../assets/Notes/Perfumes/lemon.avif"
+import Freesia from "../assets/Notes/BathBody/freesia.avif"
+import PinkPepper from "../assets/Notes/BathBody/pinkPepper.avif"
+import Argon from "../assets/Notes/Makeup/argon.avif"
+import Bergamot from "../assets/Notes/Makeup/bergamot.avif"
+import Moss from "../assets/Notes/Makeup/moss.webp"
+import Sage from "../assets/Notes/Makeup/sage.avif"
+import Caramel from "../assets/Notes/GiftSets/caramel.avif"
+import Musk from "../assets/Notes/GiftSets/musk.avif"
+import OUD from "../assets/Notes/GiftSets/oud.avif"
+import Vetiver from "../assets/Notes/GiftSets/vetiver.avif"
+import FirstPurchaseImg from "../assets/Banner/first.webp"
+import FirstPurchaseImgMini from "../assets/Banner/firstMini.webp"
+
+
+const PerfumesNotes = [
+    { name: "AMBERGRIS", img: Ambergris, desc: "It has the ability to enhance and fixes the fragrance. It adds a warm and complex character to the perfume, contributing to the longevity and depth." },
+    { name: "JASMINE", img: Jasmine, desc: "Adds a sensual and enchanting floral scent that adds a touch of romance and luxury to the fragrance." },
+    { name: "LAVENDER", img: Lavender, desc: "Adds a sense of freshness to the scent. Keeps you at peace and calms the vibe." },
+    { name: "LEMON", img: Lemon, desc: "It offers a fresh and invigorating scent that provides an immediate burst of vitality and freshness to the fragrance." },
+]
+
+const BathBodyNotes = [
+    { name: "FREESIA", img: Freesia, desc: "Its floral and airy aroma carries a sense of lightness and purity, adding an aura of freshness and grace to the fragrance." },
+    { name: "LAVENDER", img: Lavender, desc: "Adds a sense of freshness to the scent. Keeps you at peace and calms the vibe." },
+    { name: "JASMINE", img: Jasmine, desc: "Adds a sensual and enchanting floral scent that adds a touch of romance and luxury to the fragrance." },
+    { name: "PINK PEPPER", img: PinkPepper, desc: "It infuses the fragrance with an intriguing and modern twist and adds depth to the scent compositions." },
+]
+
+const MakeupNotes = [
+    { name: "BERGAMOT", img: Bergamot, desc: "It serves as a vibrant note, adding a zesty and invigorating quality to the fragrance." },
+    { name: "ARGAN OIL", img: Argon, desc: "Deeply moisturises and nourishes the skin, helping to improve its elasticity and smoothness." },
+    { name: "MOSS", img: Moss, desc: "It provides depth and complexity, evoking the serene essence of the forest floor." },
+    { name: "SAGE", img: Sage, desc: "It imparts a clean, earthy, and aromatic scent and contributes a sense of natural freshness and sophistication to the fragrance." },
+]
+
+const GiftSetsNotes = [
+    { name: "CARAMEL", img: Caramel, desc: "Its warm aroma adds a sense of comfort and decadence to the fragrance" },
+    { name: "MUSK", img: Musk, desc: "It helps to add depth, sensuality, and longevity to the fragrance." },
+    { name: "OUD", img: OUD, desc: "It lends the fragrance an opulent and mystical quality, often associated with luxury and spiritual depth." },
+    { name: "VETIVER", img: Vetiver, desc: "Its deep and complex scent evokes the tranquility of a lush forest, adds a sense of depth and refinement to the fragrance" },
+]
 
 const Benefits = [
     { name: "All Skin Types", img: All_skin },
@@ -51,12 +90,6 @@ const Offers = [
     { name: "HDFC5", code: "HDFC5", desc: "Get 5% OFF on HDFC Credit and Debit cards" },
 ]
 
-const Logos = [Fb, Twitter, Pinterest, Insta, YT]
-const BestSellers = ["Ultimate Perfume Box", "Perfume Gift Set For Men", "Perfume Gift Set For Women", "Under Eye Cream for Dark Circles", "Perfume For Men", "Perfume For Women", "Unisex Perfume"]
-const Information = ["Blogs", "Newsroom", "Terms & Conditions", "Privacy Policy", "Refund and Return", "Shipping Policy", "Bulk Order - GST Invoice"]
-const Support = ["About Us", "Contact Us", "Order Tracking", "All Products", "FAQ", "Sitemap"]
-const Contact = ["Office Location: Plot no. 417, Udyog Vihar Phase III, Gurgaon, Haryana, India", "+91-9311732440", "shop@bellavitaorganic.com", "Timing: 10:00 AM to 7:00 PM, Monday to Sunday"]
-
 function Product() {
     const { id } = useParams()
     const { addToCart } = useContext(CartContext)
@@ -67,6 +100,22 @@ function Product() {
     const [productImgModalOpen, setProductImgModalOpen] = useState(false)
     const [openDescriptions, setOpenDescriptions] = useState(false)
     const [btnLoader, setBtnLoader] = useState(null)
+    const [miniImg, setMiniImg] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 751) {
+                setMiniImg(true);
+            } else {
+                setMiniImg(false)
+            }
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [])
 
     const [activeIndex, setActiveIndex] = useState(null);
 
@@ -177,7 +226,7 @@ function Product() {
                                     <p className='ppPageName'>{product.name}</p>
                                     <p className='ppPageVariant'>{product.variant}</p>
                                     <p className='ppPageVariant' style={{ marginBottom: "10px" }}>
-                                        Category: <span style={{ color: "green" }}>{product.category}</span>
+                                        TYPE: <span style={{ color: "green" }}>{product.category}</span>
                                     </p>
                                 </div>
                                 <div className='productRatingAndShare'>
@@ -300,17 +349,92 @@ function Product() {
                                         <img src={downArrow} alt="" className={`ppRightArrowTopFooter ${activeIndex === 3 ? 'ppRotate-arrow' : ''}`} />
                                     </div>
                                     <div className={`ppFooter750pxCatItems ${activeIndex === 3 ? 'show' : 'hide'}`}>
-                                        <p className='ppAccordionInside'>
-                                            {product.note}
-                                        </p>
+                                        <div className='ppAccordionNoteMapping'>
+                                            {(product.category === "perfumes"
+                                                ? PerfumesNotes
+                                                : product.category === "bathBody"
+                                                    ? BathBodyNotes
+                                                    : product.category === "makeup"
+                                                        ? MakeupNotes
+                                                        : product.productType === "comboProducts"
+                                                            ? GiftSetsNotes
+                                                            : null
+                                            ).map((note, index) => {
+                                                return <div className='noteMapSingle' key={index}>
+                                                    <img src={note.img} alt="" />
+                                                    <p className='noteMapSingleName'>{note.name}</p>
+                                                    <p className='noteMapSingleDescription'>{note.desc}</p>
+                                                </div>
+                                            })}
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="ppFirstAccordion">
                                     <div className="ppFooterHeading750" onClick={() => handleClick(4)}>
-                                        <p>Other Information</p>
+                                        <p>FAQs</p>
                                         <img src={downArrow} alt="" className={`ppRightArrowTopFooter ${activeIndex === 4 ? 'ppRotate-arrow' : ''}`} />
                                     </div>
                                     <div className={`ppFooter750pxCatItems ${activeIndex === 4 ? 'show' : 'hide'}`}>
+                                        <p className='ppAccordionInside ppAccordionOtherInfo'>
+                                            <span>
+                                                <p style={{ color: "#000" }}>How long does a perfume usually last?</p>
+                                                Our perfumes typically last up to 8 hours, and are made especially for the Indian climate.
+                                            </span>
+
+                                            <span>
+                                                <p style={{ color: "#000" }}>Do our perfumes contain Alcohol?</p>
+                                                NO is the straightforward response to that.Alcohol used in perfumes is not the same alcohol used for consumption directly.The alcohol used in perfumes is known as perfumers alcohol. It cannot be bought in liquor stores and is not meant for drinking.So it is okay for us to apply! Use freely and carry your fragrance.
+                                            </span>
+
+                                            <span>
+                                                <p style={{ color: "#000" }}>Are Perfumes made in India?</p>
+                                                Yes,Our Perfumes are made in India .We imported perfume oils from france and bottled in India
+                                            </span>
+
+                                            <span>
+                                                <p style={{ color: "#000" }}>How should I keep/store my Perfume?</p>
+                                                Yes, it does matter where you keep your perfume. It is advisable to keep perfume out of direct sunlight and extremely hot or cold temperatures. This increases the shelf life and maintains the quality of the perfume.
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="ppFirstAccordion">
+                                    <div className="ppFooterHeading750" onClick={() => handleClick(5)}>
+                                        <p>IS THIS YOUR FIRST BELLA VITA PURCHASE?</p>
+                                        <img src={downArrow} alt="" className={`ppRightArrowTopFooter ${activeIndex === 5 ? 'ppRotate-arrow' : ''}`} />
+                                    </div>
+                                    <div className={`ppFooter750pxCatItems ${activeIndex === 5 ? 'show' : 'hide'}`}>
+                                        <p className='ppAccordionInside ppAccordionOtherInfo'>
+                                            <span>
+                                                We’ve all had the experience of seeing ads that promise the world, bought it, and realised it wasn’t quite as advertised. That's no good. We at BELLAVITA take a different approach before launching any perfume:
+                                            </span>
+                                            <span>
+                                                <span style={{ color: "#000", fontWeight: "550" }}>In-Depth Consumer Research:</span> Each of our perfumes is backed by hundreds of days of comprehensive consumer research, tailoring scents to meet the genuine needs and preferences of the Indian consumer while keeping in mind the Indian climate.
+                                            </span>
+                                            <span>
+                                                <span style={{ color: "#000", fontWeight: "550" }}>Superior Ingredients:</span> We source our premium ingredients from France, Spain, and Italy, known world-over for their quality and uniqueness in fragrance.
+                                            </span>
+                                            <span>
+                                                <span style={{ color: "#000", fontWeight: "550" }}>Proven Longevity:</span> Our perfumes are designed to last, offering 8 to 10 hours of enduring scent, ensuring you stay fresh throughout the day.
+                                            </span>
+                                            <span className='firstPurchase'>
+                                                <span style={{ color: "#000", fontWeight: "550" }}>IFRA Certification:</span> Commitment to safety and quality is paramount and so all our perfumes are IFRA-certified, meeting rigorous international standards, making them to safe to use on skin.
+                                            </span>
+                                            <span className='firstPurchaseImg'>
+                                                <img src={miniImg ? FirstPurchaseImgMini : FirstPurchaseImg} alt="" />
+                                            </span>
+                                            <span>
+                                                Still not convinced? If you’re still not sure of what you are looking for, you can try our perfume trial pack, which offers you the chance to try out our 10 perfumes at just 349!
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="ppFirstAccordion">
+                                    <div className="ppFooterHeading750" onClick={() => handleClick(6)}>
+                                        <p>Other Information</p>
+                                        <img src={downArrow} alt="" className={`ppRightArrowTopFooter ${activeIndex === 6 ? 'ppRotate-arrow' : ''}`} />
+                                    </div>
+                                    <div className={`ppFooter750pxCatItems ${activeIndex === 6 ? 'show' : 'hide'}`}>
                                         <p className='ppAccordionInside ppAccordionOtherInfo'>
                                             <span>
                                                 <span style={{ color: "#000", fontWeight: "550" }}>Marketed By:</span> IDAM Natural Wellness Pvt. Ltd. 417, First Floor, Udyog Vihar Phase 3, Sector 20, Gurugram, 122008 Haryana, India
@@ -320,35 +444,6 @@ function Product() {
                                             </span>
                                             <span style={{ color: "#000", fontWeight: "550" }}>
                                                 Country of Origin: India
-                                            </span>
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="ppFirstAccordion">
-                                    <div className="ppFooterHeading750" onClick={() => handleClick(5)}>
-                                        <p>FAQs</p>
-                                        <img src={downArrow} alt="" className={`ppRightArrowTopFooter ${activeIndex === 5 ? 'ppRotate-arrow' : ''}`} />
-                                    </div>
-                                    <div className={`ppFooter750pxCatItems ${activeIndex === 5 ? 'show' : 'hide'}`}>
-                                        <p className='ppAccordionInside ppAccordionOtherInfo'>
-                                            <span>
-                                                How long does a perfume usually last?
-                                                Our perfumes typically last up to 8 hours, and are made especially for the Indian climate.
-                                            </span>
-
-                                            <span>
-                                                Do our perfumes contain Alcohol?
-                                                NO is the straightforward response to that.Alcohol used in perfumes is not the same alcohol used for consumption directly.The alcohol used in perfumes is known as perfumers alcohol. It cannot be bought in liquor stores and is not meant for drinking.So it is okay for us to apply! Use freely and carry your fragrance.
-                                            </span>
-
-                                            <span>
-                                                Are Perfumes made in India?
-                                                Yes,Our Perfumes are made in India .We imported perfume oils from france and bottled in India
-                                            </span>
-
-                                            <span>
-                                                How should I keep/store my Perfume?
-                                                Yes, it does matter where you keep your perfume. It is advisable to keep perfume out of direct sunlight and extremely hot or cold temperatures. This increases the shelf life and maintains the quality of the perfume.
                                             </span>
                                         </p>
                                     </div>

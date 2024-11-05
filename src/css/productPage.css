@@ -514,7 +514,7 @@
 .ppFooter750pxCatItems {
   position: relative;
   cursor: pointer;
-  color: rgba(33, 35, 38, 0.75);
+  color: rgba(33, 35, 38, 0.597);
   font-weight: 500;
   text-transform: capitalize;
   background-color: #fff !important;
@@ -543,8 +543,61 @@
   transition: transform 0.3s ease;
 }
 
-.ppAccordionOtherInfo{
+.ppAccordionOtherInfo {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.firstPurchaseImg img {
+  width: 100%;
+}
+
+.ppAccordionNoteMapping {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  overflow: auto;
+  column-gap: 15px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  scrollbar-width: thin;
+  padding-inline: 60px;
+  @media (max-width: 1000px) {
+    padding-inline: 25px;
+  }
+  @media (max-width: 750px) {
+    padding-inline: 15px;
+    padding-bottom: 20px;
+  }
+}
+
+.noteMapSingle {
+  min-width: 160px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.noteMapSingle img {
+  width: 100px !important;
+}
+
+.noteMapSingleDescription {
+  font-size: 13px;
+  text-align: center;
+  line-height: 20px;
+  @media (max-width: 550px) {
+    font-size: 12.5px;
+  }
+}
+
+.noteMapSingleName {
+  font-size: 16px;
+  letter-spacing: 1.23px !important;
+  color: #000;
+  @media (max-width: 550px) {
+    font-size: 14px;
+  }
 }
