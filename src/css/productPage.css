@@ -637,6 +637,9 @@
 .fiveStar {
   display: flex;
   gap: 4.3px;
+  @media (max-width: 550px) {
+    justify-content: center !important;
+  }
 }
 
 .ratingAndReviewsCount {
@@ -644,15 +647,27 @@
   color: rgba(33, 35, 38, 0.727);
   letter-spacing: 0.83px;
   line-height: 32px;
+  @media (max-width: 550px) {
+    font-size: 13.5px;
+  }
 }
 
 .writeReviewBtn {
   width: 150px !important;
   min-height: 34px !important;
+  @media (max-width: 550px) {
+   width: 100% !important;
+   min-height: 37px !important;
+  }
 }
 
 .ratingAndAddReview {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10px;
+  @media (max-width: 550px) {
+    justify-content: center !important;
+    flex-direction: column;
+  }
 }

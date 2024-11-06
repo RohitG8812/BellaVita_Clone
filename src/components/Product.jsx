@@ -144,7 +144,7 @@ function Product() {
 
     const handleProductClick = (product) => {
         const formattedName = product.name.replace(/\s+/g, '-');
-        navigate(`/collection/${category}/${product.id}/${formattedName}`)
+        navigate(`/collection/shopAll/${product.id}/${formattedName}`)
     }
 
     const closeModal = () => setProductImgModalOpen(false);
