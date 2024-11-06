@@ -1313,10 +1313,14 @@ li a:hover {
   }
 }
 
-.productRating img,
+
 .productReviews img {
   width: 14px;
   height: 14px;
+}
+
+.productRating img{
+  width: 12.4px;
 }
 
 .middleArrow {

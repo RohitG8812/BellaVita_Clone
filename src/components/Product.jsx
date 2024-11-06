@@ -5,7 +5,7 @@ import Layout from '../Layout/Layout';
 import "../css/productPage.css"
 import NotFound from "../assets/icons/404.jpg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
-import RatingLogo from "../assets/icons/rating.svg"
+import RatingLogo from "../assets/icons/star.svg"
 import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
 import PlusSearch from "../assets/icons/plusSearch.svg"
 import ShareIcon from "../assets/icons/share.svg"
@@ -40,6 +40,10 @@ import OUD from "../assets/Notes/GiftSets/oud.avif"
 import Vetiver from "../assets/Notes/GiftSets/vetiver.avif"
 import FirstPurchaseImg from "../assets/Banner/first.webp"
 import FirstPurchaseImgMini from "../assets/Banner/firstMini.webp"
+import BestPairedProducts from '../JSON/BestPairedProducts';
+import Star from "../assets/icons/star.svg"
+import PairedProducts from '../pages/PairedProducts';
+import Reviews from '../JSON/Reviews';
 
 
 const PerfumesNotes = [
@@ -136,6 +140,11 @@ function Product() {
             setBtnLoader(null)
             toast.error(error.message)
         }
+    }
+
+    const handleProductClick = (product) => {
+        const formattedName = product.name.replace(/\s+/g, '-');
+        navigate(`/collection/${category}/${product.id}/${formattedName}`)
     }
 
     const closeModal = () => setProductImgModalOpen(false);
@@ -358,7 +367,7 @@ function Product() {
                                                         ? MakeupNotes
                                                         : product.productType === "comboProducts"
                                                             ? GiftSetsNotes
-                                                            : null
+                                                            : PerfumesNotes
                                             ).map((note, index) => {
                                                 return <div className='noteMapSingle' key={index}>
                                                     <img src={note.img} alt="" />
@@ -449,10 +458,91 @@ function Product() {
                                     </div>
                                 </div>
                             </div>
+                            <div className="BestPairedWithSection ">
+                                <p className='BestPairedWithSectionHeading'>BEST PAIRED WITH</p>
+                                <div className='categoryCard'>
+                                    {(product.category === "perfumes" ?
+                                        BestPairedProducts.perfumes
+                                        : product.category === "bathBody"
+                                            ? BestPairedProducts.bathBody
+                                            : product.category === "makeup"
+                                                ? BestPairedProducts.makeup
+                                                : BestPairedProducts.perfumes
+                                    ).map((pairedProduct, index) => {
+                                        return <PairedProducts pairedProduct={pairedProduct} handleProductClick={handleProductClick} handleAddProductToCart={handleAddProductToCart} btnLoader={btnLoader} />
+                                    })
+                                    }
+                                </div>
+                            </div>
+                            <div className='BestPairedWithSection customerReviewsSection'>
+                                <p className='BestPairedWithSectionHeading customerReviewsSectionHeading'>Customer Reviews</p>
+                                <div className='customerReviews'>
+                                    <div className="ratingAndAddReview">
+                                        <div className='ratingAndReviewsCount'>
+                                            <div className="fiveStar">
+                                                <img src={Star} alt="" className='mainStarRatingReviews' />
+                                                <img src={Star} alt="" className='mainStarRatingReviews' />
+                                                <img src={Star} alt="" className='mainStarRatingReviews' />
+                                                <img src={Star} alt="" className='mainStarRatingReviews' />
+                                                <img src={Star} alt="" className='mainStarRatingReviews' />
+                                            </div>
+                                            <p>Based On {product.numOfReviews}</p>
+                                        </div>
+                                        <button className='sortBtn writeReviewBtn'>
+                                            Write a review
+                                        </button>
+                                    </div>
+                                    <div className="filterViaRatingPP">
+                                        
+                                    </div>
+                                    {Reviews.map((review, index) => {
+                                        return <div className='customerReviewsMapping'>
+                                            {/* {[...Array(5)].map((_, i) => (
+                                                    <img
+                                                        key={i}
+                                                        src={i < review.stars ? Star : ReviewsLogo}
+                                                        alt={i < review.stars ? "filled star" : "outlined star"}
+                                                    />
+                                                ))} */}
+                                        </div>
+                                    })}
+                                </div>
+                            </div>
+                            <div className="BestPairedWithSection ">
+                                <p className='BestPairedWithSectionHeading'>RECENTLY VIEWED</p>
+                                <div className='categoryCard'>
+                                    {(product.category === "perfumes" ?
+                                        BestPairedProducts.perfumes
+                                        : product.category === "bathBody"
+                                            ? BestPairedProducts.bathBody
+                                            : product.category === "makeup"
+                                                ? BestPairedProducts.makeup
+                                                : BestPairedProducts.perfumes
+                                    ).map((pairedProduct, index) => {
+                                        return <PairedProducts pairedProduct={pairedProduct} handleProductClick={handleProductClick} handleAddProductToCart={handleAddProductToCart} btnLoader={btnLoader} />
+                                    })
+                                    }
+                                </div>
+                            </div>
+                            <div className="BestPairedWithSection ">
+                                <p className='BestPairedWithSectionHeading'>YOU MAY ALSO LIKE</p>
+                                <div className='categoryCard'>
+                                    {(product.category === "perfumes" ?
+                                        BestPairedProducts.perfumes
+                                        : product.category === "bathBody"
+                                            ? BestPairedProducts.bathBody
+                                            : product.category === "makeup"
+                                                ? BestPairedProducts.makeup
+                                                : BestPairedProducts.perfumes
+                                    ).map((pairedProduct, index) => {
+                                        return <PairedProducts pairedProduct={pairedProduct} handleProductClick={handleProductClick} handleAddProductToCart={handleAddProductToCart} btnLoader={btnLoader} />
+                                    })
+                                    }
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {/* } */}
             </div>
         </Layout>
     )

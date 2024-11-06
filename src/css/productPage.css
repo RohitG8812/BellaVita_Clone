@@ -448,6 +448,10 @@
 
 .ppAccordionMenu {
   margin: 0 auto;
+  margin-bottom: 40px;
+  @media (max-width: 750px) {
+    margin-bottom: 30px;
+  }
 }
 
 .ppFirstAccordion {
@@ -600,4 +604,55 @@
   @media (max-width: 550px) {
     font-size: 14px;
   }
+}
+
+.BestPairedWithSection {
+  padding-block: 40px;
+  @media (max-width: 750px) {
+    padding-block: 30px;
+  }
+}
+
+.BestPairedWithSectionHeading {
+  font-size: 30.4px;
+  font-weight: 550;
+  line-height: 37.8px;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  @media (max-width: 750px) {
+    margin-bottom: 20px;
+  }
+  @media (max-width: 550px) {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+.mainStarRatingReviews {
+  width: 18px;
+}
+
+.fiveStar {
+  display: flex;
+  gap: 4.3px;
+}
+
+.ratingAndReviewsCount {
+  font-size: 14.5px;
+  color: rgba(33, 35, 38, 0.727);
+  letter-spacing: 0.83px;
+  line-height: 32px;
+}
+
+.writeReviewBtn {
+  width: 150px !important;
+  min-height: 34px !important;
+}
+
+.ratingAndAddReview {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
