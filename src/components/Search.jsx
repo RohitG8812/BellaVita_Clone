@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Dustbin from "../assets/icons/bin.svg"
 import XRed from "../assets/icons/xRed.svg"
 import Recent from "../assets/icons/recent.svg"
@@ -10,6 +10,7 @@ import SpinnerLoader from "../assets/icons/spinnerLoader.svg"
 import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import Products from '../JSON/Products'
 import { Link, useNavigate } from 'react-router-dom'
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext'
 
 const trendingSearches = [
     { name: "Perfume", to: "/collection/perfumes" },
@@ -60,6 +61,8 @@ function Search({ inputBoxActive, inputValueLength, setInputBoxActive, value, se
     const [spinnerLoader, setSpinnerLoader] = useState(false);
     const [suggestions, setSuggestions] = useState([])
     const navigate = useNavigate()
+    const { addRecentlyViewed } = useContext(RecentlyViewedContext)
+
 
     useEffect(() => {
         window.scrollTo({
@@ -101,6 +104,7 @@ function Search({ inputBoxActive, inputValueLength, setInputBoxActive, value, se
     }
 
     const handleProductClick = (product) => {
+        addRecentlyViewed(product)
         const formattedName = product.name.replace(/\s+/g, '-');
         navigate(`/collection/perfumes/${product.id}/${formattedName}`)
     }

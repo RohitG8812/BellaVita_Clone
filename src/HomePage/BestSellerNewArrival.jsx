@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import Products from '../JSON/Products'
 import { useNavigate } from 'react-router-dom';
 import RatingLogo from "../assets/icons/rating.svg"
 import ReviewsLogo from "../assets/icons/reviews.svg"
 import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import Loader from '../pages/Loader';
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext';
 
 
 function BestSellerNewArrival({ handleAddToCart, btnLoader }) {
@@ -14,6 +15,7 @@ function BestSellerNewArrival({ handleAddToCart, btnLoader }) {
     const perfumes = Products.filter(product => product.category === 'perfumes');
     const bath_Body = Products.filter(product => product.category === 'bathBody');
     const categoryCardRef = useRef();
+    const { addRecentlyViewed } = useContext(RecentlyViewedContext)
 
     const changeCategory = (category) => {
         setActCategory(false)
@@ -22,6 +24,7 @@ function BestSellerNewArrival({ handleAddToCart, btnLoader }) {
     }
 
     const handleProductClick = (product) => {
+        addRecentlyViewed(product)
         const formattedName = product.name.replace(/\s+/g, '-');
         navigate(`/collection/${category}/${product.id}/${formattedName}`)
     }

@@ -44,6 +44,16 @@ import BestPairedProducts from '../JSON/BestPairedProducts';
 import Star from "../assets/icons/star.svg"
 import PairedProducts from '../pages/PairedProducts';
 import Reviews from '../JSON/Reviews';
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext';
+import dateNightBanner from "../assets/Banner/singlePageBanners/dateNight.webp"
+import LipstickBanner from "../assets/Banner/singlePageBanners/lipstickBanner.webp"
+import dateNightBannerMini from "../assets/Banner/singlePageBanners/dateNightMini.webp"
+import LipstickBannerMini from "../assets/Banner/singlePageBanners/lipstickBannerMini.webp"
+import Second from "../assets/Banner/singlePageBanners/second.avif"
+import Lipstick1 from "../assets/Banner/singlePageBanners/lipstick1.webp"
+import Lipstick2 from "../assets/Banner/singlePageBanners/lipstick2.webp"
+import Lipstick3 from "../assets/Banner/singlePageBanners/lipstick3.webp"
+import Lipstick4 from "../assets/Banner/singlePageBanners/lipstick4.webp"
 
 
 const PerfumesNotes = [
@@ -105,6 +115,7 @@ function Product() {
     const [openDescriptions, setOpenDescriptions] = useState(false)
     const [btnLoader, setBtnLoader] = useState(null)
     const [miniImg, setMiniImg] = useState(false);
+    const { recentlyViewed, addRecentlyViewed } = useContext(RecentlyViewedContext)
 
     useEffect(() => {
         const handleResize = () => {
@@ -143,6 +154,7 @@ function Product() {
     }
 
     const handleProductClick = (product) => {
+        addRecentlyViewed(product)
         const formattedName = product.name.replace(/\s+/g, '-');
         navigate(`/collection/shopAll/${product.id}/${formattedName}`)
     }
@@ -319,6 +331,17 @@ function Product() {
                             </div>
                         </div>
                         <div className="singleProductPageMainBottomSide">
+                            <div className="lipstickBannerOnly">
+                                {product.category === 'makeup' ?
+                                    <div className='onlyLipstickCatImageMap'>
+                                        <img src={Lipstick1} alt="LipstickImg" />
+                                        <img src={Lipstick2} alt="LipstickImg" />
+                                        <img src={Lipstick3} alt="LipstickImg" />
+                                        <img src={Lipstick4} alt="LipstickImg" />
+                                    </div>
+                                    : null
+                                }
+                            </div>
                             <div className="ppAccordionMenu">
                                 <div className="ppFirstAccordion">
                                     <div className="ppFooterHeading750" onClick={() => handleClick(1)} >
@@ -493,7 +516,7 @@ function Product() {
                                         </button>
                                     </div>
                                     <div className="filterViaRatingPP">
-                                        
+
                                     </div>
                                     {Reviews.map((review, index) => {
                                         return <div className='customerReviewsMapping'>
@@ -511,17 +534,9 @@ function Product() {
                             <div className="BestPairedWithSection ">
                                 <p className='BestPairedWithSectionHeading'>RECENTLY VIEWED</p>
                                 <div className='categoryCard'>
-                                    {(product.category === "perfumes" ?
-                                        BestPairedProducts.perfumes
-                                        : product.category === "bathBody"
-                                            ? BestPairedProducts.bathBody
-                                            : product.category === "makeup"
-                                                ? BestPairedProducts.makeup
-                                                : BestPairedProducts.perfumes
-                                    ).map((pairedProduct, index) => {
-                                        return <PairedProducts pairedProduct={pairedProduct} handleProductClick={handleProductClick} handleAddProductToCart={handleAddProductToCart} btnLoader={btnLoader} />
-                                    })
-                                    }
+                                    {recentlyViewed.map((recent, index) => {
+                                        return <PairedProducts pairedProduct={recent} handleProductClick={handleProductClick} handleAddProductToCart={handleAddProductToCart} btnLoader={btnLoader} />
+                                    })}
                                 </div>
                             </div>
                             <div className="BestPairedWithSection ">
@@ -540,6 +555,23 @@ function Product() {
                                     }
                                 </div>
                             </div>
+                            <div className="BestPairedWithSection bottomBannerSectionOfPPMain">
+                                <div className='bottomBannerSectionOfPP'>
+                                    {product.category === "makeup" ?
+                                        (miniImg ?
+                                            <img src={LipstickBannerMini} alt="Banner" /> :
+                                            <img src={LipstickBanner} alt="Banner" />)
+                                        :
+                                        (miniImg ?
+                                            <img src={dateNightBannerMini} alt="Banner" /> :
+                                            <img src={dateNightBanner} alt="Banner" />
+                                        )}
+                                </div>
+                                <div className='bottomBannerSectionOfPP'>
+                                    <img src={Second} alt="" />
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>

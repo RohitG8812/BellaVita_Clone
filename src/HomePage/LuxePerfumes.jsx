@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import LuxePerfumesImg from "../assets/Banner/HomePageBanner/Luxe-Perfumes.webp"
 import "../css/productCard.css"
 import RatingLogo from "../assets/icons/rating.svg"
@@ -6,10 +6,12 @@ import ReviewsLogo from "../assets/icons/reviews.svg"
 import { useNavigate } from 'react-router-dom'
 import GreenDownArrow from "../assets/icons/greenArrowDown.svg"
 import Loader from '../pages/Loader'
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext'
 
 
 function LuxePerfumes({ handleAddToCart, btnLoader }) {
     const navigate = useNavigate()
+    const { addRecentlyViewed } = useContext(RecentlyViewedContext)
     const product = [
         {
             id: 129,
@@ -58,6 +60,7 @@ function LuxePerfumes({ handleAddToCart, btnLoader }) {
 
 
     const handleProductClick = (product) => {
+        addRecentlyViewed(product)
         const formattedName = product.name.replace(/\s+/g, '-');
         navigate(`/collection/perfumes/${product.id}/${formattedName}`)
     }

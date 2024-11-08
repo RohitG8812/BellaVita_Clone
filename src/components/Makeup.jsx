@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import "../css/productCard.css"
 import { useNavigate } from 'react-router-dom'
 import Products from '../JSON/Products'
@@ -6,10 +6,13 @@ import Layout from '../Layout/Layout'
 import ProductPage from '../pages/ProductPage';
 import MakeupBanner from "../assets/Banner/productBanner/makeupBanner.webp"
 import MakeupBannerMini from "../assets/Banner/productBanner/makeupBannerMini.webp"
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext'
 
 function Makeup() {
     const [makeup] = useState(Products.filter(product => product.category === 'makeup'))
     const [smallBanner, setSmallBanner] = useState(false);
+    const { addRecentlyViewed } = useContext(RecentlyViewedContext)
+
 
     const makeupCategoryFilter = [
         { value: "comboProducts", label: "Makeup Set" },
@@ -26,6 +29,7 @@ function Makeup() {
 
     const navigate = useNavigate()
     const handleProductClick = (product) => {
+        addRecentlyViewed(product)
         const formattedName = product.name.replace(/\s+/g, '-');
         navigate(`/collection/makeup/${product.id}/${formattedName}`)
     }

@@ -656,8 +656,8 @@
   width: 150px !important;
   min-height: 34px !important;
   @media (max-width: 550px) {
-   width: 100% !important;
-   min-height: 37px !important;
+    width: 100% !important;
+    min-height: 37px !important;
   }
 }
 
@@ -670,4 +670,34 @@
     justify-content: center !important;
     flex-direction: column;
   }
+}
+
+.bottomBannerSectionOfPP img {
+  width: 100%;
+}
+
+.bottomBannerSectionOfPPMain {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.onlyLipstickCatImageMap{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 5px;
+  overflow: auto;
+  padding-bottom: 5px;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  margin-block: 20px;
+  @media (max-width: 750px) {
+    margin-block: 10px;
+  }
+}
+
+.onlyLipstickCatImageMap img{
+  width: 100%;
+  min-width: 180px;
 }

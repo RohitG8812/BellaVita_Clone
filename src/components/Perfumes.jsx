@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Products from '../JSON/Products'
 import { useNavigate } from 'react-router-dom'
 import Layout from '../Layout/Layout';
@@ -6,6 +6,7 @@ import "../css/productCard.css"
 import BogoBanner from "../assets/Banner/productBanner/bogoBanner.webp"
 import BogoBannerMini from "../assets/Banner/productBanner/bogoBannerMini.webp"
 import ProductPage from '../pages/ProductPage';
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext';
 
 
 const perfumesCategoryFilter = [
@@ -29,6 +30,7 @@ const perfumesTypeFilter = [
 function Perfumes() {
     const [perfume] = useState(Products.filter(product => product.category === 'perfumes'));
     const [smallBanner, setSmallBanner] = useState(false);
+    const { addRecentlyViewed } = useContext(RecentlyViewedContext)
 
     useEffect(() => {
         const handleResize = () => {
@@ -48,6 +50,7 @@ function Perfumes() {
     const navigate = useNavigate();
 
     const handleProductClick = (product) => {
+        addRecentlyViewed(product)
         const formattedName = product.name.replace(/\s+/g, '-');
         navigate(`/collection/perfumes/${product.id}/${formattedName}`)
     }

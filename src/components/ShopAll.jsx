@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Products from '../JSON/Products'
 import { useNavigate } from 'react-router-dom'
 import Layout from '../Layout/Layout';
@@ -6,6 +6,7 @@ import "../css/productCard.css"
 import ShopAllBanner from "../assets/Banner/productBanner/ShopAllBanner.webp"
 import ShopAllBannerMini from "../assets/Banner/productBanner/ShopAllBannerMini.webp"
 import ProductPage from '../pages/ProductPage';
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext';
 
 const ShopAllCategoryFilter = [
     { value: "man", label: "Man" },
@@ -27,6 +28,8 @@ const shopAllProductType = [
 function ShopAll() {
     const [product] = useState(Products.sort((a, b) => a.name.localeCompare(b.name)));
     const [smallBanner, setSmallBanner] = useState(false);
+    const { addRecentlyViewed } = useContext(RecentlyViewedContext)
+
 
     useEffect(() => {
         const handleResize = () => {
@@ -46,6 +49,7 @@ function ShopAll() {
     const navigate = useNavigate()
 
     const handleProductClick = (product) => {
+        addRecentlyViewed(product)
         const formattedName = product.name.replace(/\s+/g, '-');
         navigate(`/collection/shopAll/${product.id}/${formattedName}`)
     }

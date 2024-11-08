@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Layout from "../Layout/Layout"
 import { useLocation, useNavigate } from 'react-router-dom'
 import ProductPage from '../pages/ProductPage';
 import "../css/productCard.css"
 import Products from '../JSON/Products';
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext';
 
 
 const ShopAllCategoryFilter = [
@@ -30,6 +31,8 @@ function SearchResultPage() {
     const SearchQuery = queryParams.get('query')
     const navigate = useNavigate()
     const [searchResultsProducts, setSearchResultsProducts] = useState(Products)
+    const { addRecentlyViewed } = useContext(RecentlyViewedContext)
+
 
     useEffect(() => {
         if (location.state && location.state.searchResults) {
@@ -40,6 +43,7 @@ function SearchResultPage() {
     }, [location, SearchQuery]);
 
     const handleProductClick = (product) => {
+        addRecentlyViewed(product)
         const formattedName = product.name.replace(/\s+/g, '-');
         navigate(`/collection/shopAll/${product.id}/${formattedName}`)
     }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Products from '../JSON/Products'
 import { useNavigate } from 'react-router-dom'
 import Layout from '../Layout/Layout'
@@ -25,6 +25,7 @@ const bathBodyProductType = [
 function SkinCare() {
   const [bath_Body] = useState(Products.filter(product => product.category === 'bathBody'))
   const [smallBanner, setSmallBanner] = useState(false);
+  const { addRecentlyViewed } = useContext(RecentlyViewedContext)
 
   useEffect(() => {
     const handleResize = () => {
@@ -42,10 +43,12 @@ function SkinCare() {
   }, []);
 
   const navigate = useNavigate()
+
   const handleProductClick = (product) => {
+    addRecentlyViewed(product)
     const formattedName = product.name.replace(/\s+/g, '-');
     navigate(`/collection/bathBody/${product.id}/${formattedName}`)
-}
+  }
   return (
     <Layout>
       <div className="shopAllMain">

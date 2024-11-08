@@ -28,76 +28,79 @@ import ShippingPolicy from './components/ShippingPolicy'
 import PaymentPage from './addToCart/PaymentPage'
 import { Toaster } from 'react-hot-toast';
 import { CartProvider } from './context/CartContext'
+import { RecentlyViewedProvider } from './context/RecentlyViewedContext'
 
 function App() {
   return (
     <CartProvider>
-      <BrowserRouter>
-        <Toaster
-          position="top-right"
-          reverseOrder={false}
-          gutter={8}
-          containerClassName=""
-          containerStyle={{}}
-          toastOptions={{
-            className: '',
-            duration: 3000,
-            style: {
-              background: '#363636',
-              color: '#fff',
-            },
-
-            success: {
+      <RecentlyViewedProvider>
+        <BrowserRouter>
+          <Toaster
+            position="top-right"
+            reverseOrder={false}
+            gutter={8}
+            containerClassName=""
+            containerStyle={{}}
+            toastOptions={{
+              className: '',
               duration: 3000,
-              theme: {
-                primary: 'green',
-                secondary: 'black',
+              style: {
+                background: '#363636',
+                color: '#fff',
               },
-            },
-          }}
-        />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/collection' element={<Collection />} />
-          <Route path='/collection/shopAll' element={<ShopAll />} />
-          <Route path='/collection/perfumes' element={<Perfumes />} />
-          <Route path='/collection/bathBody' element={<Bath_Body />} />
-          <Route path='/collection/makeup' element={<Makeup />} />
-          <Route path='/collection/bestSellers' element={<BestSellers />} />
-          <Route path='/collection/crazyDeals' element={<CrazyDeals />} />
-          <Route path='/collection/giftSets' element={<GiftSets />} />
-          <Route path='/collection/newArrivals' element={<NewArrivals />} />
-          <Route path='/collection/perfumesSets' element={<PerfumesSets />} />
-          <Route path='/collection/skincare' element={<SkinCare />} />
-          <Route path='/collection/bogo' element={<Buy1Get1 />} />
-          <Route path='/account/login' element={<Login />} />
-          <Route path='/account/register' element={<Register />} />
-          <Route path='/pages' element={<Pages />} />
-          <Route path='/pages/bellaCash' element={<BellaCash />} />
-          <Route path='/pages/shippingPolicy' element={<ShippingPolicy />} />
-          <Route path='/collection/searchProducts' element={<SearchResultPage />} />
 
-          {/*  */}
-          <Route path="/collection/bestSellers/:id/:name" element={<Product />} />
-          <Route path="/collection/newArrivals/:id/:name" element={<Product />} />
-          <Route path="/collection/perfumes/:id/:name" element={<Product />} />
-          <Route path="/collection/bathBody/:id/:name" element={<Product />} />
-          <Route path="/collection/makeup/:id/:name" element={<Product />} />
-          <Route path="/collection/shopAll/:id/:name" element={<Product />} />
+              success: {
+                duration: 3000,
+                theme: {
+                  primary: 'green',
+                  secondary: 'black',
+                },
+              },
+            }}
+          />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/collection' element={<Collection />} />
+            <Route path='/collection/shopAll' element={<ShopAll />} />
+            <Route path='/collection/perfumes' element={<Perfumes />} />
+            <Route path='/collection/bathBody' element={<Bath_Body />} />
+            <Route path='/collection/makeup' element={<Makeup />} />
+            <Route path='/collection/bestSellers' element={<BestSellers />} />
+            <Route path='/collection/crazyDeals' element={<CrazyDeals />} />
+            <Route path='/collection/giftSets' element={<GiftSets />} />
+            <Route path='/collection/newArrivals' element={<NewArrivals />} />
+            <Route path='/collection/perfumesSets' element={<PerfumesSets />} />
+            <Route path='/collection/skincare' element={<SkinCare />} />
+            <Route path='/collection/bogo' element={<Buy1Get1 />} />
+            <Route path='/account/login' element={<Login />} />
+            <Route path='/account/register' element={<Register />} />
+            <Route path='/pages' element={<Pages />} />
+            <Route path='/pages/bellaCash' element={<BellaCash />} />
+            <Route path='/pages/shippingPolicy' element={<ShippingPolicy />} />
+            <Route path='/collection/searchProducts' element={<SearchResultPage />} />
 
-          <Route path='/account' element={<Account />}>
-            <Route index element={<Navigate to="/account/profile" />} />
-            <Route path='/account/profile' element={<Profile />} />
-            <Route path='/account/address' element={<Address />} />
-            <Route path='/account/orders' element={<Order />} />
-            <Route path='/account/cashBack' element={<CashBack />} />
-          </Route>
+            {/*  */}
+            <Route path="/collection/bestSellers/:id/:name" element={<Product />} />
+            <Route path="/collection/newArrivals/:id/:name" element={<Product />} />
+            <Route path="/collection/perfumes/:id/:name" element={<Product />} />
+            <Route path="/collection/bathBody/:id/:name" element={<Product />} />
+            <Route path="/collection/makeup/:id/:name" element={<Product />} />
+            <Route path="/collection/shopAll/:id/:name" element={<Product />} />
 
-          {/* CheckOut Page */}
-          <Route path='/payment' element={<PaymentPage />} />
+            <Route path='/account' element={<Account />}>
+              <Route index element={<Navigate to="/account/profile" />} />
+              <Route path='/account/profile' element={<Profile />} />
+              <Route path='/account/address' element={<Address />} />
+              <Route path='/account/orders' element={<Order />} />
+              <Route path='/account/cashBack' element={<CashBack />} />
+            </Route>
 
-        </Routes>
-      </BrowserRouter>
+            {/* CheckOut Page */}
+            <Route path='/payment' element={<PaymentPage />} />
+
+          </Routes>
+        </BrowserRouter>
+      </RecentlyViewedProvider>
     </CartProvider>
   )
 }

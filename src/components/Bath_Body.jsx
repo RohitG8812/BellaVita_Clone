@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Products from '../JSON/Products'
 import { useNavigate } from 'react-router-dom'
 import Layout from '../Layout/Layout'
@@ -6,10 +6,13 @@ import "../css/productCard.css"
 import ShopAllBanner from "../assets/Banner/productBanner/ShopAllBanner.webp"
 import ShopAllBannerMini from "../assets/Banner/productBanner/ShopAllBannerMini.webp"
 import ProductPage from '../pages/ProductPage';
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext'
 
 function Bath_Body() {
     const [bath_Body] = useState(Products.filter(product => product.category === 'bathBody'))
     const [smallBanner, setSmallBanner] = useState(false);
+    const { addRecentlyViewed } = useContext(RecentlyViewedContext)
+
 
     const bathBodyCategoryFilter = [
         { value: "comboProducts", label: "BathBody Combo" },
@@ -43,6 +46,7 @@ function Bath_Body() {
 
     const navigate = useNavigate()
     const handleProductClick = (product) => {
+        addRecentlyViewed(product)
         const formattedName = product.name.replace(/\s+/g, '-');
         navigate(`/collection/bathBody/${product.id}/${formattedName}`)
     }

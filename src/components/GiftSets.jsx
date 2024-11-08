@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import Layout from '../Layout/Layout'
 import Products from '../JSON/Products'
 import ShopAllBanner from "../assets/Banner/productBanner/ShopAllBanner.webp"
 import ShopAllBannerMini from "../assets/Banner/productBanner/ShopAllBannerMini.webp"
 import { useNavigate } from 'react-router-dom'
 import ProductPage from '../pages/ProductPage'
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext'
 
 
 const giftSetCategoryFilter = [
@@ -27,6 +28,8 @@ function GiftSets() {
   const [giftSets] = useState(Products.filter(product => product.productType === "comboProducts"))
   const [smallBanner, setSmallBanner] = useState(false);
   const navigate = useNavigate()
+  const { addRecentlyViewed } = useContext(RecentlyViewedContext)
+
 
   useEffect(() => {
     const handleResize = () => {
@@ -44,6 +47,7 @@ function GiftSets() {
   }, []);
 
   const handleProductClick = (product) => {
+    addRecentlyViewed(product)
     const formattedName = product.name.replace(/\s+/g, '-');
     navigate(`/collection/shopAll/${product.id}/${formattedName}`)
 }

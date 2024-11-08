@@ -14,6 +14,7 @@ import app from '../auth/firebase'
 import Loader from '../pages/Loader'
 import toast from 'react-hot-toast'
 import { CartContext } from '../context/CartContext'
+import { RecentlyViewedContext } from '../context/RecentlyViewedContext'
 
 function AddToCartPage({ toggleDrawer }) {
   const { cartItems, updateCart } = useContext(CartContext);
@@ -21,6 +22,7 @@ function AddToCartPage({ toggleDrawer }) {
   const [user, setUser] = useState(null);
   const [btnLoader, setBtnLoader] = useState(false);
   const navigate = useNavigate()
+  const { addRecentlyViewed } = useContext(RecentlyViewedContext)
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -73,6 +75,7 @@ function AddToCartPage({ toggleDrawer }) {
   }
 
   const handleProductClick = (product) => {
+    addRecentlyViewed(product)
     const formattedName = product.name.replace(/\s+/g, '-');
     navigate(`/collection/shopAll/${product.id}/${formattedName}`)
   }
