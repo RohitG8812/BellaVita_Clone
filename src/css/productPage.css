@@ -169,7 +169,6 @@
 /*  rightSideSectionProductPage */
 
 .rightSideSectionProductPage {
-  /* border: 1px solid blue; */
   width: 52%;
   padding-left: 50px;
   padding-top: 10px;
@@ -646,7 +645,7 @@
 
 .ratingAndReviewsCount {
   font-size: 14.5px;
-  color: rgba(33, 35, 38, 0.727);
+  color: rgba(33, 35, 38, 0.823);
   letter-spacing: 0.83px;
   line-height: 32px;
   @media (max-width: 550px) {
@@ -668,9 +667,12 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+  border-bottom: 0.4px solid rgb(207, 207, 207);
+  padding-bottom: 5px;
   @media (max-width: 550px) {
     justify-content: center !important;
     flex-direction: column;
+    padding-bottom: 10px;
   }
 }
 
@@ -685,8 +687,7 @@
   padding-top: 5px !important;
 }
 
-
-.onlyLipstickCatImageMap{
+.onlyLipstickCatImageMap {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 5px;
@@ -700,7 +701,25 @@
   }
 }
 
-.onlyLipstickCatImageMap img{
+.onlyLipstickCatImageMap img {
   width: 100%;
   min-width: 180px;
+}
+
+.reviewsMappingMain {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scroll-behavior: sm;
+}
+
+.reviewImage {
+  min-width: 140px;
+  height: 140px;
+  object-fit: cover;
+  @media (max-width: 550px) {
+    min-width: 90px;
+    height: 90px;
+  }
 }

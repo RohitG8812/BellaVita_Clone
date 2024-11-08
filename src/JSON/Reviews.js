@@ -7,7 +7,7 @@ const Reviews = [
       "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1723049726__1__64TXS5kX__1698043368__img-20231008-wa0007__original__original.jpg?auto=format",
       "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1723049731__0__vYD-7020__1695708729__image35__original__original.png?auto=format",
     ],
-    descHead: "",
+    descHead: "A perfect Gift to Myself!",
     desc: "Perfumes fragrance is just wow. complete worthy. I am really really happy after using the bellavita. GLAM Women is my favourite in the box. And thank you for the free gift",
   },
   {
@@ -39,7 +39,7 @@ const Reviews = [
     desc: "Nice fragrance and long lasting ...stayed for 8 hrs and one spray is more than enough if you want a slight presence of perfume.",
   },
   {
-    name: " Karan B.",
+    name: "Karan B.",
     stars: 4,
     img: [
       "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1693965903__0__80CDc87K__61yT5jJu87L__original.jpg?auto=format",
@@ -49,7 +49,7 @@ const Reviews = [
     desc: "Very good Fragrance. Superb quality but it will be much better if it is long lasting. Fragrance will stay up to 6-7 hours.",
   },
   {
-    name: " Pirzade M.M.",
+    name: "Pirzade M.M.",
     stars: 5,
     img: [
       "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1696660934__image49__original.png?auto=format",

@@ -54,6 +54,8 @@ import Lipstick1 from "../assets/Banner/singlePageBanners/lipstick1.webp"
 import Lipstick2 from "../assets/Banner/singlePageBanners/lipstick2.webp"
 import Lipstick3 from "../assets/Banner/singlePageBanners/lipstick3.webp"
 import Lipstick4 from "../assets/Banner/singlePageBanners/lipstick4.webp"
+import ReviewImageModel from '../pages/ReviewImageModel';
+// import OutlinedStar from "../assets/icons/outlinedStar.svg"
 
 
 const PerfumesNotes = [
@@ -116,6 +118,7 @@ function Product() {
     const [btnLoader, setBtnLoader] = useState(null)
     const [miniImg, setMiniImg] = useState(false);
     const { recentlyViewed, addRecentlyViewed } = useContext(RecentlyViewedContext)
+    const [reviewImageOpen, setReviewImageOpen] = useState(null)
 
     useEffect(() => {
         const handleResize = () => {
@@ -160,6 +163,7 @@ function Product() {
     }
 
     const closeModal = () => setProductImgModalOpen(false);
+    const ReviewImgModelClose = () => setReviewImageOpen(null)
 
     useEffect(() => {
         setTimeout(() => {
@@ -173,6 +177,10 @@ function Product() {
 
     const handleNavigate = () => {
         navigate('/collection/shopAll')
+    }
+
+    const handleReviewsImageClick = (image) => {
+        setReviewImageOpen(image)
     }
 
     if (!product) {
@@ -515,20 +523,20 @@ function Product() {
                                             Write a review
                                         </button>
                                     </div>
-                                    <div className="filterViaRatingPP">
-
+                                    <div className='reviewsMappingMain'>
+                                        {Reviews.map((review, reviewIndex) =>
+                                            review.img.map((imageSrc, imgIndex) => (
+                                                <img
+                                                    key={`${reviewIndex}-${imgIndex}`}
+                                                    src={imageSrc}
+                                                    alt={`Review ${reviewIndex + 1} Image ${imgIndex + 1}`}
+                                                    className="reviewImage"
+                                                    onClick={() => handleReviewsImageClick(review)}
+                                                />
+                                            )),
+                                        )}
+                                        {reviewImageOpen && <ReviewImageModel closeModal={ReviewImgModelClose} review={reviewImageOpen} />}
                                     </div>
-                                    {Reviews.map((review, index) => {
-                                        return <div className='customerReviewsMapping'>
-                                            {/* {[...Array(5)].map((_, i) => (
-                                                    <img
-                                                        key={i}
-                                                        src={i < review.stars ? Star : ReviewsLogo}
-                                                        alt={i < review.stars ? "filled star" : "outlined star"}
-                                                    />
-                                                ))} */}
-                                        </div>
-                                    })}
                                 </div>
                             </div>
                             <div className="BestPairedWithSection ">
