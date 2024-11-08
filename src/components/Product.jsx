@@ -571,7 +571,6 @@ function Product() {
                                     <img src={Second} alt="" />
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>

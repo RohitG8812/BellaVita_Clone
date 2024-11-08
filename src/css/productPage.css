@@ -607,9 +607,11 @@
 }
 
 .BestPairedWithSection {
-  padding-block: 40px;
+  padding-bottom: 40px;
+  padding-top: 10px;
   @media (max-width: 750px) {
-    padding-block: 30px;
+    padding-bottom: 30px;
+    padding-top: 10px;
   }
 }
 
@@ -679,7 +681,8 @@
 .bottomBannerSectionOfPPMain {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
+  padding-top: 5px !important;
 }
 
 

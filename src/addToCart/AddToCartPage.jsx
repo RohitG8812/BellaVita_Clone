@@ -15,6 +15,9 @@ import Loader from '../pages/Loader'
 import toast from 'react-hot-toast'
 import { CartContext } from '../context/CartContext'
 import { RecentlyViewedContext } from '../context/RecentlyViewedContext'
+import Products from '../JSON/Products'
+
+const recommendedProductsIds = [106, 110, 112, 101, 102, 105, 114, 117, 118]
 
 function AddToCartPage({ toggleDrawer }) {
   const { cartItems, updateCart } = useContext(CartContext);
@@ -23,6 +26,7 @@ function AddToCartPage({ toggleDrawer }) {
   const [btnLoader, setBtnLoader] = useState(false);
   const navigate = useNavigate()
   const { addRecentlyViewed } = useContext(RecentlyViewedContext)
+  const RecommendedProducts = Products.filter(product => recommendedProductsIds.includes(product.id))
 
   useEffect(() => {
     const auth = getAuth(app);
@@ -84,7 +88,7 @@ function AddToCartPage({ toggleDrawer }) {
       {openCheckOutPage ? <CheckOutPage setCartItems={updateCart} cartItems={cartItems} setOpenCheckOutPage={setOpenCheckOutPage} handleRemoveProductFromCart={handleRemoveProductFromCart} cartItemCount={cartItemCount} toggleDrawer={toggleDrawer} /> :
         <div className='CartPageMainContainer'>
           {/* Cart Recommended Big */}
-          <Recommended setCartItems={updateCart} handleProductClick={handleProductClick} />
+          <Recommended RecommendedProducts={RecommendedProducts} setCartItems={updateCart} handleProductClick={handleProductClick} />
           <div className="cartProductMain">
             {/* Cart Main */}
             <div className="cartProductList">
@@ -153,7 +157,7 @@ function AddToCartPage({ toggleDrawer }) {
                   </div>
                 )}
                 {/* Cart Recommended Mini */}
-                <RecommendedCartMini setCartItems={updateCart} handleProductClick={handleProductClick} />
+                <RecommendedCartMini RecommendedProducts={RecommendedProducts} setCartItems={updateCart} handleProductClick={handleProductClick} />
               </div>
               <div className="checkOutBtnMain">
                 <p className='shippingText'>Tax included. <span className='shippingPolicyLinkText' onClick={() => navigate('/pages/shippingPolicy')} >Shipping</span> calculated at checkout.</p>

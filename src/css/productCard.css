@@ -418,6 +418,7 @@
   display: flex;
   padding: 0px;
   align-items: center;
+  line-height: normal !important;
   @media (max-width: 510px) {
     height: 32px;
   }

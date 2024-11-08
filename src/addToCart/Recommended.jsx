@@ -1,10 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react'
 import toast from 'react-hot-toast'
 import Loader from '../pages/Loader'
-import RecommendedProducts from '../JSON/RecommendedProducts'
 import { CartContext } from '../context/CartContext'
 
-function Recommended({ handleProductClick }) {
+function Recommended({ handleProductClick, RecommendedProducts }) {
     const { addToCart, cartItems } = useContext(CartContext)
     const [btnLoader, setBtnLoader] = useState(null)
     const handleAddProductToCart = (product) => {

@@ -1070,7 +1070,7 @@ li a:hover {
   display: flex;
   overflow-x: auto;
   flex-wrap: nowrap;
-  scrollbar-width: none;
+  scrollbar-width: thin;
   gap: 23px;
   @media (max-width: 1150px) {
     gap: 20px;
@@ -1231,6 +1231,7 @@ li a:hover {
   display: flex;
   padding: 0px;
   align-items: center;
+
   @media (max-width: 1100px) {
     height: 30px;
   }
@@ -1295,6 +1296,7 @@ li a:hover {
   align-items: center;
   font-weight: 550;
   text-align: left;
+  line-height: normal !important;
   gap: 2px;
 }
 
@@ -1313,14 +1315,12 @@ li a:hover {
   }
 }
 
-
 .productReviews img {
-  width: 14px;
-  height: 14px;
+  width: 16px;
 }
 
-.productRating img{
-  width: 12.4px;
+.productRating img {
+  width: 15.4px;
 }
 
 .middleArrow {

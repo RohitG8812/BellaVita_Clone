@@ -38,7 +38,7 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                             <span className='filterCatHeading'>Sort</span>
                         </div>
                         <div className="filterOptions sortOptionsMini">
-                           <Sort handleSortHighToLow={handleSortHighToLow} handleSortLowToHigh={handleSortLowToHigh} sortOptionActive={sortOptionActive} handleReset={handleReset}/>
+                            <Sort handleSortHighToLow={handleSortHighToLow} handleSortLowToHigh={handleSortLowToHigh} sortOptionActive={sortOptionActive} handleReset={handleReset} />
                         </div>
                     </div>
 
@@ -176,7 +176,8 @@ function FIlter({ active, handleChange, categoryFilter, filteredProducts, handle
                                         />
                                         <div className="transition"></div>
                                     </div>
-                                    <div className='labelOrProductCount'> <span className='ratingFilterIcon'>1 <img src={starIcon} alt="" className='starIcon' /> </span> <span className='labelProductCount'>({filteredProducts.filter(product => product.rating >= 1 && product.rating < 2).length})</span></div>
+                                    <div className='labelOrProductCount'>
+                                        <span className='ratingFilterIcon'>1 <img src={starIcon} alt="" className='starIcon' /> </span> <span className='labelProductCount'>({filteredProducts.filter(product => product.rating >= 1 && product.rating < 2).length})</span></div>
                                 </label>
                             </div>
                             <div>

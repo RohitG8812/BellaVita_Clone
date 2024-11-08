@@ -20,41 +20,7 @@ const trendingSearches = [
     { name: "Perfume Combos", to: "/collection/perfumesSets" },
 ]
 
-const recommendedProducts = [
-    {
-        id: 106,
-        name: "TAAJ Gold OUD Attar - 12ml",
-        img: "https://bellavitaorganic.com/cdn/shop/files/Taaj-00.jpg?v=1712321132&width=1000",
-        price: "₹425.00",
-        mrp: "₹599",
-        discount: "30%",
-    },
-    {
-        id: 110,
-        name: "SENORITA Woman Perfume - 100ml",
-        img: "https://bellavitaorganic.com/cdn/shop/files/1_41d6b2ca-f10a-4f45-b36f-2f066941c5bf.jpg?v=1714554652&width=1000",
-        price: "₹515.00",
-        mrp: "₹899",
-        discount: "43%",
-    },
-    {
-        id: 112,
-        name: "Hot & Classy",
-        img: "https://bellavitaorganic.com/cdn/shop/files/Hot-_-classy-2_2.jpg?v=1707985653&width=1000",
-        price: "₹899.00",
-        mrp: "₹1199",
-        discount: "26%",
-    },
-    {
-        id: 101,
-        name: "Luxury Perfume Gift Set For Men - 4 x 20ml",
-        img: "https://bellavitaorganic.com/cdn/shop/files/front_2.jpg?v=1723645186&width=1000",
-        price: "₹519.00",
-        mrp: "₹849",
-        bestSeller: "bestSeller",
-        discount: "39%"
-    }
-]
+const recommendedProductsIds = [106, 110, 112, 101]
 
 function Search({ inputBoxActive, inputValueLength, setInputBoxActive, value, setValue }) {
     const [recentSearches, setRecentSearches] = useState([])
@@ -63,6 +29,7 @@ function Search({ inputBoxActive, inputValueLength, setInputBoxActive, value, se
     const navigate = useNavigate()
     const { addRecentlyViewed } = useContext(RecentlyViewedContext)
 
+    const recommendedProducts = Products.filter(product => recommendedProductsIds.includes(product.id))
 
     useEffect(() => {
         window.scrollTo({
@@ -105,6 +72,7 @@ function Search({ inputBoxActive, inputValueLength, setInputBoxActive, value, se
 
     const handleProductClick = (product) => {
         addRecentlyViewed(product)
+        setInputBoxActive(false)
         const formattedName = product.name.replace(/\s+/g, '-');
         navigate(`/collection/perfumes/${product.id}/${formattedName}`)
     }
@@ -175,7 +143,7 @@ function Search({ inputBoxActive, inputValueLength, setInputBoxActive, value, se
                                     <div className="cardImage" style={{ backgroundColor: spinnerLoader ? "#fff" : "#f2f2f2" }}>
                                         <div>
                                             {spinnerLoader ? <img src={SpinnerLoader} alt="" className='searchProductCardImg' /> :
-                                                <img src={product.img} alt="" className='searchProductCardImg' />}
+                                                <img src={product.mainImg} alt="" className='searchProductCardImg' />}
                                         </div>
                                         <div className="search-card-badge-bottom">
                                             <span className="searchDiscountBadge">{product.discount} off</span>
@@ -240,7 +208,7 @@ function Search({ inputBoxActive, inputValueLength, setInputBoxActive, value, se
                                             <div className="cardImage" style={{ backgroundColor: spinnerLoader ? "#fff" : "#f2f2f2" }}>
                                                 <div>
                                                     {spinnerLoader ? <img src={SpinnerLoader} alt="" className='searchProductCardImg' /> :
-                                                        <img src={product.img} alt="" className='searchProductCardImg' />}
+                                                        <img src={product.mainImg} alt="" className='searchProductCardImg' />}
                                                 </div>
                                                 <div className="search-card-badge-bottom">
                                                     <span className="searchDiscountBadge">{product.discount} off</span>
