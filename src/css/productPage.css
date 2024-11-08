@@ -706,7 +706,7 @@
   min-width: 180px;
 }
 
-.reviewsMappingMain {
+.reviewsMappingImageMain {
   display: flex;
   gap: 2px;
   overflow-x: auto;
@@ -715,6 +715,7 @@
 }
 
 .reviewImage {
+  cursor: pointer;
   min-width: 140px;
   height: 140px;
   object-fit: cover;
@@ -723,3 +724,69 @@
     height: 90px;
   }
 }
+
+.reviewsSectionSingleReviewImages {
+  justify-content: start !important;
+}
+
+.singleReviewNameAndIcon {
+  padding: 0px !important;
+}
+
+.singleReviewDesc {
+  padding: 0px !important;
+  padding-top: 10px !important;
+}
+
+.loadMoreBtnReviews {
+  min-height: 38.4px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 2.6px;
+  line-height: 14.4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #fff;
+  border: 0.8px solid #000;
+  transition: all 0.2s ease-in;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.reviewsSectionLoadMoreBtn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadMoreBtnReviews {
+  filter: none !important;
+  width: 160px !important;
+}
+
+.singleReviewMain{
+  border-top: 0.2px solid rgb(207, 207, 207);
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.reviewsMappingMain{
+  padding-top: 30px;
+}
+
+.reviewSectionVerifiedAndName{
+  display: flex;
+  gap: 10px;
+}
+
+.reviewSectionVerifiedText{
+  padding-block: 1px !important;
+}
+

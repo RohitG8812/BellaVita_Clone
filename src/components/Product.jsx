@@ -55,7 +55,7 @@ import Lipstick2 from "../assets/Banner/singlePageBanners/lipstick2.webp"
 import Lipstick3 from "../assets/Banner/singlePageBanners/lipstick3.webp"
 import Lipstick4 from "../assets/Banner/singlePageBanners/lipstick4.webp"
 import ReviewImageModel from '../pages/ReviewImageModel';
-// import OutlinedStar from "../assets/icons/outlinedStar.svg"
+import OutlinedStar from "../assets/icons/outlinedStar.svg"
 
 
 const PerfumesNotes = [
@@ -119,6 +119,15 @@ function Product() {
     const [miniImg, setMiniImg] = useState(false);
     const { recentlyViewed, addRecentlyViewed } = useContext(RecentlyViewedContext)
     const [reviewImageOpen, setReviewImageOpen] = useState(null)
+    const [visibleReviews, setVisibleReviews] = useState(5);
+
+    const handleLoadMore = () => {
+        setLoader(true)
+        setTimeout(() => {
+            setVisibleReviews(prev => prev + 5);
+            setLoader(false)
+        }, 1500);
+    };
 
     useEffect(() => {
         const handleResize = () => {
@@ -517,13 +526,13 @@ function Product() {
                                                 <img src={Star} alt="" className='mainStarRatingReviews' />
                                                 <img src={Star} alt="" className='mainStarRatingReviews' />
                                             </div>
-                                            <p>Based On {product.numOfReviews}</p>
+                                            <p>(Based On {product.numOfReviews})</p>
                                         </div>
                                         <button className='sortBtn writeReviewBtn'>
                                             Write a review
                                         </button>
                                     </div>
-                                    <div className='reviewsMappingMain'>
+                                    <div className='reviewsMappingImageMain'>
                                         {Reviews.map((review, reviewIndex) =>
                                             review.img.map((imageSrc, imgIndex) => (
                                                 <img
@@ -536,6 +545,49 @@ function Product() {
                                             )),
                                         )}
                                         {reviewImageOpen && <ReviewImageModel closeModal={ReviewImgModelClose} review={reviewImageOpen} />}
+                                    </div>
+                                    <div className="reviewsMappingMain">
+                                        {Reviews.slice(0, visibleReviews).map((review, index) => {
+                                            return <div className="singleReviewMain">
+                                                <div className="nameIconCircleAndStarAnd singleReviewNameAndIcon">
+                                                    <div className='modelReviewDetailNameIcon'>
+                                                        <p>{review.name[0]}</p>
+                                                    </div>
+                                                    <div className='starAndNameModel'>
+                                                        <span className='modelStarMapping'>
+                                                            {[...Array(5)].map((_, i) => (
+                                                                <img
+                                                                    key={i}
+                                                                    src={i < review.stars ? Star : OutlinedStar}
+                                                                    alt={i < review.stars ? "filled star" : "outlined star"}
+                                                                    className='modelRatingStar'
+                                                                />
+                                                            ))}
+                                                        </span>
+                                                        <div className='reviewSectionVerifiedAndName'>
+                                                            <span className='verifiedText reviewSectionVerifiedText'>Verified</span>
+                                                            <span className='reviewCostumerName'>{review.name}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="reviewsModelDesc singleReviewDesc">
+                                                    <p className='reviewModelDescHead'>{review.descHead}</p>
+                                                    <p>{review.desc}</p>
+                                                </div>
+                                                <div className='reviewModelSelectionImgMapping reviewsSectionSingleReviewImages'>
+                                                    {review.img.map((img, index) => {
+                                                        return <img src={img} alt="reviewImage" className='reviewModelImageMapping' onClick={() => handleReviewsImageClick(review)} />
+                                                    })}
+                                                </div>
+                                            </div>
+                                        })}
+                                    </div>
+                                    <div className="reviewsSectionLoadMoreBtn">
+                                        {visibleReviews < Reviews.length && (
+                                            <button className='loadMoreBtnReviews' onClick={handleLoadMore}>
+                                                {loader ? <div className='btnLoader loadMoreBtnReviews'><Loader /></div> : "Load More"}
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                             </div>

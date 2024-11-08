@@ -134,6 +134,7 @@
 }
 
 .reviewModelImageMapping {
+  cursor: pointer;
   width: 100px;
   height: 100px;
   object-fit: cover;
@@ -160,7 +161,10 @@
 }
 
 .modelRatingStar {
-  width: 20px;
+  width: 18px;
+  @media (max-width: 550px) {
+    width: 16px;
+  }
 }
 
 .modelReviewDetailNameIcon {
@@ -204,6 +208,16 @@
   font-size: 16px;
   letter-spacing: 0.63px;
   font-weight: 600;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  display: -webkit-box !important;
+  -webkit-font-smoothing: antialiased;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  @media (max-width: 550px) {
+    font-size: 14px;
+  }
 }
 
 .reviewsModelDesc {
@@ -229,7 +243,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .reviewModelMainMain {

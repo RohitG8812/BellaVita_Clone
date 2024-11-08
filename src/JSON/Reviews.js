@@ -107,13 +107,13 @@ const Reviews = [
     descHead: "good kit",
     desc: "Great products, the zipper pack can be improved though",
   },
-  {
-    name: "",
-    stars: 5,
-    img: [],
-    descHead: "",
-    desc: "",
-  },
+  // {
+  //   name: "",
+  //   stars: "",
+  //   img: [],
+  //   descHead: "",
+  //   desc: "",
+  // },
 ];
 
 export default Reviews;
