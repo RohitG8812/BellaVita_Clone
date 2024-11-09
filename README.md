@@ -2,7 +2,7 @@
 
 ## About the Project
 
-BellaVita Clone is a Frontead e-commerce website built using the Frontead Technologies. This project replicates the user experience of the BellaVita website, providing a seamless and interactive interface for users to browse, search, and purchase Perfumes, Body Care, Cosmetics, etc products. It includes both frontend and firebase(as a backend service), offering a fully responsive and pleasant user interface.
+BellaVita Clone is a Frontend e-commerce website built using the Frontead Technologies. This project replicates the user experience of the BellaVita website, providing a seamless and interactive interface for users to browse, search, and purchase Perfumes, Body Care, Cosmetics, etc products. It includes both frontend and firebase(as a backend service), offering a fully responsive and pleasant user interface.
 
 You can view the deployed project here: [BellaVita Clone](https://bella-vita-clone-one.vercel.app/) 🚀
 
@@ -39,7 +39,7 @@ You can view the deployed project here: [BellaVita Clone](https://bella-vita-clo
 
 ## Backend ⚙️
 
-- using **Firebase** as a backend service provider.
+- used **Firebase** as a backend service provider.
 - **Firebase DB** serves as the database to store user and product data.
 - Sensitive information such as `API_key` is protected using a `.env` file.
 
@@ -49,29 +49,53 @@ You can view the deployed project here: [BellaVita Clone](https://bella-vita-clo
 
 ![Homepage](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/homepage.png?raw=true)
 
-### Homepage Small Screen
-
-![Homepage](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/homeSmall.png?raw=true)
-
 ### Multiproduct Page
 
-![Multiproduct Page](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/multi.png)
+![Multiproduct Page](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/multipleproducts.png?raw=true)
 
 ### Single Product Page
 
-![Single Product Page](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/single.png)
+![Single Product Page](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/singleproduct.png?raw=true)
 
 ### Cart Page
 
-![Cart Page](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/cart.png)
+![Cart Page](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/cartpage1.png?raw=true)
+
+### Check Out Page
+
+![Check Out Page](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/cartpage2.png?raw=true)
+
+### Payment Page
+
+![Payment Page](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/paymentpage.png?raw=true)
 
 ### Login Page
 
-![Login Page](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/Login.png)
+![Login Page](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/login.png?raw=true)
 
 ### Signup Page
 
-![Signup Page](https://raw.githubusercontent.com/KaranChauhanji/Sephora_Clone/94fa2654fe3ed212edb1318223fdd86dfad7b4a4/Sephora-Frontend/public/signup.png)
+![Signup Page](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/register.png?raw=true)
+
+### Custumer Reviews
+
+![Custumer Reviews](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/custumerreviewssection.png?raw=true)
+
+### Profile Page
+
+![Profile Page](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/profilepage.png?raw=true)
+
+### My Order Page
+
+![My Order Page](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/allOrder.png?raw=true)
+
+### Filter
+
+![Filter](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/filter.png?raw=true)
+
+### Homepage Full
+
+![Homepage Full](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/homepagefull.png?raw=true)
 
 ## Installation 🏗️
 
@@ -80,35 +104,29 @@ To get started with this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/KaranChauhanji/Sephora_Clone.git
+   git clone https://github.com/RohitG8812/BellaVita_Clone.git
 
 2. Navigate to the project directory:
 
    ```bash
-    cd sephora-clone
+    cd .\BellaVita_Clone\
 
-3. Install the dependencies for both frontend and backend:
-
-   ```bash
-   cd Sephora-Frontend
-   npm install
-   cd ../Sephora-Backend
-   npm install
-
-4. Create a .env file in the backend directory and add the following environment variables:
+3. Install the packages for mui and Firebase:
 
    ```bash
-    MONGO_URL=<your-mongodb-url>
-    JWT_SECRET=<your-jwt-secret>
+   install MUI:
+   npm install @mui/material @emotion/react @emotion/styled
+   
+   install Firebase auth or Database:
+   npm install firebase
 
-5. Start the backend server:
+4. Create a .env file in the public directory and add the following environment variables:
 
    ```bash
-    npm start
+   VITE_FIREBASE_API_KEY={YOUE API KEY}
 
-6. Start the frontend server:
+5. Start the server:
 
     ```bash
-    cd Sephora-Frontend
     npm run dev
     
