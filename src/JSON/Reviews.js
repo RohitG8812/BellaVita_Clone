@@ -119,7 +119,7 @@ const Reviews = [
     desc: "This is literally smudge proof,long lasting as I've been using it and no match to this one.This eyeliner is really amazing it dries quickly and gives a matte finish. It is smudged proof and long lasting. It also has natural ingredients like Vitamin E and almond oil, one should definitely give a try.",
   },
   {
-    name: " Shailender ..",
+    name: "Shailender ..",
     stars: 5,
     img: [
       "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1729193401__image__original.jpg?auto=format&w=160",

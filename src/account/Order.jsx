@@ -62,8 +62,8 @@ function Order() {
                 <span>ORDER DETAILS</span>
               </div>
               <div className='orderDetailsDateAndId orderItemsTop'>
-                <p>Order ID - {selectedOrder.orderId}</p>
-                <p>Date - {selectedOrder.date}</p>
+                <p className='orderItemsTopItemsBorder'>Order ID - {selectedOrder.orderId}</p>
+                <p className='orderItemsTopItemsBorder'>Date - {selectedOrder.date}</p>
               </div>
               <div className='orderDetailsItemsMap'>
                 <p className='orderDetailOrderSummary orderItemsTop'>Order Summary</p>
@@ -148,8 +148,8 @@ function Order() {
                     setSelectedOrder(order);
                   }}>
                   <div className="orderItemsTop">
-                    <p>Date - {order.date}</p>
-                    <p>Order ID - {order.orderId}</p>
+                    <p className='orderItemsTopItemsBorder'>Date - {order.date}</p>
+                    <p className='orderItemsTopItemsBorder'>Order ID - {order.orderId}</p>
                   </div>
                   <div className='orderItemsAndIcon'>
                     <div className='orderItems'>

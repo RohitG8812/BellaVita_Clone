@@ -1,7 +1,5 @@
 .myOrderMain {
-  /* border: 1px solid red; */
   width: 720px !important;
-  border-top: 0.4px solid rgb(207, 207, 207);
   @media (max-width: 910px) {
     width: 100% !important;
   }
@@ -25,12 +23,9 @@
   justify-content: space-between;
   margin-bottom: 15px;
   @media (max-width: 750px) {
-    /* font-size: 13.5px; */
+    font-size: 12px;
     margin-bottom: 10px;
   }
-  /* @media (max-width: 450px) {
-    font-size: 12px;
-  } */
 }
 
 .orderItems {
@@ -56,9 +51,6 @@
   justify-content: center;
   color: rgb(103, 102, 102);
   letter-spacing: 0.93px;
-  /* @media (max-width: 450px) {
-    font-size: 12px;
-  } */
 }
 
 .catAndQuantity {
@@ -106,12 +98,6 @@
   font-weight: 600;
   letter-spacing: 0.8px;
   padding-bottom: 12px !important;
-  /* @media (max-width: 750px) {
-    font-size: 13.5px;
-  }
-  @media (max-width: 450px) {
-    font-size: 12px;
-  } */
   padding-block: 5px;
   border-bottom: 0.4px solid rgb(207, 207, 207);
   display: flex;
@@ -128,9 +114,7 @@
   padding-inline: 10px;
   margin-bottom: 0px !important;
   font-weight: 500 !important;
-  padding-block: 7px;
-  color: rgb(103, 102, 102);
-  border-bottom: 0.4px solid rgb(207, 207, 207);
+  padding-top: 15px;
 }
 
 .orderDetailOrderSummary {
@@ -141,9 +125,6 @@
   padding-bottom: 5px;
   color: green;
   margin-bottom: 0px !important;
-  /* @media (max-width: 450px) {
-    font-size: 11px;
-  } */
 }
 
 .orderDetailsItemsMap {
@@ -168,9 +149,6 @@
   padding-bottom: 5px;
   font-size: 16px;
   letter-spacing: 0.8px;
-  /* @media (max-width: 450px) {
-    font-size: 15px;
-  } */
 }
 
 .orderDetailsAppliedCouponMain {
@@ -220,7 +198,7 @@
 .orderDetailsBillDetails {
   padding-inline: 10px;
   padding-bottom: 15px;
-  border-bottom: 0.4px solid rgb(207, 207, 207);
+  /* border-bottom: 0.4px solid rgb(207, 207, 207); */
 }
 
 .billDetailsMain {
@@ -247,10 +225,37 @@
   line-height: 18px;
 }
 
-.thankYouText{
+.thankYouText {
   color: rgb(103, 102, 102);
   font-size: 13px;
   text-align: center;
   padding-top: 20px;
   padding-inline: 10px;
+}
+
+.orderItemsTopItemsBorder {
+  min-height: 28.4px;
+  width: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  letter-spacing: 2.6px;
+  line-height: 14.4px;
+  text-transform: uppercase;
+  font-weight: 600;
+  background-color: #fff;
+  border: 0.4px solid #000;
+  transition: all 0.2s ease-in;
+  color: #000 !important;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  gap: 5px;
+  cursor: pointer;
+  @media (max-width: 550px) {
+    font-size: 10px;
+    width: 120px;
+    letter-spacing: 1.6px;
+  }
 }

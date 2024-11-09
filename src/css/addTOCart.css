@@ -275,7 +275,7 @@
 .recommendedProductCard {
   gap: 8px !important;
   width: 100% !important;
-  overflow-x: auto; /* Enable horizontal scroll */
+  overflow-x: auto;
   display: flex;
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -350,7 +350,6 @@
 .marqueeText {
   display: flex;
   justify-content: flex-start;
-  /* border: 1px solid red; */
   overflow: hidden;
 }
 
@@ -371,10 +370,10 @@
 
 @keyframes scrollLeft {
   0% {
-    transform: translateX(0); /* Start from the right */
+    transform: translateX(0); 
   }
   100% {
-    transform: translateX(-100%); /* Move to the left */
+    transform: translateX(-100%); 
   }
 }
 

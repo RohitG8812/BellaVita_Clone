@@ -42,9 +42,6 @@
 
 /*  */
 
-.singleProductPageMain {
-}
-
 .singleProductPageMainTopSide {
   padding-block: 20px;
   display: flex;
@@ -55,7 +52,6 @@
 }
 
 .leftSideSectionProductPage {
-  /* border: 1px solid red; */
   width: 48%;
   padding-right: 2px;
   @media (max-width: 750px) {
