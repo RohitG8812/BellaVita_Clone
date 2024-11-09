@@ -41,6 +41,7 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer }) {
     const [couponCode, setCouponCode] = useState("")
     const [appliedCoupons, setAppliedCoupons] = useState(Discount)
     const [couponPageOpenMini, setCouponPageOpenMini] = useState(false);
+    const [couponCodeLoader, setCouponCodeLoader] = useState(null);
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -58,7 +59,7 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer }) {
 
     const handleCouponClick = (coupon) => {
         try {
-            setLoader(true);
+            setCouponCodeLoader(coupon.id)
             const isCouponAlreadyApplied = appliedCoupons.some((appliedCoupon) => appliedCoupon.code === coupon.code);
             const isMaxCouponsReached = appliedCoupons.length >= 4;
 
@@ -77,7 +78,8 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer }) {
                 };
                 setTimeout(() => {
                     toast.success("Coupon applied successfully");
-                    setLoader(false)
+                    // setLoader(false)
+                    setCouponCodeLoader(null)
                     setAppliedCoupons(prevCoupon => [...prevCoupon, newCoupon]);
                     setCouponPageOpen(false)
                     setCouponPageOpenMini(false)
@@ -85,7 +87,8 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer }) {
             } else {
                 setTimeout(() => {
                     toast.error("This coupon is already applied.");
-                    setLoader(false)
+                    // setLoader(false)
+                    setCouponCodeLoader(null)
                 }, 500)
             }
         } catch (error) {
@@ -238,7 +241,7 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer }) {
                                                         className={`couponApplyBtn ${appliedCoupons.length == 4 ? "disabledApplyCouponBtn" : ""}`}
                                                         onClick={() => handleCouponClick(coupon)}
                                                     >
-                                                        {loader ? <div><Loader /></div> : "Apply"}
+                                                        {couponCodeLoader === coupon.id ? <div><Loader /></div> : "Apply"}
                                                     </span>
                                                 </div>
                                                 <span className='couponDescription'>{coupon.desc}</span>
@@ -348,7 +351,7 @@ function CheckOutPage({ setOpenCheckOutPage, cartItems, toggleDrawer }) {
                                                 className={`couponApplyBtn ${appliedCoupons.length == 4 ? "disabledApplyCouponBtn" : ""}`}
                                                 onClick={() => handleCouponClick(coupon)}
                                             >
-                                                {loader ? <div><Loader /></div> : "Apply"}
+                                                {couponCodeLoader === coupon.id ? <div><Loader /></div> : "Apply"}
                                             </span>
                                         </div>
                                         <span className='couponDescription'>{coupon.desc}</span>

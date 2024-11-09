@@ -711,7 +711,10 @@
   gap: 2px;
   overflow-x: auto;
   scrollbar-width: thin;
-  scroll-behavior: sm;
+  scroll-behavior: smooth;
+  @media (max-width: 550px) {
+    padding-bottom: 5px;
+  }
 }
 
 .reviewImage {
@@ -771,22 +774,21 @@
   width: 160px !important;
 }
 
-.singleReviewMain{
+.singleReviewMain {
   border-top: 0.2px solid rgb(207, 207, 207);
   padding-top: 15px;
   padding-bottom: 10px;
 }
 
-.reviewsMappingMain{
+.reviewsMappingMain {
   padding-top: 30px;
 }
 
-.reviewSectionVerifiedAndName{
+.reviewSectionVerifiedAndName {
   display: flex;
   gap: 10px;
 }
 
-.reviewSectionVerifiedText{
+.reviewSectionVerifiedText {
   padding-block: 1px !important;
 }
-

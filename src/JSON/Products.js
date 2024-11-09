@@ -102,7 +102,7 @@ const Products = [
     ],
     description:
       "Discover the best perfumes for Women with the Bella Vita Luxury Perfume Gift Set for Women. A set of 4 miniatures, arousing your olfactive experience right from fruity, floral through to Oriental Woody and sweet Oud, wear a different scent every day, perfect for all your moods. A compilation of Date, Glam, Rose & Senorita Woman perfume; why compromise when you carry all four travel-friendly and long-lasting perfumes with yourself. As we are in the process of upgrading our gift sets, you may receive our new Bella Vita Luxury Perfume Gift Set for Women. This set contains: ROSE Woman, GLAM Woman, DATE Woman and SENORITA Woman. Spray ROSE Woman to go shopping with the girls and GLAM Woman to attract all the attention as you party all night. Spice up a romantic evening with DATE Woman and have fun all day long with SENORITA Woman by your side. ",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils",
     howToUse:
@@ -129,7 +129,7 @@ const Products = [
     ],
     description:
       "DATE Woman by Bella Vita Luxury is a celebration of love and romance. The perfume has top notes of Pink Pepper and Red Fruits. At its heart, lies the trio of Jasmine, Orange Blossom and Violet, perfect for a romantic date. The base notes are Moss, Musk and Powdery, balanced by the sweetness of Vanilla to create an unforgettable moment.",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils",
     howToUse:
@@ -156,7 +156,7 @@ const Products = [
     ],
     description:
       "Indulge in the long-lasting richness of Taaj Gold Oud, a luxurious blend of gourmand and floral notes to give you an attar that lasts all day. Completely free of alcohol, this pure attar opens with the sweetness of caramel, along with a heart of rose, jasmine, and orris that lends powerful depth. Base notes of ambery Oud infuse confidence and sophistication that lasts all day.",
-    note: "Notes: Top notes: Start with a sweet treat of Caramel  Heart notes: Add a touch of sensuality with Rose, Jasmine, and Orris  Base notes: Feel the grand vibe of Ambery Oud",
+    note: "Top notes: Start with a sweet treat of Caramel  Heart notes: Add a touch of sensuality with Rose, Jasmine, and Orris  Base notes: Feel the grand vibe of Ambery Oud",
     keyBenefits:
       " - Alcohol-free - IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils - For all - Perfect to wear in the day or night",
     howToUse:
@@ -264,7 +264,7 @@ const Products = [
     ],
     description:
       "Indulge in pure royalty with every whiff and a touch of gold with BELLAVITA OUD Gold Eau De Parfum. An ode to luxury and authenticity, OUD Gold is for those who love the finer things in life. Top notes of caramel add warmth and sensuality, making you smell irresistible. Heart notes of rose and orris add a floral excitement that keeps you happy and relaxed. Base notes of ambery oud, sourced from the Middle East, add confidence, giving you the literal feeling of spritzing liquid gold.",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils - For All  - Perfect to wear during the day and special occasions",
     howToUse:
@@ -291,7 +291,7 @@ const Products = [
     ],
     description:
       "Indulge your senses and transform every day into a captivating, glamorous, “who’s that girl” avatar with our ‘Hot & Classy’ perfume combo. This enchanting duo of perfumes is meticulously crafted for the modern woman who exudes elegance, shows class in her every move, and is always turning heads wherever she goes. Whether you're headed to a glamorous event, a fancy dinner date, or simply want to smell and feel irresistible, this combo is your secret weapon for exuding charm, confidence, and absolute hotness! ",
-    note: "Notes: Hot Mess Woman Eau De Parfum:  Top: Experience freshness with the tangy element of Citrus Mandarin  Heart: Feel calm and relaxed with floral notes of Passionfruit Base: Embrace confidence in every move with woody notes of Musk D.I.V.A. Woman Eau De Parfum:  Top: Start your day with a burst of energy, invigorated with the blend of Bergamot, Black currant, and Orris  Heart: Power through the day with aromatic elements of Jasmine, Caramel, and Lily of the valley  Base: Lead with confidence with the woody notes of Vanilla, Musk, and Patchouli",
+    note: "Hot Mess Woman Eau De Parfum:  Top: Experience freshness with the tangy element of Citrus Mandarin  Heart: Feel calm and relaxed with floral notes of Passionfruit Base: Embrace confidence in every move with woody notes of Musk D.I.V.A. Woman Eau De Parfum:  Top: Start your day with a burst of energy, invigorated with the blend of Bergamot, Black currant, and Orris  Heart: Power through the day with aromatic elements of Jasmine, Caramel, and Lily of the valley  Base: Lead with confidence with the woody notes of Vanilla, Musk, and Patchouli",
     keyBenefits:
       " - For Women - IFRA-certified and Safe to Use on Skin - Long-lasting - Made with imported oils from France, Spain, and Italy - Set of 2 perfumes  - Non-Irritant formula ",
     howToUse:
@@ -318,7 +318,7 @@ const Products = [
     ],
     description:
       "Take a trip to the Middle East with every whiff of OUD Dark. It’s intense, strong and long-lasting. While top notes of citrus grapefruit grab attention instantly while heart notes of floral, vetiver and orris enhance sensuality. Base notes of musky Oud, sourced straight from the Middle East, add long-lasting sophistication to the fragrance. Spoil yourself with OUD Dark, leaving you feeling rich and indulgent.Top notes: Citrus top notes give you a burst of energy  Heart notes: Oriental heart notes keep you calm and relaxed  Base notes: Woody base notes give you confidence ",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils - Perfect to wear at night and for dining out",
     howToUse:
@@ -345,7 +345,7 @@ const Products = [
     ],
     description:
       "B.L.U. Man is for those who love the water, the waves and the me time. Wear it to start your journey of solo exploration as you enjoy the fresh, calm outdoors. Feel calm and confident as the world admires your easy-going attitude. Feel refreshed with the top notes of lemon, nutmeg, mandarin and black pepper. Heart notes of apple, orris and pineapple make BLU captivating while the base notes of musk, vetiver, amber and moss add to its intensity, which lasts.",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils",
     howToUse:
@@ -372,7 +372,7 @@ const Products = [
     ],
     description:
       "Meet the bath and body combo that embodies the essence of serenity and composure, making it the ideal daytime companion for those seeking inner peace and balance - Win with White combo. Enjoy a peaceful bathing experience and a fragrance that only adds more peace to the vibe. Sourced straight from the origins, White Oud transports you to the spice streets of the Middle East without being overpowering; with a perfect balance of citrusy freshness and spicy sensuality. ",
-    note: " Notes: WHITE OUD Shower Gel: Top: Feel refreshed with the citrusy elements of Artemisia, Lemon, and Orange  Heart: Feel a sense of calm with Freesia, Blackcurrant, and Patchouli  Base: Feel super confident with musky and woody elements of Tobacco, Amber, and Musk  White OUD Eau De Parfum: Top: Feel refreshed with the citrusy elements of Artemisia, Lemon, and Orange Heart: Feel a sense of calm with Freesia, Blackcurrant, and Patchouli  Base: Feel super confident with musky and woody elements of Tobacco, Amber, and Musk",
+    note: "WHITE OUD Shower Gel: Top: Feel refreshed with the citrusy elements of Artemisia, Lemon, and Orange  Heart: Feel a sense of calm with Freesia, Blackcurrant, and Patchouli  Base: Feel super confident with musky and woody elements of Tobacco, Amber, and Musk  White OUD Eau De Parfum: Top: Feel refreshed with the citrusy elements of Artemisia, Lemon, and Orange Heart: Feel a sense of calm with Freesia, Blackcurrant, and Patchouli  Base: Feel super confident with musky and woody elements of Tobacco, Amber, and Musk",
     keyBenefits:
       "Fragrant and moisturising experience For Women and Men Refreshing and moisturising shower gel Long-lasting perfume Set of a shower gel and a perfume",
     howToUse:
@@ -399,7 +399,7 @@ const Products = [
     ],
     description:
       "Get your hands on the ultimate perfume trio for men who live a busy life. Going to a party? Spritz on KLUB and be the life of the party. For chill evenings with friends and family or when you’re travelling, spritz on BLU to be the cool dude. With G.O.A.T, smell of success every time you walk into a room. The Best Of Men Combo is all you need to be more noticeable, wherever you go. Benefits: • Long-lasting • Pack of 3 • Perfumes for Men",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils",
     howToUse:
@@ -426,7 +426,7 @@ const Products = [
     ],
     description:
       "Are fruity and floral fragrances your go-to choice for a nice day out 👋🏻? The Bella Vita Luxury Honey Oud Luxury Perfume smells like honey 🍯and bergamot at the top with delightful notes of Rose 🌹 and Oud at its Heart and Vanilla at its base. This oud perfume is a unisex cologne, perfect for anyone who loves sweet fragrances. 🍭 Let your perfume do the sweet-talking for you, all day long.",
-    note: " Notes: WHITE OUD Shower Gel: Top: Feel refreshed with the citrusy elements of Artemisia, Lemon, and Orange  Heart: Feel a sense of calm with Freesia, Blackcurrant, and Patchouli  Base: Feel super confident with musky and woody elements of Tobacco, Amber, and Musk  White OUD Eau De Parfum: Top: Feel refreshed with the citrusy elements of Artemisia, Lemon, and Orange Heart: Feel a sense of calm with Freesia, Blackcurrant, and Patchouli  Base: Feel super confident with musky and woody elements of Tobacco, Amber, and Musk",
+    note: "WHITE OUD Shower Gel: Top: Feel refreshed with the citrusy elements of Artemisia, Lemon, and Orange  Heart: Feel a sense of calm with Freesia, Blackcurrant, and Patchouli  Base: Feel super confident with musky and woody elements of Tobacco, Amber, and Musk  White OUD Eau De Parfum: Top: Feel refreshed with the citrusy elements of Artemisia, Lemon, and Orange Heart: Feel a sense of calm with Freesia, Blackcurrant, and Patchouli  Base: Feel super confident with musky and woody elements of Tobacco, Amber, and Musk",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils",
     howToUse:
@@ -453,7 +453,7 @@ const Products = [
     ],
     description:
       "Splash into a sea of freshness with Ocean Man. An aquatic fragrance, Ocean opens with the fresh energy of citrus notes. At its heart lies orchid, making you lose yourself to the depth of the Ocean. The base notes of musk are woody, sweeping you off in a wave of long-lasting confidence. Ocean keeps you calm as you travel, work or play.",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils",
     howToUse:
@@ -480,7 +480,7 @@ const Products = [
     ],
     description:
       "Be the star of every show with SWAG Star Eau de Parfum. Star is for those who have the Swag to dream big. Citrusy bergamot energises you while jasmine and lily of the valley gets you attention. Musk and tonka boost your confidence as you get ready to be the STAR. Top: Wake up with the bursting energy of citrus bergamot. Heart: Stay cool with jasmine and lily of the valley.Base: Let your charm talk with woody notes of musk and tonka.",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils",
     howToUse:
@@ -534,7 +534,7 @@ const Products = [
     ],
     description:
       "The ultimate perfume Trial pack is here. Now, try our best-selling perfumes from the comfort of your home only for Rs 349. A complete kit offering Men, Women and Unisex perfumes, try 10 of our best perfumes, love your favourite fragrances and upgrade to the full-sized, 100 ml perfumes. So, try before you buy and indulge in the world of luxury perfumes, one mini at a time!  As we are in the process of upgrading our trial pack, some fragrances have been changed in the Trial Pack. Instead of IMPACT Man Eau De Parfum, try G.O.A.T Man Eau de Parfum. Try KLUB Man Eau De Parfum instead of CEO Woman Eau De Parfum and GLAM Woman Eau De Parfum instead of Honey Oud Parfum.  Our new trial pack contains:  • CEO Man Eau De Parfum (5ml): A daring and long-lasting perfume for the boss man • G.O.A.T Man Eau De Parfum (5ml): Be the Greatest of All Time, all the time. • SKAI Aquatic Eau De Cologne (5ml): A unisex cologne that is both subtle and charming • FRESH Eau De Toilette (5ml): Get ready to take on the day with a burst of energy • GLAM Woman Eau De Parfum (5ml): Turn up the glamour wherever you go • OUD Parfum (5ml): An ode to honouring eternal grace and power • WHITE Oud Eau De Parfum (5ml): A beautiful blend of all things “sweet” and “spice” • SENORITA Eau De Parfum (5ml): For a sensual and exciting start to your day • DATE Woman Eau De Parfum (5ml): For days that celebrate love and romance • KLUB Man Eau De Parfum (5ml): Attract all the attention, be it day or night",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils",
     howToUse:
@@ -561,7 +561,7 @@ const Products = [
     ],
     description:
       "Get ready to start your day with a delightful duo of the Date Woman Shower Gel and Date Woman Eau de Parfum with our All Day Romance Combo. This duo is a burst of freshness that will make you feel clean and confident and add a hint of romance. Infused with the iconic scent of DATE Woman, this combo leaves you feeling refreshed and full of energy, all while making you smell delicious and feel more confident",
-    note: " Notes: DATE Shower Gel: Top: Attract all the attention with the blend of Pink Pepper and Red fruits  Heart: Turn up with romance with the floral and sweet notes  Base: Feel confident with woody notes   Date Woman Eau De Parfum:  Top: Attract all the attention with the blend of Pink Pepper and Red fruits Heart: Turn up with romance with the floral notes of Jasmine and Violet  Base: Feel confident with woody notes of Moss and Vanilla",
+    note: "DATE Shower Gel: Top: Attract all the attention with the blend of Pink Pepper and Red fruits  Heart: Turn up with romance with the floral and sweet notes  Base: Feel confident with woody notes   Date Woman Eau De Parfum:  Top: Attract all the attention with the blend of Pink Pepper and Red fruits Heart: Turn up with romance with the floral notes of Jasmine and Violet  Base: Feel confident with woody notes of Moss and Vanilla",
     keyBenefits:
       "Fragrant and moisturising experience For Women Refreshing and moisturising shower gel Long-lasting perfume Set of a shower gel and a perfume",
     howToUse:
@@ -615,7 +615,7 @@ const Products = [
     ],
     description:
       "This premium combo includes five unique and sophisticated fragrances. Whether you want a floral, fruity, woody, or spicy aroma, this set has something for everyone. Each fragrance is long-lasting and will add a touch of elegance to your daily routine. With a range of scents to choose from, this combo is the perfect gift for any perfume lover.  Glam: The top notes are African Orange, the Middle notes are Jasmine, and the Base notes are White Honey, Patchouli, Rose, and Virginia Cedar. Rose: The top notes are Floral Peach, Blackcurrant, Mandarin, and Pink Pepper; the middle notes are Jasmine and Woody Rose, and the base notes are Amber, Musk, Vanilla, and Benzoin.Date: The top notes of the Date are Pink pepper and Red Fruits, the Middle notes are Jasmine, Orange Blossom, and Violet, and the Base notes are Moss, Musk, and powdery. Senorita: The top notes are Yuzu, Pomegranate, and Mint; the middle notes are Lotus and Magnolia; and the base notes are Musk, Mahogany, and Amber.  CEO Woman: The top notes are Ylang-Ylang, Pink Pepper, and Incense Bergamot; the middle notes are Plum, Lily of the Valley, Patchouli, and Aqueous. And the base notes are Musk, Tonka, Vanilla, and Vetiver. ",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits:
       "- IFRA-certified and Safe to Use on Skin - Long-lasting - Made with Imported Oils",
     howToUse:
@@ -642,7 +642,7 @@ const Products = [
     ],
     description:
       "Up the GLAM quotient everyday with the GLAM Woman Body Mist by Bella Vita Luxury. An unconventional floral scent for the modern woman, this floral and citrus mist with jasmine at its heart is confidence and glamour in a bottle. Uplift your mood and of those around you with this fresh body mist.",
-    note: " Note: Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
+    note: "Always do a patch test before using the product.Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the efficacy of the product.",
     keyBenefits: "- Long-lasting - Floral mist - Jasmine-scented",
     howToUse:
       "Spritz the mist on your body and pulse points for all day freshness.",
@@ -767,18 +767,16 @@ const Products = [
     rating: "4.8",
     numOfReviews: "59 Reviews",
     discount: "35%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/SkaiAquatic500mlShowerGel-01.jpg?v=1694604006&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/2_13.jpg?v=1709993553&width=535",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/3_12_4c000022-8a36-4e2d-8c23-4b6b3beea459.jpg?v=1709993553&width=535",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/4_12.jpg?v=1709993553&width=535",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/5_12_9e8e8905-7ae4-4fdb-a6a1-6542d1066922.jpg?v=1709993553&width=535",
+    ],
     description:
-      "Bathe in the fragrance of aquatic freshness, quite literally, with the SKAI Aquatic Shower Gel. With a fragrance as intense and captivating as the SKAI perfume, the SKAI Shower gel deep cleanses your skin gently but efficiently with the goodness of Aloe Vera. Immerse yourself in the freshness of SKAI Aquatic perfume and the power of good-for-skin ingredients, all in one bottle. Notes: Top: Feel refreshed with citrus top notes  Heart: Keep cool all day with marine notes at the heart Base: Stay confident with woody base notes ",
+      "Bathe in the fragrance of aquatic freshness, quite literally, with the SKAI Aquatic Shower Gel. With a fragrance as intense and captivating as the SKAI perfume, the SKAI Shower gel deep cleanses your skin gently but efficiently with the goodness of Aloe Vera. Immerse yourself in the freshness of SKAI Aquatic perfume and the power of good-for-skin ingredients, all in one bottle.",
+    note: "Top: Feel refreshed with citrus top notes  Heart: Keep cool all day with marine notes at the heart Base: Stay confident with woody base notes ",
     keyBenefits:
       "- Deep cleanses skin - Moisturises and nourishes - Fragrant, relaxing, and reviving bathing experience",
     howToUse:
@@ -796,18 +794,16 @@ const Products = [
     rating: "4.9",
     numOfReviews: "86 Reviews",
     discount: "35%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/CEOMan500mlShowerGel-01.jpg?v=1692770100&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/2_6_aaa57a40-8f06-47d3-9591-0152c5fbc34f.jpg?v=1709991677&width=535",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/3_6_f9397709-df21-48cc-8d26-beef5b0d26d2.jpg?v=1709991677&width=1100",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/4_6.jpg?v=1709991677&width=535",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/5_6.jpg?v=1709991677&width=535",
+    ],
     description:
-      "Bathe in the scent of your favourite perfume, quite literally, with the CEO Man Shower Gel. With a fragrance as intense as spraying perfume on yourself, the CEO Man Shower gel is an indulgence full of hydrating properties of Aloe Vera and the woody confidence of CEO Man perfume. Smell like a boss from the second you take a shower and start your day fresh for the hustle, with your favourite perfume and the power of good-for-skin ingredients, all in one bottle. Notes:  Top notes: Citrus top notes give you a burst of energy. Heart notes: Aromatic heart notes keep you calm and relaxed. Base notes: Woody base notes give you confidence.",
+      "Bathe in the scent of your favourite perfume, quite literally, with the CEO Man Shower Gel. With a fragrance as intense as spraying perfume on yourself, the CEO Man Shower gel is an indulgence full of hydrating properties of Aloe Vera and the woody confidence of CEO Man perfume. Smell like a boss from the second you take a shower and start your day fresh for the hustle, with your favourite perfume and the power of good-for-skin ingredients, all in one bottle.",
+    note: "Top notes: Citrus top notes give you a burst of energy. Heart notes: Aromatic heart notes keep you calm and relaxed. Base notes: Woody base notes give you confidence.",
     keyBenefits:
       "- Deep cleanses skin - Moisturises and nourishes - Fragrant, relaxing, and reviving bathing experience",
     howToUse:
@@ -825,18 +821,16 @@ const Products = [
     rating: "4.9",
     numOfReviews: "102 Reviews",
     discount: "48%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/OUDWhite500mlShowerGel-01.jpg?v=1697011866&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/2_11.jpg?v=1709993155&width=535",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/3_10.jpg?v=1709993155&width=535",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/4_10.jpg?v=1709993155&width=535",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/5_10.jpg?v=1709993155&width=535",
+    ],
     description:
-      "Shower in the fragrance of the calm serenity, quite literally, with the OUD WHITE Shower Gel. With a fragrance as intense yet calming as the WHITE OUD perfume itself, the OUD WHITE Shower gel deep cleanses your skin gently but efficiently with the goodness of Aloe Vera. Keep calm and carry on with the intensity of oud in the OUD WHITE Shower Gel. Notes: Top: Feel refreshed with citrus top notes Heart: Captivate everyone with aromatic notes Base: Stay confident with woody base notes ",
+      "Shower in the fragrance of the calm serenity, quite literally, with the OUD WHITE Shower Gel. With a fragrance as intense yet calming as the WHITE OUD perfume itself, the OUD WHITE Shower gel deep cleanses your skin gently but efficiently with the goodness of Aloe Vera. Keep calm and carry on with the intensity of oud in the OUD WHITE Shower Gel.  ",
+    note: "Top: Feel refreshed with citrus top notes Heart: Captivate everyone with aromatic notes Base: Stay confident with woody base notes",
     keyBenefits:
       "- Deep cleanses skin - Moisturises and nourishesc - Fragrant, relaxing, and reviving bathing experience - For both men and women- As fragrant as perfume",
     howToUse:
@@ -854,18 +848,16 @@ const Products = [
     rating: "4.9",
     numOfReviews: "99 Reviews",
     discount: "31%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/CEOMANPerfumeBodyLotion-200ml.jpg?v=1694079521&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/CEOManBodyLotion-02.jpg?v=1694079521&width=535",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/CEOManBodyLotion-03.jpg?v=1694079521&width=535",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/CEOManBodyLotion-04.jpg?v=1694079521&width=535",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/CEOManBodyLotion-06.jpg?v=1694079521&width=535",
+    ],
     description:
       "For the first-time ever, nourish your skin with the power of perfume. CEO Man Perfume Lotion is a moisturising fragrance that smells as intense as spraying perfume on yourself. Crafted in a way that the light, gel-like texture of the  perfume lotion gets absorbed into your skin, it makes every part of your body smell like woody confidence and success, with the added hydrating benefits of Argan Oil and Shea Butter. ",
+    note: "Top: Feel refreshed with citrus top notes Heart: Captivate everyone with aromatic notes Base: Stay confident with woody base notes",
     keyBenefits:
       "-Infused with essential oils for long-lasting fragrance -Moisturising and hydrating -Enriched with Argan Oil and Shea Butter",
     howToUse:
@@ -883,18 +875,16 @@ const Products = [
     rating: "4.0",
     numOfReviews: "4 Reviews",
     discount: "31%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/OUDWhiteBodyLotion-01.jpg?v=1707808611&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/OUDWhiteBodyLotion-02.jpg?v=1707808613&width=535",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/OUDWhiteBodyLotion-04.jpg?v=1707808611&width=535",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/OUDWhiteBodyLotion-05.jpg?v=1707808610&width=535",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/OUDWhiteBodyLotion-03.jpg?v=1707808612&width=535",
+    ],
     description:
-      "Experience the feeling of peace, calm, and tranquillity with the iconic OUD WHITE Perfume Body Lotion. Infused with the enchanting essence of the WHITE Oud perfume, this body lotion comes with a subtle fragrance and an energetic blend of Shea Butter and Argan Oil to deeply nourish your skin. Introduce your mind and body to peaceful luxury with this velvety lotion, that gently enriches and hydrates your skin. Relax your senses with the calm vibe of OUD WHITE Perfume Body Lotion with every application.  Notes: Top: Feel refreshed with citrusy top notes  Heart: Captivate everyone with aromatic notes Base: Stay confident with woody base notes",
+      "Experience the feeling of peace, calm, and tranquillity with the iconic OUD WHITE Perfume Body Lotion. Infused with the enchanting essence of the WHITE Oud perfume, this body lotion comes with a subtle fragrance and an energetic blend of Shea Butter and Argan Oil to deeply nourish your skin. Introduce your mind and body to peaceful luxury with this velvety lotion, that gently enriches and hydrates your skin. Relax your senses with the calm vibe of OUD WHITE Perfume Body Lotion with every application.",
+    note: "Top: Feel refreshed with citrusy top notes  Heart: Captivate everyone with aromatic notes Base: Stay confident with woody base notes",
     keyBenefits:
       "-Provides hydration to the skin -Moisturises and nourishes -Fragrant and relaxing after-shower experience",
     howToUse:
@@ -912,18 +902,16 @@ const Products = [
     rating: "4.9",
     numOfReviews: "84 Reviews",
     discount: "35%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/DateWoman-01.jpg?v=1695109179&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/2_7_0962e59e-60f1-4bda-9e51-3fe252b7cfed.jpg?v=1709991843&width=535",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/3_7_e550d42f-4a78-49b2-b98c-d017f00c6c86.jpg?v=1709991843&width=535",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/4_7.jpg?v=1709991843&width=535",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/5_7.jpg?v=1709991843&width=535",
+    ],
     description:
-      "Immerse yourself in the world of sensuality as you lather up with this exquisite DATE WOMAN shower gel. With a fragrance as intense and captivating as the DATE WOMAN perfume, the DATE WOMAN Shower gel deep cleanses your skin gently but efficiently with the goodness of Aloe Vera. Elevate your senses, cleanse your skin, and prepare for a romantic evening with the essence of DATE Woman perfume captured in every drop. Notes: Top: Attract all the attention with the blend of Pink Pepper and Red fruits Heart: Turn up with romance with the floral and sweet notes Base: Feel confident with woody notes",
+      "Immerse yourself in the world of sensuality as you lather up with this exquisite DATE WOMAN shower gel. With a fragrance as intense and captivating as the DATE WOMAN perfume, the DATE WOMAN Shower gel deep cleanses your skin gently but efficiently with the goodness of Aloe Vera. Elevate your senses, cleanse your skin, and prepare for a romantic evening with the essence of DATE Woman perfume captured in every drop.",
+    note: "Top: Attract all the attention with the blend of Pink Pepper and Red fruits Heart: Turn up with romance with the floral and sweet notes Base: Feel confident with woody notes",
     keyBenefits:
       "- Deep cleanses skin - Moisturises and nourishesc - Fragrant, relaxing, and reviving bathing experience - For both men and women- As fragrant as perfume",
     howToUse:
@@ -941,18 +929,16 @@ const Products = [
     rating: "4.9",
     numOfReviews: "99 Reviews",
     discount: "31%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/SenoritaWomanBodyLotion-01.jpg?v=1706621901&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/SenoritaWomanBodyLotion-02.jpg?v=1706621902&width=360",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/SenoritaWomanBodyLotion-03.jpg?v=1706621900&width=360",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/SenoritaWomanBodyLotion-04.jpg?v=1706621900&width=360",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/SenoritaWomanBodyLotion-05.jpg?v=1706621903&width=360",
+    ],
     description:
-      "Let the playful side of you reveal itself with the SENORITA Woman Perfume Body Lotion. Infused with the delightful essence of the SENORITA Woman perfume, this body lotion comes with a striking and captivating fragrance, and a charming blend of Shea Butter and Argan Oil to deeply nourish your skin. Treat your senses with this lightweight lotion that gently enriches and hydrates your skin, preparing you for a romantic day ahead.  Notes: Top: Lift your spirit with fruity notes Heart: Turn up the romance with floral notes Base: Feel confident with woody notes",
+      "Let the playful side of you reveal itself with the SENORITA Woman Perfume Body Lotion. Infused with the delightful essence of the SENORITA Woman perfume, this body lotion comes with a striking and captivating fragrance, and a charming blend of Shea Butter and Argan Oil to deeply nourish your skin. Treat your senses with this lightweight lotion that gently enriches and hydrates your skin, preparing you for a romantic day ahead.",
+    note: "Top: Lift your spirit with fruity notes Heart: Turn up the romance with floral notes Base: Feel confident with woody notes",
     keyBenefits:
       "- It provides hydration to the skin - Moisturises and nourishes - Fragrant and relaxing after-shower experience",
     howToUse:
@@ -970,18 +956,16 @@ const Products = [
     rating: "5.0",
     numOfReviews: "36 Reviews",
     discount: "0%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/ShowerGelTrialKit-01.jpg?v=1707996315&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/ShowerGelTrialKit-02.jpg?v=1707996315&width=750",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/ShowerGelTrialKit-05.jpg?v=1707996319&width=750",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/ShowerGelTrialKit-03.jpg?v=1707996318&width=360",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/ShowerGelTrialKit-04.jpg?v=1707996319&width=360",
+    ],
     description:
       "Dive into freshness with our Shower Gel Trial Kit for Women! Enjoy the enchanting scents of DATE, GLAM, and SENORITA in travel-friendly shower gel minis. Packed in a FREE transparent pouch with a loofah, it's your on-the-go luxury. Enriched with Aloe Vera, they not only leave you with a lasting, fragrant allure but also offer a hydrating touch. Indulge your senses and make a lasting impression wherever you go. Grab this irresistible kit and let the world be captivated by your aromatic charm! Notes DATE Woman Shower Gel: Fruity top notes to attract attention, Floral heart notes for a happy feeling, and Woody base notes to add confidence GLAM Woman Shower Gel: Fruity top notes to lift spirits, Floral heart notes for romantic vibes, and Woody base notes to add confidence SENORITA Woman Shower Gel: Fruity notes add a fresh feeling, Floral heart notes tune-up romance, and Woody base notes add confidence",
+    note: "DATE Woman Shower Gel: Fruity top notes to attract attention, Floral heart notes for a happy feeling, and Woody base notes to add confidence GLAM Woman Shower Gel: Fruity top notes to lift spirits, Floral heart notes for romantic vibes, and Woody base notes to add confidence SENORITA Woman Shower Gel: Fruity notes add a fresh feeling, Floral heart notes tune-up romance, and Woody base notes add confidence",
     keyBenefits:
       "- Nourishing and moisturising - Fragrant and travel-friendly - For Women - Free pouch along with loofah",
     howToUse:
@@ -999,18 +983,16 @@ const Products = [
     rating: "5.0",
     numOfReviews: "19 Reviews",
     discount: "15%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/mens-shower-gel-trail-pack-9.jpg?v=1699235298&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/mens-shower-gel-trail-pack-5.jpg?v=1699235298&width=360",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/mens-shower-gel-trail-pack-7.jpg?v=1716273507&width=360",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/mens-shower-gel-trail-pack-6.jpg?v=1699235298&width=360",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/mens-shower-gel-trail-pack-4.jpg?v=1699235298&width=360",
+    ],
     description:
-      "The Shower Gel Travel Minis Kit is the perfect bath set to feel instantly refreshed for the day or night ahead. Bathe in the essence of the iconic CEO Man, KLUB Man, SKAI Aquatic, and White OUD perfumes with their shower gel variants. Packed with love in a FREE transparent kit so you can carry these minis easily and a loofah to scrub off that dirt with ease, bathe in the luxurious fragrance of the perfumes while you explore the world. The shower gels smell as intense and aromatic as the perfumes. Enriched with Aloe Vera to leave you with a fragrant and hydrating experience, these shower gels are moisturising while indulging your senses so you can woo everyone around you.  Notes:  CEO Man Shower Gel: Citrus top notes to keep you fresh, aromatic heart notes to make you instantly noticeable, and woody base notes to add confidence KLUB Man Shower Gel: Citrus top notes to keep you fresh, spicy heart notes to turn up the heat, and woody base notes to add confidence SKAI Aquatic Shower Gel: Citrus top notes to keep you fresh, marine heart notes to keep you cool, and woody base notes to add confidence OUD White Shower Gel: Citrus top notes to keep you fresh, aromatic heart notes to make you instantly noticeable, and woody base notes to add confidence",
+      "The Shower Gel Travel Minis Kit is the perfect bath set to feel instantly refreshed for the day or night ahead. Bathe in the essence of the iconic CEO Man, KLUB Man, SKAI Aquatic, and White OUD perfumes with their shower gel variants. Packed with love in a FREE transparent kit so you can carry these minis easily and a loofah to scrub off that dirt with ease, bathe in the luxurious fragrance of the perfumes while you explore the world. The shower gels smell as intense and aromatic as the perfumes. Enriched with Aloe Vera to leave you with a fragrant and hydrating experience, these shower gels are moisturising while indulging your senses so you can woo everyone around you.  ",
+    note: "CEO Man Shower Gel: Citrus top notes to keep you fresh, aromatic heart notes to make you instantly noticeable, and woody base notes to add confidence KLUB Man Shower Gel: Citrus top notes to keep you fresh, spicy heart notes to turn up the heat, and woody base notes to add confidence SKAI Aquatic Shower Gel: Citrus top notes to keep you fresh, marine heart notes to keep you cool, and woody base notes to add confidence OUD White Shower Gel: Citrus top notes to keep you fresh, aromatic heart notes to make you instantly noticeable, and woody base notes to add confidence",
     keyBenefits:
       "- Nourishing and moisturising - Fragrant and travel-friendly - Can be used by all - Free pouch and along with loofah!",
     howToUse:
@@ -1028,18 +1010,16 @@ const Products = [
     rating: "5.0",
     numOfReviews: "136 Reviews",
     discount: "24%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/Dategiftset-01.jpg?v=1705563221&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/Dategiftset-02.jpg?v=1705563223&width=750",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/Dategiftset-03.jpg?v=1705563222&width=750",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/Dategiftset-04.jpg?v=1705563222&width=360",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/Dategiftset-07.jpg?v=1705563224&width=360",
+    ],
     description:
-      "Discover the DATE Woman Premium Gift Set – where luxury meets the scent of romance. This special collection has four must-haves to get you ready for any date. Enjoy the lovely scent of the DATE Woman Shower Gel with Aloe Vera. Moisturise your skin with the romantically floral DATE Woman Body Lotion, enriched with Argan Oil, Shea Butter, and DATE Woman perfume. Freshen up with the subtle DATE Woman Body Mist and smell wonderful all day or night long with the DATE Woman Eau De Parfum. Embrace a sweet scent and give off charming vibes wherever you go – perfect for any romantic occasion as well as for gifting to your loved ones! Notes:  Top: Attract all the attention with the blend of Pink Pepper and Red fruits Heart: Turn up the romance with  floral and sweet notes Base: Feel confident with woody notes",
+      "Discover the DATE Woman Premium Gift Set – where luxury meets the scent of romance. This special collection has four must-haves to get you ready for any date. Enjoy the lovely scent of the DATE Woman Shower Gel with Aloe Vera. Moisturise your skin with the romantically floral DATE Woman Body Lotion, enriched with Argan Oil, Shea Butter, and DATE Woman perfume. Freshen up with the subtle DATE Woman Body Mist and smell wonderful all day or night long with the DATE Woman Eau De Parfum. Embrace a sweet scent and give off charming vibes wherever you go – perfect for any romantic occasion as well as for gifting to your loved ones! ",
+    note: "Top: Attract all the attention with the blend of Pink Pepper and Red fruits Heart: Turn up the romance with  floral and sweet notes Base: Feel confident with woody notes",
     keyBenefits:
       "- Comes in a luxurious box - Contains bath & body essentials - Perfect for gifting to loved ones - Suitable for special occasions or fancy events - Infused with DATE Woman Eau de Parfum",
     howToUse:
@@ -1057,18 +1037,16 @@ const Products = [
     rating: "4.8",
     numOfReviews: "112 Reviews",
     discount: "48%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/SenoritaShowerGel500ml-01.jpg?v=1706856953&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/2_12_6aaa2080-a68e-424c-922b-049e01622db3.jpg?v=1709993445&width=750",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/3_11.jpg?v=1709993445&width=750",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/4_11.jpg?v=1709993445&width=360",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/5_11.jpg?v=1709993445&width=360",
+    ],
     description:
-      "Unleash your fun and playful side with the SENORITA Woman Shower Gel. This shower gel has a lovely scent, just like the SENORITA Woman perfume. It also contains Aloe Vera to keep your skin moisturised and clean. Enjoy a thrilling experience, cleanse your skin, and get ready for a special evening with the enchanting fragrance of SENORITA Woman perfume in every drop. Notes: Top: Lift your spirit with fruity notes Heart: Turn up the romance with floral notes Base: Feel confident with woody notes",
+      "Unleash your fun and playful side with the SENORITA Woman Shower Gel. This shower gel has a lovely scent, just like the SENORITA Woman perfume. It also contains Aloe Vera to keep your skin moisturised and clean. Enjoy a thrilling experience, cleanse your skin, and get ready for a special evening with the enchanting fragrance of SENORITA Woman perfume in every drop. ",
+    note: "Top: Lift your spirit with fruity notes Heart: Turn up the romance with floral notes Base: Feel confident with woody notes",
     keyBenefits:
       "- Deep cleanses skin - Moisturises and nourishes - Fragrant, relaxing, and reviving bathing experience",
     howToUse:
@@ -1086,18 +1064,16 @@ const Products = [
     rating: "5.0",
     numOfReviews: "24 Reviews",
     discount: "34%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/Skai-Travel-pouch-10_2.jpg?v=1695300843&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/Skai-Travel-pouch-4.jpg?v=1695300843&width=750",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/Skai-Travel-pouch-5.jpg?v=1695300843&width=750",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/Skai-Travel-pouch-7.jpg?v=1695300843&width=360",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/Skai-Travel-pouch-8.jpg?v=1695300843&width=360",
+    ],
     description:
-      "The SKAI Aquatic Travel Minis Kit, a bath and body set, is an excellent choice to feel instantly refreshed and ready to take on the day. Bathe in the essence of the iconic SKAI Aquatic with the SKAI Aquatic Shower Gel, a shower gel that smells as intense as the perfume. It is enriched with Aloe Vera to leave you with a fragrant and hydrating experience. Moisturise your skin with the fragrant SKAI Aquatic Body Lotion, infused with Argan Oil, Shea Butter, and the SKAI Aquatic perfume. Awaken your senses with the captivating scent of SKAI Aquatic Deo Parfum and step out smelling heavenly with the SKAI Aquatic Eau De Cologne. Woo everyone with your energised spirit and a free pouch, perfect for your travel essentials. Notes: Top: Start your day fresh with an iconic blend of Bergamot and Coriander Heart: Feel calm with the touch of Sage, Lavender, Leather, and Pink Pepper Base: Sustain confidence and remain grounded with notes of Pink Pepper",
+      "The SKAI Aquatic Travel Minis Kit, a bath and body set, is an excellent choice to feel instantly refreshed and ready to take on the day. Bathe in the essence of the iconic SKAI Aquatic with the SKAI Aquatic Shower Gel, a shower gel that smells as intense as the perfume. It is enriched with Aloe Vera to leave you with a fragrant and hydrating experience. Moisturise your skin with the fragrant SKAI Aquatic Body Lotion, infused with Argan Oil, Shea Butter, and the SKAI Aquatic perfume. Awaken your senses with the captivating scent of SKAI Aquatic Deo Parfum and step out smelling heavenly with the SKAI Aquatic Eau De Cologne. Woo everyone with your energised spirit and a free pouch, perfect for your travel essentials.",
+    note: "Top: Start your day fresh with an iconic blend of Bergamot and Coriander Heart: Feel calm with the touch of Sage, Lavender, Leather, and Pink Pepper Base: Sustain confidence and remain grounded with notes of Pink Pepper",
     keyBenefits:
       "- Deep cleanses skin - Moisturises and nourishes - Fragrant, relaxing, and reviving bathing experience",
     howToUse:
@@ -1115,18 +1091,16 @@ const Products = [
     rating: "4.5",
     numOfReviews: "8 Reviews",
     discount: "24%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/KLUBMenGiftSet-01_1.jpg?v=1707819660&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/KLUBMenGiftSet-02.jpg?v=1707819660&width=750",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/KLUBMenGiftSet-03.jpg?v=1707819660&width=750",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/KLUBMenGiftSet-04.jpg?v=1707819660&width=360",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/KLUBMenGiftSet-07.jpg?v=1707819660&width=360",
+    ],
     description:
-      "Experience a zestful boost like never before with our dynamic KLUB Man Premium Gift Set. This special collection has four must-haves to prepare for any party or event you want to rock. Enjoy the impactful scent of the KLUB Man Shower Gel with Aloe Vera. Moisturise your skin with the radiating energy of KLUB Man Body Lotion, enriched with Argan Oil, Shea Butter, and KLUB Man perfume. Freshen up with the subtle KLUB Man Deo Parfum and smell wonderful all day and all night with the KLUB Man Eau De Parfum. Embrace a refreshing aroma and radiate cool, vibrant vibes wherever you go – perfect for exuding energy on any occasion! Notes: Top: Feel refreshed with citrus top notes Heart: Captivate everyone with spicy notes Base: Stay confident with woody base notes ",
+      "Experience a zestful boost like never before with our dynamic KLUB Man Premium Gift Set. This special collection has four must-haves to prepare for any party or event you want to rock. Enjoy the impactful scent of the KLUB Man Shower Gel with Aloe Vera. Moisturise your skin with the radiating energy of KLUB Man Body Lotion, enriched with Argan Oil, Shea Butter, and KLUB Man perfume. Freshen up with the subtle KLUB Man Deo Parfum and smell wonderful all day and all night with the KLUB Man Eau De Parfum. Embrace a refreshing aroma and radiate cool, vibrant vibes wherever you go – perfect for exuding energy on any occasion! ",
+    note: "Top: Feel refreshed with citrus top notes Heart: Captivate everyone with spicy notes Base: Stay confident with woody base notes",
     keyBenefits:
       "- Comes in a luxurious box - Contains bath & body essentials - Perfect for gifting to loved ones - Suitable for special occasions and parties - Infused with KLUB Man Eau de Parfum",
     howToUse:
@@ -1144,18 +1118,16 @@ const Products = [
     rating: "4.9",
     numOfReviews: "29 Reviews",
     discount: "35%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/KLUBMan-01.jpg?v=1695892533&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/2_10.jpg?v=1709993043&width=750",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/3_9.jpg?v=1709993043&width=750",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/4_9.jpg?v=1709993043&width=360",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/6_7_56894b58-4a73-4d24-9436-e3adf26f8ec5.jpg?v=1709993043&width=360",
+    ],
     description:
       "Shower in the fragrance of party madness, quite literally, with the KLUB Man Shower Gel. With a fragrance as enchanting and wild as the KLUB Man perfume, the KLUB Man Shower gel deep cleanses your skin gently but efficiently with the goodness of Aloe Vera. Your perfect addition to your pre-party routine, setting the stage for an unforgettable night.",
+    note: " Notes: Top: Start your day fresh with an iconic blend of Bergamot and Coriander Heart: Feel calm with the touch of Sage, Lavender, Leather, and Pink Pepper Base: Sustain confidence and remain grounded with notes of Pink Pepper",
     keyBenefits:
       "- Deep cleanses skin - Moisturises and nourishes - Fragrant, relaxing, and reviving bathing experience",
     howToUse:
@@ -1173,18 +1145,16 @@ const Products = [
     rating: "4.8",
     numOfReviews: "103 Reviews",
     discount: "35%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/Glamshowergel-01.jpg?v=1703067258&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/2_8.jpg?v=1709992932&width=750",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/3_8_a8bcb621-1585-49d1-8b82-2bdc498e51e3.jpg?v=1709992932&width=750",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/4_8_2b59e720-f051-42fd-ba89-e6be4ecb4323.jpg?v=1709992932&width=360",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/6_6.jpg?v=1709992932&width=360",
+    ],
     description:
-      "Immerse yourself in the world of glamour as you lather up with this exquisite GLAM Woman Shower Gel. With a fragrance as intense and captivating as the GLAM Woman perfume, the GLAM Woman Shower gel deep cleanses your skin gently but efficiently with the goodness of Aloe Vera. Indulge your senses, cleanse your skin, and prepare for a glamorous evening with the essence of GLAM Woman perfume captured in every drop. Notes: Top: Lift your spirit with fruity notes Heart: Turn up the romance with the floral notes Base: Feel confident with woody notes",
+      "Immerse yourself in the world of glamour as you lather up with this exquisite GLAM Woman Shower Gel. With a fragrance as intense and captivating as the GLAM Woman perfume, the GLAM Woman Shower gel deep cleanses your skin gently but efficiently with the goodness of Aloe Vera. Indulge your senses, cleanse your skin, and prepare for a glamorous evening with the essence of GLAM Woman perfume captured in every drop.",
+    note: "Top: Lift your spirit with fruity notes Heart: Turn up the romance with the floral notes Base: Feel confident with woody notes",
     keyBenefits:
       "- Deep cleanses skin - Moisturises and nourishes - Fragrant, relaxing, and reviving bathing experience",
     howToUse:
@@ -1214,6 +1184,7 @@ const Products = [
     ],
     description:
       "Introducing our Comfort Matte Bullet Lipstick! Make these your go-to for bold colour and all-day comfort. With 10 striking shades, from the fiery Cherry Pop and the classic Scarlet Red to the subtle Just Nude and deep Wine Stain, this lipstick has a shade for every mood and occasion. Whether you're stepping out for a casual day or an evening event, your lips will stay flawlessly creaseless for up to 4 hours without fading, smudging, or transferring.Each swipe delivers intense pigmentation, giving you vibrant, full coverage with minimal effort. The creamy-matte formula glides on effortlessly, offering a smooth, velvety texture that feels light on the lips while providing a sophisticated, sheen-free finish. The bullet design ensures precise application, allowing you to define and fill in your lips with ease and control for a polished look. Infused with nourishing ingredients like Coconut Oil, Shea Butter, and Vitamin E, this lipstick not only delivers stunning color but also keeps your lips hydrated and primed. The result? A comfortable wear that leaves your lips feeling soft, moisturized, and looking fabulous all day. Let your lips do the talking with Comfort Matte Bullet Lipstick—bold colour, luxurious comfort, and hydration, all in one perfect tube.",
+    note: "Always do a patch test before using the product. Bella Vita Organic products are created using natural products so their colour and fragrance may vary over time but will not affect the product efficacy. The artwork colours are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Creamy matte finish - Intense colour - Intense moisturisation - Smooth glide - Up to 4-hour stay - Enriched with Coconut Oil - Enriched with Shea Butter - Enriched with Vitamin E - Comfortable wear",
     howToUse:
@@ -1231,18 +1202,16 @@ const Products = [
     rating: "4.4",
     numOfReviews: "11 Reviews",
     discount: "34%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/1-b.jpg?v=1725628484&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/7_2a58b22e-d4cf-4ba0-bbdd-44cd692539a9.jpg?v=1725689818&width=750",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/Product_labelling.jpg?v=1725630723&width=750",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/eye_duo.jpg?v=1725630723&width=360",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/5_5f8667ee-0502-4442-ae14-3955e3ac5934.jpg?v=1725621032&width=360",
+    ],
     description:
-      "Introducing our ultimate essentials Date Night Gift Set! Indulge in the ultimate romantic allure with the Date Night Gift Set, meticulously curated to elevate your evening to unforgettable heights. This luxurious ensemble features a mesmerizing Date Perfume, two Kiss-Proof Liquid Lipsticks (Wine Stain & Just Nude), and the essentials for creating captivating eyes: an intense Kajal and a precision waterproof Eyeliner. Designed for the discerning woman who wishes to make a lasting impression, this set ensures you exude elegance and charm all night long. Contents: - Date Perfume: Enchanting and long-lasting, this fragrance captivates the senses with its sophisticated allure. - Kiss Proof Liquid Lipsticks (2): Smudge-proof and matte, these lipsticks provide vibrant, enduring color in two alluring shades, Wine Stain & Just Nude. - Intense Drama Kajal: Glide on bold, smudge-proof definition for eyes that mesmerize. - Intense Drama Eyeliner: Achieve flawless, sharp lines with a formula that stays perfect from dusk till dawn. Notes for Date Perfume: Top notes: Opens with fruity notes to create an aura of happiness Heart notes: Floral heart notes add a touch of femininity Base notes: Woody base notes give you the confidence to create an unforgettable moment Crafted for romantic rendezvous and special occasions, the Date Night Gift Set is your key to a night of elegance, sophistication, and unforgettable moments.",
+      "Introducing our ultimate essentials Date Night Gift Set! Indulge in the ultimate romantic allure with the Date Night Gift Set, meticulously curated to elevate your evening to unforgettable heights. This luxurious ensemble features a mesmerizing Date Perfume, two Kiss-Proof Liquid Lipsticks (Wine Stain & Just Nude), and the essentials for creating captivating eyes: an intense Kajal and a precision waterproof Eyeliner. Designed for the discerning woman who wishes to make a lasting impression, this set ensures you exude elegance and charm all night long. Contents: - Date Perfume: Enchanting and long-lasting, this fragrance captivates the senses with its sophisticated allure. - Kiss Proof Liquid Lipsticks (2): Smudge-proof and matte, these lipsticks provide vibrant, enduring color in two alluring shades, Wine Stain & Just Nude. - Intense Drama Kajal: Glide on bold, smudge-proof definition for eyes that mesmerize. - Intense Drama Eyeliner: Achieve flawless, sharp lines with a formula that stays perfect from dusk till dawn.",
+    note: " Notes for Date Perfume: Top notes: Opens with fruity notes to create an aura of happiness Heart notes: Floral heart notes add a touch of femininity Base notes: Woody base notes give you the confidence to create an unforgettable moment Crafted for romantic rendezvous and special occasions, the Date Night Gift Set is your key to a night of elegance, sophistication, and unforgettable moments.",
     keyBenefits:
       "- Intensely moisturising lipstick - Up to 18-hour stay - Fast drying lipstick - Ultra matte finish lipstick - Enriched with Vitamin E & Kokum Butter - Smooth glide precision tip Kajal - Intense black pigment - Smudge-proof Kajal and eyeliner - Enriched with Vitamin E & Almond Oil - Suitable for all Indian skin tones - Matte finish eyeliner - Felt tip eyeliner applicator - Enriched with Biotin - Enriched with Vitamin E & Almond Oil - Long lasting scent",
     howToUse:
@@ -1260,18 +1229,16 @@ const Products = [
     rating: "4.7",
     numOfReviews: "152 Reviews",
     discount: "34%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/1_0199fd8a-7fe4-4612-b911-77f730ab4ae5.jpg?v=1721200975&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/2_0f726097-d234-4237-ad64-7b338056dd21.jpg?v=1721200975&width=535",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/3_998b4ec9-8194-466e-a238-1f23617b91d1.jpg?v=1721200975&width=535",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/5_576e61e3-150a-40f5-ac11-c824e64551a8.jpg?v=1721200975&width=535",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/6_7bbb4c78-e172-4671-9756-6f4057acfb62.jpg?v=1721200975&width=535",
+    ],
     description:
       "Introducing a combo that will make the smokey-eye girlies swoon! World meet Drama Queen Combo, where our Kajal and Eyeliner unite to make your eyes the hero of all your future looks! Unleash your inner diva with our Drama Queen Combo! This perfect duo combines our Intense Drama Kajal and Intense Drama Waterproof Eyeliner for bold, dramatic eyes that last all day. The kajal, enriched with Vitamin E and Almond Oil, glides on smoothly with a precision tip, providing a smudge-proof, long-lasting wear. Complementing it, the eyeliner features a felt tip for precise lines and perfect wings, delivering intense black pigment with a matte finish that stays put for up to 16 hours. Together, these essentials create stunning, defined eyes that make a statement from day to night. Note: Always do a patch test before use. BellaVita Organic products are made with natural ingredients; color and fragrance may vary without affecting efficacy",
+    note: "Always do a patch test before use. BellaVita Organic products are made with natural ingredients; color and fragrance may vary without affecting efficacy",
     keyBenefits:
       "- Matte finish - Smudge-proof - Fast drying - Up to 16-hour stay - Enriched with Biotin - Enriched with Vitamin E & Almond Oil - Intense pigment - Smudge-proof - Eyeliner with felt tip applicator - Kajal with smooth glide precision tip - Enriched with Biotin - Enriched with Vitamin E & Almond Oil - Suitable for all Indian skin tones",
     howToUse:
@@ -1300,7 +1267,8 @@ const Products = [
     innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/7_7_17d5548d-89cb-46b4-8581-e2f8bf300c6d.jpg?v=1723024187&width=535",
     description:
-      "Introducing our Kiss-Proof Liquid Lipsticks now in irresistible Minis! If you’ve been on the lookout for a richly pigmented formula that stays on for up to 18 hours and is both waterproof and transfer-proof, look no further! Our ultra matte finish liquid lipsticks let you binge eat, nibble on the end of your pen, rant to your pals, and sip through straws without the worry of transferring or wiping off. It is designed to stay for a long without drying your lips! Our formula is enriched with Vitamin E nourishes the lips and keeps them feeling soft and smooth for long hours, alongside Kokum Butter, an ideal ingredient in lip products due to its rich emollients. What's better? Our Minis Gift Box lets you have your cake and eat it too! Get all our best-selling 4 lip shades without picking and choosing! In our Minis set of 4, you get - Just Nude, Berry Nude, Mocha Madness, and Cherry Pop. Note: Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
+      "Introducing our Kiss-Proof Liquid Lipsticks now in irresistible Minis! If you’ve been on the lookout for a richly pigmented formula that stays on for up to 18 hours and is both waterproof and transfer-proof, look no further! Our ultra matte finish liquid lipsticks let you binge eat, nibble on the end of your pen, rant to your pals, and sip through straws without the worry of transferring or wiping off. It is designed to stay for a long without drying your lips! Our formula is enriched with Vitamin E nourishes the lips and keeps them feeling soft and smooth for long hours, alongside Kokum Butter, an ideal ingredient in lip products due to its rich emollients. What's better? Our Minis Gift Box lets you have your cake and eat it too! Get all our best-selling 4 lip shades without picking and choosing! In our Minis set of 4, you get - Just Nude, Berry Nude, Mocha Madness, and Cherry Pop. ",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Intense moisturisation - Up to 18-hour stay - Fast drying - Ultra matte finish - Enriched with Vitamin E & Kokum Butter - Best-selling 4 shades in mini sizes",
     howToUse:
@@ -1318,18 +1286,16 @@ const Products = [
     rating: "4.7",
     numOfReviews: "118 Reviews",
     discount: "50%",
-    mainImg:
+    mainImg: [
       "https://bellavitaorganic.com/cdn/shop/files/1_Sultry-nude-listing.jpg?v=1718179522&width=1000",
-    innerImg1:
       "https://bellavitaorganic.com/cdn/shop/files/2_The-Sultry-Nude.jpg?v=1717508894&width=535",
-    innerImg2:
       "https://bellavitaorganic.com/cdn/shop/files/3_The-Sultry-Nude.jpg?v=1717508894&width=535",
-    innerImg3:
       "https://bellavitaorganic.com/cdn/shop/files/7_The-Sultry-Nude.jpg?v=1717508894&width=535",
-    innerImg4:
       "https://bellavitaorganic.com/cdn/shop/files/4_The-Sultry-Nude.jpg?v=1717508894&width=535",
+    ],
     description:
       "Elevate your lip game with the Sultry Nude Combo, a curated collection of five stunning Kiss-Proof Liquid Lipsticks. Perfect for any occasion, this set features versatile nude shades that effortlessly transition from day to night. Whether you're heading to the office or out for an evening soiree, these lipsticks have you covered. Shades Included: 1. Berry Nude: A rich, berry-inspired nude that adds a pop of color while maintaining a sophisticated look. 2. Dreamy Nude: A soft, ethereal nude that provides a subtle yet elegant finish. 3. Dusty Nude: A deep, earthy nude that complements all skin tones, ideal for a polished, everyday look. 4. Just Nude: The quintessential nude shade, perfect for a natural, understated elegance. 5. Naughty Nude: A bold, daring nude that adds a touch of allure to your makeup routine. Our Liquid Lipsticks promise a Kiss-Proof Formula for you to enjoy a long-lasting, smudge-proof wear that stays put throughout the day. It is lightweight and non-drying, providing a comfortable, velvety finish. The formula delivers a rich, opaque color in just one swipe, ensuring your lips look luscious and vibrant. What more? These shades are suitable for day wear, office wear, and evening outings, basically perfect for any occasion. Transform your look with the Sultry Nude Combo and experience the perfect blend of style and comfort. Whether you prefer a subtle hint of color or a bolder nude statement, this collection has something for everyone. Embrace the power of nudes and make your lips the star of the show.",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Intense moisturisation - Up to 18-hour stay - Fast drying - Ultra matte finish - Enriched with Vitamin E & Kokum Butter 5 Shades in one combo",
     howToUse:
@@ -1357,6 +1323,7 @@ const Products = [
     ],
     description:
       "Introducing our Comfort Matte Bullet Lipstick! Make these your go-to for bold colour and all-day comfort. With 10 striking shades, from the fiery Cherry Pop and the classic Scarlet Red to the subtle Just Nude and deep Wine Stain, this lipstick has a shade for every mood and occasion. Whether you're stepping out for a casual day or an evening event, your lips will stay flawlessly creaseless for up to 4 hours without fading, smudging, or transferring.Each swipe delivers intense pigmentation, giving you vibrant, full coverage with minimal effort. The creamy-matte formula glides on effortlessly, offering a smooth, velvety texture that feels light on the lips while providing a sophisticated, sheen-free finish. The bullet design ensures precise application, allowing you to define and fill in your lips with ease and control for a polished look. Infused with nourishing ingredients like Coconut Oil, Shea Butter, and Vitamin E, this lipstick not only delivers stunning color but also keeps your lips hydrated and primed. The result? A comfortable wear that leaves your lips feeling soft, moisturized, and looking fabulous all day. Let your lips do the talking with Comfort Matte Bullet Lipstick—bold colour, luxurious comfort, and hydration, all in one perfect tube.",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Creamy matte finish - Intense colour - Intense moisturisation - Smooth glide - Up to 4-hour stay - Enriched with Coconut Oil - Enriched with Shea Butter - Enriched with Vitamin E - Comfortable wear",
     howToUse:
@@ -1384,6 +1351,7 @@ const Products = [
     ],
     description:
       "Introducing our Comfort Matte Bullet Lipstick! Make these your go-to for bold colour and all-day comfort. With 10 striking shades, from the fiery Cherry Pop and the classic Scarlet Red to the subtle Just Nude and deep Wine Stain, this lipstick has a shade for every mood and occasion. Whether you're stepping out for a casual day or an evening event, your lips will stay flawlessly creaseless for up to 4 hours without fading, smudging, or transferring.Each swipe delivers intense pigmentation, giving you vibrant, full coverage with minimal effort. The creamy-matte formula glides on effortlessly, offering a smooth, velvety texture that feels light on the lips while providing a sophisticated, sheen-free finish. The bullet design ensures precise application, allowing you to define and fill in your lips with ease and control for a polished look. Infused with nourishing ingredients like Coconut Oil, Shea Butter, and Vitamin E, this lipstick not only delivers stunning color but also keeps your lips hydrated and primed. The result? A comfortable wear that leaves your lips feeling soft, moisturized, and looking fabulous all day. Let your lips do the talking with Comfort Matte Bullet Lipstick—bold colour, luxurious comfort, and hydration, all in one perfect tube.",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Creamy matte finish - Intense colour - Intense moisturisation - Smooth glide - Up to 4-hour stay - Enriched with Coconut Oil - Enriched with Shea Butter - Enriched with Vitamin E - Comfortable wear",
     howToUse:
@@ -1411,6 +1379,7 @@ const Products = [
     ],
     description:
       "Introducing our Comfort Matte Bullet Lipstick! Make these your go-to for bold colour and all-day comfort. With 10 striking shades, from the fiery Cherry Pop and the classic Scarlet Red to the subtle Just Nude and deep Wine Stain, this lipstick has a shade for every mood and occasion. Whether you're stepping out for a casual day or an evening event, your lips will stay flawlessly creaseless for up to 4 hours without fading, smudging, or transferring.Each swipe delivers intense pigmentation, giving you vibrant, full coverage with minimal effort. The creamy-matte formula glides on effortlessly, offering a smooth, velvety texture that feels light on the lips while providing a sophisticated, sheen-free finish. The bullet design ensures precise application, allowing you to define and fill in your lips with ease and control for a polished look. Infused with nourishing ingredients like Coconut Oil, Shea Butter, and Vitamin E, this lipstick not only delivers stunning color but also keeps your lips hydrated and primed. The result? A comfortable wear that leaves your lips feeling soft, moisturized, and looking fabulous all day. Let your lips do the talking with Comfort Matte Bullet Lipstick—bold colour, luxurious comfort, and hydration, all in one perfect tube.",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Creamy matte finish - Intense colour - Intense moisturisation - Smooth glide - Up to 4-hour stay - Enriched with Coconut Oil - Enriched with Shea Butter - Enriched with Vitamin E - Comfortable wear",
     howToUse:
@@ -1438,6 +1407,7 @@ const Products = [
     ],
     description:
       "Introducing our Comfort Matte Bullet Lipstick! Make these your go-to for bold colour and all-day comfort. With 10 striking shades, from the fiery Cherry Pop and the classic Scarlet Red to the subtle Just Nude and deep Wine Stain, this lipstick has a shade for every mood and occasion. Whether you're stepping out for a casual day or an evening event, your lips will stay flawlessly creaseless for up to 4 hours without fading, smudging, or transferring.Each swipe delivers intense pigmentation, giving you vibrant, full coverage with minimal effort. The creamy-matte formula glides on effortlessly, offering a smooth, velvety texture that feels light on the lips while providing a sophisticated, sheen-free finish. The bullet design ensures precise application, allowing you to define and fill in your lips with ease and control for a polished look. Infused with nourishing ingredients like Coconut Oil, Shea Butter, and Vitamin E, this lipstick not only delivers stunning color but also keeps your lips hydrated and primed. The result? A comfortable wear that leaves your lips feeling soft, moisturized, and looking fabulous all day. Let your lips do the talking with Comfort Matte Bullet Lipstick—bold colour, luxurious comfort, and hydration, all in one perfect tube.",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Creamy matte finish - Intense colour - Intense moisturisation - Smooth glide - Up to 4-hour stay - Enriched with Coconut Oil - Enriched with Shea Butter - Enriched with Vitamin E - Comfortable wear",
     howToUse:
@@ -1465,6 +1435,7 @@ const Products = [
     ],
     description:
       "Introducing our Comfort Matte Bullet Lipstick! Make these your go-to for bold colour and all-day comfort. With 10 striking shades, from the fiery Cherry Pop and the classic Scarlet Red to the subtle Just Nude and deep Wine Stain, this lipstick has a shade for every mood and occasion. Whether you're stepping out for a casual day or an evening event, your lips will stay flawlessly creaseless for up to 4 hours without fading, smudging, or transferring.Each swipe delivers intense pigmentation, giving you vibrant, full coverage with minimal effort. The creamy-matte formula glides on effortlessly, offering a smooth, velvety texture that feels light on the lips while providing a sophisticated, sheen-free finish. The bullet design ensures precise application, allowing you to define and fill in your lips with ease and control for a polished look. Infused with nourishing ingredients like Coconut Oil, Shea Butter, and Vitamin E, this lipstick not only delivers stunning color but also keeps your lips hydrated and primed. The result? A comfortable wear that leaves your lips feeling soft, moisturized, and looking fabulous all day. Let your lips do the talking with Comfort Matte Bullet Lipstick—bold colour, luxurious comfort, and hydration, all in one perfect tube.",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Creamy matte finish - Intense colour - Intense moisturisation - Smooth glide - Up to 4-hour stay - Enriched with Coconut Oil - Enriched with Shea Butter - Enriched with Vitamin E - Comfortable wear",
     howToUse:
@@ -1492,6 +1463,7 @@ const Products = [
     ],
     description:
       "Introducing our Comfort Matte Bullet Lipstick! Make these your go-to for bold colour and all-day comfort. With 10 striking shades, from the fiery Cherry Pop and the classic Scarlet Red to the subtle Just Nude and deep Wine Stain, this lipstick has a shade for every mood and occasion. Whether you're stepping out for a casual day or an evening event, your lips will stay flawlessly creaseless for up to 4 hours without fading, smudging, or transferring.Each swipe delivers intense pigmentation, giving you vibrant, full coverage with minimal effort. The creamy-matte formula glides on effortlessly, offering a smooth, velvety texture that feels light on the lips while providing a sophisticated, sheen-free finish. The bullet design ensures precise application, allowing you to define and fill in your lips with ease and control for a polished look. Infused with nourishing ingredients like Coconut Oil, Shea Butter, and Vitamin E, this lipstick not only delivers stunning color but also keeps your lips hydrated and primed. The result? A comfortable wear that leaves your lips feeling soft, moisturized, and looking fabulous all day. Let your lips do the talking with Comfort Matte Bullet Lipstick—bold colour, luxurious comfort, and hydration, all in one perfect tube.",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Creamy matte finish - Intense colour - Intense moisturisation - Smooth glide - Up to 4-hour stay - Enriched with Coconut Oil - Enriched with Shea Butter - Enriched with Vitamin E - Comfortable wear",
     howToUse:
@@ -1519,6 +1491,7 @@ const Products = [
     ],
     description:
       "Introducing our Comfort Matte Bullet Lipstick! Make these your go-to for bold colour and all-day comfort. With 10 striking shades, from the fiery Cherry Pop and the classic Scarlet Red to the subtle Just Nude and deep Wine Stain, this lipstick has a shade for every mood and occasion. Whether you're stepping out for a casual day or an evening event, your lips will stay flawlessly creaseless for up to 4 hours without fading, smudging, or transferring.Each swipe delivers intense pigmentation, giving you vibrant, full coverage with minimal effort. The creamy-matte formula glides on effortlessly, offering a smooth, velvety texture that feels light on the lips while providing a sophisticated, sheen-free finish. The bullet design ensures precise application, allowing you to define and fill in your lips with ease and control for a polished look. Infused with nourishing ingredients like Coconut Oil, Shea Butter, and Vitamin E, this lipstick not only delivers stunning color but also keeps your lips hydrated and primed. The result? A comfortable wear that leaves your lips feeling soft, moisturized, and looking fabulous all day. Let your lips do the talking with Comfort Matte Bullet Lipstick—bold colour, luxurious comfort, and hydration, all in one perfect tube.",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Creamy matte finish - Intense colour - Intense moisturisation - Smooth glide - Up to 4-hour stay - Enriched with Coconut Oil - Enriched with Shea Butter - Enriched with Vitamin E - Comfortable wear",
     howToUse:
@@ -1546,6 +1519,7 @@ const Products = [
     ],
     description:
       "Introducing our Comfort Matte Bullet Lipstick! Make these your go-to for bold colour and all-day comfort. With 10 striking shades, from the fiery Cherry Pop and the classic Scarlet Red to the subtle Just Nude and deep Wine Stain, this lipstick has a shade for every mood and occasion. Whether you're stepping out for a casual day or an evening event, your lips will stay flawlessly creaseless for up to 4 hours without fading, smudging, or transferring.Each swipe delivers intense pigmentation, giving you vibrant, full coverage with minimal effort. The creamy-matte formula glides on effortlessly, offering a smooth, velvety texture that feels light on the lips while providing a sophisticated, sheen-free finish. The bullet design ensures precise application, allowing you to define and fill in your lips with ease and control for a polished look. Infused with nourishing ingredients like Coconut Oil, Shea Butter, and Vitamin E, this lipstick not only delivers stunning color but also keeps your lips hydrated and primed. The result? A comfortable wear that leaves your lips feeling soft, moisturized, and looking fabulous all day. Let your lips do the talking with Comfort Matte Bullet Lipstick—bold colour, luxurious comfort, and hydration, all in one perfect tube.",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Creamy matte finish - Intense colour - Intense moisturisation - Smooth glide - Up to 4-hour stay - Enriched with Coconut Oil - Enriched with Shea Butter - Enriched with Vitamin E - Comfortable wear",
     howToUse:
@@ -1573,6 +1547,7 @@ const Products = [
     ],
     description:
       "Introducing our Comfort Matte Bullet Lipstick! Make these your go-to for bold colour and all-day comfort. With 10 striking shades, from the fiery Cherry Pop and the classic Scarlet Red to the subtle Just Nude and deep Wine Stain, this lipstick has a shade for every mood and occasion. Whether you're stepping out for a casual day or an evening event, your lips will stay flawlessly creaseless for up to 4 hours without fading, smudging, or transferring.Each swipe delivers intense pigmentation, giving you vibrant, full coverage with minimal effort. The creamy-matte formula glides on effortlessly, offering a smooth, velvety texture that feels light on the lips while providing a sophisticated, sheen-free finish. The bullet design ensures precise application, allowing you to define and fill in your lips with ease and control for a polished look. Infused with nourishing ingredients like Coconut Oil, Shea Butter, and Vitamin E, this lipstick not only delivers stunning color but also keeps your lips hydrated and primed. The result? A comfortable wear that leaves your lips feeling soft, moisturized, and looking fabulous all day. Let your lips do the talking with Comfort Matte Bullet Lipstick—bold colour, luxurious comfort, and hydration, all in one perfect tube.",
+    note: "Always do a patch test before using the product. BellaVita Organic products are created using natural products so their color and fragrance may vary over time but will not affect the product efficacy. The artwork colors are only indicative and not true lipstick shade matches.",
     keyBenefits:
       "- Creamy matte finish - Intense colour - Intense moisturisation - Smooth glide - Up to 4-hour stay - Enriched with Coconut Oil - Enriched with Shea Butter - Enriched with Vitamin E - Comfortable wear",
     howToUse:

@@ -107,13 +107,110 @@ const Reviews = [
     descHead: "good kit",
     desc: "Great products, the zipper pack can be improved though",
   },
-  // {
-  //   name: "",
-  //   stars: "",
-  //   img: [],
-  //   descHead: "",
-  //   desc: "",
-  // },
+  {
+    name: "Apeksha B.B.",
+    stars: 5,
+    img: [
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1721236109__0__Pu2aEM10__612-6W8Z4gL__original.jpg?auto=format&w=1024",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1721236109__0__dGUkD2qg__61qH1IC4woL__original.jpg?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1721236109__0__gBhOYE5O__81XOdTesZSL__original.jpg?auto=format",
+    ],
+    descHead: "The glide of kajal is very smooth!",
+    desc: "This is literally smudge proof,long lasting as I've been using it and no match to this one.This eyeliner is really amazing it dries quickly and gives a matte finish. It is smudged proof and long lasting. It also has natural ingredients like Vitamin E and almond oil, one should definitely give a try.",
+  },
+  {
+    name: " Shailender ..",
+    stars: 5,
+    img: [
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1729193401__image__original.jpg?auto=format&w=160",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1729193404__image__original.jpg?auto=format&w=160",
+    ],
+    descHead: "Top quality perfumes",
+    desc: "I am a regular customer of Bella Vita products I am fully satisfied with the top quality good luck",
+  },
+  {
+    name: "Ruby K.",
+    stars: 5,
+    img: [
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1705582901__vn__original.png?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1707978457__gold_oud_2__original.jpeg?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1701689995__image64__original.png?auto=format",
+    ],
+    descHead: "Mind Blowing Fragrance ...💕",
+    desc: "I Have Tried Many Bellavita Perfumes. Anyone Can Use This Perfume. U Will Feel Like You R In Heaven🥰 Bestest Product By Bellavita .... Luxurious Feel...🥰❤️😍",
+  },
+  {
+    name: "Tanisha C.",
+    stars: 4,
+    img: [
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1695722776__image44__original.png?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1695034855__image22__original.png?auto=format",
+    ],
+    descHead: "Good Product",
+    desc: "One of my favourite perfume ever. It smells amazing good. It fragrance last upto 12 hours. Addicted to fragrance of this perfume.Go and grab your DEAL as it is limited addition.",
+  },
+  {
+    name: "Nilaparna N.",
+    stars: 5,
+    img: [
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1695642943__0__Q5eyXDgh__61qbWqzGF-L__original.jpg?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1695642943__0__wzFGP66m__61azGURtM7L__original.jpg?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1695642943__0__Lkd4MRYz__61Nc1XwOj2L__original.jpg?auto=format",
+    ],
+    descHead: "Oud Unisex",
+    desc: "I could never be more satisfied. The perfect balance of woody vanilla and sandalwood. I was looking for such a fragrance for so long. Smells so luxurious. Totally loving it!",
+  },
+  {
+    name: "Akshay N.",
+    stars: 5,
+    img: [
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1705945114__2a__original.png?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1693914940__0__Gh6QHxhs__61OmB-jmUoL__original.jpg?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1693914940__0__QYDn7xwB__71qu5oYCa9L__original.jpg?auto=format",
+    ],
+    descHead: "Great product",
+    desc: "Bella Vita Skai perfume is refreshing with a mix of citrus, floral, and woody notes. It lasts all day and isn’t too strong. You can wear it anytime, day or night. The bottle looks nice and stylish. Overall, it's a great, versatile perfume that people love.",
+  },
+  {
+    name: "Jasmine K.",
+    stars: 5,
+    img: [
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1699780566__image54__original.png?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1696387843__img_20231003_191615__original.jpg?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1719836234__hotmess__original.png?auto=format",
+    ],
+    descHead: "Unleash Confidence with Bella Vita 😻",
+    desc: "Purchasing a perfume online is like taking a chance, but after reading so many positive reviews, I took the chance.....and yess it is the best.....perfect for gifting too....Happy with the luxurious fragrance, beautiful bottle and packing....Order it without thinking much..",
+  },
+  {
+    name: "Swati A.",
+    stars: 4,
+    img: [
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1705945114__2a__original.png?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1693914940__0__Imj4448-__61rT6u-zXuL__original.jpg?auto=format",
+    ],
+    descHead: "Best 👌",
+    desc: "Bella Vita Skai perfume is refreshing with a mix of citrus, floral, and woody notes. It lasts all day and isn’t too strong. You can wear it anytime, day or night. The bottle looks nice and stylish. Overall, it's a great, versatile perfume that people love.",
+  },
+  {
+    name: "Vaibhav R.",
+    stars: 5,
+    img: [
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1695711288__image39__original.png?auto=format",
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1702888261__img_1721__original.jpeg?auto=format",
+    ],
+    descHead: "Must have at your dressing table",
+    desc: "First I ordered a sample pack of 10 to choose right fragrance for me , all are too good, difficult to choose one. Then ordered Klub for my husband and Senorita to gift my friend, Apart from these even Bella Vita luxury fresh Unisex, White Oud, Oud Unisex,Glam Woman are also good.",
+  },
+  {
+    name: "Manisha K.",
+    stars: "2",
+    img: [
+      "https://judgeme.imgix.net/bella-vita-organic-idam-natural-wellness-pvt-ltd/1727508703__0__UfQzCRRW__612-6W8Z4gL__original.jpg?auto=format&w=160",
+    ],
+    descHead: "Bad combo",
+    desc: "The combo was Not good eye liner was so tiny and it dries very soon and Kajal was not water proof and the pencil is not sharp as it should be. The free gift they sent was awful.",
+  },
 ];
 
 export default Reviews;

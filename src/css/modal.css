@@ -235,7 +235,7 @@
 .reviewModelDescHead {
   text-transform: capitalize;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-block: 10px;
   color: #000000d2;
 }
 
