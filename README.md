@@ -4,7 +4,7 @@
 
 BellaVita Clone is a Frontead e-commerce website built using the Frontead Technologies. This project replicates the user experience of the BellaVita website, providing a seamless and interactive interface for users to browse, search, and purchase Perfumes, Body Care, Cosmetics, etc products. It includes both frontend and firebase(as a backend service), offering a fully responsive and pleasant user interface.
 
-You can view the deployed project here: [Sephora Clone](https://bella-vita-clone-one.vercel.app/) 🚀
+You can view the deployed project here: [BellaVita Clone](https://bella-vita-clone-one.vercel.app/) 🚀
 
 ## Tech Stack 🛠️
 
@@ -48,6 +48,10 @@ You can view the deployed project here: [Sephora Clone](https://bella-vita-clone
 ### Homepage
 
 ![Homepage](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/homepage.png?raw=true)
+
+### Homepage Small Screen
+
+![Homepage](https://github.com/RohitG8812/BellaVita_Clone/blob/main/src/assets/preview/homeSmall.png?raw=true)
 
 ### Multiproduct Page
 
