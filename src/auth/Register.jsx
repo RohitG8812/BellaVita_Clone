@@ -39,7 +39,7 @@ function Register() {
             console.log("user Registered successfully")
             toast.success("Registered Successfully")
             setTimeout(() => {
-                navigate(-2)
+                navigate(-1)
                 setLoader(false)
             }, 2000)
         } catch (error) {
